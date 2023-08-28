@@ -1,0 +1,11 @@
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.AssemblyReference.cache
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.frmLogin.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.frmMenu.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.Properties.Resources.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.GenerateResource.cache
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.CoreCompileInputs.cache
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\deltarh.exe.config
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\deltarh.exe
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\deltarh.pdb
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.exe
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.pdb
