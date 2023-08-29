@@ -68,7 +68,7 @@ namespace deltarh
             this.mskSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskSenha.Location = new System.Drawing.Point(87, 85);
             this.mskSenha.Name = "mskSenha";
-            this.mskSenha.PasswordChar = '#';
+            this.mskSenha.PasswordChar = '*';
             this.mskSenha.Size = new System.Drawing.Size(118, 24);
             this.mskSenha.TabIndex = 1;
             // 
@@ -94,7 +94,7 @@ namespace deltarh
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmLogin
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +105,10 @@ namespace deltarh
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
-            this.Name = "frmLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -9,3 +9,5 @@ C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\deltarh.exe
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\deltarh.pdb
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.exe
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.pdb
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmCadEmpresa.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmEndereco.resources

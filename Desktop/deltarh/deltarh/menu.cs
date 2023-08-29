@@ -16,5 +16,17 @@ namespace deltarh
         {
             InitializeComponent();
         }
+
+        private void btnCnpj_Click(object sender, EventArgs e)
+        {
+
+            var resposta = MessageBox.Show("Empresa não cadastrada. Deseja cadastrá-la?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(resposta == DialogResult.Yes)
+            {
+                FrmCadEmpresa cadastro = new FrmCadEmpresa();
+                cadastro.ShowDialog();
+            }
+        }
     }
 }
