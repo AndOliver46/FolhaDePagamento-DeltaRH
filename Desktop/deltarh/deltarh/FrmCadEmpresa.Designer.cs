@@ -34,28 +34,28 @@ namespace deltarh
             this.txtCodId = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.pgEndereco = new System.Windows.Forms.TabPage();
-            this.pgContato = new System.Windows.Forms.TabPage();
+            this.btnEditarEnd = new System.Windows.Forms.Button();
             this.gridEndereco = new System.Windows.Forms.DataGridView();
+            this.pgContato = new System.Windows.Forms.TabPage();
+            this.btnEditarContato = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEditarDp = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txtInscEstadual = new System.Windows.Forms.TextBox();
             this.txtInscMunicipal = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEditarEnd = new System.Windows.Forms.Button();
-            this.btnEditarContato = new System.Windows.Forms.Button();
-            this.btnEditarDp = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.pgEndereco.SuspendLayout();
-            this.pgContato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEndereco)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.pgContato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +109,26 @@ namespace deltarh
             this.pgEndereco.TabIndex = 0;
             this.pgEndereco.Text = "Endereço";
             // 
+            // btnEditarEnd
+            // 
+            this.btnEditarEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEnd.Location = new System.Drawing.Point(690, 6);
+            this.btnEditarEnd.Name = "btnEditarEnd";
+            this.btnEditarEnd.Size = new System.Drawing.Size(75, 37);
+            this.btnEditarEnd.TabIndex = 11;
+            this.btnEditarEnd.Text = "Editar";
+            this.btnEditarEnd.UseVisualStyleBackColor = true;
+            this.btnEditarEnd.Click += new System.EventHandler(this.btnEditarEnd_Click);
+            // 
+            // gridEndereco
+            // 
+            this.gridEndereco.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.gridEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEndereco.Location = new System.Drawing.Point(6, 49);
+            this.gridEndereco.Name = "gridEndereco";
+            this.gridEndereco.Size = new System.Drawing.Size(759, 325);
+            this.gridEndereco.TabIndex = 4;
+            // 
             // pgContato
             // 
             this.pgContato.Controls.Add(this.btnEditarContato);
@@ -121,14 +141,56 @@ namespace deltarh
             this.pgContato.Text = "Contato";
             this.pgContato.UseVisualStyleBackColor = true;
             // 
-            // gridEndereco
+            // btnEditarContato
             // 
-            this.gridEndereco.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.gridEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEndereco.Location = new System.Drawing.Point(6, 49);
-            this.gridEndereco.Name = "gridEndereco";
-            this.gridEndereco.Size = new System.Drawing.Size(759, 325);
-            this.gridEndereco.TabIndex = 4;
+            this.btnEditarContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarContato.Location = new System.Drawing.Point(690, 6);
+            this.btnEditarContato.Name = "btnEditarContato";
+            this.btnEditarContato.Size = new System.Drawing.Size(75, 37);
+            this.btnEditarContato.TabIndex = 12;
+            this.btnEditarContato.Text = "Editar";
+            this.btnEditarContato.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(759, 325);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnEditarDp);
+            this.tabPage1.Controls.Add(this.dataGridView2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(768, 380);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Departamento Pessoal";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarDp
+            // 
+            this.btnEditarDp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarDp.Location = new System.Drawing.Point(690, 6);
+            this.btnEditarDp.Name = "btnEditarDp";
+            this.btnEditarDp.Size = new System.Drawing.Size(75, 37);
+            this.btnEditarDp.TabIndex = 12;
+            this.btnEditarDp.Text = "Editar";
+            this.btnEditarDp.UseVisualStyleBackColor = true;
+            this.btnEditarDp.Click += new System.EventHandler(this.btnEditarDp_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 49);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(759, 325);
+            this.dataGridView2.TabIndex = 6;
             // 
             // txtInscEstadual
             // 
@@ -147,36 +209,6 @@ namespace deltarh
             this.txtInscMunicipal.Name = "txtInscMunicipal";
             this.txtInscMunicipal.Size = new System.Drawing.Size(232, 24);
             this.txtInscMunicipal.TabIndex = 5;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btnEditarDp);
-            this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 380);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Departamento Pessoal";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 49);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(759, 325);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 49);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(759, 325);
-            this.dataGridView2.TabIndex = 6;
             // 
             // lblCnpj
             // 
@@ -223,37 +255,6 @@ namespace deltarh
             this.label4.TabIndex = 10;
             this.label4.Text = "Insc. Municipal";
             // 
-            // btnEditarEnd
-            // 
-            this.btnEditarEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarEnd.Location = new System.Drawing.Point(690, 6);
-            this.btnEditarEnd.Name = "btnEditarEnd";
-            this.btnEditarEnd.Size = new System.Drawing.Size(75, 37);
-            this.btnEditarEnd.TabIndex = 11;
-            this.btnEditarEnd.Text = "Editar";
-            this.btnEditarEnd.UseVisualStyleBackColor = true;
-            this.btnEditarEnd.Click += new System.EventHandler(this.btnEditarEnd_Click);
-            // 
-            // btnEditarContato
-            // 
-            this.btnEditarContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarContato.Location = new System.Drawing.Point(690, 6);
-            this.btnEditarContato.Name = "btnEditarContato";
-            this.btnEditarContato.Size = new System.Drawing.Size(75, 37);
-            this.btnEditarContato.TabIndex = 12;
-            this.btnEditarContato.Text = "Editar";
-            this.btnEditarContato.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarDp
-            // 
-            this.btnEditarDp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarDp.Location = new System.Drawing.Point(690, 6);
-            this.btnEditarDp.Name = "btnEditarDp";
-            this.btnEditarDp.Size = new System.Drawing.Size(75, 37);
-            this.btnEditarDp.TabIndex = 12;
-            this.btnEditarDp.Text = "Editar";
-            this.btnEditarDp.UseVisualStyleBackColor = true;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,6 +264,7 @@ namespace deltarh
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FrmCadEmpresa
             // 
@@ -285,10 +287,10 @@ namespace deltarh
             this.Text = "Cadastrar Empresa";
             this.tabControl1.ResumeLayout(false);
             this.pgEndereco.ResumeLayout(false);
-            this.pgContato.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEndereco)).EndInit();
-            this.tabPage1.ResumeLayout(false);
+            this.pgContato.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

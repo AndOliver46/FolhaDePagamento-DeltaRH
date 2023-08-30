@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jarvis.Logs</name>
+    </assembly>
+    <members>
+        <member name="T:Jarvis.Logs.JarvisLogs">
+            <summary>
+            Acessa os métodos de logs.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.Debug(System.String,System.String)">
+            <summary>
+            Exibe o log debug no console.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.Info(System.String,System.String)">
+            <summary>
+            Exibe o log information no console.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.Warn(System.String,System.String)">
+            <summary>
+            Exibe o log warning no console.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.Error(System.String,System.String)">
+            <summary>
+            Exibe o log error no console.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.Write(System.String,System.String,Jarvis.Logs.LogLevel)">
+            <summary>
+            Exibe o log selecionado no console.
+            </summary>
+        </member>
+        <member name="M:Jarvis.Logs.JarvisLogs.ObjectParameters(System.Object)">
+            <summary>
+            Exibe os parâmetros e valores do objeto no console.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -23,5 +23,19 @@ namespace deltarh
             end.ShowDialog();
 
         }
+
+        private void btnEditarDp_Click(object sender, EventArgs e)
+        {
+            FrmCadDp dp = new FrmCadDp();
+            dp.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DLL_CLASS_CNPJ.CNPJ cnpj = new DLL_CLASS_CNPJ.CNPJ();
+            cnpj.mForm("99999999999999", "");
+            Console.WriteLine(cnpj);
+           // txtRazaoSocial.Text = DLL_CLASS_CNPJ.RazaoSocial;
+        }
     }
 }

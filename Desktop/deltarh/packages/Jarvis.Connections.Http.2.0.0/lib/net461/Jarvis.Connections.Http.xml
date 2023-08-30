@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jarvis.Connections.Http</name>
+    </assembly>
+    <members>
+        <member name="T:Jarvis.Connections.Http.JarvisHttp">
+            <summary>
+            Acessa os métodos HTTP.
+            </summary>
+        </member>
+        <member name="P:Jarvis.Connections.Http.JarvisHttp.Token">
+            <summary>
+            Token de segurança do header da conexão HTTP. O padrão é null.
+            </summary>
+        </member>
+        <member name="P:Jarvis.Connections.Http.JarvisHttp.HeaderTokenName">
+            <summary>
+            Nome do token de segurança do header da conexão HTTP. O padrão é "X-Auth-Token".
+            </summary>
+        </member>
+        <member name="P:Jarvis.Connections.Http.JarvisHttp.Timeout">
+            <summary>
+            Timeout da conexão HTTP. O padrão é 30000 (milissegundos).
+            </summary>
+        </member>
+        <member name="P:Jarvis.Connections.Http.JarvisHttp.LogsIsEnabled">
+            <summary>
+            Define se os logs estão habilitados. O padrão é true.
+            </summary>
+        </member>
+    </members>
+</doc>

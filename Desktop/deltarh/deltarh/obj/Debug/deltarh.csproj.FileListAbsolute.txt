@@ -11,3 +11,17 @@ C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.exe
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.pdb
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmCadEmpresa.resources
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmEndereco.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmCadDp.resources
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.CopyComplete
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Jarvis.Connections.Http.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Jarvis.Logs.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\RestSharp.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\ViaCep.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Jarvis.Connections.Http.xml
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Jarvis.Logs.xml
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\RestSharp.xml
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\MosaicoSolutions.ViaCep.dll
