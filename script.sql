@@ -63,6 +63,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[nome] [varchar](50) NOT NULL,
 	[data_nascimento] [date] NOT NULL,
 	[cpf] [varchar](15) NOT NULL,
+	[tipo_contrato] [varchar](20) NOT NULL,
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
 	[carga_horaria] [int] NOT NULL,
