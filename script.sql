@@ -1,4 +1,4 @@
-USE [DB_DELTA]
+USE [BD_DELTA]
 
 /****** Object:  Table [dbo].[tbl_MissaoVisaoValores]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_missaovisaovalores](
@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[cpf] [varchar](15) NOT NULL,
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
-	[carga_horaria] INT NOT NULL,
+	[carga_horaria] [int] NOT NULL,
 	[lougradouro] [varchar](80) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
 	[complemento] [varchar](20) NULL,
@@ -132,8 +132,11 @@ CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[descricao] [varchar](200),
 	[documento] VARBINARY(MAX),
 	[id_colaborador] [int] NOT NULL,
+	[id_folhaindividual] [int],
 	CONSTRAINT FK_pontoeletronico_colaborador FOREIGN KEY (id_colaborador) 
-	REFERENCES tbl_colaborador(id_colaborador));
+	REFERENCES tbl_colaborador(id_colaborador),
+	CONSTRAINT FK_pontoeletronico_folhaindividual FOREIGN KEY (id_folhaindividual) 
+	REFERENCES tbl_folhaindividual(id_folhaindividual));
 
 /****** Object:  Table [dbo].[tbl_UsuarioRH]    Script Date: 31/08/2023 21:30:24 ******/
 
