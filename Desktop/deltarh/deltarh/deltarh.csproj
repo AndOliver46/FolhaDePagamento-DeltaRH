@@ -36,6 +36,9 @@
     <Reference Include="CNPJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f50de5dcda738049, processorArchitecture=MSIL">
       <HintPath>..\packages\Consulta_CNPJ.1.0.1\lib\CNPJ.dll</HintPath>
     </Reference>
+    <Reference Include="Consulta.CNPJ, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Consulta.CNPJ.1.0.1\lib\netstandard2.0\Consulta.CNPJ.dll</HintPath>
+    </Reference>
     <Reference Include="Jarvis.Connections.Http, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Jarvis.Connections.Http.2.0.0\lib\net461\Jarvis.Connections.Http.dll</HintPath>
     </Reference>
@@ -71,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cnpj.cs" />
     <Compile Include="FrmCadDp.cs">
       <SubType>Form</SubType>
     </Compile>

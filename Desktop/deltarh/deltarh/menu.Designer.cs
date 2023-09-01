@@ -32,7 +32,17 @@ namespace deltarh
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCnpj = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.lblCadCnpj = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnProcessar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnJustificar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -43,16 +53,6 @@ namespace deltarh
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnJustificar = new System.Windows.Forms.Button();
-            this.btnProcessar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblCadCnpj = new System.Windows.Forms.Label();
-            this.lblCpf = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnCnpj = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -75,7 +75,7 @@ namespace deltarh
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(518, 485);
+            this.tabPage1.Size = new System.Drawing.Size(518, 521);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,8 +94,63 @@ namespace deltarh
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(518, 521);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Cadastro";
+            this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCnpj
+            // 
+            this.btnCnpj.Location = new System.Drawing.Point(382, 65);
+            this.btnCnpj.Name = "btnCnpj";
+            this.btnCnpj.Size = new System.Drawing.Size(89, 23);
+            this.btnCnpj.TabIndex = 6;
+            this.btnCnpj.Text = "Buscar";
+            this.btnCnpj.UseVisualStyleBackColor = true;
+            this.btnCnpj.Click += new System.EventHandler(this.btnCnpj_Click);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(20, 373);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 23);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "CNPJ";
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.Location = new System.Drawing.Point(20, 220);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(62, 23);
+            this.lblCpf.TabIndex = 4;
+            this.lblCpf.Text = "CPF";
+            // 
+            // lblCadCnpj
+            // 
+            this.lblCadCnpj.Location = new System.Drawing.Point(20, 70);
+            this.lblCadCnpj.Name = "lblCadCnpj";
+            this.lblCadCnpj.Size = new System.Drawing.Size(62, 23);
+            this.lblCadCnpj.TabIndex = 3;
+            this.lblCadCnpj.Text = "CNPJ";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(125, 370);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(228, 20);
+            this.textBox3.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(125, 217);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(228, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 67);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -119,6 +174,36 @@ namespace deltarh
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fechar Folha";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnProcessar
+            // 
+            this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcessar.Location = new System.Drawing.Point(423, 472);
+            this.btnProcessar.Name = "btnProcessar";
+            this.btnProcessar.Size = new System.Drawing.Size(85, 30);
+            this.btnProcessar.TabIndex = 2;
+            this.btnProcessar.Text = "Processar";
+            this.btnProcessar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(314, 472);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(85, 30);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnJustificar
+            // 
+            this.btnJustificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJustificar.Location = new System.Drawing.Point(9, 472);
+            this.btnJustificar.Name = "btnJustificar";
+            this.btnJustificar.Size = new System.Drawing.Size(85, 30);
+            this.btnJustificar.TabIndex = 1;
+            this.btnJustificar.Text = "Justificar";
+            this.btnJustificar.UseVisualStyleBackColor = true;
             // 
             // btnAtualizar
             // 
@@ -207,91 +292,6 @@ namespace deltarh
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(377, 21);
             this.comboBox1.TabIndex = 0;
-            // 
-            // btnJustificar
-            // 
-            this.btnJustificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJustificar.Location = new System.Drawing.Point(9, 472);
-            this.btnJustificar.Name = "btnJustificar";
-            this.btnJustificar.Size = new System.Drawing.Size(85, 30);
-            this.btnJustificar.TabIndex = 1;
-            this.btnJustificar.Text = "Justificar";
-            this.btnJustificar.UseVisualStyleBackColor = true;
-            // 
-            // btnProcessar
-            // 
-            this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessar.Location = new System.Drawing.Point(423, 472);
-            this.btnProcessar.Name = "btnProcessar";
-            this.btnProcessar.Size = new System.Drawing.Size(85, 30);
-            this.btnProcessar.TabIndex = 2;
-            this.btnProcessar.Text = "Processar";
-            this.btnProcessar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(314, 472);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(85, 30);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(125, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(125, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(125, 370);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // lblCadCnpj
-            // 
-            this.lblCadCnpj.Location = new System.Drawing.Point(20, 70);
-            this.lblCadCnpj.Name = "lblCadCnpj";
-            this.lblCadCnpj.Size = new System.Drawing.Size(62, 23);
-            this.lblCadCnpj.TabIndex = 3;
-            this.lblCadCnpj.Text = "CNPJ";
-            // 
-            // lblCpf
-            // 
-            this.lblCpf.Location = new System.Drawing.Point(20, 220);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(62, 23);
-            this.lblCpf.TabIndex = 4;
-            this.lblCpf.Text = "CPF";
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(20, 373);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 23);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "CNPJ";
-            // 
-            // btnCnpj
-            // 
-            this.btnCnpj.Location = new System.Drawing.Point(382, 65);
-            this.btnCnpj.Name = "btnCnpj";
-            this.btnCnpj.Size = new System.Drawing.Size(89, 23);
-            this.btnCnpj.TabIndex = 6;
-            this.btnCnpj.Text = "Buscar";
-            this.btnCnpj.UseVisualStyleBackColor = true;
-            this.btnCnpj.Click += new System.EventHandler(this.btnCnpj_Click);
             // 
             // frmMenu
             // 

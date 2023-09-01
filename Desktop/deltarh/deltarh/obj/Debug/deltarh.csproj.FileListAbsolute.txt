@@ -25,3 +25,5 @@ C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Newtonsoft.Json.
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\RestSharp.xml
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\MosaicoSolutions.ViaCep.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\CNPJ.dll
+C:\Users\mauri\Documents\pim4\Desktop\deltarh\deltarh\bin\Debug\Consulta.CNPJ.dll

@@ -15,7 +15,7 @@ namespace deltarh
     public partial class FrmEndereco : Form
     {
 
-        private void LocalizaCep()
+        /*private void LocalizaCep()
         {
                 if (!string.IsNullOrWhiteSpace(txtCep.Text))
                 {
@@ -38,7 +38,7 @@ namespace deltarh
                 {
                     MessageBox.Show("Informe um CEP Válido!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }       
-        }
+        }*/
         public FrmEndereco()
         {
             InitializeComponent();
@@ -46,19 +46,19 @@ namespace deltarh
 
         private void btnCep_Click(object sender, EventArgs e)
         {
-            LocalizaCep();
+         
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtLogradouro.Text = "";
+          /*  txtLogradouro.Text = "";
             txtBairro.Text = "";
             txtCidade.Text = "";
             txtUf.Text = "";
             txtNumero = "";
             txtComplemento = "";
 
-            txtCep.Focus;
+            txtCep.Focus;*/
         }
     }
 }

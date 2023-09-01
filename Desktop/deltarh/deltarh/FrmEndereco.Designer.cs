@@ -45,13 +45,12 @@ namespace deltarh
             this.label7 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnCep = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCep
             // 
             this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCep.Location = new System.Drawing.Point(115, 25);
+            this.txtCep.Location = new System.Drawing.Point(119, 146);
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(134, 24);
             this.txtCep.TabIndex = 0;
@@ -59,7 +58,7 @@ namespace deltarh
             // txtLogradouro
             // 
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogradouro.Location = new System.Drawing.Point(115, 72);
+            this.txtLogradouro.Location = new System.Drawing.Point(119, 23);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(469, 24);
             this.txtLogradouro.TabIndex = 2;
@@ -67,7 +66,7 @@ namespace deltarh
             // txtNumero
             // 
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(115, 113);
+            this.txtNumero.Location = new System.Drawing.Point(119, 64);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(75, 24);
             this.txtNumero.TabIndex = 3;
@@ -75,7 +74,7 @@ namespace deltarh
             // txtComplemento
             // 
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplemento.Location = new System.Drawing.Point(320, 113);
+            this.txtComplemento.Location = new System.Drawing.Point(324, 64);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(264, 24);
             this.txtComplemento.TabIndex = 4;
@@ -83,7 +82,7 @@ namespace deltarh
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(115, 153);
+            this.txtBairro.Location = new System.Drawing.Point(119, 104);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(320, 24);
             this.txtBairro.TabIndex = 5;
@@ -91,7 +90,7 @@ namespace deltarh
             // txtUf
             // 
             this.txtUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUf.Location = new System.Drawing.Point(266, 195);
+            this.txtUf.Location = new System.Drawing.Point(310, 146);
             this.txtUf.Name = "txtUf";
             this.txtUf.Size = new System.Drawing.Size(56, 24);
             this.txtUf.TabIndex = 6;
@@ -99,7 +98,7 @@ namespace deltarh
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(450, 195);
+            this.txtCidade.Location = new System.Drawing.Point(454, 146);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(134, 24);
             this.txtCidade.TabIndex = 8;
@@ -107,7 +106,7 @@ namespace deltarh
             // lblCep
             // 
             this.lblCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCep.Location = new System.Drawing.Point(12, 28);
+            this.lblCep.Location = new System.Drawing.Point(16, 149);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(67, 23);
             this.lblCep.TabIndex = 9;
@@ -116,7 +115,7 @@ namespace deltarh
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 23);
             this.label1.TabIndex = 10;
@@ -125,7 +124,7 @@ namespace deltarh
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 113);
+            this.label2.Location = new System.Drawing.Point(16, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 23);
             this.label2.TabIndex = 11;
@@ -134,7 +133,7 @@ namespace deltarh
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(205, 113);
+            this.label3.Location = new System.Drawing.Point(209, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 23);
             this.label3.TabIndex = 12;
@@ -143,7 +142,7 @@ namespace deltarh
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 156);
+            this.label4.Location = new System.Drawing.Point(16, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 23);
             this.label4.TabIndex = 13;
@@ -152,7 +151,7 @@ namespace deltarh
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(212, 198);
+            this.label6.Location = new System.Drawing.Point(267, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 23);
             this.label6.TabIndex = 15;
@@ -161,7 +160,7 @@ namespace deltarh
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(368, 198);
+            this.label7.Location = new System.Drawing.Point(372, 149);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 23);
             this.label7.TabIndex = 16;
@@ -170,7 +169,7 @@ namespace deltarh
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(503, 247);
+            this.btnCadastrar.Location = new System.Drawing.Point(507, 205);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(81, 36);
             this.btnCadastrar.TabIndex = 9;
@@ -180,7 +179,7 @@ namespace deltarh
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(416, 247);
+            this.btnLimpar.Location = new System.Drawing.Point(420, 205);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(81, 36);
             this.btnLimpar.TabIndex = 10;
@@ -188,23 +187,11 @@ namespace deltarh
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnCep
-            // 
-            this.btnCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCep.Location = new System.Drawing.Point(266, 19);
-            this.btnCep.Name = "btnCep";
-            this.btnCep.Size = new System.Drawing.Size(81, 32);
-            this.btnCep.TabIndex = 1;
-            this.btnCep.Text = "Buscar";
-            this.btnCep.UseVisualStyleBackColor = true;
-            this.btnCep.Click += new System.EventHandler(this.btnCep_Click);
-            // 
             // FrmEndereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 295);
-            this.Controls.Add(this.btnCep);
+            this.ClientSize = new System.Drawing.Size(604, 259);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label7);
@@ -246,6 +233,5 @@ namespace deltarh
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnCep;
     }
 }

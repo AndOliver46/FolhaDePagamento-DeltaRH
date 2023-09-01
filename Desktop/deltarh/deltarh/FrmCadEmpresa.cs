@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace deltarh
 {
     public partial class FrmCadEmpresa : Form
@@ -32,10 +33,54 @@ namespace deltarh
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DLL_CLASS_CNPJ.CNPJ cnpj = new DLL_CLASS_CNPJ.CNPJ();
-            cnpj.mForm("99999999999999", "");
-            Console.WriteLine(cnpj);
-           // txtRazaoSocial.Text = DLL_CLASS_CNPJ.RazaoSocial;
+            var resposta = MessageBox.Show("Deseja Importar Todos os Dados da Base da Receita Federal?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(resposta == DialogResult.Yes)
+            {
+                ObterCnpj();
+            }
+            
+        }
+
+        private void ObterCnpj()
+        {
+            var cnpj = Empresa.ObterCnpj(txtCnpj.Text);
+
+            if (cnpj != null)
+            {
+                txtRazaoSocial.Text = cnpj.nome;
+                txtFantasia.Text = cnpj.fantasia;
+                txtSituacao.Text = cnpj.situacao;
+                txtLogradouro.Text = cnpj.logradouro;
+                txtNumero.Text = cnpj.numero;
+                txtComplemento.Text = cnpj.complemento;
+                txtBairro.Text = cnpj.bairro;
+                txtCep.Text = cnpj.cep;
+                txtUf.Text = cnpj.uf;
+                txtCidade.Text = cnpj.municipio;
+            }
+
+            else
+            {
+                MessageBox.Show("CNPJ Inválido!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtCnpj.Text = "";
+            txtRazaoSocial.Text = "";
+            txtFantasia.Text = "";
+            txtSituacao.Text = "";
+            txtLogradouro.Text = "";
+            txtNumero.Text = "";
+            txtComplemento.Text = "";
+            txtBairro.Text = "";
+            txtCep.Text = "";
+            txtUf.Text = "";
+            txtCidade.Text = "";
+
+           // txtCnpj.;
         }
     }
 }
