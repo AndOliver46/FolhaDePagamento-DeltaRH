@@ -32,7 +32,8 @@ namespace DeltaRHWebSite.Infrastructure.Repositories
 
         public void Update(Empresa empresa)
         {
-            throw new NotImplementedException();
+            _contexto.Empresas.Update(empresa);
+            _contexto.SaveChanges();
         }
     }
 }

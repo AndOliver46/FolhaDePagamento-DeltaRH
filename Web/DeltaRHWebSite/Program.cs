@@ -12,6 +12,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
 builder.Services.AddTransient<IEmpresaRepository, EmpresaRepository>();
+builder.Services.AddTransient<IMissaoVisaoValoresRepository, MissaoVisaoValoresRepository>();
+builder.Services.AddTransient<INormaRegraRepository, NormaRegraRepository>();
+builder.Services.AddTransient<IPoliticaDisciplinarRepository, PoliticaDisciplinarRepository>();
 
 var app = builder.Build();
 
