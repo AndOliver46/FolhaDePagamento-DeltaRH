@@ -24,5 +24,11 @@
         public string? telefone { get; set; }
         public string? telefone2 { get; set; }
         public string? email { get; set; }
+
+        public int id_missaovisaovalores { get; set; }
+        public MissaoVisaoValoresDTO? missaovisaovalores { get; set; }
+        public int id_politicadisciplinar { get; set; }
+        public PoliticaDisciplinarDTO? politicadisciplinar { get; set; }
+        public ICollection<NormaRegraDTO>? normaregras { get; set; }
     }
 }

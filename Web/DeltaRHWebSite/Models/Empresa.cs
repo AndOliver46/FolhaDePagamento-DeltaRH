@@ -39,7 +39,7 @@ namespace DeltaRHWebSite.Models
         public PoliticaDisciplinar? politicadisciplinar { get; set; }
         public ICollection<NormaRegra>? normaregras { get; set; }
 
-        public Empresa(string? senha, string? razao_social, string? cnpj, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, MissaoVisaoValores missaovisaovalores, PoliticaDisciplinar politicadisciplinar)
+        public Empresa(string? senha, string? razao_social, string? cnpj, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_missaovisaovalores, int id_politicadisciplinar)
         {
             this.senha = senha;
             this.razao_social = razao_social;
@@ -54,8 +54,8 @@ namespace DeltaRHWebSite.Models
             this.telefone = telefone;
             this.telefone2 = telefone2;
             this.email = email;
-            this.missaovisaovalores = missaovisaovalores;
-            this.politicadisciplinar = politicadisciplinar;
+            this.id_missaovisaovalores = id_missaovisaovalores;
+            this.id_politicadisciplinar = id_politicadisciplinar;
         }
     }
 }
