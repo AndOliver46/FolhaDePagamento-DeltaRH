@@ -5,6 +5,7 @@ using DeltaRHWebSite.Models.Enums;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Runtime.ConstrainedExecution;
 using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
+using DeltaRHWebSite.Services;
 
 namespace DeltaRHWebSite.Controllers
 {
@@ -13,23 +14,22 @@ namespace DeltaRHWebSite.Controllers
     public class ColaboradorController : ControllerBase
     { 
 
-        private readonly IColaboradorRepository _colaboradorRepository;
+        private readonly ColaboradorService _colaboradorService;
 
-        public ColaboradorController(IColaboradorRepository colaboradorRepository)
+        public ColaboradorController(ColaboradorService colaboradorService)
         {
-            _colaboradorRepository = colaboradorRepository;
+            _colaboradorService = colaboradorService;
         }
+
         [HttpPost]
         public IActionResult Add(ColaboradorDTO colaboradorDTO)
         {
-            var colaborador = new Colaborador(colaboradorDTO.nome, colaboradorDTO.data_nascimento, colaboradorDTO.cpf, colaboradorDTO.salario_bruto, colaboradorDTO.senha, colaboradorDTO.tipo_contrato, colaboradorDTO.carga_horaria, colaboradorDTO.logradouro, colaboradorDTO.numero, colaboradorDTO.complemento, colaboradorDTO.bairro, colaboradorDTO.cep, colaboradorDTO.cidade, colaboradorDTO.uf, colaboradorDTO.telefone, colaboradorDTO.telefone2, colaboradorDTO.email);
-            _colaboradorRepository.Add(colaborador);
+            _colaboradorService.Add(colaboradorDTO);
             return Ok();
         }
         [HttpGet]
         public IActionResult Get() {
-            var employees = _colaboradorRepository.GetAll();
-
+       
             return Ok(); 
         }
     }

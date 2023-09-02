@@ -52,6 +52,8 @@ namespace DeltaRHWebSite.Models
             this.telefone2 = telefone2;
             this.email = email;
         }
+
+
       
     }
 }
