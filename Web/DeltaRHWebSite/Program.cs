@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
+builder.Services.AddTransient<IEmpresaRepository, EmpresaRepository>();
 
 var app = builder.Build();
 
