@@ -33,9 +33,29 @@ namespace DeltaRHWebSite.Models
         public string? email { get; private set; }
 
         //Associacoes
-        //public MissaoVisaoValores missaovisaovalores { get; private set; }
-        //public PoliticaDisciplinar politicadisciplinar { get; private set; }
+        public int id_missaovisaovalores { get; set; }
+        public MissaoVisaoValores? missaovisaovalores { get; set; }
+        public int id_politicadisciplinar { get; set; }
+        public PoliticaDisciplinar? politicadisciplinar { get; set; }
+        public ICollection<NormaRegra>? normaregras { get; set; }
 
-
+        public Empresa(string? senha, string? razao_social, string? cnpj, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, MissaoVisaoValores missaovisaovalores, PoliticaDisciplinar politicadisciplinar)
+        {
+            this.senha = senha;
+            this.razao_social = razao_social;
+            this.cnpj = cnpj;
+            this.logradouro = logradouro;
+            this.numero = numero;
+            this.complemento = complemento;
+            this.bairro = bairro;
+            this.cep = cep;
+            this.cidade = cidade;
+            this.uf = uf;
+            this.telefone = telefone;
+            this.telefone2 = telefone2;
+            this.email = email;
+            this.missaovisaovalores = missaovisaovalores;
+            this.politicadisciplinar = politicadisciplinar;
+        }
     }
 }
