@@ -7,6 +7,10 @@ namespace DeltaRHWebSite.Infrastructure
     {
         public DbSet<Colaborador> Colaboradores { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<MissaoVisaoValores> MissaoVisaoValores { get; set; }
+        public DbSet<NormaRegra> NormaRegras { get; set; }
+        public DbSet<PoliticaDisciplinar> PoliticaDisciplinar { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
