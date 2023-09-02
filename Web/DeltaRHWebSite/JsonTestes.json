@@ -20,3 +20,34 @@
     "id_setor":  1
   }
 }
+
+{
+  "senha": "senha123",
+  "razao_social": "Minha Empresa",
+  "cnpj": "12345678901234",
+  "logradouro": "Rua da Empresa",
+  "numero": "123",
+  "complemento": "Sala 101",
+  "bairro": "Centro",
+  "cep": "12345-678",
+  "cidade": "Cidade",
+  "uf": "UF",
+  "telefone": "(11) 1234-5678",
+  "telefone2": "(11) 9876-5432",
+  "email": "contato@minhaempresa.com",
+  "id_missaovisaovalores": 1,
+  "missaovisaovalores": {
+    "descricao": "Missão da Empresa",
+    "visao_futuro": "Visão de Futuro",
+    "produtividade": "Alta Produtividade",
+    "sustentabilidade": "Compromisso com a Sustentabilidade"
+  },
+  "id_politicadisciplinar": 2,
+  "politicadisciplinar": {
+    "descricao": "Política Disciplinar da Empresa",
+    "advertencia": "Processo de Advertência",
+    "dispensa": "Procedimento de Dispensa",
+    "suspensao": "Política de Suspensão"
+  },
+  "normaregras": []
+}

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DeltaRHWebSite.Models.DTO;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DeltaRHWebSite.Models
@@ -34,9 +35,12 @@ namespace DeltaRHWebSite.Models
 
         //Associacoes
         public int id_missaovisaovalores { get; set; }
+        [NotMapped]
         public MissaoVisaoValores? missaovisaovalores { get; set; }
         public int id_politicadisciplinar { get; set; }
+        [NotMapped]
         public PoliticaDisciplinar? politicadisciplinar { get; set; }
+        [NotMapped]
         public ICollection<NormaRegra>? normaregras { get; set; }
 
         public Empresa(string? senha, string? razao_social, string? cnpj, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_missaovisaovalores, int id_politicadisciplinar)
@@ -56,6 +60,25 @@ namespace DeltaRHWebSite.Models
             this.email = email;
             this.id_missaovisaovalores = id_missaovisaovalores;
             this.id_politicadisciplinar = id_politicadisciplinar;
+        }
+
+        public Empresa(EmpresaDTO empresaDTO)
+        {
+            this.senha = empresaDTO.senha;
+            this.razao_social = empresaDTO.razao_social;
+            this.cnpj = empresaDTO.cnpj;
+            this.logradouro = empresaDTO.logradouro;
+            this.numero = empresaDTO.numero;
+            this.complemento = empresaDTO.complemento;
+            this.bairro = empresaDTO.bairro;
+            this.cep = empresaDTO.cep;
+            this.cidade = empresaDTO.cidade;
+            this.uf = empresaDTO.uf;
+            this.telefone = empresaDTO.telefone;
+            this.telefone2 = empresaDTO.telefone2;
+            this.email = empresaDTO.email;
+            this.id_missaovisaovalores = empresaDTO.id_missaovisaovalores;
+            this.id_politicadisciplinar = empresaDTO.id_politicadisciplinar;
         }
     }
 }

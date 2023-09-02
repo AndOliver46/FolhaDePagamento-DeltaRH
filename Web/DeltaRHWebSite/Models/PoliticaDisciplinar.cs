@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Identity.Client;
+using DeltaRHWebSite.Models.DTO;
 
 namespace DeltaRHWebSite.Models
 {
@@ -22,6 +23,14 @@ namespace DeltaRHWebSite.Models
             this.advertencia = advertencia;
             this.dispensa = dispensa;
             this.suspensao = suspensao;
+        }
+
+        public PoliticaDisciplinar(PoliticaDisciplinarDTO politicaDisciplinarDTO)
+        {
+            this.descricao = politicaDisciplinarDTO.descricao;
+            this.advertencia = politicaDisciplinarDTO.advertencia;
+            this.dispensa = politicaDisciplinarDTO.dispensa;
+            this.suspensao = politicaDisciplinarDTO.suspensao;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DeltaRHWebSite.Models.DTO;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DeltaRHWebSite.Models
@@ -20,6 +21,14 @@ namespace DeltaRHWebSite.Models
             this.visao_futuro = visao_futuro;
             this.produtividade = produtividade;
             this.sustentabilidade = sustentabilidade;
+        }
+
+        public MissaoVisaoValores(MissaoVisaoValoresDTO missaoVisaoValoresDTO)
+        {
+            this.descricao = missaoVisaoValoresDTO.descricao;
+            this.visao_futuro = missaoVisaoValoresDTO.visao_futuro;
+            this.produtividade = missaoVisaoValoresDTO.produtividade;
+            this.sustentabilidade = missaoVisaoValoresDTO.sustentabilidade;
         }
     }
 }

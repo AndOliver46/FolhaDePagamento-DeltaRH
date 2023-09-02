@@ -1,4 +1,5 @@
 using DeltaRHWebSite.Controllers;
+using DeltaRHWebSite.Infrastructure;
 using DeltaRHWebSite.Infrastructure.Repositories;
 using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
 using DeltaRHWebSite.Services;
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ColaboradorService>();
 builder.Services.AddTransient<ColaboradorController>();
+builder.Services.AddSingleton<EmpresaService>();
+builder.Services.AddTransient<EmpresaController>();
 
 builder.Services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
 builder.Services.AddTransient<IEmpresaRepository, EmpresaRepository>();
