@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[tbl_missaovisaovalores](
 
 /****** Object:  Table [dbo].[tbl_PoliticaDisciplinar]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_politicadisciplinar](
-	[id_politicadiscilplinar] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[id_politicadisciplinar] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[descricao] [varchar](200) NULL,
 	[advertencia] [varchar](50) NULL,
 	[dispensa] [varchar](50) NULL,
