@@ -22,7 +22,7 @@ namespace DeltaRHWebSite.Infrastructure.Repositories
 
         public Colaborador Get(int id)
         {
-           return _contexto.Colaboradores.Single(colab => colab.id_colaborador == id);
+           return _contexto.Colaboradores.Single(entidade => entidade.id_colaborador == id);
         }
 
         public List<Colaborador> GetAll()

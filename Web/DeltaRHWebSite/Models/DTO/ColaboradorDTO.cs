@@ -4,7 +4,6 @@ namespace DeltaRHWebSite.Models.DTO
 {
     public class ColaboradorDTO
     {
-        public int id_colaborador { get; set; }
         public string? nome { get; set; }
         public string? data_nascimento { get; set; }
         public string? cpf { get; set; }

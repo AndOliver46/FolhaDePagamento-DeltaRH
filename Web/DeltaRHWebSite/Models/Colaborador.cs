@@ -9,6 +9,7 @@ namespace DeltaRHWebSite.Models
     public class Colaborador
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_colaborador {  get; private set; }
         public string? nome {  get; private set; }
         public string? data_nascimento {  get; private set; }
