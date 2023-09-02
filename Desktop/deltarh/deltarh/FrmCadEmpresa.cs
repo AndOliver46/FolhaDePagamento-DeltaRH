@@ -48,22 +48,24 @@ namespace deltarh
 
             if (cnpj != null)
             {
-                txtRazaoSocial.Text = cnpj.nome;
-                txtFantasia.Text = cnpj.fantasia;
-                txtSituacao.Text = cnpj.situacao;
-                txtLogradouro.Text = cnpj.logradouro;
-                txtNumero.Text = cnpj.numero;
-                txtComplemento.Text = cnpj.complemento;
-                txtBairro.Text = cnpj.bairro;
-                txtCep.Text = cnpj.cep;
-                txtUf.Text = cnpj.uf;
-                txtCidade.Text = cnpj.municipio;
+               txtRazaoSocial.Text = cnpj.nome;
+               txtFantasia.Text = cnpj.fantasia;
+               txtSituacao.Text = cnpj.situacao;
+               txtLogradouro.Text = cnpj.logradouro;
+               txtNumero.Text = cnpj.numero;
+               txtComplemento.Text = cnpj.complemento;
+               txtBairro.Text = cnpj.bairro;
+               txtCep.Text = cnpj.cep;
+               txtUf.Text = cnpj.uf;
+               txtCidade.Text = cnpj.municipio;
+               txtTelefone1.Text = cnpj.telefone;
+               txtEmail.Text = cnpj.email;
             }
 
-            else
-            {
-                MessageBox.Show("CNPJ Inválido!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                else
+                {
+                    MessageBox.Show("CNPJ Inválido!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
