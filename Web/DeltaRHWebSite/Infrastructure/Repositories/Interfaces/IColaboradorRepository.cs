@@ -1,4 +1,6 @@
-﻿namespace DeltaRHWebSite.Models.Repositories
+﻿using DeltaRHWebSite.Models;
+
+namespace DeltaRHWebSite.Infrastructure.Repositories.Interfaces
 {
     public interface IColaboradorRepository
     {

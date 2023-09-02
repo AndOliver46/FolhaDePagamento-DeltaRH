@@ -1,5 +1,5 @@
-﻿using DeltaRHWebSite.Models;
-using DeltaRHWebSite.Models.Repositories;
+﻿using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
+using DeltaRHWebSite.Models;
 
 namespace DeltaRHWebSite.Infrastructure.Repositories
 {

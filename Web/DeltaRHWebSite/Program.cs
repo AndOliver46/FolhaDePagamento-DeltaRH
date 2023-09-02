@@ -1,5 +1,5 @@
 using DeltaRHWebSite.Infrastructure.Repositories;
-using DeltaRHWebSite.Models.Repositories;
+using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
