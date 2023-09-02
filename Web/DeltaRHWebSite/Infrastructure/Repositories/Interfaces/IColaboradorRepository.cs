@@ -10,6 +10,5 @@ namespace DeltaRHWebSite.Infrastructure.Repositories.Interfaces
         Colaborador Get(int id);
         List<Colaborador> GetAll();
 
-
     }
 }
