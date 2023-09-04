@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[tbl_missaovisaovalores](
 
 /****** Object:  Table [dbo].[tbl_PoliticaDisciplinar]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_politicadisciplinar](
-	[id_politicadiscilplinar] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[id_politicadisciplinar] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[descricao] [varchar](200) NULL,
 	[advertencia] [varchar](50) NULL,
 	[dispensa] [varchar](50) NULL,
@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[senha] [varchar](20) NOT NULL,
 	[razao_social] [varchar](40) NOT NULL,
 	[cnpj] [varchar](20) NOT NULL,
-	[lougradouro] [varchar](15) NOT NULL,
+	[logradouro] [varchar](15) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
 	[complemento] [varchar](15) NULL,
 	[bairro] [varchar](15) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
 	[carga_horaria] [int] NOT NULL,
-	[lougradouro] [varchar](80) NOT NULL,
+	[logradouro] [varchar](80) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
 	[complemento] [varchar](20) NULL,
 	[bairro] [varchar](20) NOT NULL,
