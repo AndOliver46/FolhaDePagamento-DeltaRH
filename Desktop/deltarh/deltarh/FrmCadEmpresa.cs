@@ -33,7 +33,7 @@ namespace deltarh
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var resposta = MessageBox.Show("Deseja Importar Todos os Dados da Base da Receita Federal?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resposta = MessageBox.Show("Deseja Importar Todos os Dados da Base da Receita Federal?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if(resposta == DialogResult.Yes)
             {
