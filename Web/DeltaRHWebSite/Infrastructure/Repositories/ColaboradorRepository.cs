@@ -35,5 +35,10 @@ namespace DeltaRHWebSite.Infrastructure.Repositories
             _contexto.Colaboradores.Update(colaborador);
             _contexto.SaveChanges();
         }
+
+        public Colaborador FindByCPF(string cpf)
+        {
+            return _contexto.Colaboradores.Single(entidade => entidade.cpf == cpf);
+        }
     }
 }

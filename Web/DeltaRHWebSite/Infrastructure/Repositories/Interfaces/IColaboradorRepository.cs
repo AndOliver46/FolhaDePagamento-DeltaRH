@@ -9,6 +9,7 @@ namespace DeltaRHWebSite.Infrastructure.Repositories.Interfaces
         void Delete(Colaborador colaborador);
         Colaborador Get(int id);
         List<Colaborador> GetAll();
+        Colaborador FindByCPF(string cpf);
 
     }
 }
