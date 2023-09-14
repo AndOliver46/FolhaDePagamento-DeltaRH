@@ -12,11 +12,11 @@ namespace DeltaRHWebSite.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_colaborador {  get; private set; }
         public string? nome {  get; private set; }
-        public string? data_nascimento {  get; private set; }
+        public DateTime? data_nascimento {  get; private set; }
         public string? cpf {  get; private set; }
-        public double salario_bruto { get; private set; }
+        public decimal salario_bruto { get; private set; }
         public string? senha { get; private set; }
-        public TipoContrato tipo_contrato {  get; private set; }
+        public string? tipo_contrato {  get; private set; }
         public int carga_horaria {  get; private set; }
         public string? logradouro { get; private set; }
         public string? numero { get; private set; }
@@ -30,9 +30,11 @@ namespace DeltaRHWebSite.Models
         public string? email { get; private set; }
 
         //Associacoes
-        //public Setor setor { get; private set; }
+        public int id_setor { get; set; }
+        [NotMapped]
+        public Setor? setor { get; set; }
 
-        public Colaborador(string? nome, string? data_nascimento, string? cpf, double salario_bruto, string? senha, TipoContrato tipo_contrato, int carga_horaria, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email)
+        public Colaborador(string? nome, DateTime? data_nascimento, string? cpf, decimal salario_bruto, string? senha, string? tipo_contrato, int carga_horaria, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_setor)
         {
             this.nome = nome;
             this.data_nascimento = data_nascimento;
@@ -51,6 +53,7 @@ namespace DeltaRHWebSite.Models
             this.telefone = telefone;
             this.telefone2 = telefone2;
             this.email = email;
+            this.id_setor = id_setor;
         }
 
 
