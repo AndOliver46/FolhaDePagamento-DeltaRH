@@ -1,0 +1,44 @@
+﻿@page
+@model DeltaRH.WEB.Pages.Models.CadastroEmpresaModel
+@{
+    ViewData["Title"] = "RCM Software";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/style.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <main class="conteudo">
+        <section class="conteudo-painel">
+            <div class="conteudo-painel-livre">
+                <img src="~/Logo rcm.png" alt="Logo da RCM Software" class="logo-img">
+            </div>
+            <form class="conteudo-painel-form" method="post">
+                <label for="RazaoSocial">Razão Social</label>
+                <input id="RazaoSocial" type="text" asp-for="Empresa." placeholder="Razão Social" class="caixa-rs" required>
+                <label for="CNPJ">CNPJ</label>
+                <input id="CNPJ" type="text" asp-for="Empresa.CNPJ" placeholder="Ex: 012345678910" class="caixa-cnpj" minlength="12" required>
+                <label for="Email">Email</label>
+                <input id="Email" type="text" asp-for="Empresa.Email" placeholder="Email" class="caixa-email" required>
+                <label for="Responsavel">Responsável</label>
+                <input id="Responsavel" type="text" asp-for="Empresa.Responsavel" placeholder="Responsável" class="caixa-nome-responsavel" required>
+                <label for="CPFResponsavel">CPF do Responsável</label>
+                <input id="CPFResponsavel" type="text" asp-for="Empresa.CPFResponsavel" placeholder="Ex: 00000000000" class="caixa-cpf-responsavel" required>
+                <label for="Telefone">Telefone</label>
+                <input id="Telefone" type="text" asp-for="Empresa.Telefone" placeholder="Ex: DDD912345678" class="caixa-telefone">
+                <label for="Login">Login</label>
+                <input id="Login" type="text" asp-for="Empresa.Login" placeholder="Login" class="caixa-login" required>
+                <label for="Senha">Senha</label>
+                <input id="Senha" type="password" asp-for="Empresa.Senha" placeholder="Senha" class="caixa-senha" required>
+                <input type="submit" value="Proxima página" class="botao-enviar">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
