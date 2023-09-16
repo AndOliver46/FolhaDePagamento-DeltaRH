@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaRH.API", "DeltaRHWebSite\DeltaRH.API.csproj", "{3316E49A-61F2-42D9-BF84-57928BBBB2AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaRH.WEB", "DeltaRH.WEB\DeltaRH.WEB.csproj", "{27B07608-5D3E-4D8A-A849-C2266E4BEB92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaRH.WEB", "DeltaRH.WEB\DeltaRH.WEB.csproj", "{27B07608-5D3E-4D8A-A849-C2266E4BEB92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

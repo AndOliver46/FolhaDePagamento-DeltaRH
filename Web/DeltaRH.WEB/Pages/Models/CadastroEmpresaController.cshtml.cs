@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using DeltaRH.WEB.Pages.Models;
 
-namespace DeltaRH.WEB.Pages
+namespace DeltaRH.WEB.Pages.Models
 {
-    public class CadastroEmpresa : PageModel
+    public class CadastroEmpresaController : PageModel
     {
         [BindProperty]
         public CadastroEmpresaModel Empresa { get; set; }
@@ -24,8 +24,9 @@ namespace DeltaRH.WEB.Pages
 
             // Processar os dados do formulário aqui
             // Por exemplo, salvar no banco de dados
+            Console.Write(Empresa.ToString());
 
-            return RedirectToPage("ProximaPagina");
+            return StatusCode(200);
         }
     }
 }

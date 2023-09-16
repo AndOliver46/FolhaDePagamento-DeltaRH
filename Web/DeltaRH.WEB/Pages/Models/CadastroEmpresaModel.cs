@@ -23,9 +23,27 @@ namespace DeltaRH.WEB.Pages.Models
         public string Telefone { get; set; }
 
         [Required]
-        public string Login { get; set; }
+        public string Telefone2 { get; set; }
 
         [Required]
         public string Senha { get; set; }
+
+        [Required]
+        public string CEP { get; set; }
+
+        [Required]
+        [MinLength(12)]
+        public string Cidade { get; set; }
+
+        [Required]
+        public string Bairro { get; set; }
+
+        [Required]
+        public string Logradouro { get; set; }
+
+        [Required]
+        public string Numero { get; set; }
+
+        public string Complemento { get; set; }
     }
 }

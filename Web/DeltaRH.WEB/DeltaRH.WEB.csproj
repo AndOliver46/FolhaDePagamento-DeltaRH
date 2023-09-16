@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Delta Pages\cadastroEmpresa.cshtml" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\img\Logo rcm.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Delta Pages\cadastroEmpresa.cshtml" />
-    <None Include="wwwroot\css\style.css" />
-    <None Include="wwwroot\img\Logo rcm.png" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
