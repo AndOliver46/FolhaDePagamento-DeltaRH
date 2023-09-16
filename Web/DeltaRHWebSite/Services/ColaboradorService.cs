@@ -1,6 +1,7 @@
 ﻿using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
 using DeltaRHWebSite.Models.DTO;
 using DeltaRHWebSite.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DeltaRHWebSite.Services
 {
@@ -19,7 +20,7 @@ namespace DeltaRHWebSite.Services
             _colaboradorRepository.Add(colaborador);
         }
 
-        public bool ProcurarPorCPF(string cpf, string password)
+        public bool ValidarLoginPorCPF(string cpf, string password)
         {
             Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
 
@@ -31,6 +32,20 @@ namespace DeltaRHWebSite.Services
                 }
             }
             return false;
+        }
+
+        public Colaborador BuscarColaboradorPorCPF(string cpf)
+        {
+
+            Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
+
+            if (colaborador != null)
+            {
+                return colaborador;
+            }
+
+            throw new Exception("ERRO: O colaborador não foi encontrado");
+
         }
     }
 }

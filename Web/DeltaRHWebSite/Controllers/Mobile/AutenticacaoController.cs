@@ -48,7 +48,7 @@ namespace DeltaRHWebSite.Controllers.Mobile
         private bool IsValidUser(string cpf, string password)
         {
 
-            return _colaboradorService.ProcurarPorCPF(cpf, password);
+            return _colaboradorService.ValidarLoginPorCPF(cpf, password);
         }
 
         private string GenerateJwtToken(string cpf)
