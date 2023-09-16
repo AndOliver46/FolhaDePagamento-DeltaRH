@@ -32,7 +32,7 @@ namespace DeltaRHWebSite.Models
         //Associacoes
         public int id_setor { get; set; }
         [NotMapped]
-        public Setor? setor { get; set; }
+        public virtual Setor? setor { get; set; }
 
         public Colaborador(string? nome, DateTime? data_nascimento, string? cpf, decimal salario_bruto, string? senha, string? tipo_contrato, int carga_horaria, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_setor)
         {

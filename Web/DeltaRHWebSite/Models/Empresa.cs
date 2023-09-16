@@ -36,12 +36,12 @@ namespace DeltaRHWebSite.Models
         //Associacoes
         public int id_missaovisaovalores { get; set; }
         [NotMapped]
-        public MissaoVisaoValores? missaovisaovalores { get; set; }
+        public virtual MissaoVisaoValores? missaovisaovalores { get; set; }
         public int id_politicadisciplinar { get; set; }
         [NotMapped]
-        public PoliticaDisciplinar? politicadisciplinar { get; set; }
+        public virtual PoliticaDisciplinar? politicadisciplinar { get; set; }
         [NotMapped]
-        public ICollection<NormaRegra>? normaregras { get; set; }
+        public virtual ICollection<NormaRegra>? normaregras { get; set; }
 
         public Empresa(string? senha, string? razao_social, string? cnpj, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_missaovisaovalores, int id_politicadisciplinar)
         {

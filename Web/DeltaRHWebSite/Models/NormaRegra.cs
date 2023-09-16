@@ -14,7 +14,7 @@ namespace DeltaRHWebSite.Models
 
         //Associacoes
         public int id_empresa { get; set; }
-        public Empresa? empresa { get; set; }
+        public virtual Empresa? empresa { get; set; }
 
         public NormaRegra(string? tipo, string? descricao, int id_empresa)
         {

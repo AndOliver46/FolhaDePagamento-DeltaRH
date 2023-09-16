@@ -14,6 +14,13 @@ namespace DeltaRHWebSite.Models
         //Associacoes
         public int id_empresa { get; set; }
         [NotMapped]
-        public Empresa? empresa { get; set; }
+        public virtual Empresa? empresa { get; set; }
+
+        public Setor(string? nome_setor, int id_empresa, Empresa? empresa)
+        {
+            this.nome_setor = nome_setor;
+            this.id_empresa = id_empresa;
+            this.empresa = empresa;
+        }
     }
 }
