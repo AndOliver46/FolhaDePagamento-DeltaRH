@@ -34,6 +34,9 @@ namespace DeltaRHWebSite.Models
         [NotMapped]
         public virtual Setor? setor { get; set; }
 
+        [NotMapped]
+        public virtual ICollection<Holerite>? holerites { get; set; }
+
         public Colaborador(string? nome, DateTime? data_nascimento, string? cpf, decimal salario_bruto, string? senha, string? tipo_contrato, int carga_horaria, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_setor)
         {
             this.nome = nome;

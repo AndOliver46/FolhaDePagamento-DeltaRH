@@ -4,6 +4,7 @@ namespace DeltaRHWebSite.Models.DTO
 {
     public class ColaboradorDTO
     {
+        public int id_colaborador { get; set; }
         public string? nome { get; set; }
         public DateTime? data_nascimento { get; set; }
         public string? cpf { get; set; }
@@ -22,6 +23,28 @@ namespace DeltaRHWebSite.Models.DTO
         public string? telefone2 { get; set; }
         public string? email { get; set; }
         public int id_setor { get; set; }
-        public Setor setor { get; set; }
+
+        public ColaboradorDTO(Colaborador colaborador)
+        {
+            this.id_colaborador = colaborador.id_colaborador;
+            this.nome = colaborador.nome;
+            this.data_nascimento = colaborador.data_nascimento;
+            this.cpf = colaborador.cpf;
+            this.salario_bruto = colaborador.salario_bruto;
+            this.senha = colaborador.senha;
+            this.tipo_contrato = colaborador.tipo_contrato;
+            this.carga_horaria = colaborador.carga_horaria;
+            this.logradouro = colaborador.logradouro;
+            this.numero = colaborador.numero;
+            this.complemento = colaborador.complemento;
+            this.bairro = colaborador.bairro;
+            this.cep = colaborador.cep;
+            this.cidade = colaborador.cidade;
+            this.uf = colaborador.uf;
+            this.telefone = colaborador.telefone;
+            this.telefone2 = colaborador.telefone2;
+            this.email = colaborador.email;
+            this.id_setor = colaborador.id_setor;
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace DeltaRHWebSite.Services
 
         public EmpresaService(IEmpresaRepository empresaRepository, IPoliticaDisciplinarRepository politicaDisciplinarRepository, IMissaoVisaoValoresRepository missaoVisaoValoresRepository)
         {
-            _empresaRepository = empresaRepository;
-            _politicaDisciplinarRepository = politicaDisciplinarRepository;
-            _missaoVisaoValoresRepository = missaoVisaoValoresRepository;
+            this._empresaRepository = empresaRepository;
+            this._politicaDisciplinarRepository = politicaDisciplinarRepository;
+            this._missaoVisaoValoresRepository = missaoVisaoValoresRepository;
         }
 
         public void Add(EmpresaDTO empresaDTO)

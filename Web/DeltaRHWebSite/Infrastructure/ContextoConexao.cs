@@ -10,6 +10,7 @@ namespace DeltaRHWebSite.Infrastructure
         public DbSet<MissaoVisaoValores> MissaoVisaoValores { get; set; }
         public DbSet<NormaRegra> NormaRegra { get; set; }
         public DbSet<PoliticaDisciplinar> PoliticaDisciplinar { get; set; }
+        public DbSet<Holerite> Holerites { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

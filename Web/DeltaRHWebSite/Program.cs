@@ -1,4 +1,5 @@
 using DeltaRHWebSite.Controllers;
+using DeltaRHWebSite.Controllers.Mobile;
 using DeltaRHWebSite.Infrastructure;
 using DeltaRHWebSite.Infrastructure.Repositories;
 using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
@@ -19,16 +20,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ColaboradorService>();
+builder.Services.AddTransient<AutenticacaoController>();
+builder.Services.AddTransient<MobileController>();
 builder.Services.AddTransient<ColaboradorController>();
-builder.Services.AddSingleton<EmpresaService>();
 builder.Services.AddTransient<EmpresaController>();
+
+builder.Services.AddSingleton<ColaboradorService>();
+builder.Services.AddSingleton<EmpresaService>();
+builder.Services.AddSingleton<HoleriteService>();
 
 builder.Services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
 builder.Services.AddTransient<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddTransient<IMissaoVisaoValoresRepository, MissaoVisaoValoresRepository>();
 builder.Services.AddTransient<INormaRegraRepository, NormaRegraRepository>();
 builder.Services.AddTransient<IPoliticaDisciplinarRepository, PoliticaDisciplinarRepository>();
+builder.Services.AddTransient<IHoleriteRepository, HoleriteRepository>();
 
 builder.Services.AddAuthentication(options =>
 {

@@ -34,14 +34,15 @@ namespace DeltaRHWebSite.Services
             return false;
         }
 
-        public Colaborador BuscarColaboradorPorCPF(string cpf)
+        public ColaboradorDTO BuscarColaboradorPorCPF(string cpf)
         {
 
             Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
+            ColaboradorDTO colaboradorDTO = new ColaboradorDTO(colaborador);
 
             if (colaborador != null)
             {
-                return colaborador;
+                return colaboradorDTO;
             }
 
             throw new Exception("ERRO: O colaborador não foi encontrado");

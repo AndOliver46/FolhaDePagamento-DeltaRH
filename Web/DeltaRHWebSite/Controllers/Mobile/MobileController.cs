@@ -1,4 +1,5 @@
 ﻿using DeltaRHWebSite.Models;
+using DeltaRHWebSite.Models.DTO;
 using DeltaRHWebSite.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,20 +14,32 @@ namespace DeltaRHWebSite.Controllers.Mobile
     {
 
         private readonly ColaboradorService _colaboradorService;
+        private readonly HoleriteService _holeriteService;
 
-        public MobileController(ColaboradorService colaboradorService)
+        public MobileController(ColaboradorService _colaboradorService, HoleriteService _holeriteService)
         {
-            _colaboradorService = colaboradorService;
+            this._colaboradorService = _colaboradorService;
+            this._holeriteService = _holeriteService;
         }
 
         [HttpGet("carregar-dados-usuario")]
-        public IActionResult GetUserInfo()
+        public IActionResult BuscarDadosColaborador()
         {
             string cpf = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
 
-            Colaborador colaborador = _colaboradorService.BuscarColaboradorPorCPF(cpf);
+            ColaboradorDTO colaboradorDTO = _colaboradorService.BuscarColaboradorPorCPF(cpf);
      
-            return Ok(colaborador);
+            return Ok(colaboradorDTO);
+        }
+
+        [HttpGet("carregar-holerites")]
+        public IActionResult BuscarHolerites()
+        {
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            ICollection<HoleriteDTO> holerites = _holeriteService.BuscarHoleritesColaborador(id);
+
+            return Ok(holerites);
         }
     }
 }
