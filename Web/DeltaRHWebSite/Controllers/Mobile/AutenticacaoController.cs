@@ -36,8 +36,9 @@ namespace DeltaRHWebSite.Controllers.Mobile
             // Verificar as credenciais (substitua isso pela sua lógica de autenticação real)
             if (IsValidUser(credentials.CPF, credentials.Password))
             {
+                ColaboradorDTO colaboradorDTO = _colaboradorService.BuscarColaboradorPorCPF(credentials.CPF);
                 // Credenciais válidas, gerar um token JWT
-                var token = GenerateJwtToken(credentials.CPF);
+                var token = GenerateJwtToken(colaboradorDTO.cpf, colaboradorDTO.id_colaborador);
 
                 return Ok(new { Token = token });
             }
@@ -51,7 +52,7 @@ namespace DeltaRHWebSite.Controllers.Mobile
             return _colaboradorService.ValidarLoginPorCPF(cpf, password);
         }
 
-        private string GenerateJwtToken(string cpf)
+        private string GenerateJwtToken(string cpf, int id)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -59,7 +60,7 @@ namespace DeltaRHWebSite.Controllers.Mobile
             var token = new JwtSecurityToken(
                 issuer: _configuration["JwtSettings:Issuer"],
                 audience: _configuration["JwtSettings:Audience"],
-                claims: new[] { new Claim(ClaimTypes.Name, cpf) },
+                claims: new[] { new Claim(ClaimTypes.Name, cpf), new Claim(ClaimTypes.NameIdentifier, Convert.ToString(id)) },
                 expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["JwtSettings:ExpirationMinutes"])),
                 signingCredentials: creds
             );
