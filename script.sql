@@ -21,7 +21,9 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[id_empresa] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[senha] [varchar](20) NOT NULL,
 	[razao_social] [varchar](40) NOT NULL,
-	[cnpj] [varchar](20) NOT NULL,
+	[cnpj] [varchar](20) NOT NULL UNIQUE,
+	[nome_responsavel] [varchar](50) NOT NULL,
+	[cpf_responsavel] [varchar](15) NOT NULL UNIQUE,
 	[logradouro] [varchar](15) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
 	[complemento] [varchar](15) NULL,
@@ -62,7 +64,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[id_colaborador] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[nome] [varchar](50) NOT NULL,
 	[data_nascimento] [date] NOT NULL,
-	[cpf] [varchar](15) NOT NULL,
+	[cpf] [varchar](15) NOT NULL UNIQUE,
 	[tipo_contrato] [varchar](20) NOT NULL,
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
@@ -84,10 +86,10 @@ CREATE TABLE [dbo].[tbl_colaborador](
 /****** Object:  Table [dbo].[tbl_FolhadePgt]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_folhadepagamento](
 	[id_folhadepagamento] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[valor_folhafinal] [decimal](10, 2) NOT NULL,
-	[valor_desc_total] [decimal](10, 2) NOT NULL,
+	[valor_folhafinal] [decimal](12, 2) NOT NULL,
+	[valor_desc_total] [decimal](12, 2) NOT NULL,
 	[horas_trab] [decimal](5, 2) NOT NULL,
-	[salario_liq] [decimal](10, 2) NOT NULL,
+	[salario_liq] [decimal](12, 2) NOT NULL,
 	[periodo_inicio] [date] NOT NULL,
 	[periodo_fim] [date] NOT NULL,
 	[id_empresa] [int] NOT NULL,
@@ -99,20 +101,23 @@ CREATE TABLE [dbo].[tbl_folhaindividual](
 	[id_folhaindividual] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[periodo_inicio] [date] NOT NULL,
 	[periodo_fim] [date] NOT NULL,
-	[valor_folhafinal] [decimal](10, 2) NOT NULL,
-	[valor_desc_total] [decimal](10, 2) NOT NULL,
-	[horas_trab] [decimal](3, 2) NOT NULL,
-	[salario_liq] [decimal](10, 2) NOT NULL,
+	[valor_folhafinal] [decimal](12, 2) NOT NULL,
+	[valor_desc_total] [decimal](12, 2) NOT NULL,
+	[horas_trab] [decimal](5, 2) NOT NULL,
+	[salario_liq] [decimal](12, 2) NOT NULL,
 	[id_folhadepagamento] [int] NOT NULL,
+	[id_colaborador] [int] NOT NULL,
 	CONSTRAINT FK_folhaindividual_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
-	REFERENCES tbl_folhadepagamento(id_folhadepagamento));
+	REFERENCES tbl_folhadepagamento(id_folhadepagamento),
+	CONSTRAINT FK_folhaindividual_colaborador FOREIGN KEY (id_colaborador) 
+	REFERENCES tbl_colaborador(id_colaborador));
 
 /****** Object:  Table [dbo].[tbl_Holerite]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_holerite](
 	[id_holerite] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[horas_trab] [decimal](3, 2) NOT NULL,
-	[valor_desc_total] [decimal](10, 2) NOT NULL,
-	[salario_liq] [decimal](10, 2) NOT NULL,
+	[horas_trab] [decimal](5, 2) NOT NULL,
+	[valor_desc_total] [decimal](12, 2) NOT NULL,
+	[salario_liq] [decimal](12, 2) NOT NULL,
 	[id_folhadepagamento] [int] NOT NULL,
 	[id_colaborador] [int] NOT NULL,
 	CONSTRAINT FK_holerite_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
@@ -133,11 +138,8 @@ CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[descricao] [varchar](200),
 	[documento] VARBINARY(MAX),
 	[id_colaborador] [int] NOT NULL,
-	[id_folhaindividual] [int],
 	CONSTRAINT FK_pontoeletronico_colaborador FOREIGN KEY (id_colaborador) 
-	REFERENCES tbl_colaborador(id_colaborador),
-	CONSTRAINT FK_pontoeletronico_folhaindividual FOREIGN KEY (id_folhaindividual) 
-	REFERENCES tbl_folhaindividual(id_folhaindividual));
+	REFERENCES tbl_colaborador(id_colaborador));
 
 /****** Object:  Table [dbo].[tbl_UsuarioRH]    Script Date: 31/08/2023 21:30:24 ******/
 
