@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	CONSTRAINT FK_empresa_missaovisaovalores FOREIGN KEY (id_missaovisaovalores) 
 	REFERENCES tbl_missaovisaovalores(id_missaovisaovalores),
 	CONSTRAINT FK_empresa_politicadisciplinar FOREIGN KEY (id_politicadisciplinar) 
-	REFERENCES tbl_politicadisciplinar(id_politicadiscilplinar));
+	REFERENCES tbl_politicadisciplinar(id_politicadisciplinar));
 
 /****** Object:  Table [dbo].[tbl_NormaRegra]    Script Date: 31/08/2023 21:30:24 ******/
 
