@@ -1,32 +1,32 @@
 USE BD_DELTA;
 
 -- Inserir mais 10 valores fictícios na tabela tbl_missaovisaovalores
-INSERT INTO dbo.tbl_missaovisaovalores (descricao, visao_futuro, produtividade, sustentabilidade)
+INSERT INTO dbo.tbl_missaovisaovalores (descricao)
 VALUES
-  ('Missão 11', 'Visão 11', 'Produtividade 11', 'Sustentabilidade 11'),
-  ('Missão 12', 'Visão 12', 'Produtividade 12', 'Sustentabilidade 12'),
-  ('Missão 13', 'Visão 13', 'Produtividade 13', 'Sustentabilidade 13'),
-  ('Missão 14', 'Visão 14', 'Produtividade 14', 'Sustentabilidade 14'),
-  ('Missão 15', 'Visão 15', 'Produtividade 15', 'Sustentabilidade 15'),
-  ('Missão 16', 'Visão 16', 'Produtividade 16', 'Sustentabilidade 16'),
-  ('Missão 17', 'Visão 17', 'Produtividade 17', 'Sustentabilidade 17'),
-  ('Missão 18', 'Visão 18', 'Produtividade 18', 'Sustentabilidade 18'),
-  ('Missão 19', 'Visão 19', 'Produtividade 19', 'Sustentabilidade 19'),
-  ('Missão 20', 'Visão 20', 'Produtividade 20', 'Sustentabilidade 20');
+  ('Missão 11'),
+  ('Missão 12'),
+  ('Missão 13'),
+  ('Missão 14'),
+  ('Missão 15'),
+  ('Missão 16'),
+  ('Missão 17'),
+  ('Missão 18'),
+  ('Missão 19'),
+  ('Missão 20');
 
 -- Inserir mais 10 valores fictícios na tabela tbl_politicadisciplinar
-INSERT INTO dbo.tbl_politicadisciplinar (descricao, advertencia, dispensa, suspensao)
+INSERT INTO dbo.tbl_politicadisciplinar (descricao)
 VALUES
-  ('Política 11', 'Advertência 11', 'Dispensa 11', 'Suspensão 11'),
-  ('Política 12', 'Advertência 12', 'Dispensa 12', 'Suspensão 12'),
-  ('Política 13', 'Advertência 13', 'Dispensa 13', 'Suspensão 13'),
-  ('Política 14', 'Advertência 14', 'Dispensa 14', 'Suspensão 14'),
-  ('Política 15', 'Advertência 15', 'Dispensa 15', 'Suspensão 15'),
-  ('Política 16', 'Advertência 16', 'Dispensa 16', 'Suspensão 16'),
-  ('Política 17', 'Advertência 17', 'Dispensa 17', 'Suspensão 17'),
-  ('Política 18', 'Advertência 18', 'Dispensa 18', 'Suspensão 18'),
-  ('Política 19', 'Advertência 19', 'Dispensa 19', 'Suspensão 19'),
-  ('Política 20', 'Advertência 20', 'Dispensa 20', 'Suspensão 20');
+  ('Política 11'),
+  ('Política 12'),
+  ('Política 13'),
+  ('Política 14'),
+  ('Política 15'),
+  ('Política 16'),
+  ('Política 17'),
+  ('Política 18'),
+  ('Política 19'),
+  ('Política 20');
 
 -- Inserir mais 10 valores fictícios na tabela tbl_empresa
 INSERT INTO dbo.tbl_empresa (senha, razao_social, cnpj, nome_responsavel, cpf_responsavel, logradouro, numero, complemento, bairro, cep, cidade, uf, telefone, telefone2, email, id_missaovisaovalores, id_politicadisciplinar)
