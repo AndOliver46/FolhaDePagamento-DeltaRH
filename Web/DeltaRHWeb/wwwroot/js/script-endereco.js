@@ -87,7 +87,6 @@ const getEndereco = async (cep) => {
 }
 
 formEndereco.addEventListener("submit", (e) => {
-    e.preventDefault();
     aparecerLoader();
 
     setTimeout(() => {

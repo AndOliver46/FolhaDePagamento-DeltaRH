@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Padrao */
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(140deg, #71C1FE, #954AFF);
+    overflow: hidden;
+}
+
+#loader {
+    height: 60px;
+    width: 60px;
+}
+
+#fade {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Conteúdo do painel */
+.conteudo-painel {
+    background-color: white;
+    border-radius: 20px;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 480px 1fr;
+    height: 700px;
+    padding: 35px 35px 0 35px;
+    width: 1200px;
+}
+
+/* Conteúdo do painel lado esquerdo */
+.conteudo-painel-livre {
+    background-color: #493CE4;
+    border-radius: 12px 0px 0px 12px;
+    color: white;
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+    gap: 12px;
+    grid-column: 1;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 630px;
+    padding: 25px 0px 25px 40px;
+}
+
+/* Título do contato */
+.info-contato-titulo {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    grid-row: 1;
+}
+
+/* Informações de contato */
+.info-contato {
+    display: grid;
+    grid-template-columns: 60px 300px;
+    grid-row: 2;
+    width: 300px;
+}
+
+    .info-contato > p {
+        grid-column: 2;
+        text-align: start;
+    }
+
+    .info-contato > svg {
+        grid-column: 1;
+        width: 25px;
+    }
+
+/* Redes sociais de contato */
+.info-contato-redes {
+    align-items: end;
+    display: flex;
+    gap: 35px;
+}
+
+    .info-contato-redes > svg {
+        width: 18px;
+    }
+
+        .info-contato-redes > svg:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+form {
+    display: grid;
+    gap: 15px;
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 1fr;
+    margin: -20px;
+    padding-top: 50px;
+    width: 100%;
+    max-height: 100%;
+}
+
+    form label {
+        font-size: 16px;
+        margin: 3px 0px 3px 10px;
+    }
+
+/* Estilo para inputs desabilitados */
+.conteudo-painel-form input:disabled {
+    background-color: rgb(158, 158, 158);
+}
+
+.conteudo-painel-form input:focus {
+    border-bottom: 1px solid #493CE3;
+}
+
+/* Botão de envio do formulário */
+form [type="submit"] {
+    background-color: #493CE3;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    height: 45px;
+    padding: 0;
+    width: 50%;
+    grid-row: auto;
+}
+
+/* Estilo para o elemento com ID 'texto' */
+#texto {
+    border: 1px solid black;
+    padding: 10px;
+    width: 99%;
+}
+
+.hide {
+    display: none !important;
+}

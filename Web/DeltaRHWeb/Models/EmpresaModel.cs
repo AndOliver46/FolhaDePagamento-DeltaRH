@@ -19,7 +19,7 @@ namespace DeltaRHWeb.Models
         [Required(ErrorMessage = "CPF do Responsável é obrigatório")]
         public string CPFResponsavel { get; set; }
 
-        public string Telefone { get; set; }
+        public string? Telefone { get; set; }
 
         [Required(ErrorMessage = "Celular é obrigatório")]
         public string Telefone2 { get; set; }
