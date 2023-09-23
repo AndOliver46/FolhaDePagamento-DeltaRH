@@ -3,18 +3,12 @@ USE [BD_DELTA]
 /****** Object:  Table [dbo].[tbl_MissaoVisaoValores]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_missaovisaovalores](
 	[id_missaovisaovalores] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[descricao] [varchar](200) NULL,
-	[visao_futuro] [varchar](200) NULL,
-	[produtividade] [varchar](100) NULL,
-	[sustentabilidade] [varchar](100) NULL);
+	[descricao] [varchar](256) NOT NULL;
 
 /****** Object:  Table [dbo].[tbl_PoliticaDisciplinar]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_politicadisciplinar](
 	[id_politicadisciplinar] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[descricao] [varchar](200) NULL,
-	[advertencia] [varchar](50) NULL,
-	[dispensa] [varchar](50) NULL,
-	[suspensao] [varchar](50) NULL);
+	[descricao] [varchar](256) NOT NULL;
 
 /****** Object:  Table [dbo].[tbl_empresa]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_empresa](
