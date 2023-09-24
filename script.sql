@@ -124,11 +124,11 @@ CREATE TABLE [dbo].[tbl_holerite](
 
 CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[id_pontoeletronico] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[data] [datetime] NOT NULL,
-	[entrada] [datetime],
-	[saida_almoco] [datetime],
-	[retorno_almoco] [datetime],
-	[saida] [datetime],
+	[data] [date] NOT NULL,
+	[entrada] [time](7),
+	[saida_almoco] [time](7),
+	[retorno_almoco] [time](7),
+	[saida] [time](7),
 	[tipoJustificativa] [varchar](20),
 	[descricao] [varchar](200),
 	[documento] VARBINARY(MAX),
