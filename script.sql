@@ -20,7 +20,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[cpf_responsavel] [varchar](15) NOT NULL UNIQUE,
 	[logradouro] [varchar](128) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
-	[complemento] [varchar](100) NULL,
+	[complemento] [varchar](100),
 	[bairro] [varchar](80) NOT NULL,
 	[cep] [varchar](15) NOT NULL,
 	[cidade] [varchar](60) NOT NULL,
