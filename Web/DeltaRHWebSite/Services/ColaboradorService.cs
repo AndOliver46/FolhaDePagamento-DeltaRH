@@ -2,6 +2,7 @@
 using DeltaRHWebSite.Models.DTO;
 using DeltaRHWebSite.Models;
 using Microsoft.AspNetCore.Mvc;
+using DeltaRH.API.Models.DTO;
 
 namespace DeltaRHWebSite.Services
 {
@@ -22,14 +23,20 @@ namespace DeltaRHWebSite.Services
 
         public bool ValidarLoginPorCPF(string cpf, string password)
         {
-            Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
-
-            if (colaborador != null)
+            try
             {
-                if (colaborador.senha == password)
+                Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
+
+                if (colaborador != null)
                 {
-                    return true;
+                    if (colaborador.senha == password)
+                    {
+                        return true;
+                    }
                 }
+            }catch(Exception ex)
+            {
+                return false;
             }
             return false;
         }
@@ -38,10 +45,10 @@ namespace DeltaRHWebSite.Services
         {
 
             Colaborador colaborador = _colaboradorRepository.FindByCPF(cpf);
-            ColaboradorDTO colaboradorDTO = new ColaboradorDTO(colaborador);
-
+            
             if (colaborador != null)
             {
+                ColaboradorDTO colaboradorDTO = new ColaboradorDTO(colaborador);
                 return colaboradorDTO;
             }
 
