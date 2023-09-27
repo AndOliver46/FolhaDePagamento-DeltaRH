@@ -1,4 +1,6 @@
-﻿using DeltaRHWebSite.Models;
+﻿using DeltaRH.API.Models.DTO;
+using DeltaRH.API.Services;
+using DeltaRHWebSite.Models;
 using DeltaRHWebSite.Models.DTO;
 using DeltaRHWebSite.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -15,11 +17,13 @@ namespace DeltaRHWebSite.Controllers.Mobile
 
         private readonly ColaboradorService _colaboradorService;
         private readonly HoleriteService _holeriteService;
+        private readonly PontoEletronicoService _pontoEletronicoService;
 
-        public MobileController(ColaboradorService _colaboradorService, HoleriteService _holeriteService)
+        public MobileController(ColaboradorService _colaboradorService, HoleriteService _holeriteService, PontoEletronicoService _pontoEletronicoService)
         {
             this._colaboradorService = _colaboradorService;
             this._holeriteService = _holeriteService;
+            this._pontoEletronicoService = _pontoEletronicoService;
         }
 
         [HttpGet("carregar-dados-usuario")]
@@ -30,6 +34,16 @@ namespace DeltaRHWebSite.Controllers.Mobile
             ColaboradorDTO colaboradorDTO = _colaboradorService.BuscarColaboradorPorCPF(cpf);
      
             return Ok(colaboradorDTO);
+        }
+
+        [HttpGet("carregar-registro-ponto")]
+        public IActionResult BuscarPonto()
+        {
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            PontoEletronicoDTO pontoEletronicoDTO = _pontoEletronicoService.BuscarPontoDoDia(id);
+
+            return Ok(pontoEletronicoDTO);
         }
 
         [HttpGet("carregar-holerites")]

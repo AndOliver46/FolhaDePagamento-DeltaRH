@@ -1,4 +1,5 @@
-﻿using DeltaRHWebSite.Models;
+﻿using DeltaRH.API.Models;
+using DeltaRHWebSite.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeltaRHWebSite.Infrastructure
@@ -11,6 +12,7 @@ namespace DeltaRHWebSite.Infrastructure
         public DbSet<NormaRegra> NormaRegra { get; set; }
         public DbSet<PoliticaDisciplinar> PoliticaDisciplinar { get; set; }
         public DbSet<Holerite> Holerites { get; set; }
+        public DbSet<PontoEletronico> PontosEletronicos { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
