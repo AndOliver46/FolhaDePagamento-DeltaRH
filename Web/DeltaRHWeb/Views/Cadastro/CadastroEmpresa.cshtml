@@ -17,7 +17,7 @@
             </div>
             <form class="conteudo-painel-form" method="post" action="/Cadastro/SalvarEmpresa">
                 <label for="RazaoSocial">Razão Social</label>
-                <input id="RazaoSocial" type="text" asp-for="RazaoSocial" placeholder="Razão Social" class="caixa-rs" required>
+                <input id="RazaoSocial" type="text" asp-for="RazaoSocial" placeholder="Razão Social" class="caixa-rs"  required>
                 <label for="CNPJ">CNPJ</label>
                 <input id="CNPJ" type="text" asp-for="CNPJ" placeholder="Ex: 012345678910" class="caixa-cnpj" minlength="12" required>
                 <label for="Email">Email</label>
@@ -32,7 +32,7 @@
                 <input id="Telefone2" type="text" asp-for="Telefone2" placeholder="Celular" class="caixa-telefone" required>
                 <label for="Senha">Senha</label>
                 <input id="Senha" type="password" asp-for="Senha" placeholder="Senha" class="caixa-senha" required>
-                <input type="submit" value="Próxima Pagina" class="botao-enviar" />
+                <input type="submit" value="Enviar" class="botao-enviar" />
             </form>
         </section>
     </main>
