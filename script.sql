@@ -124,7 +124,7 @@ CREATE TABLE [dbo].[tbl_holerite](
 
 CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[id_pontoeletronico] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[data] [date] NOT NULL,
+	[data] [datetime] NOT NULL,
 	[entrada] [time](7),
 	[saida_almoco] [time](7),
 	[retorno_almoco] [time](7),
