@@ -129,7 +129,7 @@ CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[saida_almoco] [time](7),
 	[retorno_almoco] [time](7),
 	[saida] [time](7),
-	[tipoJustificativa] [varchar](20),
+	[tipo_justificativa] [varchar](20),
 	[descricao] [varchar](200),
 	[documento] VARBINARY(MAX),
 	[id_colaborador] [int] NOT NULL,
