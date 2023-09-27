@@ -160,7 +160,7 @@ VALUES
   (152.00, 32.00, 3380.00, 9, 9),
   (160.00, 28.00, 3120.00, 10, 10);
 INSERT INTO [dbo].[tbl_pontoeletronico] (
-  [data], [entrada], [saida_almoco], [retorno_almoco], [saida], [tipoJustificativa],
+  [data], [entrada], [saida_almoco], [retorno_almoco], [saida], [tipo_justificativa],
   [descricao], [documento], [id_colaborador])
 VALUES
   ('2023-08-01 00:00:00', '08:00:00', '12:00:00', '13:00:00', '17:00:00', 'Entrada', 'Ponto do dia 1', NULL, 1),
