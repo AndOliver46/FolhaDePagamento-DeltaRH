@@ -1,5 +1,6 @@
 ﻿using delta_modelo;
 using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
 
 
@@ -13,12 +14,16 @@ namespace delta_controle
         {
             try
             {
+                int idSetor, carga;
+                double salario;
+                
+
                 using (SqlConnection conexaodb = new SqlConnection(conexao))
                 {
                     conexaodb.Open();
 
                     string query = @"
-        INSERT INTO tbl_empresa (
+        INSERT INTO tbl_colaborador (
             nome, 
             data_nascimento, 
             cpf, 
@@ -62,12 +67,14 @@ namespace delta_controle
 
 
                     cmd.Parameters.AddWithValue("@nome", colab.nome);
-                    cmd.Parameters.AddWithValue("@data_nascimento", colab.nascimento);
+                    cmd.Parameters.AddWithValue("@data_nascimento", Convert.ToDateTime(colab.nascimento));
                     cmd.Parameters.AddWithValue("@cpf", colab.cpf);
                     cmd.Parameters.AddWithValue("@tipo_contrato", colab.contrato);
-                    cmd.Parameters.AddWithValue("@salario_bruto", colab.salario);
+                    salario = Convert.ToDouble(colab.salario);
+                    cmd.Parameters.AddWithValue("@salario_bruto", salario);
                     cmd.Parameters.AddWithValue("@senha", colab.senha);
-                    cmd.Parameters.AddWithValue("carga_horaria", colab.cHoraria);
+                    carga = Convert.ToInt32(colab.cHoraria);
+                    cmd.Parameters.AddWithValue("carga_horaria", carga);
                     cmd.Parameters.AddWithValue("@logradouro", colab.logradouro);
                     cmd.Parameters.AddWithValue("@numero", colab.numero);
                     cmd.Parameters.AddWithValue("@complemento", colab.complemento);
@@ -78,7 +85,8 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@telefone", colab.fone1);
                     cmd.Parameters.AddWithValue("@telefone2", colab.fone2);
                     cmd.Parameters.AddWithValue("@email", colab.email);
-                    cmd.Parameters.AddWithValue("@id_setor", colab.id_setor);
+                    idSetor = Convert.ToInt32(colab.id_setor);
+                    cmd.Parameters.AddWithValue("@id_setor", idSetor);
 
 
                     int idInserido = (int)cmd.ExecuteScalar();

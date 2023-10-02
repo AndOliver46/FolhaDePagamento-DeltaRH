@@ -4,3 +4,9 @@ C:\Users\mauri\OneDrive\Documentos\Pim4\pim\Desktop\deltarh\delta_modelo\obj\Deb
 C:\Users\mauri\OneDrive\Documentos\Pim4\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.csproj.CoreCompileInputs.cache
 C:\Users\mauri\OneDrive\Documentos\Pim4\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.dll
 C:\Users\mauri\OneDrive\Documentos\Pim4\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.pdb
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\bin\Debug\delta_modelo.dll
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\bin\Debug\delta_modelo.pdb
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.csproj.AssemblyReference.cache
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.csproj.CoreCompileInputs.cache
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.dll
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_modelo\obj\Debug\delta_modelo.pdb

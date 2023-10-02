@@ -51,6 +51,7 @@ namespace deltarh
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.pgContato = new System.Windows.Forms.TabPage();
             this.gboxContato = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.txtTelefone2 = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtTelefone1 = new System.Windows.Forms.TextBox();
@@ -92,7 +93,7 @@ namespace deltarh
             this.gboxCadastro = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSetor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -353,6 +354,7 @@ namespace deltarh
             // 
             // gboxContato
             // 
+            this.gboxContato.Controls.Add(this.label24);
             this.gboxContato.Controls.Add(this.txtTelefone2);
             this.gboxContato.Controls.Add(this.lblEmail);
             this.gboxContato.Controls.Add(this.txtTelefone1);
@@ -365,6 +367,15 @@ namespace deltarh
             this.gboxContato.Size = new System.Drawing.Size(737, 214);
             this.gboxContato.TabIndex = 19;
             this.gboxContato.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(391, 96);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(98, 23);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "(OPCIONAL)";
             // 
             // txtTelefone2
             // 
@@ -847,7 +858,7 @@ namespace deltarh
             // 
             this.gboxCadastro.Controls.Add(this.button1);
             this.gboxCadastro.Controls.Add(this.label17);
-            this.gboxCadastro.Controls.Add(this.textBox6);
+            this.gboxCadastro.Controls.Add(this.txtSetor);
             this.gboxCadastro.Enabled = false;
             this.gboxCadastro.Location = new System.Drawing.Point(12, 23);
             this.gboxCadastro.Name = "gboxCadastro";
@@ -864,6 +875,7 @@ namespace deltarh
             this.button1.TabIndex = 3;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label17
             // 
@@ -874,12 +886,12 @@ namespace deltarh
             this.label17.TabIndex = 2;
             this.label17.Text = "Nome";
             // 
-            // textBox6
+            // txtSetor
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(232, 22);
-            this.textBox6.TabIndex = 1;
+            this.txtSetor.Location = new System.Drawing.Point(105, 31);
+            this.txtSetor.Name = "txtSetor";
+            this.txtSetor.Size = new System.Drawing.Size(232, 22);
+            this.txtSetor.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -1136,7 +1148,7 @@ namespace deltarh
             // btnConsultaCnpj
             // 
             this.btnConsultaCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaCnpj.Location = new System.Drawing.Point(495, 29);
+            this.btnConsultaCnpj.Location = new System.Drawing.Point(399, 29);
             this.btnConsultaCnpj.Name = "btnConsultaCnpj";
             this.btnConsultaCnpj.Size = new System.Drawing.Size(90, 30);
             this.btnConsultaCnpj.TabIndex = 16;
@@ -1322,7 +1334,7 @@ namespace deltarh
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtSetor;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox gboxCadastro;
         private System.Windows.Forms.Button button1;
@@ -1351,8 +1363,9 @@ namespace deltarh
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label23;
         public System.Windows.Forms.TextBox txtCnpj;
+        public System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label24;
     }
 }

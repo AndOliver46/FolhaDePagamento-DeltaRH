@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CadColab.cs" />
+    <Compile Include="CadSetor.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ConsultaBanco.cs" />

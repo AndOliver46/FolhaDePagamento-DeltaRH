@@ -14,12 +14,13 @@ namespace delta_controle
     {
         private string conexao = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
 
-        public bool CadastrarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa)
+        public bool CadastrarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa, mdlSetor setor)
         {
             try
             {
                 int IdMissaoVisaoValores;
                 int IdPoliticaDisciplinar;
+                int idInserido;
 
                 using (SqlConnection conexaodb = new SqlConnection(conexao))
                 {
@@ -116,10 +117,22 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@id_missaovisaovalores", IdMissaoVisaoValores);
                     cmd.Parameters.AddWithValue("@id_politicadisciplinar", IdPoliticaDisciplinar);
 
-                    int idInserido = (int)cmd.ExecuteScalar();
+                    idInserido = (int)cmd.ExecuteScalar();
+                }
+                using (SqlConnection conexaodb = new SqlConnection(conexao))
+                {
+                    conexaodb.Open();
+
+                    string query = "INSERT INTO tbl_setor (nome_setor, id_empresa) VALUES (@nome_setor, @id_empresa);SELECT CAST(scope_identity() AS int)";
+                    SqlCommand cmd = new SqlCommand(query, conexaodb); //instanciando
+
+                    cmd.Parameters.AddWithValue("@nome_setor", setor.nome);
+                    cmd.Parameters.AddWithValue("@id_empresa", idInserido);
+
+                    int IdSetor = (int)cmd.ExecuteScalar();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }

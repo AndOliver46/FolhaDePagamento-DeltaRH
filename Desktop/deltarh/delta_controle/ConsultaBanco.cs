@@ -28,7 +28,8 @@ namespace delta_controle
                     mdlEmpresa empresa = null;
                     while (rd.Read())
                     {
-                        empresa = new mdlEmpresa(); 
+                        empresa = new mdlEmpresa();
+                        empresa.id = rd.GetInt32(0);
                         empresa.senha = rd.GetString(1);
                         empresa.razao = rd.GetString(2);
                         empresa.cnpj = rd.GetString(3);

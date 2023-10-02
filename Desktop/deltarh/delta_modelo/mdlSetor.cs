@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace delta_modelo
 {
-    internal class mdlSetor
+    public class mdlSetor
     {
         public int id { get; set; }
         public string nome { get; set; }
+        public int idEmpresa { get; set; }    
     }
 }

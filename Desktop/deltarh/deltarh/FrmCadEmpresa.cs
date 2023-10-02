@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using delta_modelo;
 using delta_controle;
-
+using System.Web.UI.WebControls;
 
 namespace deltarh
 {
@@ -54,6 +54,7 @@ namespace deltarh
                 txtMissao.Text = empresa.missao.descricao;
                 txtPolitica.Text = empresa.politica.descricao;
 
+                txtCodId.Text = Convert.ToString(empresa.id);
                 txtRazaoSocial.Text = empresa.razao;
                 txtCnpj.Text = empresa.cnpj;
                 txtNome.Text = empresa.responsavel; ;
@@ -70,6 +71,8 @@ namespace deltarh
                 txtTelefone2.Text = empresa.fone2;
                 txtEmail.Text = empresa.email;
                 txtSenha.Text = empresa.senha;
+
+                txtUsuario.Text = txtCnpj.Text;
             }
             catch (Exception ex)
             {
@@ -140,7 +143,7 @@ namespace deltarh
             else
             {
 
-                MessageBox.Show("CNPJ Inválido!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CNPJ Não Encontrado na Base da Receita Federal!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -178,6 +181,8 @@ namespace deltarh
             mdlMissao missao = new mdlMissao();
             mdlPolitica politica = new mdlPolitica();
             mdlEmpresa empresa = new mdlEmpresa();
+            mdlSetor setor = new mdlSetor();
+            string nomeSetor = "Geral";
 
             try
             {
@@ -201,9 +206,11 @@ namespace deltarh
                 empresa.email = txtEmail.Text;
                 empresa.senha = txtSenha.Text;
 
+                setor.nome = nomeSetor;
+
                 Conexao conecta = new Conexao();
 
-                conecta.CadastrarEmpresa(missao, politica, empresa);
+                conecta.CadastrarEmpresa(missao, politica, empresa, setor);
             }
             catch (Exception ex)
             {
@@ -233,6 +240,31 @@ namespace deltarh
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mdlSetor setor = new mdlSetor();
+            
+            try
+            {
+                setor.nome = txtSetor.Text;
+                setor.idEmpresa = Convert.ToInt32(txtCodId.Text);
+
+                CadSetor conecta = new CadSetor();
+
+                conecta.CadastrarSetor(setor);
+
+                MessageBox.Show("Setor Cadastrado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtSetor.Text = "";
+                txtSetor.Focus();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
