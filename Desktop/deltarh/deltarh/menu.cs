@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using delta_controle;
+using delta_modelo;
 
 namespace deltarh
 {
@@ -19,14 +21,49 @@ namespace deltarh
 
         private void btnCnpj_Click(object sender, EventArgs e)
         {
+            string cnpj = txtCnpj.Text;
 
-            var resposta = MessageBox.Show("Empresa não cadastrada. Deseja cadastrá-la?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            ConsultaBanco consulta = new ConsultaBanco();
 
-            if(resposta == DialogResult.Yes)
+            mdlEmpresa empresa = null;
+
+            try
             {
-                FrmCadEmpresa cadastro = new FrmCadEmpresa();
-                cadastro.ShowDialog();
+                empresa = consulta.ConsultarEmpresa(cnpj);
+
+                if (empresa == null)
+                {
+                    var resposta = MessageBox.Show("Empresa não cadastrada. Deseja cadastrá-la?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resposta == DialogResult.Yes)
+                    {
+                        FrmCadEmpresa cadastro = new FrmCadEmpresa();
+                        cadastro.txtCnpj.Text = cnpj;
+                        cadastro.ObterCnpj();
+                        cadastro.editar();
+                        cadastro.ShowDialog();
+                    }
+                }
+                else
+                {
+                    FrmCadEmpresa cadastro = new FrmCadEmpresa();
+                    cadastro.txtCnpj.Text = cnpj;
+                    cadastro.consultaCnpj();
+                    cadastro.ShowDialog();
+                }
             }
+            catch (Exception ex)
+            {
+                empresa = null;
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmColadorador colab = new FrmColadorador();
+            colab.ShowDialog();
         }
     }
 }

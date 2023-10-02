@@ -32,13 +32,17 @@ namespace deltarh
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnCnpj = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblCpf = new System.Windows.Forms.Label();
-            this.lblCadCnpj = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCnpj = new System.Windows.Forms.TextBox();
+            this.btnCnpj = new System.Windows.Forms.Button();
+            this.lblCadCnpj = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnProcessar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -55,6 +59,8 @@ namespace deltarh
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -82,13 +88,8 @@ namespace deltarh
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnCnpj);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.lblCpf);
-            this.tabPage2.Controls.Add(this.lblCadCnpj);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -97,9 +98,92 @@ namespace deltarh
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.lblCpf);
+            this.groupBox2.Location = new System.Drawing.Point(9, 268);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(499, 244);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Consulta Colaborador";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(373, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(373, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(116, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(228, 20);
+            this.textBox4.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(32, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 23);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "ID";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(116, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(228, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.Location = new System.Drawing.Point(32, 62);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(62, 23);
+            this.lblCpf.TabIndex = 4;
+            this.lblCpf.Text = "CPF";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtCnpj);
+            this.groupBox1.Controls.Add(this.btnCnpj);
+            this.groupBox1.Controls.Add(this.lblCadCnpj);
+            this.groupBox1.Location = new System.Drawing.Point(9, 22);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(499, 231);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Consulta Empresa";
+            // 
+            // txtCnpj
+            // 
+            this.txtCnpj.Location = new System.Drawing.Point(116, 31);
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(228, 20);
+            this.txtCnpj.TabIndex = 0;
+            // 
             // btnCnpj
             // 
-            this.btnCnpj.Location = new System.Drawing.Point(382, 65);
+            this.btnCnpj.Location = new System.Drawing.Point(373, 29);
             this.btnCnpj.Name = "btnCnpj";
             this.btnCnpj.Size = new System.Drawing.Size(89, 23);
             this.btnCnpj.TabIndex = 6;
@@ -107,50 +191,13 @@ namespace deltarh
             this.btnCnpj.UseVisualStyleBackColor = true;
             this.btnCnpj.Click += new System.EventHandler(this.btnCnpj_Click);
             // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(20, 373);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 23);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "CNPJ";
-            // 
-            // lblCpf
-            // 
-            this.lblCpf.Location = new System.Drawing.Point(20, 220);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(62, 23);
-            this.lblCpf.TabIndex = 4;
-            this.lblCpf.Text = "CPF";
-            // 
             // lblCadCnpj
             // 
-            this.lblCadCnpj.Location = new System.Drawing.Point(20, 70);
+            this.lblCadCnpj.Location = new System.Drawing.Point(32, 34);
             this.lblCadCnpj.Name = "lblCadCnpj";
             this.lblCadCnpj.Size = new System.Drawing.Size(62, 23);
             this.lblCadCnpj.TabIndex = 3;
             this.lblCadCnpj.Text = "CNPJ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(125, 370);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(125, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(125, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -304,7 +351,10 @@ namespace deltarh
             this.Text = "Menu Principal";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -331,12 +381,16 @@ namespace deltarh
         private System.Windows.Forms.Button btnJustificar;
         private System.Windows.Forms.Button btnProcessar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnCnpj;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblCadCnpj;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

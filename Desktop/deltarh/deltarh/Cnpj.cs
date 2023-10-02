@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace deltarh
 {
@@ -72,12 +73,23 @@ namespace deltarh
 
         public static Empresa ObterCnpj(string cnpj)
         {
-            string url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj;
-            WebClient client = new WebClient();
-            client.Encoding = System.Text.Encoding.UTF8;
-            string json = client.DownloadString(url);
+            Empresa empresa = null; 
+            
+            try
+            {
+                string url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj;
+                WebClient client = new WebClient();
+                client.Encoding = System.Text.Encoding.UTF8;
+                string json = client.DownloadString(url); 
 
-            var empresa = JsonConvert.DeserializeObject<Empresa>(json);
+                empresa = JsonConvert.DeserializeObject<Empresa>(json);
+
+            }
+            catch (Exception ex) 
+            {
+                empresa = null;
+            }
+
 
             return empresa;
         }

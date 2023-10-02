@@ -39,6 +39,9 @@
     <Reference Include="Consulta.CNPJ, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Consulta.CNPJ.1.0.1\lib\netstandard2.0\Consulta.CNPJ.dll</HintPath>
     </Reference>
+    <Reference Include="Cpf, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cpf.2.1.0\lib\Cpf.dll</HintPath>
+    </Reference>
     <Reference Include="Jarvis.Connections.Http, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Jarvis.Connections.Http.2.0.0\lib\net461\Jarvis.Connections.Http.dll</HintPath>
     </Reference>
@@ -75,6 +78,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cnpj.cs" />
+    <Compile Include="FrmCadColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadColaborador.Designer.cs">
+      <DependentUpon>FrmCadColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmColadorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmColadorador.Designer.cs">
+      <DependentUpon>FrmColadorador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadDp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +102,23 @@
     <Compile Include="FrmCadEmpresa.Designer.cs">
       <DependentUpon>FrmCadEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditaSetor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditaSetor.Designer.cs">
+      <DependentUpon>FrmEditaSetor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEndereco.Designer.cs">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegras.Designer.cs">
+      <DependentUpon>FrmRegras.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -107,14 +134,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCadColaborador.resx">
+      <DependentUpon>FrmCadColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmColadorador.resx">
+      <DependentUpon>FrmColadorador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadDp.resx">
       <DependentUpon>FrmCadDp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadEmpresa.resx">
       <DependentUpon>FrmCadEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditaSetor.resx">
+      <DependentUpon>FrmEditaSetor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEndereco.resx">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegras.resx">
+      <DependentUpon>FrmRegras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -145,6 +184,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\delta_controle\delta_controle.csproj">
+      <Project>{cfb6f71c-7a09-4809-8c3a-3acb65397426}</Project>
+      <Name>delta_controle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\delta_modelo\delta_modelo.csproj">
+      <Project>{8a95ae83-c577-4de8-ba0e-2ae93ebafb01}</Project>
+      <Name>delta_modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
