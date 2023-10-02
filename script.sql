@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[razao_social] [varchar](90) NOT NULL,
 	[cnpj] [varchar](20) NOT NULL UNIQUE,
 	[nome_responsavel] [varchar](50) NOT NULL,
-	[cpf_responsavel] [varchar](15) NOT NULL UNIQUE,
+	[cpf_responsavel] [varchar](15) NOT NULL,
 	[logradouro] [varchar](128) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
 	[complemento] [varchar](100),
