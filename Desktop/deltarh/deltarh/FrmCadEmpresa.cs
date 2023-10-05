@@ -139,6 +139,8 @@ namespace deltarh
                 txtCidade.Text = cnpj.municipio;
                 txtTelefone1.Text = cnpj.telefone;
                 txtEmail.Text = cnpj.email;
+
+                txtUsuario.Text = txtCnpj.Text;
             }
             else
             {
@@ -193,7 +195,6 @@ namespace deltarh
                 empresa.cnpj = txtCnpj.Text;
                 empresa.responsavel = txtNome.Text; ;
                 empresa.cpf = txtCpf.Text;
-                empresa.status = txtStatus.Text;
                 empresa.logradouro = txtLogradouro.Text;
                 empresa.numero = txtNumero.Text;
                 empresa.complemento = txtComplemento.Text;
@@ -207,6 +208,15 @@ namespace deltarh
                 empresa.senha = txtSenha.Text;
 
                 setor.nome = nomeSetor;
+
+                if(txtStatus.Text == "")
+                {
+                    empresa.status = "PENDENTE";
+                }
+                else
+                {
+                    empresa.status = txtStatus.Text;
+                }
 
                 Conexao conecta = new Conexao();
 

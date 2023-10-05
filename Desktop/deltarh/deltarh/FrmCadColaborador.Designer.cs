@@ -72,13 +72,13 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.txtIdEmpresa = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cBoxSetor = new System.Windows.Forms.ComboBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -512,7 +512,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(12, 696);
+            this.btnLimpar.Location = new System.Drawing.Point(13, 696);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 22;
@@ -522,13 +522,13 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtIdEmpresa);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.cBoxSetor);
             this.groupBox4.Controls.Add(this.txtEmpresa);
-            this.groupBox4.Controls.Add(this.maskedTextBox1);
             this.groupBox4.Location = new System.Drawing.Point(12, 578);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(655, 100);
@@ -536,42 +536,34 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empregador";
             // 
-            // maskedTextBox1
+            // txtIdEmpresa
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(122, 19);
-            this.maskedTextBox1.Mask = "##.###.###/####-##";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(243, 22);
-            this.maskedTextBox1.TabIndex = 24;
-            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtIdEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdEmpresa.Location = new System.Drawing.Point(122, 19);
+            this.txtIdEmpresa.Name = "txtIdEmpresa";
+            this.txtIdEmpresa.Size = new System.Drawing.Size(111, 22);
+            this.txtIdEmpresa.TabIndex = 29;
             // 
-            // txtEmpresa
+            // button1
             // 
-            this.txtEmpresa.Enabled = false;
-            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(122, 59);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
-            this.txtEmpresa.TabIndex = 24;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(258, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // comboBox1
+            // label21
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(521, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 25;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(29, 22);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 16);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "CNPJ";
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(380, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 16);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "Setor";
             // 
             // label20
             // 
@@ -583,25 +575,32 @@
             this.label20.TabIndex = 27;
             this.label20.Text = "Empresa";
             // 
-            // label21
+            // label19
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(463, 22);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(39, 16);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "Setor";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(58, 22);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(20, 16);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "ID";
             // 
-            // button1
+            // cBoxSetor
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(373, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cBoxSetor.FormattingEnabled = true;
+            this.cBoxSetor.Location = new System.Drawing.Point(435, 21);
+            this.cBoxSetor.Name = "cBoxSetor";
+            this.cBoxSetor.Size = new System.Drawing.Size(207, 21);
+            this.cBoxSetor.TabIndex = 25;
+            // 
+            // txtEmpresa
+            // 
+            this.txtEmpresa.Enabled = false;
+            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpresa.Location = new System.Drawing.Point(122, 59);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
+            this.txtEmpresa.TabIndex = 24;
             // 
             // FrmCadColadorador
             // 
@@ -682,10 +681,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxSetor;
         private System.Windows.Forms.TextBox txtEmpresa;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIdEmpresa;
     }
 }

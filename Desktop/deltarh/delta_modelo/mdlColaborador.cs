@@ -10,12 +10,12 @@ namespace delta_modelo
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string nascimento { get; set; }
+        public DateTime nascimento { get; set; }
         public string cpf { get; set; }
         public string contrato { get; set; }
-        public string salario { get; set; }
+        public double salario { get; set; }
         public string senha { get; set; }
-        public string cHoraria { get; set; }
+        public int cHoraria { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
         public string complemento { get; set; }
@@ -26,6 +26,7 @@ namespace delta_modelo
         public string fone1 { get; set; }
         public string fone2 { get; set; }
         public string email { get; set; }
-        public string id_setor { get; set; }
+        public int id_setor { get; set; }
+        public mdlSetor setor { get; set; }
     }
 }

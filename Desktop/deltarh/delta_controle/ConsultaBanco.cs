@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using delta_modelo;
 
@@ -92,6 +93,116 @@ namespace delta_controle
                 }
             }
             catch(Exception ex) 
+            {
+                return null;
+            }
+        }
+
+        public mdlColaborador ConsultarColab(string cpf)
+        {
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_colaborador WHERE cpf = @cpf";
+
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@cpf", cpf);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    mdlColaborador colaborador = null;
+                    while (rd.Read())
+                    {
+                        colaborador = new mdlColaborador();
+                        colaborador.id = rd.GetInt32(0);
+                        colaborador.nome = rd.GetString(1);
+                        colaborador.nascimento = rd.GetDateTime(2);
+                        colaborador.cpf = rd.GetString(3);
+                        colaborador.contrato = rd.GetString(4);
+                        colaborador.salario = Convert.ToDouble(rd.GetDecimal(5));
+                        colaborador.senha = rd.GetString(6);
+                        colaborador.cHoraria = rd.GetInt32(7);
+                        colaborador.logradouro = rd.GetString(8);
+                        colaborador.numero = rd.GetString(9);
+                        colaborador.complemento = rd.GetString(10);
+                        colaborador.bairro = rd.GetString(11);
+                        colaborador.cep = rd.GetString(12);
+                        colaborador.cidade = rd.GetString(13);
+                        colaborador.uf = rd.GetString(14);
+                        colaborador.fone1 = rd.GetString(15);
+                        colaborador.fone2 = rd.GetString(16);
+                        colaborador.email = rd.GetString(17);
+                        colaborador.id_setor = rd.GetInt32(18);
+                    }
+                    rd.Close();
+
+                    if (colaborador != null)
+                    {
+                        string query_s = "SELECT nome_setor FROM tbl_setor WHERE id_setor = @id_setor";
+
+                        SqlCommand cmd_s = new SqlCommand(query_s, conexaodb);
+
+                        cmd_s.Parameters.AddWithValue("@id_setor", colaborador.id_setor);
+
+                        SqlDataReader rd_s = cmd_s.ExecuteReader();
+
+                        mdlSetor setor = new mdlSetor();
+
+                        while (rd_s.Read())
+                        {
+                            setor.nome = rd_s.GetString(0);
+                        }
+                        rd_s.Close();
+
+                        colaborador.setor = setor;
+                    }
+
+                    return colaborador;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<mdlSetor> ConsultarSetor(int idempresa)
+        {
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_setor WHERE id_empresa = @id_empresa";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@id_empresa", idempresa);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    List<mdlSetor> setores = new List<mdlSetor>();
+                    while (rd.Read())
+                    {
+                       mdlSetor setor = new mdlSetor();
+                        setor.id = rd.GetInt32(0);
+                        setor.nome = rd.GetString(1);
+                        setor.idEmpresa = rd.GetInt32(2);
+
+                        setores.Add(setor);
+                    }
+                    rd.Close();
+
+                    return setores;
+                }
+            }
+            catch (Exception ex)
             {
                 return null;
             }

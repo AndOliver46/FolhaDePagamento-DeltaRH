@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CpfLibrary;
 using delta_controle;
 using delta_modelo;
+using DLL_CLASS_CNPJ;
 
 namespace deltarh
 {
     public partial class FrmCadColadorador : Form
     {
+        public string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
         public FrmCadColadorador()
         {
             InitializeComponent();
@@ -74,12 +78,12 @@ namespace deltarh
             try
             {
                 colab.nome = txtNome.Text;
-                colab.nascimento = mskNascimento.Text;
+                colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
                 colab.cpf = mskCpf.Text;
                 colab.contrato = cboxTipoContrato.Text;
-                colab.salario = txtSalario.Text;
+                colab.salario = Convert.ToDouble(txtSalario.Text);
                 colab.senha = txtSenha.Text;
-                colab.cHoraria = cboxHorario.Text;
+                colab.cHoraria = Convert.ToInt32(cboxHorario.Text);
                 colab.logradouro = txtLogradouro.Text;
                 colab.numero = txtNumero.Text;
                 colab.complemento = txtComplemento.Text;
@@ -90,7 +94,7 @@ namespace deltarh
                 colab.fone1 = txtTelefone1.Text;
                 colab.fone2 = txtTelefone2.Text;
                 colab.email = txtEmail.Text;
-                colab.id_setor = txtSetor.Text;
+                colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
 
                 CadColab conecta = new CadColab();
 
@@ -109,6 +113,35 @@ namespace deltarh
             else
             {
                 Close();
+            }
+        }
+
+        private void BuscarSetor()
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+
+            ConsultaBanco consulta = new ConsultaBanco();
+
+            List<mdlSetor> setores = new List<mdlSetor>();
+
+            try
+            {
+                setores = consulta.ConsultarSetor(idEmpresa);
+
+                cBoxSetor.DataSource  = setores;
+
+                this.cBoxSetor.DisplayMember = "nome";
+                this.cBoxSetor.ValueMember = "id";
+                //this.cBoxSetor.SelectedValue = "idProduto";
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
     }
