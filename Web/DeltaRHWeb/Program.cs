@@ -40,7 +40,7 @@ app.UseRouting();
 
 app.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Cadastro}/{action=CadastroEmpresa}/{id?}");
+        pattern: "{controller=Login}/{action=LoginUsuario}/{id?}");
 
 app.UseAuthorization();
 

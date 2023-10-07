@@ -19,6 +19,12 @@ namespace DeltaRHWeb.Models
         [Required(ErrorMessage = "CPF do Responsável é obrigatório")]
         public string CPFResponsavel { get; set; }
 
+        public string Logradouro { get; set; }
+
+        public string Numero { get; set; }
+
+        public string Cidade { get; set; }
+
         public string? Telefone { get; set; }
 
         [Required(ErrorMessage = "Celular é obrigatório")]
@@ -26,6 +32,14 @@ namespace DeltaRHWeb.Models
 
         [Required(ErrorMessage = "Senha é obrigatória")]
         public string Senha { get; set; }
+
+        public int id_missao { get; set; }
+
+        public int id_politica { get; set; }
+
+        public string descricao_missao { get; set; }
+
+        public string descricao_politica { get; set; }
 
         public EmpresaModel() { }
 
