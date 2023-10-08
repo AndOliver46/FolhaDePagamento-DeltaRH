@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace DeltaRHWebSite.Controllers.Mobile
 {
-    [Authorize]
+    [Authorize("AuthorizedUsers")]
     [ApiController]
     [Route("api/v1/mobile")]
     public class MobileController : ControllerBase
