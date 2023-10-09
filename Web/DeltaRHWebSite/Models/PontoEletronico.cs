@@ -11,12 +11,12 @@ namespace DeltaRH.API.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_pontoeletronico { get; private set; }
         public DateTime data { get; private set; }
-        public TimeSpan? entrada { get; private set; }
-        public TimeSpan? saida_almoco { get; private set; }
+        public TimeSpan? entrada { get; set; }
+        public TimeSpan? saida_almoco { get; set; }
 
-        public TimeSpan? retorno_almoco { get; private set; }
+        public TimeSpan? retorno_almoco { get; set; }
 
-        public TimeSpan? saida { get; private set; }
+        public TimeSpan? saida { get; set; }
         public String? tipo_justificativa { get; private set; }
         public String? descricao { get; private set; }
         public Byte[]? documento { get; private set; }

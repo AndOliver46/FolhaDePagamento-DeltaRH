@@ -55,5 +55,20 @@ namespace DeltaRHWebSite.Controllers.Mobile
 
             return Ok(holerites);
         }
+
+        [HttpPost("registrar-ponto")]
+        public IActionResult RegistrarPonto([FromBody] TipoPontoDTO tipo_ponto)
+        {
+            if (tipo_ponto == null)
+            {
+                return BadRequest("Erro ao registrar ponto, tente novamente.");
+            }
+
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            PontoEletronicoDTO pontoEletronicoDTO = _pontoEletronicoService.SalvarPonto(id, tipo_ponto.tipo_ponto);
+
+            return Ok(pontoEletronicoDTO);
+        }
     }
 }

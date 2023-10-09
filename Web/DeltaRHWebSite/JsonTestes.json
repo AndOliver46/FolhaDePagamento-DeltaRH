@@ -1,53 +1,55 @@
-{
-  "nome": "João da Silva",
-  "data_nascimento": "1985-05-10",
-  "cpf": "123.456.789-00",
-  "salario_bruto": 5000.00,
-  "senha": "senhadocolaborador",
-  "tipo_contrato": 1,
-  "carga_horaria": 40,
-  "logradouro": "Rua das Flores",
-  "numero": "123",
-  "complemento": "Apto 101",
-  "bairro": "Centro",
-  "cep": "12345-678",
-  "cidade": "São Paulo",
-  "uf": "SP",
-  "telefone": "(11) 9876-5432",
-  "telefone2": "(11) 1234-5678",
-  "email": "joao.silva@email.com",
-  "setor": {
-    "id_setor":  1
-  }
-}
+[
+  {
+    "nome": "Joï¿½o da Silva",
+    "data_nascimento": "1985-05-10",
+    "cpf": "123.456.789-00",
+    "salario_bruto": 5000.00,
+    "senha": "senhadocolaborador",
+    "tipo_contrato": 1,
+    "carga_horaria": 40,
+    "logradouro": "Rua das Flores",
+    "numero": "123",
+    "complemento": "Apto 101",
+    "bairro": "Centro",
+    "cep": "12345-678",
+    "cidade": "Sï¿½o Paulo",
+    "uf": "SP",
+    "telefone": "(11) 9876-5432",
+    "telefone2": "(11) 1234-5678",
+    "email": "joao.silva@email.com",
+    "setor": {
+      "id_setor": 1
+    }
+  },
 
-{
-  "senha": "senha123",
-  "razao_social": "Minha Empresa",
-  "cnpj": "12345678901234",
-  "logradouro": "Rua da Empresa",
-  "numero": "123",
-  "complemento": "Sala 101",
-  "bairro": "Centro",
-  "cep": "12345-678",
-  "cidade": "Cidade",
-  "uf": "UF",
-  "telefone": "(11) 1234-5678",
-  "telefone2": "(11) 9876-5432",
-  "email": "contato@minhaempresa.com",
-  "id_missaovisaovalores": 1,
-  "missaovisaovalores": {
-    "descricao": "Missão da Empresa",
-    "visao_futuro": "Visão de Futuro",
-    "produtividade": "Alta Produtividade",
-    "sustentabilidade": "Compromisso com a Sustentabilidade"
-  },
-  "id_politicadisciplinar": 2,
-  "politicadisciplinar": {
-    "descricao": "Política Disciplinar da Empresa",
-    "advertencia": "Processo de Advertência",
-    "dispensa": "Procedimento de Dispensa",
-    "suspensao": "Política de Suspensão"
-  },
-  "normaregras": []
-}
+  {
+    "senha": "senha123",
+    "razao_social": "Minha Empresa",
+    "cnpj": "12345678901234",
+    "logradouro": "Rua da Empresa",
+    "numero": "123",
+    "complemento": "Sala 101",
+    "bairro": "Centro",
+    "cep": "12345-678",
+    "cidade": "Cidade",
+    "uf": "UF",
+    "telefone": "(11) 1234-5678",
+    "telefone2": "(11) 9876-5432",
+    "email": "contato@minhaempresa.com",
+    "id_missaovisaovalores": 1,
+    "missaovisaovalores": {
+      "descricao": "Missï¿½o da Empresa",
+      "visao_futuro": "Visï¿½o de Futuro",
+      "produtividade": "Alta Produtividade",
+      "sustentabilidade": "Compromisso com a Sustentabilidade"
+    },
+    "id_politicadisciplinar": 2,
+    "politicadisciplinar": {
+      "descricao": "Polï¿½tica Disciplinar da Empresa",
+      "advertencia": "Processo de Advertï¿½ncia",
+      "dispensa": "Procedimento de Dispensa",
+      "suspensao": "Polï¿½tica de Suspensï¿½o"
+    },
+    "normaregras": []
+  }
+]

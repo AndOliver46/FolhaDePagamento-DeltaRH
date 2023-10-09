@@ -4,6 +4,7 @@ namespace DeltaRH.API.Models.DTO
 {
     public class PontoEletronicoDTO
     {
+        public int id_pontoeletronico { get; private set; }
         public DateTime? data { get; private set; }
         public TimeSpan? entrada { get; private set; }
         public TimeSpan? saida_almoco { get; private set; }
@@ -21,8 +22,9 @@ namespace DeltaRH.API.Models.DTO
 
         public PontoEletronicoDTO() { }
 
-        public PontoEletronicoDTO(DateTime? data, TimeSpan? entrada, TimeSpan? saida_almoco, TimeSpan? retorno_almoco, TimeSpan? saida, string? tipo_justificativa, string? descricao, byte[]? documento, int id_colaborador)
+        public PontoEletronicoDTO(int id_pontoeletronico, DateTime? data, TimeSpan? entrada, TimeSpan? saida_almoco, TimeSpan? retorno_almoco, TimeSpan? saida, string? tipo_justificativa, string? descricao, byte[]? documento, int id_colaborador)
         {
+            this.id_pontoeletronico = id_pontoeletronico;
             this.data = data;
             this.entrada = entrada;
             this.saida_almoco = saida_almoco;
@@ -36,6 +38,7 @@ namespace DeltaRH.API.Models.DTO
 
         public PontoEletronicoDTO(PontoEletronico pontoEletronico)
         {
+            this.id_pontoeletronico = pontoEletronico.id_pontoeletronico;
             this.data = pontoEletronico.data;
             this.entrada = pontoEletronico.entrada;
             this.saida_almoco = pontoEletronico.saida_almoco;
