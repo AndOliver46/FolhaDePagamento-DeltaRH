@@ -1,6 +1,7 @@
 package com.example.deltarhmobile.retrofit.api
 
 import com.example.deltarhmobile.retrofit.model.PontoModel
+import com.example.deltarhmobile.retrofit.model.TipoPonto
 import com.example.deltarhmobile.retrofit.model.UserModel
 import com.example.deltarhmobile.retrofit.model.UserRequest
 import com.example.deltarhmobile.retrofit.model.UserResponse
@@ -19,4 +20,7 @@ interface UserAPI {
 
     @GET("/api/v1/mobile/carregar-registro-ponto")
     fun carregarPonto(): Call<PontoModel>
+
+    @POST("/api/v1/mobile/registrar-ponto")
+    fun registrarPonto(@Body tipoPonto : TipoPonto) : Call<PontoModel>
 }

@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.deltarhmobile.NavigationHost
 import com.example.deltarhmobile.R
@@ -72,6 +73,7 @@ class LoginFragment : Fragment() {
             }
 
             var userRequest = UserRequest(cpf, password, true)
+            val messageTextView = view.findViewById<TextView>(R.id.message_text_view)
 
             try {
                 val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
@@ -81,25 +83,19 @@ class LoginFragment : Fragment() {
 
                 if(response.isSuccessful){
                     var token = responseBody?.token
-
                     val sessionManager = SessionManager(context)
+
                     if (token != null) {
                         sessionManager.saveAuthToken(token)
                     }
 
                     (activity as NavigationHost).navigateTo(MenuFragment(), false)
                 }else if(response.code() == 401){
-                    val errorMessageTextView = view.findViewById<TextView>(R.id.errorMessageTextView)
-
-                    errorMessageTextView.text = "Credenciais inválidas."
-                    errorMessageTextView.visibility = View.VISIBLE
+                    messageTextView.text = "Credenciais inválidas."
                 }
             }catch (e : Exception){
-                val errorMessageTextView = view.findViewById<TextView>(R.id.errorMessageTextView)
-                errorMessageTextView.text = "ERRO DE API"
-                errorMessageTextView.visibility = View.VISIBLE
+                messageTextView.text = "ERRO DE API"
             }
-
         }
 
     }

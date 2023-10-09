@@ -17,6 +17,7 @@ import com.example.deltarhmobile.R
 import com.example.deltarhmobile.retrofit.api.UserAPI
 import com.example.deltarhmobile.retrofit.config.NetworkConfig
 import com.example.deltarhmobile.retrofit.model.PontoModel
+import com.example.deltarhmobile.retrofit.model.TipoPonto
 import com.example.deltarhmobile.retrofit.model.UserModel
 import retrofit2.Call
 import retrofit2.Response
@@ -61,16 +62,64 @@ class PontoFragment : Fragment() {
             (activity as NavigationHost).navigateTo(MenuFragment(), false)
         }
 
+        carregarBotoes(view)
+
+        val entradaButton = view.findViewById<Button>(R.id.entrada_button)
+        val pausaButton = view.findViewById<Button>(R.id.pausa_button)
+        val retornoButton = view.findViewById<Button>(R.id.retorno_button)
+        val saidaButton = view.findViewById<Button>(R.id.saida_button)
+
+        val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
+        entradaButton.setOnClickListener{
+            val tipoPonto = TipoPonto("entrada")
+            val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
+            val response: Response<PontoModel> = callRegistrarPonto.execute()
+            var responseBody = response.body()
+
+            carregarBotoes(view)
+        }
+        pausaButton.setOnClickListener{
+            val tipoPonto = TipoPonto("pausa")
+            val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
+            val response: Response<PontoModel> = callRegistrarPonto.execute()
+            var responseBody = response.body()
+
+            carregarBotoes(view)
+        }
+        retornoButton.setOnClickListener{
+            val tipoPonto = TipoPonto("retorno")
+            val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
+            val response: Response<PontoModel> = callRegistrarPonto.execute()
+            var responseBody = response.body()
+
+            carregarBotoes(view)
+        }
+        saidaButton.setOnClickListener{
+            val tipoPonto = TipoPonto("saida")
+            val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
+            val response: Response<PontoModel> = callRegistrarPonto.execute()
+            var responseBody = response.body()
+
+            carregarBotoes(view)
+        }
+    }
+
+    fun carregarBotoes(view : View){
         try {
             val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
-            val call: Call<PontoModel> = userAPI.carregarPonto()
-            val response: Response<PontoModel> = call.execute()
+            val callCarregarPonto: Call<PontoModel> = userAPI.carregarPonto()
+            val response: Response<PontoModel> = callCarregarPonto.execute()
             var responseBody = response.body()
 
             val entradaButton = view.findViewById<Button>(R.id.entrada_button)
             val pausaButton = view.findViewById<Button>(R.id.pausa_button)
             val retornoButton = view.findViewById<Button>(R.id.retorno_button)
             val saidaButton = view.findViewById<Button>(R.id.saida_button)
+
+            entradaButton.isEnabled = false
+            pausaButton.isEnabled = false
+            retornoButton.isEnabled = false
+            saidaButton.isEnabled = false
 
             if(response.isSuccessful){
                 if (responseBody != null) {
@@ -88,8 +137,8 @@ class PontoFragment : Fragment() {
         }catch (e : Exception){
             Log.d("Erro busca:", e.stackTraceToString())
         }
-
     }
+
 
     companion object {
 
