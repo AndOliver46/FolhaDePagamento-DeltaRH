@@ -15,11 +15,7 @@ import com.example.deltarhmobile.R
 import com.example.deltarhmobile.retrofit.api.UserAPI
 import com.example.deltarhmobile.retrofit.config.NetworkConfig
 import com.example.deltarhmobile.retrofit.config.SessionManager
-import com.example.deltarhmobile.retrofit.model.LoggedUserInfo
 import com.example.deltarhmobile.retrofit.model.UserModel
-import com.example.deltarhmobile.retrofit.model.UserRequest
-import com.example.deltarhmobile.retrofit.model.UserResponse
-import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Call
 import retrofit2.Response
 
@@ -39,6 +35,7 @@ class MenuFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,7 +43,7 @@ class MenuFragment : Fragment() {
             val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
             val call: Call<UserModel> = userAPI.carregarDados()
             val response: Response<UserModel> = call.execute()
-            var responseBody = response.body()
+            val responseBody = response.body()
 
             if(response.isSuccessful){
                 val userName = view.findViewById<TextView>(R.id.text_username)
@@ -61,6 +58,11 @@ class MenuFragment : Fragment() {
         val registrarPontoButton = view.findViewById<Button>(R.id.registrar_button)
         registrarPontoButton.setOnClickListener{
             (activity as NavigationHost).navigateTo(PontoFragment(), true)
+        }
+
+        val registrarJustificativaButton = view.findViewById<Button>(R.id.justificativa_button)
+        registrarJustificativaButton.setOnClickListener{
+            (activity as NavigationHost).navigateTo(JustificativaFragment(), true)
         }
 
         //outros botoes

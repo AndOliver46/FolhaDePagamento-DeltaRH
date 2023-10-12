@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:padding="24dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText, RtlHardcoded">
 
     <ImageView
         android:id="@+id/img_logo"
@@ -14,6 +15,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="48dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="logo_detlarh"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Login"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#FFFFFF"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -106,7 +108,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/contato_button"
         android:text=""
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="#FF0000"
         android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
