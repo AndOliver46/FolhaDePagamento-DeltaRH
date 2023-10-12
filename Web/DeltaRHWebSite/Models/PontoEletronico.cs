@@ -17,9 +17,9 @@ namespace DeltaRH.API.Models
         public TimeSpan? retorno_almoco { get; set; }
 
         public TimeSpan? saida { get; set; }
-        public String? tipo_justificativa { get; private set; }
-        public String? descricao { get; private set; }
-        public Byte[]? documento { get; private set; }
+        public String? tipo_justificativa { get; set; }
+        public String? descricao { get; set; }
+        public Byte[]? documento { get; set; }
 
         //Associacoes
         public int id_colaborador { get; set; }

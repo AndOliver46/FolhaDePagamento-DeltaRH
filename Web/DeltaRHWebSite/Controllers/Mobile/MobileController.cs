@@ -70,5 +70,20 @@ namespace DeltaRHWebSite.Controllers.Mobile
 
             return Ok(pontoEletronicoDTO);
         }
+
+        [HttpPost("registrar-justificativa")]
+        public IActionResult RegistrarJustificativa([FromBody] JustificativaDTO justificativaDTO)
+        {
+            if (justificativaDTO == null)
+            {
+                return BadRequest("Erro ao registrar justificativa, tente novamente.");
+            }
+
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            PontoEletronicoDTO pontoEletronicoDTO = _pontoEletronicoService.RegistrarJustificativa(id, justificativaDTO);
+
+            return Ok(pontoEletronicoDTO);
+        }
     }
 }

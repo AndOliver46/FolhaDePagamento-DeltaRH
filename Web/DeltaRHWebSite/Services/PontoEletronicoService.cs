@@ -47,6 +47,22 @@ namespace DeltaRH.API.Services
             return new PontoEletronicoDTO(pontoEletronico);
         }
 
+        public PontoEletronicoDTO RegistrarJustificativa(string id_colaborador, JustificativaDTO justificativaDTO)
+        {
+            PontoEletronico pontoEletronico = BuscarPontoOuCriar(id_colaborador);
+
+            pontoEletronico.tipo_justificativa = justificativaDTO.tipo_justificativa;
+            pontoEletronico.descricao = justificativaDTO.descricao_justificativa;
+            if(justificativaDTO.documento != null)
+            {
+                pontoEletronico.documento = Convert.FromBase64String(justificativaDTO.documento);
+            }
+
+            _pontoEletronicoRepository.Update(pontoEletronico);
+
+            return new PontoEletronicoDTO(pontoEletronico);
+        }
+
         private PontoEletronico BuscarPontoOuCriar(string? id_colaborador)
         {
             PontoEletronico? pontoEletronico;
