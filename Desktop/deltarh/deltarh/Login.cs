@@ -17,18 +17,13 @@ namespace deltarh
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
+        private void EntrarMenu()
         {
             frmMenu menu = new frmMenu();
 
             if (txtUsuario.Text == "admin" && mskSenha.Text == "admin")
             {
-                
+
                 menu.ShowDialog();
                 Close();
             }
@@ -39,12 +34,32 @@ namespace deltarh
                 mskSenha.Text = "";
                 txtUsuario.Focus();
             }
-            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            EntrarMenu();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void mskSenha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            this.SetStyle(ControlStyles.StandardClick, true);
+            EntrarMenu();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

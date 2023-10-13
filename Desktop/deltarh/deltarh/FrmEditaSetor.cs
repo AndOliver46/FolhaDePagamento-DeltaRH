@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using delta_controle;
+using delta_modelo;
 
 namespace deltarh
 {
@@ -15,6 +10,34 @@ namespace deltarh
         public FrmEditaSetor()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AlteraBanco altera = new AlteraBanco();
+
+            mdlSetor setor = new mdlSetor();
+
+            setor.id = Convert.ToInt32(txtId.Text);
+           
+            setor.nome = txtNome.Text;
+            try
+            {
+                bool alterado = altera.AlterarSetor(setor);
+                if(alterado)
+                {
+                    MessageBox.Show("Setor Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("NÃO CADASTRADO.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            catch (Exception ex) 
+            {
+                throw;
+            }
         }
     }
 }

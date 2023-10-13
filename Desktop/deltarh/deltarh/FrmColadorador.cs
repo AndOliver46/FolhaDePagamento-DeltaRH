@@ -18,18 +18,7 @@ namespace deltarh
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FrmCadColadorador edita = new FrmCadColadorador();
-            edita.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void BuscarColab()
         {
             string cpf = mskCpf.Text;
 
@@ -68,8 +57,23 @@ namespace deltarh
             {
                 colab = null;
             }
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmCadColadorador edita = new FrmCadColadorador();
+            edita.mskCpf.Text = mskCpf.Text;
+            edita.ShowDialog();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BuscarColab();
         }
     }
 }

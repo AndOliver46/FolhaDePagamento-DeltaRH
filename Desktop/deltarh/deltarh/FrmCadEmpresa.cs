@@ -73,6 +73,8 @@ namespace deltarh
                 txtSenha.Text = empresa.senha;
 
                 txtUsuario.Text = txtCnpj.Text;
+
+                ListarSetores();
             }
             catch (Exception ex)
             {
@@ -162,7 +164,7 @@ namespace deltarh
         private void button2_Click(object sender, EventArgs e)
         {
             FrmEditaSetor edita = new FrmEditaSetor();
-
+            edita.txtId.Text = txtEditaSetor.Text;
             edita.ShowDialog();
         }
 
@@ -171,7 +173,7 @@ namespace deltarh
             editar();
         }
 
-        private void btnConsultaCnpj_Click(object sender, EventArgs e)
+        public void btnConsultaCnpj_Click(object sender, EventArgs e)
         {
             consultaCnpj();
         }
@@ -276,6 +278,32 @@ namespace deltarh
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void FrmCadEmpresa_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet2.tbl_setor'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_setorTableAdapter.Fill(this.bD_DELTADataSet2.tbl_setor);
+
+        }
+
+        private void setorToolStripButton_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        public void ListarSetores()
+        {
+
+            try
+            {
+                this.tbl_setorTableAdapter.Setor(this.bD_DELTADataSet2.tbl_setor, ((int)(System.Convert.ChangeType(txtCodId.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

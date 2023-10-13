@@ -62,6 +62,7 @@ namespace deltarh
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(118, 24);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // mskSenha
             // 
@@ -71,6 +72,7 @@ namespace deltarh
             this.mskSenha.PasswordChar = '*';
             this.mskSenha.Size = new System.Drawing.Size(118, 24);
             this.mskSenha.TabIndex = 1;
+            this.mskSenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSenha_MaskInputRejected);
             // 
             // btnOk
             // 

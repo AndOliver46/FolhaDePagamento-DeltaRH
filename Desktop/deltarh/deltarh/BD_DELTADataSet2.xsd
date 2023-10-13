@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BD_DELTADataSet2" targetNamespace="http://tempuri.org/BD_DELTADataSet2.xsd" xmlns:mstns="http://tempuri.org/BD_DELTADataSet2.xsd" xmlns="http://tempuri.org/BD_DELTADataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_DELTAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_DELTAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.deltarh.Properties.Settings.GlobalReference.Default.BD_DELTAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_colaboradorTableAdapter" GeneratorDataComponentClassName="tbl_colaboradorTableAdapter" Name="tbl_colaborador" UserDataComponentName="tbl_colaboradorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_DELTAConnectionString (Settings)" DbObjectName="BD_DELTA.dbo.tbl_colaborador" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nome FROM dbo.tbl_colaborador</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BD_DELTADataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BD_DELTADataSet2" msprop:Generator_DataSetName="BD_DELTADataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_colaborador" msprop:Generator_RowEvHandlerName="tbl_colaboradorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_colaboradorRowDeleted" msprop:Generator_RowDeletingName="tbl_colaboradorRowDeleting" msprop:Generator_RowEvArgName="tbl_colaboradorRowChangeEvent" msprop:Generator_TablePropName="tbl_colaborador" msprop:Generator_RowChangedName="tbl_colaboradorRowChanged" msprop:Generator_RowChangingName="tbl_colaboradorRowChanging" msprop:Generator_TableClassName="tbl_colaboradorDataTable" msprop:Generator_RowClassName="tbl_colaboradorRow" msprop:Generator_TableVarName="tabletbl_colaborador" msprop:Generator_UserTableName="tbl_colaborador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_UserColumnName="nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

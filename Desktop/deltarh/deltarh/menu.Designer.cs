@@ -29,15 +29,20 @@ namespace deltarh
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.razaosocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet = new deltarh.BD_DELTADataSet();
+            this.btnAtualiza = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCnpj = new System.Windows.Forms.TextBox();
@@ -54,15 +59,25 @@ namespace deltarh
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBoxColaborador = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxEmpresa = new System.Windows.Forms.ComboBox();
+            this.tblempresaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet1 = new deltarh.BD_DELTADataSet1();
+            this.tbl_empresaTableAdapter1 = new deltarh.BD_DELTADataSet1TableAdapters.tbl_empresaTableAdapter();
+            this.tbl_empresaTableAdapter = new deltarh.BD_DELTADataSetTableAdapters.tbl_empresaTableAdapter();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -73,18 +88,81 @@ namespace deltarh
             this.tabControl1.Location = new System.Drawing.Point(-1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(526, 547);
+            this.tabControl1.Size = new System.Drawing.Size(526, 537);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.dataGridView2);
+            this.tabPage1.Controls.Add(this.btnAtualiza);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(518, 521);
+            this.tabPage1.Size = new System.Drawing.Size(518, 511);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.razaosocialDataGridViewTextBoxColumn,
+            this.cnpjDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.tblempresaBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 18);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(506, 435);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // razaosocialDataGridViewTextBoxColumn
+            // 
+            this.razaosocialDataGridViewTextBoxColumn.DataPropertyName = "razao_social";
+            this.razaosocialDataGridViewTextBoxColumn.HeaderText = "razao_social";
+            this.razaosocialDataGridViewTextBoxColumn.Name = "razaosocialDataGridViewTextBoxColumn";
+            this.razaosocialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razaosocialDataGridViewTextBoxColumn.Width = 260;
+            // 
+            // cnpjDataGridViewTextBoxColumn
+            // 
+            this.cnpjDataGridViewTextBoxColumn.DataPropertyName = "cnpj";
+            this.cnpjDataGridViewTextBoxColumn.HeaderText = "cnpj";
+            this.cnpjDataGridViewTextBoxColumn.Name = "cnpjDataGridViewTextBoxColumn";
+            this.cnpjDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tblempresaBindingSource
+            // 
+            this.tblempresaBindingSource.DataMember = "tbl_empresa";
+            this.tblempresaBindingSource.DataSource = this.bD_DELTADataSet;
+            // 
+            // bD_DELTADataSet
+            // 
+            this.bD_DELTADataSet.DataSetName = "BD_DELTADataSet";
+            this.bD_DELTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnAtualiza
+            // 
+            this.btnAtualiza.Location = new System.Drawing.Point(437, 472);
+            this.btnAtualiza.Name = "btnAtualiza";
+            this.btnAtualiza.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualiza.TabIndex = 1;
+            this.btnAtualiza.Text = "Atualizar";
+            this.btnAtualiza.UseVisualStyleBackColor = true;
+            this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
             // tabPage2
             // 
@@ -93,7 +171,7 @@ namespace deltarh
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(518, 521);
+            this.tabPage2.Size = new System.Drawing.Size(518, 511);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -101,21 +179,19 @@ namespace deltarh
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtCpf);
             this.groupBox2.Controls.Add(this.lblCpf);
-            this.groupBox2.Location = new System.Drawing.Point(9, 268);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(9, 131);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(499, 244);
+            this.groupBox2.Size = new System.Drawing.Size(499, 107);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta Colaborador";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(373, 57);
+            this.button2.Location = new System.Drawing.Point(373, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 8;
@@ -123,40 +199,16 @@ namespace deltarh
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // txtCpf
             // 
-            this.button1.Location = new System.Drawing.Point(373, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(116, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(228, 20);
-            this.textBox4.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(32, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 23);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "ID";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(116, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtCpf.Location = new System.Drawing.Point(116, 36);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(228, 22);
+            this.txtCpf.TabIndex = 1;
             // 
             // lblCpf
             // 
-            this.lblCpf.Location = new System.Drawing.Point(32, 62);
+            this.lblCpf.Location = new System.Drawing.Point(32, 39);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(62, 23);
             this.lblCpf.TabIndex = 4;
@@ -167,9 +219,10 @@ namespace deltarh
             this.groupBox1.Controls.Add(this.txtCnpj);
             this.groupBox1.Controls.Add(this.btnCnpj);
             this.groupBox1.Controls.Add(this.lblCadCnpj);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 231);
+            this.groupBox1.Size = new System.Drawing.Size(499, 92);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta Empresa";
@@ -178,7 +231,7 @@ namespace deltarh
             // 
             this.txtCnpj.Location = new System.Drawing.Point(116, 31);
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(228, 20);
+            this.txtCnpj.Size = new System.Drawing.Size(228, 22);
             this.txtCnpj.TabIndex = 0;
             // 
             // btnCnpj
@@ -211,13 +264,13 @@ namespace deltarh
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.cBoxColaborador);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.cBoxEmpresa);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(518, 521);
+            this.tabPage3.Size = new System.Drawing.Size(518, 511);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fechar Folha";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -254,12 +307,13 @@ namespace deltarh
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(433, 132);
+            this.btnAtualizar.Location = new System.Drawing.Point(433, 88);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 9;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // dataGridView1
             // 
@@ -268,7 +322,7 @@ namespace deltarh
             this.dataGridView1.Location = new System.Drawing.Point(9, 161);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(499, 296);
+            this.dataGridView1.Size = new System.Drawing.Size(499, 305);
             this.dataGridView1.TabIndex = 8;
             // 
             // dateTimePicker2
@@ -315,13 +369,13 @@ namespace deltarh
             this.label2.TabIndex = 3;
             this.label2.Text = "Colaborador";
             // 
-            // comboBox2
+            // cBoxColaborador
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 84);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(286, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cBoxColaborador.FormattingEnabled = true;
+            this.cBoxColaborador.Location = new System.Drawing.Point(135, 88);
+            this.cBoxColaborador.Name = "cBoxColaborador";
+            this.cBoxColaborador.Size = new System.Drawing.Size(282, 21);
+            this.cBoxColaborador.TabIndex = 2;
             // 
             // label1
             // 
@@ -332,24 +386,48 @@ namespace deltarh
             this.label1.TabIndex = 1;
             this.label1.Text = "Empresa";
             // 
-            // comboBox1
+            // cBoxEmpresa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(377, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cBoxEmpresa.FormattingEnabled = true;
+            this.cBoxEmpresa.Location = new System.Drawing.Point(131, 43);
+            this.cBoxEmpresa.Name = "cBoxEmpresa";
+            this.cBoxEmpresa.Size = new System.Drawing.Size(377, 21);
+            this.cBoxEmpresa.TabIndex = 0;
+            this.cBoxEmpresa.SelectedIndexChanged += new System.EventHandler(this.cBoxEmpresa_SelectedIndexChanged);
+            // 
+            // tblempresaBindingSource1
+            // 
+            this.tblempresaBindingSource1.DataMember = "tbl_empresa";
+            this.tblempresaBindingSource1.DataSource = this.bD_DELTADataSet1;
+            // 
+            // bD_DELTADataSet1
+            // 
+            this.bD_DELTADataSet1.DataSetName = "BD_DELTADataSet1";
+            this.bD_DELTADataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbl_empresaTableAdapter1
+            // 
+            this.tbl_empresaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbl_empresaTableAdapter
+            // 
+            this.tbl_empresaTableAdapter.ClearBeforeFill = true;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 548);
+            this.ClientSize = new System.Drawing.Size(534, 543);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -358,6 +436,8 @@ namespace deltarh
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,7 +449,6 @@ namespace deltarh
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -377,7 +456,7 @@ namespace deltarh
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBoxColaborador;
         private System.Windows.Forms.Button btnJustificar;
         private System.Windows.Forms.Button btnProcessar;
         private System.Windows.Forms.Button btnCancelar;
@@ -385,12 +464,21 @@ namespace deltarh
         private System.Windows.Forms.Button btnCnpj;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblCadCnpj;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtCpf;
+        public System.Windows.Forms.ComboBox cBoxEmpresa;
+        private BD_DELTADataSet bD_DELTADataSet;
+        private System.Windows.Forms.BindingSource tblempresaBindingSource;
+        private BD_DELTADataSetTableAdapters.tbl_empresaTableAdapter tbl_empresaTableAdapter;
+        private BD_DELTADataSet1 bD_DELTADataSet1;
+        private System.Windows.Forms.BindingSource tblempresaBindingSource1;
+        private BD_DELTADataSet1TableAdapters.tbl_empresaTableAdapter tbl_empresaTableAdapter1;
+        private System.Windows.Forms.Button btnAtualiza;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razaosocialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnpjDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

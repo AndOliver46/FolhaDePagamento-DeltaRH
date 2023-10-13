@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using ViaCep;
 using System.Windows.Forms;
 using CpfLibrary;
 using delta_controle;
@@ -118,31 +111,55 @@ namespace deltarh
 
         private void BuscarSetor()
         {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
             int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
 
             ConsultaBanco consulta = new ConsultaBanco();
 
             List<mdlSetor> setores = new List<mdlSetor>();
 
+            mdlEmpresa empresa = new mdlEmpresa();
+
             try
             {
                 setores = consulta.ConsultarSetor(idEmpresa);
 
-                cBoxSetor.DataSource  = setores;
+                cBoxSetor.DataSource = setores;
 
                 this.cBoxSetor.DisplayMember = "nome";
                 this.cBoxSetor.ValueMember = "id";
-                //this.cBoxSetor.SelectedValue = "idProduto";
+
+                empresa = consulta.ConsultarEmpresaId(idEmpresa);
+
+                txtEmpresa.Text = empresa.razao;
+
             }
             catch (Exception ex)
             {
                 throw;
             }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BuscarSetor();
+        }
+
+        private void btnCep_Click(object sender, EventArgs e)
+        {
+            var result = new ViaCepClient().Search(txtCep.Text); //searches for the postal code 01001-000
+            txtLogradouro.Text = result.Street;
+            txtCidade.Text = result.City;
+            txtBairro.Text = result.Neighborhood;
+            txtUf.Text = result.StateInitials;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

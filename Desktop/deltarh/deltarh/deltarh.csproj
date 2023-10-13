@@ -77,6 +77,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_DELTADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DELTADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DELTADataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DELTADataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DELTADataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DELTADataSet21.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cnpj.cs" />
     <Compile Include="FrmCadColaborador.cs">
       <SubType>Form</SubType>
@@ -170,6 +185,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BD_DELTADataSet.xsc">
+      <DependentUpon>BD_DELTADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DELTADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DELTADataSet.xss">
+      <DependentUpon>BD_DELTADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet1.xsc">
+      <DependentUpon>BD_DELTADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DELTADataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DELTADataSet1.xss">
+      <DependentUpon>BD_DELTADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet21.xsc">
+      <DependentUpon>BD_DELTADataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DELTADataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DELTADataSet21.xss">
+      <DependentUpon>BD_DELTADataSet21.xsd</DependentUpon>
+    </None>
     <None Include="CNPJ.tlb" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

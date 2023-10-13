@@ -67,14 +67,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtSetor = new System.Windows.Forms.TextBox();
             this.txtIdEmpresa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.txtSetor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -487,16 +487,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnEditar
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(15, 691);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Editar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(15, 691);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 22;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox4
             // 
@@ -514,6 +514,14 @@
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empregador";
+            // 
+            // txtSetor
+            // 
+            this.txtSetor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSetor.Location = new System.Drawing.Point(459, 24);
+            this.txtSetor.Name = "txtSetor";
+            this.txtSetor.Size = new System.Drawing.Size(175, 22);
+            this.txtSetor.TabIndex = 37;
             // 
             // txtIdEmpresa
             // 
@@ -562,21 +570,13 @@
             this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
             this.txtEmpresa.TabIndex = 31;
             // 
-            // txtSetor
-            // 
-            this.txtSetor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSetor.Location = new System.Drawing.Point(459, 24);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(175, 22);
-            this.txtSetor.TabIndex = 37;
-            // 
             // FrmColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 727);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
@@ -609,7 +609,6 @@
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.ComboBox cboxTipoContrato;
         private System.Windows.Forms.ComboBox cboxHorario;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.MaskedTextBox mskNascimento;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.TextBox txtNumero;
@@ -641,7 +640,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtIdEmpresa;
         private System.Windows.Forms.Label label21;
@@ -651,5 +650,6 @@
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtSetor;
+        public System.Windows.Forms.MaskedTextBox mskCpf;
     }
 }

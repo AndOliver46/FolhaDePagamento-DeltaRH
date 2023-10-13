@@ -29,6 +29,7 @@ namespace deltarh
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.txtCodId = new System.Windows.Forms.TextBox();
@@ -87,9 +88,9 @@ namespace deltarh
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gboxEdita = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditarSetor = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtEditaSetor = new System.Windows.Forms.TextBox();
             this.gboxCadastro = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -126,6 +127,11 @@ namespace deltarh
             this.label20 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.tblsetorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet2 = new deltarh.BD_DELTADataSet2();
+            this.tbl_setorTableAdapter = new deltarh.BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter();
+            this.idsetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomesetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.pgEndereco.SuspendLayout();
             this.gboxEndereco.SuspendLayout();
@@ -143,6 +149,8 @@ namespace deltarh
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCnpj
@@ -804,6 +812,7 @@ namespace deltarh
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.gboxEdita);
             this.tabPage2.Controls.Add(this.gboxCadastro);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -817,9 +826,9 @@ namespace deltarh
             // 
             // gboxEdita
             // 
-            this.gboxEdita.Controls.Add(this.button2);
+            this.gboxEdita.Controls.Add(this.btnEditarSetor);
             this.gboxEdita.Controls.Add(this.label18);
-            this.gboxEdita.Controls.Add(this.textBox7);
+            this.gboxEdita.Controls.Add(this.txtEditaSetor);
             this.gboxEdita.Enabled = false;
             this.gboxEdita.Location = new System.Drawing.Point(12, 140);
             this.gboxEdita.Name = "gboxEdita";
@@ -828,15 +837,15 @@ namespace deltarh
             this.gboxEdita.TabStop = false;
             this.gboxEdita.Text = "Editar Setor";
             // 
-            // button2
+            // btnEditarSetor
             // 
-            this.button2.Location = new System.Drawing.Point(262, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Consultar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEditarSetor.Location = new System.Drawing.Point(262, 71);
+            this.btnEditarSetor.Name = "btnEditarSetor";
+            this.btnEditarSetor.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarSetor.TabIndex = 3;
+            this.btnEditarSetor.Text = "Editar";
+            this.btnEditarSetor.UseVisualStyleBackColor = true;
+            this.btnEditarSetor.Click += new System.EventHandler(this.button2_Click);
             // 
             // label18
             // 
@@ -847,12 +856,12 @@ namespace deltarh
             this.label18.TabIndex = 2;
             this.label18.Text = "ID";
             // 
-            // textBox7
+            // txtEditaSetor
             // 
-            this.textBox7.Location = new System.Drawing.Point(105, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(232, 22);
-            this.textBox7.TabIndex = 1;
+            this.txtEditaSetor.Location = new System.Drawing.Point(105, 31);
+            this.txtEditaSetor.Name = "txtEditaSetor";
+            this.txtEditaSetor.Size = new System.Drawing.Size(232, 22);
+            this.txtEditaSetor.TabIndex = 1;
             // 
             // gboxCadastro
             // 
@@ -897,7 +906,13 @@ namespace deltarh
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idsetorDataGridViewTextBoxColumn,
+            this.nomesetorDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tblsetorBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(398, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -1208,6 +1223,36 @@ namespace deltarh
             this.label21.TabIndex = 22;
             this.label21.Text = "Status";
             // 
+            // tblsetorBindingSource
+            // 
+            this.tblsetorBindingSource.DataMember = "tbl_setor";
+            this.tblsetorBindingSource.DataSource = this.bD_DELTADataSet2;
+            // 
+            // bD_DELTADataSet2
+            // 
+            this.bD_DELTADataSet2.DataSetName = "BD_DELTADataSet2";
+            this.bD_DELTADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbl_setorTableAdapter
+            // 
+            this.tbl_setorTableAdapter.ClearBeforeFill = true;
+            // 
+            // idsetorDataGridViewTextBoxColumn
+            // 
+            this.idsetorDataGridViewTextBoxColumn.DataPropertyName = "id_setor";
+            this.idsetorDataGridViewTextBoxColumn.HeaderText = "id_setor";
+            this.idsetorDataGridViewTextBoxColumn.Name = "idsetorDataGridViewTextBoxColumn";
+            this.idsetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsetorDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // nomesetorDataGridViewTextBoxColumn
+            // 
+            this.nomesetorDataGridViewTextBoxColumn.DataPropertyName = "nome_setor";
+            this.nomesetorDataGridViewTextBoxColumn.HeaderText = "nome_setor";
+            this.nomesetorDataGridViewTextBoxColumn.Name = "nomesetorDataGridViewTextBoxColumn";
+            this.nomesetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomesetorDataGridViewTextBoxColumn.Width = 210;
+            // 
             // FrmCadEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1239,6 +1284,7 @@ namespace deltarh
             this.Controls.Add(this.txtCnpj);
             this.Name = "FrmCadEmpresa";
             this.Text = "Empresa";
+            this.Load += new System.EventHandler(this.FrmCadEmpresa_Load);
             this.tabControl1.ResumeLayout(false);
             this.pgEndereco.ResumeLayout(false);
             this.gboxEndereco.ResumeLayout(false);
@@ -1265,6 +1311,8 @@ namespace deltarh
             this.tabPage4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1341,9 +1389,9 @@ namespace deltarh
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox gboxEdita;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditarSetor;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEditaSetor;
         private System.Windows.Forms.GroupBox gboxContato;
         private System.Windows.Forms.GroupBox gboxEndereco;
         private System.Windows.Forms.Button btnOk;
@@ -1368,5 +1416,10 @@ namespace deltarh
         public System.Windows.Forms.TextBox txtCnpj;
         public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label24;
+        private BD_DELTADataSet2 bD_DELTADataSet2;
+        private System.Windows.Forms.BindingSource tblsetorBindingSource;
+        private BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter tbl_setorTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsetorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomesetorDataGridViewTextBoxColumn;
     }
 }
