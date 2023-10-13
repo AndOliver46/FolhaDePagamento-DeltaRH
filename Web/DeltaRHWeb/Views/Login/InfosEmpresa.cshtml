@@ -33,7 +33,7 @@
                             <label for="cidade">Cidade</label>
                             <input id="cidade" value="@Model.Cidade" type="text" name="cidade" readonly>
                             <label for="logradouro">Logradouro</label>
-                            <input id="logradouro" value="@Model.Logradouro" type="text" name="logradouro" readonly>
+                            <input id="logradouro" value="@Model.Logradouro, @Model.Numero" type="text" name="logradouro" readonly>
                             <label for="Numero">Numero</label>
                             <input id="Numero" value="@Model.Numero" type="text" name="Numero" readonly>
                         </section>
@@ -50,6 +50,37 @@
             </div>
             <div class="container-aprovacoes sumiu">
                 <h2>Aprovações</h2>
+                <div class="container-tabela">
+                    <table class="tabela-aprovacoes" border="1">
+                        <thead id="cabecalho-tabela">
+                            <th>Folha</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th>Salario liquido</th>
+                            <th>Valor total de desc.</th>
+                            <th>Valor final</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody id="conteudo-tabela">
+                            
+                            @foreach (var objeto in Model.Lista_folha)
+                            {
+                                <tr>
+                                    <td><a href="/Login/DownloadDocumento/@objeto.id_folha" target="_blank">Icone</a></td>
+                                    <td>@objeto.Periodo_inicio.ToShortDateString()</td>
+                                    <td>@objeto.Periodo_fim.ToShortDateString()</td>
+                                    <td>@objeto.Valor_liq_final</td>
+                                    <td>@objeto.Valor_desconto_final</td>
+                                    <td>@objeto.Valor_final</td>
+                                    <td>@objeto.Status</td>
+                                    <td>Y / N</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>

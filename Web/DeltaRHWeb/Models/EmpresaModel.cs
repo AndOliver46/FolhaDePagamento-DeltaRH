@@ -4,6 +4,8 @@ namespace DeltaRHWeb.Models
 {
     public class EmpresaModel
     {
+
+        public int id_empresa { get; set; }
         [Required(ErrorMessage = "Razão Social é obrigatória")]
         public string RazaoSocial { get; set; }
 
@@ -40,6 +42,7 @@ namespace DeltaRHWeb.Models
         public string descricao_missao { get; set; }
 
         public string descricao_politica { get; set; }
+        public List<FolhaModel> Lista_folha { get; set; }
 
         public EmpresaModel() { }
 

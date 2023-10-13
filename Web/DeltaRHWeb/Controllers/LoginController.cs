@@ -5,6 +5,15 @@ using System.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.Serialization.Formatters.Binary;
+
+
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+
 
 public class LoginController : Controller
 {
@@ -76,6 +85,7 @@ public class LoginController : Controller
     {
         string cnpj = _contextAccessor.HttpContext.Session.GetString("cnpj");
         EmpresaModel empresa = ConsultarEmpresa(cnpj);
+        empresa.Lista_folha = ConsultarFolhas(empresa.id_empresa);
         return View(empresa);
 
     }
@@ -101,6 +111,7 @@ public class LoginController : Controller
                 while (rd.Read())
                 {
                     empresa = new EmpresaModel();
+                    empresa.id_empresa = rd.GetInt32(0);
                     empresa.RazaoSocial = rd.GetString(2);
                     empresa.Logradouro = rd.GetString(6);
                     empresa.Numero = rd.GetString(7);
@@ -152,5 +163,126 @@ public class LoginController : Controller
         }
     }
 
+
+    [HttpGet("/Login/DownloadDocumento/{id_folha}")]
+    public IActionResult DownloadDocumento(int id_folha)
+    {
+        AtualizarArquivoExcelFicticioNoBanco(consulta);
+
+        // Suponha que você já tenha uma conexão SQL configurada.
+        using (SqlConnection conexaodb = new SqlConnection(consulta))
+        {
+            conexaodb.Open();
+
+            // Crie uma consulta SQL para buscar o documento pelo ID.
+            string query = "SELECT * FROM tbl_folhadepagamento WHERE id_folhadepagamento = @id_folha";
+            using (SqlCommand cmd = new SqlCommand(query, conexaodb))
+            {
+                cmd.Parameters.AddWithValue("@id_folha", id_folha);
+
+                // Execute a consulta.
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string nome = "Folha de pagamento.xlsx";
+                        byte[] documento = (byte[])reader[1];
+
+                        // Defina o tipo de conteúdo.
+                        string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+                        // Retorne o arquivo como um FileResult.
+                        return File(documento, contentType, nome);
+                    }
+                    else
+                    {
+                        return NotFound(); // Documento não encontrado.
+                    }
+                }
+            }
+        }
+    }
+
+    public List<FolhaModel> ConsultarFolhas(int id_empresa)
+    {
+        try
+        {
+            using (SqlConnection conexaodb = new SqlConnection(consulta))
+            {
+                conexaodb.Open();
+
+                string query = "SELECT * FROM tbl_folhadepagamento WHERE id_empresa = @id_empresa";
+
+
+                SqlCommand cmd = new SqlCommand(query, conexaodb);
+
+                cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                List<FolhaModel>  Lista_folha = new List<FolhaModel>();
+                while (rd.Read())
+                {
+                    FolhaModel folha = new FolhaModel();
+
+                    folha.id_folha = rd.GetInt32(0);
+                    folha.Periodo_inicio = rd.GetDateTime(6);
+                    folha.Periodo_fim = rd.GetDateTime(7);
+                    folha.Valor_final = rd.GetDecimal(2);
+                    folha.Valor_desconto_final = rd.GetDecimal(3);
+                    folha.Valor_liq_final = rd.GetDecimal(5);
+                    folha.Status = rd.GetString(8);
+
+                    Lista_folha.Add(folha);
+                }
+                rd.Close();
+
+                return Lista_folha;
+            }
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+
+
+
+    //Função teste arquivo 
+    public void AtualizarArquivoExcelFicticioNoBanco(string connectionString)
+    {
+        // Criar um arquivo Excel fictício com dados fictícios
+        IWorkbook workbook = new XSSFWorkbook();
+        ISheet sheet = workbook.CreateSheet("Folha de Pagamento");
+
+        // Adicionar dados fictícios à planilha
+        IRow headerRow = sheet.CreateRow(0);
+        headerRow.CreateCell(0).SetCellValue("Nome");
+        headerRow.CreateCell(1).SetCellValue("Salário");
+
+        IRow dataRow = sheet.CreateRow(1);
+        dataRow.CreateCell(0).SetCellValue("Maria");
+        dataRow.CreateCell(1).SetCellValue(6000.00);
+
+        // Salvar o arquivo Excel em memória
+        using (MemoryStream memoryStream = new MemoryStream())
+        {
+            workbook.Write(memoryStream);
+            byte[] bytes = memoryStream.ToArray();
+
+            // Atualizar o registro existente na tabela com ID 1
+            using (SqlConnection conexao = new SqlConnection(connectionString))
+            {
+                conexao.Open();
+
+                using (SqlCommand cmd = new SqlCommand("UPDATE tbl_folhadepagamento SET doc_folhadepagamento = @doc_folhadepagamento WHERE id_folhadepagamento = 1", conexao))
+                {
+                    cmd.Parameters.Add("@doc_folhadepagamento", SqlDbType.VarBinary, bytes.Length).Value = bytes;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+    }
 
 }

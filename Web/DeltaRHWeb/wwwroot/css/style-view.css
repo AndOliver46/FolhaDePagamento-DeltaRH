@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
@@ -9,25 +9,22 @@
     font-family: 'Poppins';
 }
 
-body{
+body {
     overflow: hidden;
-    height: 100vh;
     background: linear-gradient(140deg, #71C1FE, #954AFF);
 }
 
-main{
+main {
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#container-view{
+#container-view {
     display: flex;
     gap: 25px;
-
     padding: 20px;
     background-color: white;
     width: 95%;
@@ -35,58 +32,62 @@ main{
     border-radius: 20px;
 }
 
-#container-abas{
+/* Container onde ficam as opções de visualização, sendo aprovações ou informações */
+
+#container-abas {
     background-color: #493CE4;
     width: 40%;
     border-radius: 20px;
-
     display: flex;
     flex-direction: column;
-
     padding: 30px 0;
     gap: 1px;
     transition: 0.3s;
-    
 }
 
-.botao{
+.botao {
     font-size: 22px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     padding: 10px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.botao:hover{
-    border: 1px solid black;
-    transition: 0.3s;
-    background-color: #71C1FE;
+    .botao:hover {
+        transition: 0.3s;
+        background-color: #ffffff;
+    }
+
+.botao-ativo {
+    background-color: white;
+    text-align: end;
 }
 
-.container-infos-missao{
+/*Container da visualização das informações, sendo nome, endereço, entre outros*/
+
+.container-infos-missao {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     width: 99%;
 }
 
-.form-infos-gerais{
+.form-infos-gerais {
     display: flex;
     gap: 35px;
 }
 
-.sec-info1, .sec-info2{
+.sec-info1, .sec-info2 {
     width: 47%;
     display: flex;
     flex-direction: column;
 }
 
-section > label{
+section > label {
     padding-left: 15px;
 }
 
-input{
+input {
     background-color: rgb(212, 212, 212);
     border: none;
     outline: none;
@@ -97,13 +98,12 @@ input{
 }
 
 
-
-.txbox-missao, .txbox-politica{
+.txbox-missao, .txbox-politica {
     display: flex;
     flex-direction: column;
 }
 
-textarea{
+textarea {
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;
@@ -112,10 +112,65 @@ textarea{
     height: 140px;
 }
 
-.container-aprovacoes{
+
+/*Container da visualização das aprovações, sendo uma tabela com todas que tem*/
+
+.container-aprovacoes {
+    margin-top: 20px;
     width: 99%;
 }
 
-.sumiu{
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.container-tabela {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.tabela-aprovacoes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* cabeçalho da tabela */
+#cabecalho-tabela {
+    background-color: #f5f5f5;
+}
+
+    #cabecalho-tabela th {
+        background-color: #d1d1d1;
+        ;
+        padding: 10px;
+        text-align: left;
+        font-weight: bold;
+        border: 1px solid #ccc;
+    }
+
+/* linhas da tabela */
+#conteudo-tabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#conteudo-tabela td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+    /* links de ação na última coluna */
+    #conteudo-tabela td a {
+        text-decoration: none;
+        color: #007bff; /* Cor do link */
+    }
+
+        #conteudo-tabela td a:hover {
+            text-decoration: underline;
+        }
+
+
+.sumiu {
     display: none;
 }
