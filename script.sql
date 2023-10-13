@@ -88,6 +88,7 @@ CREATE TABLE [dbo].[tbl_folhadepagamento](
 	[salario_liq] [decimal](12, 2) NOT NULL,
 	[periodo_inicio] [date] NOT NULL,
 	[periodo_fim] [date] NOT NULL,
+	[status_folha] [varchar](15) NOT NULL,
 	[id_empresa] [int] NOT NULL,
 	CONSTRAINT FK_folhadepagamento_empresa FOREIGN KEY (id_empresa) 
 	REFERENCES tbl_empresa(id_empresa));
