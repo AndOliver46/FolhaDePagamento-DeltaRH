@@ -81,6 +81,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 /****** Object:  Table [dbo].[tbl_FolhadePgt]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_folhadepagamento](
 	[id_folhadepagamento] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[doc_folhadepagamento] VARBINARY(MAX),
 	[valor_folhafinal] [decimal](12, 2) NOT NULL,
 	[valor_desc_total] [decimal](12, 2) NOT NULL,
 	[horas_trab] [decimal](5, 2) NOT NULL,
