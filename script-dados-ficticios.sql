@@ -1,4 +1,4 @@
-USE DB_DELTA
+USE BD_DELTA
 
 INSERT INTO [dbo].[tbl_missaovisaovalores] ([descricao])
 VALUES
