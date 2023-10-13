@@ -12,20 +12,19 @@ namespace delta_controle
     {
         private string conexao = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
 
-        public bool AlterarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa, mdlSetor setor)
+        public bool AlterarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa)
         {
             try
             {
                 int IdMissaoVisaoValores;
                 int IdPoliticaDisciplinar;
-                int idInserido;
 
                 using (SqlConnection conexaodb = new SqlConnection(conexao))
                 {
                     conexaodb.Open();
 
 
-                    string query = "UPDATE tbl_missaovisaovalores SET descricao = @descricao WHERE id_missaovisaovalores = @id_missao";
+                    string query = "UPDATE tbl_missaovisaovalores SET descricao = @descricao WHERE id_missaovisaovalores = @id_missaovisaovalores";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb); //instanciando
 
@@ -40,7 +39,7 @@ namespace delta_controle
                 {
                     conexaodb.Open();
 
-                    string query = "UPDATE tbl_politicadisciplinar SET descricao = @descricao WHERE id_politicadisciplinar = @id_politica";
+                    string query = "UPDATE tbl_politicadisciplinar SET descricao = @descricao WHERE id_politicadisciplinar = @id_politicadisciplinar";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb); //instanciando
 
@@ -60,7 +59,7 @@ namespace delta_controle
             senha = @senha, 
             razao_social = @razao_social, 
             cnpj = @cnpj, 
-            nome_responsavel = nome_responsavel, 
+            nome_responsavel = @nome_responsavel, 
             cpf_responsavel = @cpf_responsavel, 
             logradouro = @logradouro, 
             numero = @numero, 
@@ -75,10 +74,11 @@ namespace delta_controle
             status = @status,
             id_missaovisaovalores = @id_missaovisaovalores, 
             id_politicadisciplinar = @id_politicadisciplinar
-            WHERE cnpj = @cnpj";
+            WHERE id_empresa = @id_empresa";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
 
+                    cmd.Parameters.AddWithValue("@id_empresa", empresa.id);
                     cmd.Parameters.AddWithValue("@senha", empresa.senha);
                     cmd.Parameters.AddWithValue("@razao_social", empresa.razao);
                     cmd.Parameters.AddWithValue("@cnpj", empresa.cnpj);
@@ -99,18 +99,6 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@id_politicadisciplinar", IdPoliticaDisciplinar);
 
                     Int32 idInseriro = cmd.ExecuteNonQuery();
-                }
-                using (SqlConnection conexaodb = new SqlConnection(conexao))
-                {
-                    conexaodb.Open();
-
-                    string query = "UPDATE tbl_setor SET nome_setor = @nome_setor, id_empresa = @id_empresa WHERE id_empresa = @id_empresa";
-                    SqlCommand cmd = new SqlCommand(query, conexaodb); //instanciando
-
-                    cmd.Parameters.AddWithValue("@nome_setor", setor.nome);
-                    cmd.Parameters.AddWithValue("@id_empresa", empresa.id);
-
-                    Int32 recordsAffected = cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)

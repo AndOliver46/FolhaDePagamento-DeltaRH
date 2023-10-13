@@ -109,6 +109,8 @@ namespace deltarh
                         cadastro.txtCnpj.Text = cnpj;
                         cadastro.ObterCnpj();
                         cadastro.editar();
+                        cadastro.btnSalvar.Visible = false;
+                        cadastro.btnCadastrar.Visible = true;
                         cadastro.ShowDialog();
                     }
                 }

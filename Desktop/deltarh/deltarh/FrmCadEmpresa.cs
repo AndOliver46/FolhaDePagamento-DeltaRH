@@ -72,6 +72,7 @@ namespace deltarh
                 txtEmail.Text = empresa.email;
                 txtSenha.Text = empresa.senha;
 
+                txtRazaoSocial.Enabled = false;
                 txtUsuario.Text = txtCnpj.Text;
 
                 ListarSetores();
@@ -91,10 +92,10 @@ namespace deltarh
             gboxCadastro.Enabled = true;
             gboxEdita.Enabled = true;
             txtFantasia.Enabled = true;
+            txtCnpj.Enabled = false;
             btnSalvar.Visible = true;
             btnLimpar.Visible = true;
             btnCancelar.Visible = true;
-            btnBuscar.Visible = true;
             btnOk.Visible = false;
             btnEditar.Visible = false;
             btnConsultaCnpj.Visible = false;
@@ -111,16 +112,6 @@ namespace deltarh
         {
             FrmCadDp dp = new FrmCadDp();
             dp.ShowDialog();
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            DialogResult resposta = MessageBox.Show("Deseja Importar Todos os Dados da Base da Receita Federal?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resposta == DialogResult.Yes)
-            {
-                ObterCnpj();
-            }
         }
 
         public void ObterCnpj()
@@ -181,63 +172,51 @@ namespace deltarh
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            AlteraBanco altera = new AlteraBanco();
 
+            mdlEmpresa empresa = new mdlEmpresa();
             mdlMissao missao = new mdlMissao();
             mdlPolitica politica = new mdlPolitica();
-            mdlEmpresa empresa = new mdlEmpresa();
-            mdlSetor setor = new mdlSetor();
-            string nomeSetor = "Geral";
 
+            empresa.id = Convert.ToInt32(txtCodId.Text);
+
+            missao.descricao = txtMissao.Text;
+            politica.descricao = txtPolitica.Text;
+
+            empresa.razao = txtRazaoSocial.Text;
+            empresa.cnpj = txtCnpj.Text;
+            empresa.responsavel = txtNome.Text; ;
+            empresa.cpf = txtCpf.Text;
+            empresa.logradouro = txtLogradouro.Text;
+            empresa.numero = txtNumero.Text;
+            empresa.complemento = txtComplemento.Text;
+            empresa.bairro = txtBairro.Text;
+            empresa.cep = txtCep.Text;
+            empresa.cidade = txtCidade.Text;
+            empresa.uf = txtUf.Text;
+            empresa.fone1 = txtTelefone1.Text;
+            empresa.fone2 = txtTelefone2.Text;
+            empresa.email = txtEmail.Text;
+            empresa.senha = txtSenha.Text;
+            empresa.status = txtStatus.Text;
             try
             {
-                missao.descricao = txtMissao.Text;
-                politica.descricao = txtPolitica.Text;
-
-                empresa.razao = txtRazaoSocial.Text;
-                empresa.cnpj = txtCnpj.Text;
-                empresa.responsavel = txtNome.Text; ;
-                empresa.cpf = txtCpf.Text;
-                empresa.logradouro = txtLogradouro.Text;
-                empresa.numero = txtNumero.Text;
-                empresa.complemento = txtComplemento.Text;
-                empresa.bairro = txtBairro.Text;
-                empresa.cep = txtCep.Text;
-                empresa.cidade = txtCidade.Text;
-                empresa.uf = txtUf.Text;
-                empresa.fone1 = txtTelefone1.Text;
-                empresa.fone2 = txtTelefone2.Text;
-                empresa.email = txtEmail.Text;
-                empresa.senha = txtSenha.Text;
-
-                setor.nome = nomeSetor;
-
-                if(txtStatus.Text == "")
+                bool alterado = altera.AlterarEmpresa(missao, politica, empresa);
+                if (alterado)
                 {
-                    empresa.status = "PENDENTE";
+                    MessageBox.Show("Cadastro Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    empresa.status = txtStatus.Text;
+                    MessageBox.Show("NÃO CADASTRADO.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                Conexao conecta = new Conexao();
-
-                conecta.CadastrarEmpresa(missao, politica, empresa, setor);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
-            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Nova Empresa?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            if (resposta == DialogResult.Yes)
-            {
-                limparCadastro();
-            }
-            else
-            {
-                Close();
-            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -298,11 +277,71 @@ namespace deltarh
 
             try
             {
-                this.tbl_setorTableAdapter.Setor(this.bD_DELTADataSet2.tbl_setor, ((int)(System.Convert.ChangeType(txtCodId.Text, typeof(int)))));
+                this.tbl_setorTableAdapter.Setor(this.bD_DELTADataSet2.tbl_setor, (int)System.Convert.ChangeType(txtCodId.Text, typeof(int)));
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            mdlMissao missao = new mdlMissao();
+            mdlPolitica politica = new mdlPolitica();
+            mdlEmpresa empresa = new mdlEmpresa();
+            mdlSetor setor = new mdlSetor();
+            string nomeSetor = "Geral";
+
+            try
+            {
+                missao.descricao = txtMissao.Text;
+                politica.descricao = txtPolitica.Text;
+
+                empresa.razao = txtRazaoSocial.Text;
+                empresa.cnpj = txtCnpj.Text;
+                empresa.responsavel = txtNome.Text; ;
+                empresa.cpf = txtCpf.Text;
+                empresa.logradouro = txtLogradouro.Text;
+                empresa.numero = txtNumero.Text;
+                empresa.complemento = txtComplemento.Text;
+                empresa.bairro = txtBairro.Text;
+                empresa.cep = txtCep.Text;
+                empresa.cidade = txtCidade.Text;
+                empresa.uf = txtUf.Text;
+                empresa.fone1 = txtTelefone1.Text;
+                empresa.fone2 = txtTelefone2.Text;
+                empresa.email = txtEmail.Text;
+                empresa.senha = txtSenha.Text;
+
+                setor.nome = nomeSetor;
+
+                if (txtStatus.Text == "")
+                {
+                    empresa.status = "PENDENTE";
+                }
+                else
+                {
+                    empresa.status = txtStatus.Text;
+                }
+
+                Conexao conecta = new Conexao();
+
+                conecta.CadastrarEmpresa(missao, politica, empresa, setor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Nova Empresa?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resposta == DialogResult.Yes)
+            {
+                limparCadastro();
+            }
+            else
+            {
+                Close();
             }
         }
     }

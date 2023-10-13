@@ -114,7 +114,6 @@ namespace deltarh
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -132,6 +131,7 @@ namespace deltarh
             this.tbl_setorTableAdapter = new deltarh.BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter();
             this.idsetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomesetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.pgEndereco.SuspendLayout();
             this.gboxEndereco.SuspendLayout();
@@ -164,7 +164,6 @@ namespace deltarh
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Enabled = false;
             this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRazaoSocial.Location = new System.Drawing.Point(148, 70);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
@@ -1090,24 +1089,12 @@ namespace deltarh
             this.label4.TabIndex = 10;
             this.label4.Text = "Situação Cadastral";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(399, 29);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(90, 30);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Visible = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(713, 511);
+            this.btnSalvar.Location = new System.Drawing.Point(702, 511);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 30);
+            this.btnSalvar.Size = new System.Drawing.Size(89, 30);
             this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -1140,9 +1127,9 @@ namespace deltarh
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(713, 511);
+            this.btnOk.Location = new System.Drawing.Point(702, 511);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 30);
+            this.btnOk.Size = new System.Drawing.Size(89, 30);
             this.btnOk.TabIndex = 14;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -1163,7 +1150,7 @@ namespace deltarh
             // btnConsultaCnpj
             // 
             this.btnConsultaCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaCnpj.Location = new System.Drawing.Point(399, 29);
+            this.btnConsultaCnpj.Location = new System.Drawing.Point(388, 28);
             this.btnConsultaCnpj.Name = "btnConsultaCnpj";
             this.btnConsultaCnpj.Size = new System.Drawing.Size(90, 30);
             this.btnConsultaCnpj.TabIndex = 16;
@@ -1253,24 +1240,36 @@ namespace deltarh
             this.nomesetorDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomesetorDataGridViewTextBoxColumn.Width = 210;
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(702, 511);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(89, 30);
+            this.btnCadastrar.TabIndex = 23;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Visible = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
             // FrmCadEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 553);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnConsultaCnpj);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -1332,7 +1331,6 @@ namespace deltarh
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtLogradouro;
@@ -1348,7 +1346,6 @@ namespace deltarh
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblEmail;
@@ -1421,5 +1418,7 @@ namespace deltarh
         private BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter tbl_setorTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idsetorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomesetorDataGridViewTextBoxColumn;
+        public System.Windows.Forms.Button btnSalvar;
+        public System.Windows.Forms.Button btnCadastrar;
     }
 }
