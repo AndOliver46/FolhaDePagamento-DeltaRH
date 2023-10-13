@@ -18,7 +18,7 @@ using System.Data.SqlClient;
 public class LoginController : Controller
 {
 
-    public string consulta = @"Data Source=DESKTOP-TJ31DK7\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
+    public string consulta = @"Data Source=localhost; Initial Catalog=BD_DELTA; User Id=admin; Password=admin; TrustServerCertificate=True";
 
     private readonly ILogger<LoginController> _logger;
 

@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace DeltaRHWebSite.Controllers.Mobile
 {
-    [Authorize]
+    [Authorize("AuthorizedUsers")]
     [ApiController]
     [Route("api/v1/mobile")]
     public class MobileController : ControllerBase
@@ -54,6 +54,36 @@ namespace DeltaRHWebSite.Controllers.Mobile
             ICollection<HoleriteDTO> holerites = _holeriteService.BuscarHoleritesColaborador(id);
 
             return Ok(holerites);
+        }
+
+        [HttpPost("registrar-ponto")]
+        public IActionResult RegistrarPonto([FromBody] TipoPontoDTO tipo_ponto)
+        {
+            if (tipo_ponto == null)
+            {
+                return BadRequest("Erro ao registrar ponto, tente novamente.");
+            }
+
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            PontoEletronicoDTO pontoEletronicoDTO = _pontoEletronicoService.SalvarPonto(id, tipo_ponto.tipo_ponto);
+
+            return Ok(pontoEletronicoDTO);
+        }
+
+        [HttpPost("registrar-justificativa")]
+        public IActionResult RegistrarJustificativa([FromBody] JustificativaDTO justificativaDTO)
+        {
+            if (justificativaDTO == null)
+            {
+                return BadRequest("Erro ao registrar justificativa, tente novamente.");
+            }
+
+            string id = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            PontoEletronicoDTO pontoEletronicoDTO = _pontoEletronicoService.RegistrarJustificativa(id, justificativaDTO);
+
+            return Ok(pontoEletronicoDTO);
         }
     }
 }

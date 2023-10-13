@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:padding="24dp"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText, RtlHardcoded">
+
+    <TextView
+        android:id="@+id/text_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="Registrar Ponto"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="46dp"
+        android:background="@drawable/ico_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_registrar" />
+
+    <TextView
+        android:id="@+id/text_hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_data" />
+
+    <TableLayout
+        android:id="@+id/table_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="30dp"
+        android:stretchColumns="*"
+        app:layout_constraintTop_toBottomOf="@+id/text_hora">
+
+        <!-- Linha 1 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/entrada_button"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:paddingBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:drawableBottom="@drawable/ico_enter"
+                android:text="Entrada"
+                android:textSize="20sp"
+                android:enabled="false"
+                app:cornerRadius="0dp"
+                app:backgroundTint="#618DFF"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pausa_button"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:paddingBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:drawableBottom="@drawable/ico_lunch_start"
+                android:text="Pausa"
+                android:textSize="20sp"
+                android:enabled="false"
+                app:cornerRadius="0dp"
+                app:backgroundTint="#618DFF"/>
+        </TableRow>
+
+        <!-- Linha 2 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/retorno_button"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:paddingBottom="30dp"
+                android:drawableBottom="@drawable/ico_lunch_return"
+                android:text="Retorno"
+                android:textSize="20sp"
+                android:enabled="false"
+                app:cornerRadius="0dp"
+                app:backgroundTint="#618DFF"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saida_button"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:paddingBottom="30dp"
+                android:drawableBottom="@drawable/ico_left"
+                android:text="Saida"
+                android:textSize="20sp"
+                android:enabled="false"
+                app:cornerRadius="0dp"
+                app:backgroundTint="#618DFF"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TextView
+        android:id="@+id/ponto_registrado_text"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Ponto registrado com sucesso"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_buttons" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

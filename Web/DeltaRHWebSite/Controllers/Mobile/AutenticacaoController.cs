@@ -34,22 +34,21 @@ namespace DeltaRHWebSite.Controllers.Mobile
             }
 
             // Verificar as credenciais (substitua isso pela sua lógica de autenticação real)
-            if (IsValidUser(credentials.CPF, credentials.Password))
+            if (IsValidUser(credentials.CPF, credentials.Password, credentials.isLogged))
             {
                 ColaboradorDTO colaboradorDTO = _colaboradorService.BuscarColaboradorPorCPF(credentials.CPF);
                 // Credenciais válidas, gerar um token JWT
                 var token = GenerateJwtToken(colaboradorDTO.cpf, colaboradorDTO.id_colaborador);
 
-                return Ok(new { Token = token });
+                return Ok(new { Token = token, message = "Login realizado com sucesso", error = false });
             }
 
-            return Unauthorized("Credenciais inválidas.");
+            return Unauthorized();
         }
 
-        private bool IsValidUser(string cpf, string password)
+        private bool IsValidUser(string cpf, string password, Boolean isLogged)
         {
-
-            return _colaboradorService.ValidarLoginPorCPF(cpf, password);
+            return _colaboradorService.ValidarLoginPorCPF(cpf, password) && isLogged;
         }
 
         private string GenerateJwtToken(string cpf, int id)

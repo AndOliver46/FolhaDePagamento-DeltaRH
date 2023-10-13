@@ -3,18 +3,20 @@ using DeltaRH.API.Infrastructure.Repositories.Interfaces;
 using DeltaRH.API.Services;
 using DeltaRHWebSite.Controllers;
 using DeltaRHWebSite.Controllers.Mobile;
-using DeltaRHWebSite.Infrastructure;
 using DeltaRHWebSite.Infrastructure.Repositories;
 using DeltaRHWebSite.Infrastructure.Repositories.Interfaces;
 using DeltaRHWebSite.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Configuration;
+using System.Net;
 using System.Text;
+using Microsoft.IdentityModel.Tokens;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var provider = builder.Services.BuildServiceProvider();
 var _configuration = provider.GetRequiredService<IConfiguration>();
+
+builder.Services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
 
 // Add services to the container.
 
@@ -28,12 +30,10 @@ builder.Services.AddTransient<MobileController>();
 builder.Services.AddTransient<ColaboradorController>();
 builder.Services.AddTransient<EmpresaController>();
 
-
 builder.Services.AddSingleton<ColaboradorService>();
 builder.Services.AddSingleton<EmpresaService>();
 builder.Services.AddSingleton<HoleriteService>();
 builder.Services.AddSingleton<PontoEletronicoService>();
-
 
 builder.Services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
 builder.Services.AddTransient<IEmpresaRepository, EmpresaRepository>();
@@ -61,16 +61,26 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AuthorizedUsers", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        // Adicione quaisquer outros requisitos de autorização aqui, se necessário.
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    // Ignorar a validação de certificados SSL em ambiente de desenvolvimento
+    ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

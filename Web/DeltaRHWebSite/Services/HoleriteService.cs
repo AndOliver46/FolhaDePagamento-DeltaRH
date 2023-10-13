@@ -17,10 +17,6 @@ namespace DeltaRHWebSite.Services
         public ICollection<HoleriteDTO> BuscarHoleritesColaborador(string? id)
         {
 
-            //ICollection<Holerite> holerites = _holeriteRepository.BuscarHoleritesDoColaborador(id);
-            //ICollection<HoleriteDTO> holeritesDTO = holerites.Select(holerite => new HoleriteDTO(holerite)).ToList();
-
-
             ICollection<Holerite> holerites = _holeriteRepository.BuscarHoleritesDoColaborador(id);
             ICollection<HoleriteDTO> holeritesDTO = holerites.Select(holerite => new HoleriteDTO(holerite)).ToList();
 

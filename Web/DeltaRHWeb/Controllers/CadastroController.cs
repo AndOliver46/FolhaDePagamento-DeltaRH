@@ -73,7 +73,7 @@ public class CadastroController : Controller
             EnderecoModel enderecoModel = JsonConvert.DeserializeObject<EnderecoModel>(enderecoModelJson);
 
 
-            string _connectionString = "Data Source=DESKTOP-TJ31DK7\\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
+            string _connectionString = "Data Source=localhost; Initial Catalog=BD_DELTA; User Id=admin; Password=admin; TrustServerCertificate=True";
             int IdMissaoVisaoValores;
             int IdPoliticaDisciplinar;
 
