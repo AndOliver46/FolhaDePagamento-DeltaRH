@@ -78,7 +78,5 @@ class MenuFragment : Fragment() {
         }
     }
 
-    companion object {
-
-    }
+    companion object
 }

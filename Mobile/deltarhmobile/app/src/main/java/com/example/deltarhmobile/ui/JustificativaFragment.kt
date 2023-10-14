@@ -168,6 +168,5 @@ class JustificativaFragment : Fragment() {
         pickFileLauncher.launch(intent)
     }
 
-    companion object {
-    }
+    companion object
 }

@@ -135,7 +135,5 @@ class PontoFragment : Fragment() {
         }
     }
 
-    companion object {
-
-    }
+    companion object
 }

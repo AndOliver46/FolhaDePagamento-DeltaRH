@@ -75,6 +75,5 @@ class HoleriteFragment : Fragment() {
 
 
 
-    companion object {
-    }
+    companion object
 }
