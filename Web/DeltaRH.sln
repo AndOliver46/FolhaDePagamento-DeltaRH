@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaRH.API", "DeltaRHWebSite\DeltaRH.API.csproj", "{3316E49A-61F2-42D9-BF84-57928BBBB2AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaRHWeb", "DeltaRHWeb\DeltaRHWeb.csproj", "{CD0543BA-C83D-4D31-9732-4FAE01D16566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3316E49A-61F2-42D9-BF84-57928BBBB2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3316E49A-61F2-42D9-BF84-57928BBBB2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3316E49A-61F2-42D9-BF84-57928BBBB2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3316E49A-61F2-42D9-BF84-57928BBBB2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD0543BA-C83D-4D31-9732-4FAE01D16566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0543BA-C83D-4D31-9732-4FAE01D16566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0543BA-C83D-4D31-9732-4FAE01D16566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0543BA-C83D-4D31-9732-4FAE01D16566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C040960-3FCC-439B-AA42-C65441A0B6C3}
+	EndGlobalSection
+EndGlobal

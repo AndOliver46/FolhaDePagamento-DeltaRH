@@ -1,0 +1,35 @@
+﻿@model DeltaRHWeb.Models.LoginModel
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style-login.css">
+    <title>Delta RH</title>
+</head>
+<body>
+    <main class="main">
+        <form class="container-login" action="/Login/FazerLogin" method="post">
+            <h1>LOGIN</h1>
+            
+            <div class="campos-login">
+                <label for="cnpj">CNPJ</label>
+                <input id="cnpj" type="text" name="cnpj" asp-for="cnpj" placeholder="CNPJ" required>
+            </div>
+            <div class="campos-login">
+                <label for="password">Senha</label>
+                <input id="password" type="password" name="senha" asp-for="senha" placeholder="Senha" required>
+            </div>
+            <div class="link-registro">
+                <p>Não possui cadastro?</p><p><a href="/Cadastro/CadastroEmpresa">Clique aqui</a></p>
+            </div>
+            <p id="paragrafo-erro" style="color: red; display: none; font-family: 'Poppins';">Cnpj ou senha incorreto</p>
+            <button type="submit" class="btn-login" value="Enviar">ENTRAR</button>
+        </form>
+    </main>
+    <script src="~/js/script-login.js"></script>
+</body>
+</html>
+

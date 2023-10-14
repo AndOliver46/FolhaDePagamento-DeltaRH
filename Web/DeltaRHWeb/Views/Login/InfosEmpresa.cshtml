@@ -1,0 +1,89 @@
+﻿@model DeltaRHWeb.Models.EmpresaModel
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style-view.css">
+    <title>Delta RH</title>
+</head>
+<body>
+    <main>
+        <div id="container-view">
+            <div id="container-abas">
+                <a class="botao botao-infos">Informações da empresa</a>
+                <a class="botao botao-aprovacoes">Aprovações</a>
+            </div>
+            <div class="container-infos-missao">
+                <h2>Informações da empresa</h2>
+                <div class="container-infos-gerais">
+                    <form class="form-infos-gerais">
+                        <section class="sec-info1">
+                            <label for="razao_social">Razão Social</label>
+                            <input id="razao_social" value="@Model.RazaoSocial" type="text" name="Razao-Social" readonly>
+                            <label for="Telefone">Telefone</label>
+                            <input id="Telefone" value="@Model.Telefone" type="text" name="Telefone" readonly>
+                            <label for="Celular">Celular</label>
+                            <input id="Celular" value="@Model.Telefone2" type="text" name="Celular" readonly>
+                        </section>
+
+                        <section class="sec-info2">
+                            <label for="cidade">Cidade</label>
+                            <input id="cidade" value="@Model.Cidade" type="text" name="cidade" readonly>
+                            <label for="logradouro">Logradouro</label>
+                            <input id="logradouro" value="@Model.Logradouro, @Model.Numero" type="text" name="logradouro" readonly>
+                            <label for="Numero">Numero</label>
+                            <input id="Numero" value="@Model.Numero" type="text" name="Numero" readonly>
+                        </section>
+                    </form>
+                </div>
+                <div class="txbox-missao">
+                    <label for="texto">Missão, visão e valores</label>
+                    <textarea id="texto" cols="30" rows="5" readonly wrap="hard">@Model.descricao_missao</textarea>
+                </div>
+                <div class="txbox-politica">
+                    <label for="texto">Politica Disciplinar</label>
+                    <textarea id="texto" cols="30" rows="5" readonly wrap="hard">@Model.descricao_politica</textarea>
+                </div>
+            </div>
+            <div class="container-aprovacoes sumiu">
+                <h2>Aprovações</h2>
+                <div class="container-tabela">
+                    <table class="tabela-aprovacoes" border="1">
+                        <thead id="cabecalho-tabela">
+                            <th>Folha</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th>Salario liquido</th>
+                            <th>Valor total de desc.</th>
+                            <th>Valor final</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody id="conteudo-tabela">
+                            
+                            @foreach (var objeto in Model.Lista_folha)
+                            {
+                                <tr>
+                                    <td><a href="/Login/DownloadDocumento/@objeto.id_folha" target="_blank">Icone</a></td>
+                                    <td>@objeto.Periodo_inicio.ToShortDateString()</td>
+                                    <td>@objeto.Periodo_fim.ToShortDateString()</td>
+                                    <td>@objeto.Valor_liq_final</td>
+                                    <td>@objeto.Valor_desconto_final</td>
+                                    <td>@objeto.Valor_final</td>
+                                    <td>@objeto.Status</td>
+                                    <td>Y / N</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/js/script-view.js"></script>
+</body>
+</html>
