@@ -22,6 +22,7 @@
         public decimal total_vencimentos { get; set; }
         public decimal total_descontos { get; set; }
         public decimal salario_liq { get; set; }
+        public string mes_ano_ref { get; set; }
 
         public HoleriteDTO(Holerite model)
         {
@@ -45,6 +46,7 @@
             total_vencimentos = model.total_vencimentos;
             total_descontos = model.total_descontos;
             salario_liq = model.salario_liq;
+            mes_ano_ref = model.mes_ano_ref;
         }
     }
 }

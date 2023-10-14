@@ -1,5 +1,6 @@
 package com.example.deltarhmobile.retrofit.api
 
+import com.example.deltarhmobile.retrofit.model.HoleriteModel
 import com.example.deltarhmobile.retrofit.model.JustificativaModel
 import com.example.deltarhmobile.retrofit.model.PontoModel
 import com.example.deltarhmobile.retrofit.model.TipoPonto
@@ -27,4 +28,7 @@ interface UserAPI {
 
     @POST("/api/v1/mobile/registrar-justificativa")
     fun registrarJustificativa(@Body justificativaModel: JustificativaModel) : Call<PontoModel>
+
+    @GET("/api/v1/mobile/carregar-holerites")
+    fun carregarHolerites() : Call<List<HoleriteModel>>
 }

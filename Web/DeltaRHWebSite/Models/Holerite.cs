@@ -26,6 +26,7 @@ namespace DeltaRHWebSite.Models
         public decimal total_vencimentos { get; set; }
         public decimal total_descontos { get; set; }
         public decimal salario_liq { get; set; }
+        public string mes_ano_ref { get; set; }
 
         //Associacoes
         public int id_folhadepagamento { get; set; }

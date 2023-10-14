@@ -65,7 +65,10 @@ class MenuFragment : Fragment() {
             (activity as NavigationHost).navigateTo(JustificativaFragment(), true)
         }
 
-        //outros botoes
+        val holeritesButton = view.findViewById<Button>(R.id.holerites_button)
+        holeritesButton.setOnClickListener{
+            (activity as NavigationHost).navigateTo(HoleriteFragment(), true)
+        }
 
         val logoutButton = view.findViewById<Button>(R.id.logout_button)
         logoutButton.setOnClickListener{
