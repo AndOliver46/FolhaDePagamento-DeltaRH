@@ -86,38 +86,38 @@ VALUES
 INSERT INTO [dbo].[tbl_colaborador] (
   [nome], [data_nascimento], [cpf], [tipo_contrato], [salario_bruto], [senha],
   [carga_horaria], [logradouro], [numero], [complemento], [bairro], [cep], [cidade], [uf],
-  [telefone], [telefone2], [email], [id_setor])
+  [telefone], [telefone2], [email], [id_setor], [horas_banco], [cargo])
 VALUES
   ('Colaborador 1', '1990-01-01', '12345678901', 'Contrato 1', 3500.00, 'senha1',
    40, 'Rua A', '101', NULL, 'Bairro 1', '12345-678', 'Cidade 1', 'UF1',
-   '123-456-7890', '987-654-3210', 'colaborador1@email.com', 1),
+   '123-456-7890', '987-654-3210', 'colaborador1@email.com', 1, 0.0, 'Analista'),
   ('Colaborador 2', '1985-02-15', '23456789012', 'Contrato 2', 4200.00, 'senha2',
    35, 'Rua B', '202', 'Complemento 2', 'Bairro 2', '23456-789', 'Cidade 2', 'UF2',
-   '234-567-8901', '876-543-2109', 'colaborador2@email.com', 2),
+   '234-567-8901', '876-543-2109', 'colaborador2@email.com', 2, 0.0, 'Analista'),
   ('Colaborador 3', '1993-03-25', '34567890123', 'Contrato 3', 3800.00, 'senha3',
    38, 'Rua C', '303', NULL, 'Bairro 3', '34567-890', 'Cidade 3', 'UF3',
-   '345-678-9012', '765-432-1098', 'colaborador3@email.com', 3),
+   '345-678-9012', '765-432-1098', 'colaborador3@email.com', 3, 0.0, 'Analista'),
   ('Colaborador 4', '1988-04-10', '45678901234', 'Contrato 1', 3200.00, 'senha4',
    40, 'Rua D', '404', 'Complemento 4', 'Bairro 4', '45678-901', 'Cidade 4', 'UF4',
-   '456-789-0123', '654-321-0987', 'colaborador4@email.com', 4),
+   '456-789-0123', '654-321-0987', 'colaborador4@email.com', 4, 0.0, 'Analista'),
   ('Colaborador 5', '1995-05-20', '56789012345', 'Contrato 2', 4000.00, 'senha5',
    35, 'Rua E', '505', NULL, 'Bairro 5', '56789-012', 'Cidade 5', 'UF5',
-   '567-890-1234', '543-210-9876', 'colaborador5@email.com', 5),
+   '567-890-1234', '543-210-9876', 'colaborador5@email.com', 5, 0.0, 'Analista'),
   ('Colaborador 6', '1992-06-30', '67890123456', 'Contrato 3', 3600.00, 'senha6',
    38, 'Rua F', '606', 'Complemento 6', 'Bairro 6', '67890-123', 'Cidade 6', 'UF6',
-   '678-901-2345', '432-109-8765', 'colaborador6@email.com', 6),
+   '678-901-2345', '432-109-8765', 'colaborador6@email.com', 6, 0.0, 'Analista'),
   ('Colaborador 7', '1991-07-05', '78901234567', 'Contrato 1', 3300.00, 'senha7',
    40, 'Rua G', '707', NULL, 'Bairro 7', '78901-234', 'Cidade 7', 'UF7',
-   '789-012-3456', '321-098-7654', 'colaborador7@email.com', 7),
+   '789-012-3456', '321-098-7654', 'colaborador7@email.com', 7, 0.0, 'Analista'),
   ('Colaborador 8', '1987-08-15', '89012345678', 'Contrato 2', 4100.00, 'senha8',
    35, 'Rua H', '808', 'Complemento 8', 'Bairro 8', '89012-345', 'Cidade 8', 'UF8',
-   '890-123-4567', '210-987-6543', 'colaborador8@email.com', 8),
+   '890-123-4567', '210-987-6543', 'colaborador8@email.com', 8, 0.0, 'Analista'),
   ('Colaborador 9', '1994-09-22', '90123456789', 'Contrato 3', 3700.00, 'senha9',
    38, 'Rua I', '909', NULL, 'Bairro 9', '90123-456', 'Cidade 9', 'UF9',
-   '901-234-5678', '098-765-4321', 'colaborador9@email.com', 9),
+   '901-234-5678', '098-765-4321', 'colaborador9@email.com', 9, 0.0, 'Analista'),
   ('Colaborador 10', '1986-10-03', '01234567890', 'Contrato 1', 3400.00, 'senha10',
    40, 'Rua J', '1010', 'Complemento 10', 'Bairro 10', '01234-567', 'Cidade 10', 'UF10',
-   '012-345-6789', '987-654-3210', 'colaborador10@email.com', 10);
+   '012-345-6789', '987-654-3210', 'colaborador10@email.com', 10, 0.0, 'Analista');
 INSERT INTO [dbo].[tbl_folhadepagamento] (
   [doc_folhadepagamento], [valor_folhafinal], [valor_desc_total], [horas_trab], [salario_liq],
   [periodo_inicio], [periodo_fim], [status_folha], [id_empresa])
@@ -146,19 +146,19 @@ VALUES
   ('2023-08-01', '2023-08-31', 3760.00, 350.00, 140.00, 3760.00, 8, 8),
   ('2023-08-01', '2023-08-31', 3380.00, 320.00, 152.00, 3380.00, 9, 9),
   ('2023-08-01', '2023-08-31', 3120.00, 280.00, 160.00, 3120.00, 10, 10);
-INSERT INTO [dbo].[tbl_holerite] (
-  [horas_trab], [valor_desc_total], [salario_liq], [id_folhadepagamento], [id_colaborador])
-VALUES
-  (160.00, 30.00, 3200.00, 1, 1),
-  (140.00, 35.00, 3850.00, 2, 2),
-  (152.00, 32.00, 3480.00, 3, 3),
-  (160.00, 28.00, 2920.00, 4, 4),
-  (136.00, 34.00, 3660.00, 5, 5),
-  (156.00, 31.00, 3290.00, 6, 6),
-  (160.00, 29.00, 3010.00, 7, 7),
-  (140.00, 35.00, 3760.00, 8, 8),
-  (152.00, 32.00, 3380.00, 9, 9),
-  (160.00, 28.00, 3120.00, 10, 10);
+INSERT INTO [dbo].[tbl_holerite] (nome_empresa, cnpj_empresa, periodo_inicio, periodo_fim, id_folhadepagamento, id_colaborador, nome_colaborador, cargo_colaborador, horas_trab, porcentagem_vt, porcentagem_vr, porcentagem_assis_odonto, porcentagem_assis_medica, porcentagem_adiantamento, horas_extras, salario_base, total_vencimentos, total_descontos, salario_liq)
+VALUES 
+('Empresa A', '1234567890', '2023-01-01', '2023-01-15', 1, 1, 'Colaborador 1', 'Cargo 1', 160.50, 6.0, 7.5, 2.0, 3.0, 5.0, '02:30:00', 3000.00, 3000.00, 500.00, 2500.00),
+('Empresa B', '9876543210', '2023-01-01', '2023-01-15', 2, 2, 'Colaborador 2', 'Cargo 2', 140.25, 5.5, 6.0, 1.5, 2.5, 4.5, '01:45:00', 3000.00, 2500.00, 400.00, 2100.00),
+('Empresa C', '5555555555', '2023-01-16', '2023-01-31', 3, 3, 'Colaborador 3', 'Cargo 3', 145.75, 5.0, 6.5, 2.5, 2.0, 4.0, '02:15:00', 3000.00, 2800.00, 450.00, 2350.00),
+('Empresa D', '1111111111', '2023-01-16', '2023-01-31', 4, 4, 'Colaborador 4', 'Cargo 4', 152.00, 6.5, 7.0, 3.0, 2.5, 5.5, '02:00:00', 3000.00, 3200.00, 500.00, 2700.00),
+('Empresa E', '2222222222', '2023-02-01', '2023-02-15', 5, 5, 'Colaborador 5', 'Cargo 5', 160.50, 6.0, 7.5, 2.0, 3.0, 5.0, '02:30:00', 3000.00, 3000.00, 500.00, 2500.00),
+('Empresa F', '3333333333', '2023-02-01', '2023-02-15', 6, 6, 'Colaborador 6', 'Cargo 6', 140.25, 5.5, 6.0, 1.5, 2.5, 4.5, '01:45:00', 3000.00, 2500.00, 400.00, 2100.00),
+('Empresa G', '4444444444', '2023-02-16', '2023-02-28', 7, 7, 'Colaborador 7', 'Cargo 7', 145.75, 5.0, 6.5, 2.5, 2.0, 4.0, '02:15:00', 3000.00, 2800.00, 450.00, 2350.00),
+('Empresa H', '5555555555', '2023-02-16', '2023-02-28', 8, 8, 'Colaborador 8', 'Cargo 8', 152.00, 6.5, 7.0, 3.0, 2.5, 5.5, '02:00:00', 3000.00, 3200.00, 500.00, 2700.00),
+('Empresa I', '6666666666', '2023-03-01', '2023-03-15', 9, 9, 'Colaborador 9', 'Cargo 9', 160.50, 6.0, 7.5, 2.0, 3.0, 5.0, '02:30:00', 3000.00, 3000.00, 500.00, 2500.00),
+('Empresa J', '7777777777', '2023-03-01', '2023-03-15', 10, 10, 'Colaborador 10', 'Cargo 10', 140.25, 5.5, 6.0, 1.5, 2.5, 4.5, '01:45:00', 3000.00, 2500.00, 400.00, 2100.00);
+
 INSERT INTO [dbo].[tbl_pontoeletronico] (
   [data], [entrada], [saida_almoco], [retorno_almoco], [saida], [tipo_justificativa],
   [descricao], [documento], [id_colaborador])
