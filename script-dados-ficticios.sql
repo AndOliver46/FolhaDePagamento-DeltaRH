@@ -146,7 +146,7 @@ VALUES
   ('2023-08-01', '2023-08-31', 3760.00, 350.00, 140.00, 3760.00, 8, 8),
   ('2023-08-01', '2023-08-31', 3380.00, 320.00, 152.00, 3380.00, 9, 9),
   ('2023-08-01', '2023-08-31', 3120.00, 280.00, 160.00, 3120.00, 10, 10);
-INSERT INTO [dbo].[tbl_holerite] (nome_empresa, cnpj_empresa, periodo_inicio, periodo_fim, id_folhadepagamento, id_colaborador, nome_colaborador, cargo_colaborador, horas_trab, porcentagem_vt, porcentagem_vr, porcentagem_assis_odonto, porcentagem_assis_medica, porcentagem_adiantamento, horas_extras, salario_base, total_vencimentos, total_descontos, salario_liq)
+INSERT INTO [dbo].[tbl_holerite] (nome_empresa, cnpj_empresa, periodo_inicio, periodo_fim, id_folhadepagamento, id_colaborador, nome_colaborador, cargo_colaborador, horas_trab, porcentagem_vt, porcentagem_vr, porcentagem_assis_odonto, porcentagem_assis_medica, porcentagem_adiantamento, horas_extras, salario_base, total_vencimentos, total_descontos, salario_liq, mes_ano_ref)
 VALUES 
 ('Empresa A', '1234567890', '2023-01-01', '2023-01-15', 1, 1, 'Colaborador 1', 'Cargo 1', 160.50, 6.0, 7.5, 2.0, 3.0, 5.0, '02:30:00', 3000.00, 3000.00, 500.00, 2500.00, '01/2023'),
 ('Empresa B', '9876543210', '2023-01-01', '2023-01-15', 2, 1, 'Colaborador 2', 'Cargo 2', 140.25, 5.5, 6.0, 1.5, 2.5, 4.5, '01:45:00', 3000.00, 2500.00, 400.00, 2100.00, '02/2023'),
