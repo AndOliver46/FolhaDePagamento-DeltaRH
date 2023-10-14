@@ -17,7 +17,7 @@ namespace DeltaRHWebSite.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost; Initial Catalog=BD_DELTA; User Id=admin; Password=admin; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True;TrustServerCertificate=Yes;");
             base.OnConfiguring(optionsBuilder);
         }
     }

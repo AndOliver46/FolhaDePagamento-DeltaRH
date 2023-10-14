@@ -23,6 +23,8 @@ namespace DeltaRHWebSite.Models.DTO
         public string? telefone2 { get; set; }
         public string? email { get; set; }
         public int id_setor { get; set; }
+        public string? cargo { get; private set; }
+        public decimal? horas_banco { get; private set; }
 
         public ColaboradorDTO(Colaborador colaborador)
         {
@@ -45,6 +47,8 @@ namespace DeltaRHWebSite.Models.DTO
             this.telefone2 = colaborador.telefone2;
             this.email = colaborador.email;
             this.id_setor = colaborador.id_setor;
+            this.cargo = colaborador.cargo;
+            this.horas_banco = colaborador.horas_banco;
         }
     }
 }

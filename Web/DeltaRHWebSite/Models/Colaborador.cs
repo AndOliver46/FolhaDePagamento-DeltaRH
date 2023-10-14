@@ -28,6 +28,8 @@ namespace DeltaRHWebSite.Models
         public string? telefone { get; private set; }
         public string? telefone2 { get; private set; }
         public string? email { get; private set; }
+        public string? cargo { get; private set; }
+        public decimal? horas_banco { get; private set; }
 
         //Associacoes
         public int id_setor { get; set; }
@@ -35,31 +37,6 @@ namespace DeltaRHWebSite.Models
         public virtual Setor? setor { get; set; }
 
         [NotMapped]
-        public virtual ICollection<Holerite>? holerites { get; set; }
-
-        public Colaborador(string? nome, DateTime? data_nascimento, string? cpf, decimal salario_bruto, string? senha, string? tipo_contrato, int carga_horaria, string? logradouro, string? numero, string? complemento, string? bairro, string? cep, string? cidade, string? uf, string? telefone, string? telefone2, string? email, int id_setor)
-        {
-            this.nome = nome;
-            this.data_nascimento = data_nascimento;
-            this.cpf = cpf;
-            this.salario_bruto = salario_bruto;
-            this.senha = senha;
-            this.tipo_contrato = tipo_contrato;
-            this.carga_horaria = carga_horaria;
-            this.logradouro = logradouro;
-            this.numero = numero;
-            this.complemento = complemento;
-            this.bairro = bairro;
-            this.cep = cep;
-            this.cidade = cidade;
-            this.uf = uf;
-            this.telefone = telefone;
-            this.telefone2 = telefone2;
-            this.email = email;
-            this.id_setor = id_setor;
-        }
-
-
-      
+        public virtual ICollection<Holerite>? holerites { get; set; } 
     }
 }

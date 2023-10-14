@@ -21,12 +21,6 @@ namespace DeltaRHWebSite.Controllers
             _colaboradorService = colaboradorService;
         }
 
-        [HttpPost]
-        public IActionResult Add(ColaboradorDTO colaboradorDTO)
-        {
-            _colaboradorService.Add(colaboradorDTO);
-            return Ok();
-        }
         [HttpGet]
         public IActionResult Get() {
        
