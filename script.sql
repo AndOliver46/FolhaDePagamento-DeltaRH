@@ -29,7 +29,6 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[telefone2] [varchar](20) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[status] [varchar](20) NOT NULL,
-	[mes_ano_ref] [varchar](25) NOT NULL,
 	[id_missaovisaovalores] [int] NOT NULL,
 	[id_politicadisciplinar] [int] NOT NULL,
 	CONSTRAINT FK_empresa_missaovisaovalores FOREIGN KEY (id_missaovisaovalores) 
@@ -134,6 +133,7 @@ CREATE TABLE [dbo].[tbl_holerite](
 	[total_vencimentos] [decimal](12, 2) NOT NULL,
 	[total_descontos] [decimal](12, 2) NOT NULL,
 	[salario_liq] [decimal](12, 2) NOT NULL,
+	[mes_ano_ref] [varchar](25) NOT NULL,
 	CONSTRAINT FK_holerite_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
 	REFERENCES tbl_folhadepagamento(id_folhadepagamento),
 	CONSTRAINT FK_holerite_colaborador FOREIGN KEY (id_colaborador) 
