@@ -1,17 +1,16 @@
 package com.example.deltarhmobile.ui
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.deltarhmobile.NavigationHost
 import com.example.deltarhmobile.R
@@ -47,6 +46,7 @@ class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -54,11 +54,11 @@ class LoginFragment : Fragment() {
 
         loginButton.setOnClickListener{
 
-            var cpfInput = view.findViewById<TextInputEditText>(R.id.cpf_edit_text)
-            var passwordInput = view.findViewById<TextInputEditText>(R.id.senha_edit_text)
+            val cpfInput = view.findViewById<TextInputEditText>(R.id.cpf_edit_text)
+            val passwordInput = view.findViewById<TextInputEditText>(R.id.senha_edit_text)
 
-            var cpf = cpfInput.text.toString().trim()
-            var password = passwordInput.text.toString().trim()
+            val cpf = cpfInput.text.toString().trim()
+            val password = passwordInput.text.toString().trim()
 
             if(cpf.isEmpty()){
                 cpfInput.error = "Insira o CPF"
@@ -72,17 +72,17 @@ class LoginFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            var userRequest = UserRequest(cpf, password, true)
+            val userRequest = UserRequest(cpf, password, true)
             val messageTextView = view.findViewById<TextView>(R.id.message_text_view)
 
             try {
                 val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
                 val call: Call<UserResponse> = userAPI.onLogin(userRequest)
                 val response: Response<UserResponse> = call.execute()
-                var responseBody = response.body()
+                val responseBody = response.body()
 
                 if(response.isSuccessful){
-                    var token = responseBody?.token
+                    val token = responseBody?.token
                     val sessionManager = SessionManager(context)
 
                     if (token != null) {
@@ -96,6 +96,21 @@ class LoginFragment : Fragment() {
             }catch (e : Exception){
                 messageTextView.text = "ERRO DE API"
             }
+        }
+
+        val esqueciSenhaButton = view.findViewById<Button>(R.id.esqueci_senha_button)
+        esqueciSenhaButton.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext())
+
+            builder.setTitle("Esqueci minha senha")
+            builder.setMessage("Entre em contato com o RH da empresa e solicite a alteração da senha!\n\nContato: (11) 91234-5678\nEmail: contato@deltarh.com.br")
+
+            builder.setPositiveButton("OK") { dialog, which ->
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
         }
 
     }
