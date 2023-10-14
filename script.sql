@@ -75,6 +75,8 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[telefone2] [varchar](15) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[id_setor] [int] NOT NULL,
+	[cargo] [varchar](50) NOT NULL,
+	[horas_banco] [decimal](5, 2) NOT NULL,
 	CONSTRAINT FK_colaborador_setor FOREIGN KEY (id_setor) 
 	REFERENCES tbl_setor(id_setor));
 
@@ -112,18 +114,31 @@ CREATE TABLE [dbo].[tbl_folhaindividual](
 /****** Object:  Table [dbo].[tbl_Holerite]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_holerite](
 	[id_holerite] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[horas_trab] [decimal](5, 2) NOT NULL,
-	[valor_desc_total] [decimal](12, 2) NOT NULL,
-	[salario_liq] [decimal](12, 2) NOT NULL,
+	[nome_empresa] [varchar](70) NOT NULL,
+	[cnpj_empresa] [varchar](20) NOT NULL,
+	[periodo_inicio] [date] NOT NULL,
+	[periodo_fim] [date] NOT NULL,
 	[id_folhadepagamento] [int] NOT NULL,
 	[id_colaborador] [int] NOT NULL,
+	[nome_colaborador] [varchar](70) NOT NULL,
+	[cargo_colaborador] [varchar](50) NOT NULL,
+	[horas_trab] [decimal](5, 2) NOT NULL,
+	[porcentagem_vt] [decimal](5, 2),
+	[porcentagem_vr] [decimal](5, 2),
+	[porcentagem_assis_odonto] [decimal](5, 2),
+	[porcentagem_assis_medica] [decimal](5, 2),
+	[porcentagem_adiantamento] [decimal](5, 2),
+	[horas_extras] [time](0),
+	[salario_base] [decimal](12, 2) NOT NULL,
+	[total_vencimentos] [decimal](12, 2) NOT NULL,
+	[total_descontos] [decimal](12, 2) NOT NULL,
+	[salario_liq] [decimal](12, 2) NOT NULL,
 	CONSTRAINT FK_holerite_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
 	REFERENCES tbl_folhadepagamento(id_folhadepagamento),
 	CONSTRAINT FK_holerite_colaborador FOREIGN KEY (id_colaborador) 
 	REFERENCES tbl_colaborador(id_colaborador));
 
 /****** Object:  Table [dbo].[tbl_PontoEletronico]    Script Date: 31/08/2023 21:30:24 ******/
-
 CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[id_pontoeletronico] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[data] [datetime] NOT NULL,
@@ -139,9 +154,9 @@ CREATE TABLE [dbo].[tbl_pontoeletronico](
 	REFERENCES tbl_colaborador(id_colaborador));
 
 /****** Object:  Table [dbo].[tbl_UsuarioRH]    Script Date: 31/08/2023 21:30:24 ******/
-
-CREATE TABLE [dbo].[tbl_usuariodesktop](
+/*CREATE TABLE [dbo].[tbl_usuariodesktop](
 	[id_acesso] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[nome] [varchar](40) NOT NULL,
 	[senha] [varchar](16) NOT NULL,
 	[tipo_acesso] [varchar](10) NOT NULL);
+*/
