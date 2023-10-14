@@ -29,6 +29,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[telefone2] [varchar](20) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[status] [varchar](20) NOT NULL,
+	[mes_ano_ref] [varchar](25) NOT NULL,
 	[id_missaovisaovalores] [int] NOT NULL,
 	[id_politicadisciplinar] [int] NOT NULL,
 	CONSTRAINT FK_empresa_missaovisaovalores FOREIGN KEY (id_missaovisaovalores) 
