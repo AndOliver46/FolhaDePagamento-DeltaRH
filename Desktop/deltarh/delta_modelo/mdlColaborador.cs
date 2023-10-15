@@ -13,7 +13,7 @@ namespace delta_modelo
         public DateTime nascimento { get; set; }
         public string cpf { get; set; }
         public string contrato { get; set; }
-        public double salario { get; set; }
+        public decimal salario { get; set; }
         public string senha { get; set; }
         public int cHoraria { get; set; }
         public string logradouro { get; set; }
@@ -27,6 +27,8 @@ namespace delta_modelo
         public string fone2 { get; set; }
         public string email { get; set; }
         public int id_setor { get; set; }
+        public string cargo { get; set; }
+        public decimal horas_banco { get; set; }
         public mdlSetor setor { get; set; }
     }
 }

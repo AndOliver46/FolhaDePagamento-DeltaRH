@@ -26,8 +26,7 @@ namespace deltarh.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-dk36nf7\\sqlexpress;Initial Catalog=BD_DELTA;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True")]
         public string BD_DELTAConnectionString {
             get {
                 return ((string)(this["BD_DELTAConnectionString"]));

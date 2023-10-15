@@ -16,3 +16,12 @@ C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_controle\obj\Debug\
 C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.csproj.CopyComplete
 C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.dll
 C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.pdb
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\bin\Debug\delta_controle.dll
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\bin\Debug\delta_controle.pdb
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\bin\Debug\delta_modelo.dll
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\bin\Debug\delta_modelo.pdb
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.csproj.AssemblyReference.cache
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.csproj.CoreCompileInputs.cache
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.csproj.CopyComplete
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.dll
+C:\Users\ander\Projetos\pim\Desktop\deltarh\delta_controle\obj\Debug\delta_controle.pdb

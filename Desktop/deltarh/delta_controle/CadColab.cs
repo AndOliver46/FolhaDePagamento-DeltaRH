@@ -8,7 +8,7 @@ namespace delta_controle
 {
     public class CadColab
     {
-        private string conexao = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
 
         public bool CadastrarColab(mdlColaborador colab)
         {
@@ -41,7 +41,9 @@ namespace delta_controle
             telefone, 
             telefone2, 
             email, 
-            id_setor) 
+            id_setor,
+            cargo,
+            horas_banco) 
          VALUES (
             @nome, 
             @data_nascimento, 
@@ -60,7 +62,9 @@ namespace delta_controle
             @telefone, 
             @telefone2, 
             @email, 
-            @id_setor);
+            @id_setor,
+            @cargo,
+            @horas_banco);
         SELECT CAST(scope_identity() AS int)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
@@ -70,8 +74,7 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@data_nascimento", Convert.ToDateTime(colab.nascimento));
                     cmd.Parameters.AddWithValue("@cpf", colab.cpf);
                     cmd.Parameters.AddWithValue("@tipo_contrato", colab.contrato);
-                    salario = Convert.ToDouble(colab.salario);
-                    cmd.Parameters.AddWithValue("@salario_bruto", salario);
+                    cmd.Parameters.AddWithValue("@salario_bruto", colab.salario);
                     cmd.Parameters.AddWithValue("@senha", colab.senha);
                     carga = Convert.ToInt32(colab.cHoraria);
                     cmd.Parameters.AddWithValue("carga_horaria", carga);
@@ -87,7 +90,8 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@email", colab.email);
                     idSetor = Convert.ToInt32(colab.id_setor);
                     cmd.Parameters.AddWithValue("@id_setor", idSetor);
-
+                    cmd.Parameters.AddWithValue("@cargo", colab.cargo);
+                    cmd.Parameters.AddWithValue("@horas_banco", colab.horas_banco);
 
                     int idInserido = (int)cmd.ExecuteScalar();
                 }

@@ -11,7 +11,7 @@ namespace deltarh
 {
     public partial class FrmCadColadorador : Form
     {
-        public string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+        public string consulta = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
         public FrmCadColadorador()
         {
             InitializeComponent();
@@ -74,7 +74,7 @@ namespace deltarh
                 colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
                 colab.cpf = mskCpf.Text;
                 colab.contrato = cboxTipoContrato.Text;
-                colab.salario = Convert.ToDouble(txtSalario.Text);
+                colab.salario = Convert.ToDecimal(txtSalario.Text);
                 colab.senha = txtSenha.Text;
                 colab.cHoraria = Convert.ToInt32(cboxHorario.Text);
                 colab.logradouro = txtLogradouro.Text;
@@ -88,6 +88,8 @@ namespace deltarh
                 colab.fone2 = txtTelefone2.Text;
                 colab.email = txtEmail.Text;
                 colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
+                colab.cargo = "COLOCAR CARGO";
+                colab.horas_banco = 0.0M;
 
                 CadColab conecta = new CadColab();
 

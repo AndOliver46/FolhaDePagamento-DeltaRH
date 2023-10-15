@@ -8,7 +8,7 @@ namespace delta_controle
 {
     public class ConsultaBanco
     {
-        public string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+        public string consulta = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
 
         public mdlEmpresa ConsultarEmpresa(string cnpj)
         {
@@ -214,7 +214,7 @@ namespace delta_controle
                         colaborador.nascimento = rd.GetDateTime(2);
                         colaborador.cpf = rd.GetString(3);
                         colaborador.contrato = rd.GetString(4);
-                        colaborador.salario = Convert.ToDouble(rd.GetDecimal(5));
+                        colaborador.salario = rd.GetDecimal(5);
                         colaborador.senha = rd.GetString(6);
                         colaborador.cHoraria = rd.GetInt32(7);
                         colaborador.logradouro = rd.GetString(8);

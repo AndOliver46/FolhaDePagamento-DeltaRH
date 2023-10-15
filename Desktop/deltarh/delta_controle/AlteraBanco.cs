@@ -10,7 +10,7 @@ namespace delta_controle
 {
     public class AlteraBanco
     {
-        private string conexao = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
 
         public bool AlterarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa)
         {
