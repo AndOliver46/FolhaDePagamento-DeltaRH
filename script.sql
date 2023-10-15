@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[cep] [varchar](15) NOT NULL,
 	[cidade] [varchar](60) NOT NULL,
 	[uf] [varchar](10) NOT NULL,
-	[telefone] [varchar](20),
+	[telefone] [varchar](20) NOT NULL,
 	[telefone2] [varchar](20) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[status] [varchar](20) NOT NULL,
