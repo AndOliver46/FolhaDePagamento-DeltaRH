@@ -10,10 +10,11 @@ namespace delta_controle
 {
     public class AlteraBanco
     {
-        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
+        StringConexao conecta = new StringConexao();
 
         public bool AlterarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa)
         {
+            string conexao = conecta.stringSql;
             try
             {
                 int IdMissaoVisaoValores;
@@ -110,6 +111,7 @@ namespace delta_controle
 
         public bool AlterarSetor(mdlSetor setor)
         {
+            string conexao = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(conexao))

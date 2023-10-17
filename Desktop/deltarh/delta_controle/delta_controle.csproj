@@ -44,7 +44,7 @@
     <Compile Include="AlteraBanco.cs" />
     <Compile Include="CadColab.cs" />
     <Compile Include="CadSetor.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="StringConexao.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ConsultaBanco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

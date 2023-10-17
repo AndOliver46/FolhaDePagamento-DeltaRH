@@ -27,6 +27,8 @@ namespace deltarh
                 if(alterado)
                 {
                     MessageBox.Show("Setor Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    FrmCadEmpresa setores = new FrmCadEmpresa();
+                    setores.ListarSetores();
                 }
                 else
                 {

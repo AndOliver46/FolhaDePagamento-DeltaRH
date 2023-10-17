@@ -32,5 +32,16 @@ namespace deltarh.Properties {
                 return ((string)(this["BD_DELTAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-dk36nf7\\sqlexpress;Initial Catalog=BD_DELTA;Integrated Securi" +
+            "ty=True")]
+        public string BD_DELTAConnectionString1 {
+            get {
+                return ((string)(this["BD_DELTAConnectionString1"]));
+            }
+        }
     }
 }

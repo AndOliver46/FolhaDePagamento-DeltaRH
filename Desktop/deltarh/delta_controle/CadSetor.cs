@@ -10,10 +10,11 @@ namespace delta_controle
 {
     public class CadSetor
     {
-        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
+        StringConexao conecta = new StringConexao();
 
         public bool CadastrarSetor(mdlSetor setor)
         {
+            string conexao = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(conexao))

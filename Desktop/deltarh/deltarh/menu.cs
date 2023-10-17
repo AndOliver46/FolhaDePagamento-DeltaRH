@@ -161,6 +161,8 @@ namespace deltarh
         }
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet3.tbl_empresa'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_empresaTableAdapter2.Fill(this.bD_DELTADataSet3.tbl_empresa);
             ListarEmpresa();
             BuscarSetor();
             BuscarStatus();

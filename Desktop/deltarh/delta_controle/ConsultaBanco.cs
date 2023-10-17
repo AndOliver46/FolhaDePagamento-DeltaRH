@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Configuration;
 using delta_modelo;
 
 namespace delta_controle
 {
     public class ConsultaBanco
     {
-        public string consulta = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
+        StringConexao conecta = new StringConexao();
 
         public mdlEmpresa ConsultarEmpresa(string cnpj)
         {
+            // string consulta = conecta.stringSql;
+            string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -101,6 +104,7 @@ namespace delta_controle
 
         public mdlEmpresa ConsultarEmpresaId(int id)
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -190,6 +194,7 @@ namespace delta_controle
 
         public mdlColaborador ConsultarColab(string cpf)
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -262,6 +267,7 @@ namespace delta_controle
 
         public List<mdlSetor> ConsultarSetor(int idempresa)
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -298,6 +304,7 @@ namespace delta_controle
 
         public List<mdlEmpresa> ListarEmpresas() 
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -331,6 +338,7 @@ namespace delta_controle
 
         public List<mdlColaborador> ListarColaborador(int id_setor)
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -367,6 +375,7 @@ namespace delta_controle
 
         public mdlSetor BuscarSetor(string id)
         {
+            string consulta = conecta.stringSql;
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -424,7 +433,9 @@ namespace delta_controle
 
         public void BuscarPendentes()
         {
+           // string consulta = conecta.stringSql;
 
+            string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
             using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
                 conexaodb.Open();

@@ -8,10 +8,10 @@ namespace delta_controle
 {
     public class CadColab
     {
-        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
-
+        StringConexao conecta = new StringConexao();
         public bool CadastrarColab(mdlColaborador colab)
         {
+            string conexao = conecta.stringSql;
             try
             {
                 int idSetor, carga;

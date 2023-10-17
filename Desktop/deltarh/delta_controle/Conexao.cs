@@ -12,10 +12,11 @@ namespace delta_controle
 {
     public class Conexao
     {
-        private string conexao = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
+        StringConexao conecta = new StringConexao();
 
         public bool CadastrarEmpresa(mdlMissao missao, mdlPolitica politica, mdlEmpresa empresa, mdlSetor setor)
         {
+            string conexao = conecta.stringSql;
             try
             {
                 int IdMissaoVisaoValores;

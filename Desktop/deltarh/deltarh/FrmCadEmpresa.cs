@@ -262,7 +262,7 @@ namespace deltarh
         private void FrmCadEmpresa_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet2.tbl_setor'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_setorTableAdapter.Fill(this.bD_DELTADataSet2.tbl_setor);
+            this.tbl_setorTableAdapter.Fill(this.BD_DELTADataSet2.tbl_setor);
 
         }
 
@@ -277,7 +277,7 @@ namespace deltarh
 
             try
             {
-                this.tbl_setorTableAdapter.Setor(this.bD_DELTADataSet2.tbl_setor, (int)System.Convert.ChangeType(txtCodId.Text, typeof(int)));
+                this.tbl_setorTableAdapter.Setor(this.BD_DELTADataSet2.tbl_setor, (int)System.Convert.ChangeType(txtCodId.Text, typeof(int)));
             }
             catch (System.Exception ex)
             {
