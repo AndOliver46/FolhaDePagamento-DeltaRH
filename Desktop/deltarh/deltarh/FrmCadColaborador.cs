@@ -88,7 +88,7 @@ namespace deltarh
                 colab.fone2 = txtTelefone2.Text;
                 colab.email = txtEmail.Text;
                 colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
-                colab.cargo = "COLOCAR CARGO";
+                colab.cargo = txtCargo.Text;
                 colab.horas_banco = 0.0M;
 
                 CadColab conecta = new CadColab();
@@ -99,7 +99,7 @@ namespace deltarh
             {
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Nova Empresa?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Novo Colaborador?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (resposta == DialogResult.Yes)
             {

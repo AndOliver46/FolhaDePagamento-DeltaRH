@@ -11,6 +11,14 @@ namespace deltarh
         {
             InitializeComponent();
         }
+        private void atualizarEmpresa()
+        {
+            FrmCadEmpresa empresa = new FrmCadEmpresa();
+            empresa.btnOk.Visible = true;
+            empresa.btnSalvar.Visible = false;
+            empresa.btnLimpar.Visible = false;
+            empresa.btnCancelar.Visible = false;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,8 +35,8 @@ namespace deltarh
                 if(alterado)
                 {
                     MessageBox.Show("Setor Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    FrmCadEmpresa setores = new FrmCadEmpresa();
-                    setores.ListarSetores();
+                    atualizarEmpresa();
+                    Close();
                 }
                 else
                 {

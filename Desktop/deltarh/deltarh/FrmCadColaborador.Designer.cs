@@ -52,7 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtSetor = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -106,6 +106,9 @@
             // 
             this.cboxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoContrato.FormattingEnabled = true;
+            this.cboxTipoContrato.Items.AddRange(new object[] {
+            "Fixo",
+            "Flexível"});
             this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
             this.cboxTipoContrato.Name = "cboxTipoContrato";
             this.cboxTipoContrato.Size = new System.Drawing.Size(159, 24);
@@ -115,6 +118,11 @@
             // 
             this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxHorario.FormattingEnabled = true;
+            this.cboxHorario.Items.AddRange(new object[] {
+            "20",
+            "30",
+            "40",
+            "44"});
             this.cboxHorario.Location = new System.Drawing.Point(396, 106);
             this.cboxHorario.Name = "cboxHorario";
             this.cboxHorario.Size = new System.Drawing.Size(75, 24);
@@ -307,7 +315,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.txtSetor);
+            this.groupBox2.Controls.Add(this.txtCargo);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -330,19 +338,19 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(501, 109);
+            this.label17.Location = new System.Drawing.Point(485, 109);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.Size = new System.Drawing.Size(44, 16);
             this.label17.TabIndex = 23;
-            this.label17.Text = "Setor";
+            this.label17.Text = "Cargo";
             // 
-            // txtSetor
+            // txtCargo
             // 
-            this.txtSetor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSetor.Location = new System.Drawing.Point(567, 106);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(75, 22);
-            this.txtSetor.TabIndex = 22;
+            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(535, 106);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(107, 22);
+            this.txtCargo.TabIndex = 22;
             // 
             // label7
             // 
@@ -690,7 +698,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtSetor;
+        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.GroupBox groupBox4;

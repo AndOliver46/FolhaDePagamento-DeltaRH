@@ -96,7 +96,6 @@ namespace deltarh
             this.label17 = new System.Windows.Forms.Label();
             this.txtSetor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BD_DELTADataSet2 = new deltarh.BD_DELTADataSet2();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPolitica = new System.Windows.Forms.TextBox();
@@ -109,6 +108,7 @@ namespace deltarh
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.tblsetorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BD_DELTADataSet2 = new deltarh.BD_DELTADataSet2();
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.txtSituacao = new System.Windows.Forms.TextBox();
             this.lblCnpj = new System.Windows.Forms.Label();
@@ -130,6 +130,12 @@ namespace deltarh
             this.label21 = new System.Windows.Forms.Label();
             this.tbl_setorTableAdapter = new deltarh.BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.bD_DELTADataSet3 = new deltarh.BD_DELTADataSet3();
+            this.bDDELTADataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDDELTADataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblsetorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet4 = new deltarh.BD_DELTADataSet4();
+            this.tbl_setorTableAdapter1 = new deltarh.BD_DELTADataSet4TableAdapters.tbl_setorTableAdapter();
             this.idsetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomesetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
@@ -144,13 +150,18 @@ namespace deltarh
             this.gboxEdita.SuspendLayout();
             this.gboxCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BD_DELTADataSet2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BD_DELTADataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCnpj
@@ -911,17 +922,12 @@ namespace deltarh
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idsetorDataGridViewTextBoxColumn,
             this.nomesetorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tblsetorBindingSource;
+            this.dataGridView1.DataSource = this.tblsetorBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(398, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(364, 243);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // BD_DELTADataSet2
-            // 
-            this.BD_DELTADataSet2.DataSetName = "BD_DELTADataSet2";
-            this.BD_DELTADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage3
             // 
@@ -1035,6 +1041,11 @@ namespace deltarh
             // 
             this.tblsetorBindingSource.DataMember = "tbl_setor";
             this.tblsetorBindingSource.DataSource = this.BD_DELTADataSet2;
+            // 
+            // BD_DELTADataSet2
+            // 
+            this.BD_DELTADataSet2.DataSetName = "BD_DELTADataSet2";
+            this.BD_DELTADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtFantasia
             // 
@@ -1236,12 +1247,42 @@ namespace deltarh
             this.btnCadastrar.Visible = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // bD_DELTADataSet3
+            // 
+            this.bD_DELTADataSet3.DataSetName = "BD_DELTADataSet3";
+            this.bD_DELTADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bDDELTADataSet3BindingSource
+            // 
+            this.bDDELTADataSet3BindingSource.DataSource = this.bD_DELTADataSet3;
+            this.bDDELTADataSet3BindingSource.Position = 0;
+            // 
+            // bDDELTADataSet2BindingSource
+            // 
+            this.bDDELTADataSet2BindingSource.DataSource = this.BD_DELTADataSet2;
+            this.bDDELTADataSet2BindingSource.Position = 0;
+            // 
+            // tblsetorBindingSource1
+            // 
+            this.tblsetorBindingSource1.DataMember = "tbl_setor";
+            this.tblsetorBindingSource1.DataSource = this.bD_DELTADataSet4;
+            // 
+            // bD_DELTADataSet4
+            // 
+            this.bD_DELTADataSet4.DataSetName = "BD_DELTADataSet4";
+            this.bD_DELTADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbl_setorTableAdapter1
+            // 
+            this.tbl_setorTableAdapter1.ClearBeforeFill = true;
+            // 
             // idsetorDataGridViewTextBoxColumn
             // 
             this.idsetorDataGridViewTextBoxColumn.DataPropertyName = "id_setor";
             this.idsetorDataGridViewTextBoxColumn.HeaderText = "id_setor";
             this.idsetorDataGridViewTextBoxColumn.Name = "idsetorDataGridViewTextBoxColumn";
             this.idsetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsetorDataGridViewTextBoxColumn.Width = 110;
             // 
             // nomesetorDataGridViewTextBoxColumn
             // 
@@ -1249,6 +1290,7 @@ namespace deltarh
             this.nomesetorDataGridViewTextBoxColumn.HeaderText = "nome_setor";
             this.nomesetorDataGridViewTextBoxColumn.Name = "nomesetorDataGridViewTextBoxColumn";
             this.nomesetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomesetorDataGridViewTextBoxColumn.Width = 200;
             // 
             // FrmCadEmpresa
             // 
@@ -1300,7 +1342,6 @@ namespace deltarh
             this.gboxCadastro.ResumeLayout(false);
             this.gboxCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BD_DELTADataSet2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1310,6 +1351,12 @@ namespace deltarh
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BD_DELTADataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1344,7 +1391,6 @@ namespace deltarh
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelefone2;
@@ -1389,8 +1435,6 @@ namespace deltarh
         private System.Windows.Forms.TextBox txtEditaSetor;
         private System.Windows.Forms.GroupBox gboxContato;
         private System.Windows.Forms.GroupBox gboxEndereco;
-        private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConsultaCnpj;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox txtPolitica;
@@ -1416,7 +1460,16 @@ namespace deltarh
         private BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter tbl_setorTableAdapter;
         public System.Windows.Forms.Button btnSalvar;
         public System.Windows.Forms.Button btnCadastrar;
+        private BD_DELTADataSet3 bD_DELTADataSet3;
+        private System.Windows.Forms.BindingSource bDDELTADataSet3BindingSource;
+        private System.Windows.Forms.BindingSource bDDELTADataSet2BindingSource;
+        private BD_DELTADataSet4 bD_DELTADataSet4;
+        private System.Windows.Forms.BindingSource tblsetorBindingSource1;
+        private BD_DELTADataSet4TableAdapters.tbl_setorTableAdapter tbl_setorTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idsetorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomesetorDataGridViewTextBoxColumn;
+        public System.Windows.Forms.Button btnLimpar;
+        public System.Windows.Forms.Button btnOk;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

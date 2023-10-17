@@ -157,6 +157,12 @@ namespace deltarh
             FrmEditaSetor edita = new FrmEditaSetor();
             edita.txtId.Text = txtEditaSetor.Text;
             edita.ShowDialog();
+            consultaCnpj();
+
+            btnOk.Visible = true;
+            btnSalvar.Visible = false;
+            btnLimpar.Visible = false;
+            btnCancelar.Visible = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -231,7 +237,9 @@ namespace deltarh
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-
+            frmMenu menu = new frmMenu();
+            menu.txtCnpj.Text = "";
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -251,6 +259,14 @@ namespace deltarh
 
                 txtSetor.Text = "";
                 txtSetor.Focus();
+
+                consultaCnpj();
+
+                btnOk.Visible = true;
+                btnSalvar.Visible = false;
+                btnLimpar.Visible = false;
+                btnCancelar.Visible = false;
+
             }
             catch(Exception ex)
             {
@@ -261,8 +277,8 @@ namespace deltarh
 
         private void FrmCadEmpresa_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet2.tbl_setor'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_setorTableAdapter.Fill(this.BD_DELTADataSet2.tbl_setor);
+            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet4.tbl_setor'. Você pode movê-la ou removê-la conforme necessário.
+           // this.tbl_setorTableAdapter1.Fill(this.bD_DELTADataSet4.tbl_setor);
 
         }
 
@@ -274,10 +290,9 @@ namespace deltarh
 
         public void ListarSetores()
         {
-
             try
             {
-                this.tbl_setorTableAdapter.Setor(this.BD_DELTADataSet2.tbl_setor, (int)System.Convert.ChangeType(txtCodId.Text, typeof(int)));
+                this.tbl_setorTableAdapter1.FillBy(this.bD_DELTADataSet4.tbl_setor, ((int)(System.Convert.ChangeType(txtCodId.Text, typeof(int)))));
             }
             catch (System.Exception ex)
             {

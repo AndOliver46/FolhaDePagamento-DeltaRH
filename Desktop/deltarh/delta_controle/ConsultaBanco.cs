@@ -13,8 +13,8 @@ namespace delta_controle
 
         public mdlEmpresa ConsultarEmpresa(string cnpj)
         {
-            // string consulta = conecta.stringSql;
-            string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+            string consulta = conecta.stringSql;
+
             try
             {
                 using (SqlConnection conexaodb = new SqlConnection(consulta))
@@ -384,7 +384,6 @@ namespace delta_controle
 
                     string sql = "SELECT * FROM tbl_setor WHERE id_empresa = @id_empresa";
 
-
                     SqlCommand cmd = new SqlCommand(sql, conexaodb);
 
                     cmd.Parameters.AddWithValue("@id_empresa", id);
@@ -433,9 +432,8 @@ namespace delta_controle
 
         public void BuscarPendentes()
         {
-           // string consulta = conecta.stringSql;
+            string consulta = conecta.stringSql;
 
-            string consulta = @"Data Source=desktop-dk36nf7\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
             using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
                 conexaodb.Open();

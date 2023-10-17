@@ -23,34 +23,43 @@
               <Mapping SourceColumn="cnpj" DataSetColumn="cnpj" />
               <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="BD_DELTAConnectionString1 (Settings)" DbObjectName="BD_DELTA.dbo.tbl_empresa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT razao_social, cnpj, status FROM dbo.tbl_empresa WHERE status = 'PENDENTE'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BD_DELTADataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BD_DELTADataSet3" msprop:Generator_DataSetName="BD_DELTADataSet3">
+  <xs:element name="BD_DELTADataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BD_DELTADataSet3" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BD_DELTADataSet3">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbl_empresa" msprop:Generator_RowEvHandlerName="tbl_empresaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_empresaRowDeleted" msprop:Generator_RowDeletingName="tbl_empresaRowDeleting" msprop:Generator_RowEvArgName="tbl_empresaRowChangeEvent" msprop:Generator_TablePropName="tbl_empresa" msprop:Generator_RowChangedName="tbl_empresaRowChanged" msprop:Generator_RowChangingName="tbl_empresaRowChanging" msprop:Generator_TableClassName="tbl_empresaDataTable" msprop:Generator_RowClassName="tbl_empresaRow" msprop:Generator_TableVarName="tabletbl_empresa" msprop:Generator_UserTableName="tbl_empresa">
+        <xs:element name="tbl_empresa" msprop:Generator_RowClassName="tbl_empresaRow" msprop:Generator_RowEvHandlerName="tbl_empresaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_empresaRowDeleted" msprop:Generator_RowDeletingName="tbl_empresaRowDeleting" msprop:Generator_RowEvArgName="tbl_empresaRowChangeEvent" msprop:Generator_TablePropName="tbl_empresa" msprop:Generator_RowChangedName="tbl_empresaRowChanged" msprop:Generator_UserTableName="tbl_empresa" msprop:Generator_RowChangingName="tbl_empresaRowChanging" msprop:Generator_TableClassName="tbl_empresaDataTable" msprop:Generator_TableVarName="tabletbl_empresa">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="razao_social" msprop:Generator_ColumnPropNameInRow="razao_social" msprop:Generator_ColumnPropNameInTable="razao_socialColumn" msprop:Generator_ColumnVarNameInTable="columnrazao_social" msprop:Generator_UserColumnName="razao_social">
+              <xs:element name="razao_social" msprop:Generator_UserColumnName="razao_social" msprop:Generator_ColumnPropNameInTable="razao_socialColumn" msprop:Generator_ColumnPropNameInRow="razao_social" msprop:Generator_ColumnVarNameInTable="columnrazao_social">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="90" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="cnpj" msprop:Generator_ColumnPropNameInRow="cnpj" msprop:Generator_ColumnPropNameInTable="cnpjColumn" msprop:Generator_ColumnVarNameInTable="columncnpj" msprop:Generator_UserColumnName="cnpj">
+              <xs:element name="cnpj" msprop:Generator_UserColumnName="cnpj" msprop:Generator_ColumnPropNameInTable="cnpjColumn" msprop:Generator_ColumnPropNameInRow="cnpj" msprop:Generator_ColumnVarNameInTable="columncnpj">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status">
+              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />

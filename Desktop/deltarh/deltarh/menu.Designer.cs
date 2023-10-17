@@ -32,8 +32,7 @@ namespace deltarh
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD_DELTADataSet = new deltarh.BD_DELTADataSet();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnAtualiza = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,7 +47,6 @@ namespace deltarh
             this.btnProcessar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnJustificar = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -58,31 +56,34 @@ namespace deltarh
             this.cBoxColaborador = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxEmpresa = new System.Windows.Forms.ComboBox();
+            this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet = new deltarh.BD_DELTADataSet();
             this.tblempresaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bD_DELTADataSet1 = new deltarh.BD_DELTADataSet1();
             this.tbl_empresaTableAdapter1 = new deltarh.BD_DELTADataSet1TableAdapters.tbl_empresaTableAdapter();
             this.tbl_empresaTableAdapter = new deltarh.BD_DELTADataSetTableAdapters.tbl_empresaTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.bD_DELTADataSet3 = new deltarh.BD_DELTADataSet3();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tblempresaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet3 = new deltarh.BD_DELTADataSet3();
             this.tbl_empresaTableAdapter2 = new deltarh.BD_DELTADataSet3TableAdapters.tbl_empresaTableAdapter();
             this.razaosocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,6 +100,7 @@ namespace deltarh
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.btnAtualiza);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -109,15 +111,17 @@ namespace deltarh
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tblempresaBindingSource
+            // dataGridView2
             // 
-            this.tblempresaBindingSource.DataMember = "tbl_empresa";
-            this.tblempresaBindingSource.DataSource = this.bD_DELTADataSet;
-            // 
-            // bD_DELTADataSet
-            // 
-            this.bD_DELTADataSet.DataSetName = "BD_DELTADataSet";
-            this.bD_DELTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(515, 450);
+            this.dataGridView2.TabIndex = 2;
             // 
             // btnAtualiza
             // 
@@ -222,7 +226,6 @@ namespace deltarh
             this.tabPage3.Controls.Add(this.btnProcessar);
             this.tabPage3.Controls.Add(this.btnCancelar);
             this.tabPage3.Controls.Add(this.btnJustificar);
-            this.tabPage3.Controls.Add(this.btnAtualizar);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.dateTimePicker2);
             this.tabPage3.Controls.Add(this.dateTimePicker1);
@@ -269,16 +272,6 @@ namespace deltarh
             this.btnJustificar.TabIndex = 1;
             this.btnJustificar.Text = "Justificar";
             this.btnJustificar.UseVisualStyleBackColor = true;
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(433, 88);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 9;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // dataGridView1
             // 
@@ -360,6 +353,16 @@ namespace deltarh
             this.cBoxEmpresa.TabIndex = 0;
             this.cBoxEmpresa.SelectedIndexChanged += new System.EventHandler(this.cBoxEmpresa_SelectedIndexChanged);
             // 
+            // tblempresaBindingSource
+            // 
+            this.tblempresaBindingSource.DataMember = "tbl_empresa";
+            this.tblempresaBindingSource.DataSource = this.bD_DELTADataSet;
+            // 
+            // bD_DELTADataSet
+            // 
+            this.bD_DELTADataSet.DataSetName = "BD_DELTADataSet";
+            this.bD_DELTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tblempresaBindingSource1
             // 
             this.tblempresaBindingSource1.DataMember = "tbl_empresa";
@@ -378,33 +381,30 @@ namespace deltarh
             // 
             this.tbl_empresaTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
+            // dataGridView3
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.razaosocialDataGridViewTextBoxColumn,
             this.cnpjDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.tblempresaBindingSource2;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(515, 450);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // bD_DELTADataSet3
-            // 
-            this.bD_DELTADataSet3.DataSetName = "BD_DELTADataSet3";
-            this.bD_DELTADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView3.DataSource = this.tblempresaBindingSource2;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(512, 447);
+            this.dataGridView3.TabIndex = 3;
             // 
             // tblempresaBindingSource2
             // 
             this.tblempresaBindingSource2.DataMember = "tbl_empresa";
             this.tblempresaBindingSource2.DataSource = this.bD_DELTADataSet3;
+            // 
+            // bD_DELTADataSet3
+            // 
+            this.bD_DELTADataSet3.DataSetName = "BD_DELTADataSet3";
+            this.bD_DELTADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbl_empresaTableAdapter2
             // 
@@ -415,7 +415,6 @@ namespace deltarh
             this.razaosocialDataGridViewTextBoxColumn.DataPropertyName = "razao_social";
             this.razaosocialDataGridViewTextBoxColumn.HeaderText = "razao_social";
             this.razaosocialDataGridViewTextBoxColumn.Name = "razaosocialDataGridViewTextBoxColumn";
-            this.razaosocialDataGridViewTextBoxColumn.ReadOnly = true;
             this.razaosocialDataGridViewTextBoxColumn.Width = 260;
             // 
             // cnpjDataGridViewTextBoxColumn
@@ -423,7 +422,6 @@ namespace deltarh
             this.cnpjDataGridViewTextBoxColumn.DataPropertyName = "cnpj";
             this.cnpjDataGridViewTextBoxColumn.HeaderText = "cnpj";
             this.cnpjDataGridViewTextBoxColumn.Name = "cnpjDataGridViewTextBoxColumn";
-            this.cnpjDataGridViewTextBoxColumn.ReadOnly = true;
             this.cnpjDataGridViewTextBoxColumn.Width = 110;
             // 
             // statusDataGridViewTextBoxColumn
@@ -431,7 +429,6 @@ namespace deltarh
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
             this.statusDataGridViewTextBoxColumn.HeaderText = "status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmMenu
             // 
@@ -445,8 +442,7 @@ namespace deltarh
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -455,11 +451,13 @@ namespace deltarh
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,7 +469,6 @@ namespace deltarh
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -482,7 +479,6 @@ namespace deltarh
         private System.Windows.Forms.Button btnJustificar;
         private System.Windows.Forms.Button btnProcessar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnCnpj;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblCadCnpj;
@@ -502,6 +498,8 @@ namespace deltarh
         private BD_DELTADataSet3 bD_DELTADataSet3;
         private System.Windows.Forms.BindingSource tblempresaBindingSource2;
         private BD_DELTADataSet3TableAdapters.tbl_empresaTableAdapter tbl_empresaTableAdapter2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        public System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.DataGridViewTextBoxColumn razaosocialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;

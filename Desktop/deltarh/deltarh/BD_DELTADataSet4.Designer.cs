@@ -20,17 +20,17 @@ namespace deltarh {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BD_DELTADataSet3")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BD_DELTADataSet4")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BD_DELTADataSet3 : global::System.Data.DataSet {
+    public partial class BD_DELTADataSet4 : global::System.Data.DataSet {
         
-        private tbl_empresaDataTable tabletbl_empresa;
+        private tbl_setorDataTable tabletbl_setor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BD_DELTADataSet3() {
+        public BD_DELTADataSet4() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace deltarh {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BD_DELTADataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BD_DELTADataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace deltarh {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tbl_empresa"] != null)) {
-                    base.Tables.Add(new tbl_empresaDataTable(ds.Tables["tbl_empresa"]));
+                if ((ds.Tables["tbl_setor"] != null)) {
+                    base.Tables.Add(new tbl_setorDataTable(ds.Tables["tbl_setor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace deltarh {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tbl_empresaDataTable tbl_empresa {
+        public tbl_setorDataTable tbl_setor {
             get {
-                return this.tabletbl_empresa;
+                return this.tabletbl_setor;
             }
         }
         
@@ -127,7 +127,7 @@ namespace deltarh {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BD_DELTADataSet3 cln = ((BD_DELTADataSet3)(base.Clone()));
+            BD_DELTADataSet4 cln = ((BD_DELTADataSet4)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace deltarh {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tbl_empresa"] != null)) {
-                    base.Tables.Add(new tbl_empresaDataTable(ds.Tables["tbl_empresa"]));
+                if ((ds.Tables["tbl_setor"] != null)) {
+                    base.Tables.Add(new tbl_setorDataTable(ds.Tables["tbl_setor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace deltarh {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabletbl_empresa = ((tbl_empresaDataTable)(base.Tables["tbl_empresa"]));
+            this.tabletbl_setor = ((tbl_setorDataTable)(base.Tables["tbl_setor"]));
             if ((initTable == true)) {
-                if ((this.tabletbl_empresa != null)) {
-                    this.tabletbl_empresa.InitVars();
+                if ((this.tabletbl_setor != null)) {
+                    this.tabletbl_setor.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace deltarh {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BD_DELTADataSet3";
+            this.DataSetName = "BD_DELTADataSet4";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BD_DELTADataSet3.xsd";
+            this.Namespace = "http://tempuri.org/BD_DELTADataSet4.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletbl_empresa = new tbl_empresaDataTable();
-            base.Tables.Add(this.tabletbl_empresa);
+            this.tabletbl_setor = new tbl_setorDataTable();
+            base.Tables.Add(this.tabletbl_setor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializetbl_empresa() {
+        private bool ShouldSerializetbl_setor() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace deltarh {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BD_DELTADataSet3 ds = new BD_DELTADataSet3();
+            BD_DELTADataSet4 ds = new BD_DELTADataSet4();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,23 @@ namespace deltarh {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void tbl_empresaRowChangeEventHandler(object sender, tbl_empresaRowChangeEvent e);
+        public delegate void tbl_setorRowChangeEventHandler(object sender, tbl_setorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tbl_empresaDataTable : global::System.Data.TypedTableBase<tbl_empresaRow> {
+        public partial class tbl_setorDataTable : global::System.Data.TypedTableBase<tbl_setorRow> {
             
-            private global::System.Data.DataColumn columnrazao_social;
+            private global::System.Data.DataColumn columnid_setor;
             
-            private global::System.Data.DataColumn columncnpj;
-            
-            private global::System.Data.DataColumn columnstatus;
+            private global::System.Data.DataColumn columnnome_setor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaDataTable() {
-                this.TableName = "tbl_empresa";
+            public tbl_setorDataTable() {
+                this.TableName = "tbl_setor";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +294,7 @@ namespace deltarh {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tbl_empresaDataTable(global::System.Data.DataTable table) {
+            internal tbl_setorDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,32 +311,24 @@ namespace deltarh {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected tbl_empresaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tbl_setorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn razao_socialColumn {
+            public global::System.Data.DataColumn id_setorColumn {
                 get {
-                    return this.columnrazao_social;
+                    return this.columnid_setor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn cnpjColumn {
+            public global::System.Data.DataColumn nome_setorColumn {
                 get {
-                    return this.columncnpj;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn statusColumn {
-                get {
-                    return this.columnstatus;
+                    return this.columnnome_setor;
                 }
             }
             
@@ -353,47 +343,53 @@ namespace deltarh {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaRow this[int index] {
+            public tbl_setorRow this[int index] {
                 get {
-                    return ((tbl_empresaRow)(this.Rows[index]));
+                    return ((tbl_setorRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tbl_empresaRowChangeEventHandler tbl_empresaRowChanging;
+            public event tbl_setorRowChangeEventHandler tbl_setorRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tbl_empresaRowChangeEventHandler tbl_empresaRowChanged;
+            public event tbl_setorRowChangeEventHandler tbl_setorRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tbl_empresaRowChangeEventHandler tbl_empresaRowDeleting;
+            public event tbl_setorRowChangeEventHandler tbl_setorRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tbl_empresaRowChangeEventHandler tbl_empresaRowDeleted;
+            public event tbl_setorRowChangeEventHandler tbl_setorRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addtbl_empresaRow(tbl_empresaRow row) {
+            public void Addtbl_setorRow(tbl_setorRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaRow Addtbl_empresaRow(string razao_social, string cnpj, string status) {
-                tbl_empresaRow rowtbl_empresaRow = ((tbl_empresaRow)(this.NewRow()));
+            public tbl_setorRow Addtbl_setorRow(string nome_setor) {
+                tbl_setorRow rowtbl_setorRow = ((tbl_setorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        razao_social,
-                        cnpj,
-                        status};
-                rowtbl_empresaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtbl_empresaRow);
-                return rowtbl_empresaRow;
+                        null,
+                        nome_setor};
+                rowtbl_setorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtbl_setorRow);
+                return rowtbl_setorRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tbl_setorRow FindByid_setor(int id_setor) {
+                return ((tbl_setorRow)(this.Rows.Find(new object[] {
+                            id_setor})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tbl_empresaDataTable cln = ((tbl_empresaDataTable)(base.Clone()));
+                tbl_setorDataTable cln = ((tbl_setorDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,58 +397,59 @@ namespace deltarh {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tbl_empresaDataTable();
+                return new tbl_setorDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnrazao_social = base.Columns["razao_social"];
-                this.columncnpj = base.Columns["cnpj"];
-                this.columnstatus = base.Columns["status"];
+                this.columnid_setor = base.Columns["id_setor"];
+                this.columnnome_setor = base.Columns["nome_setor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnrazao_social = new global::System.Data.DataColumn("razao_social", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrazao_social);
-                this.columncnpj = new global::System.Data.DataColumn("cnpj", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncnpj);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus);
-                this.columnrazao_social.AllowDBNull = false;
-                this.columnrazao_social.MaxLength = 90;
-                this.columncnpj.AllowDBNull = false;
-                this.columncnpj.MaxLength = 20;
-                this.columnstatus.AllowDBNull = false;
-                this.columnstatus.MaxLength = 20;
+                this.columnid_setor = new global::System.Data.DataColumn("id_setor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_setor);
+                this.columnnome_setor = new global::System.Data.DataColumn("nome_setor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome_setor);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_setor}, true));
+                this.columnid_setor.AutoIncrement = true;
+                this.columnid_setor.AutoIncrementSeed = -1;
+                this.columnid_setor.AutoIncrementStep = -1;
+                this.columnid_setor.AllowDBNull = false;
+                this.columnid_setor.ReadOnly = true;
+                this.columnid_setor.Unique = true;
+                this.columnnome_setor.AllowDBNull = false;
+                this.columnnome_setor.MaxLength = 25;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaRow Newtbl_empresaRow() {
-                return ((tbl_empresaRow)(this.NewRow()));
+            public tbl_setorRow Newtbl_setorRow() {
+                return ((tbl_setorRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tbl_empresaRow(builder);
+                return new tbl_setorRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tbl_empresaRow);
+                return typeof(tbl_setorRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tbl_empresaRowChanged != null)) {
-                    this.tbl_empresaRowChanged(this, new tbl_empresaRowChangeEvent(((tbl_empresaRow)(e.Row)), e.Action));
+                if ((this.tbl_setorRowChanged != null)) {
+                    this.tbl_setorRowChanged(this, new tbl_setorRowChangeEvent(((tbl_setorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -460,8 +457,8 @@ namespace deltarh {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tbl_empresaRowChanging != null)) {
-                    this.tbl_empresaRowChanging(this, new tbl_empresaRowChangeEvent(((tbl_empresaRow)(e.Row)), e.Action));
+                if ((this.tbl_setorRowChanging != null)) {
+                    this.tbl_setorRowChanging(this, new tbl_setorRowChangeEvent(((tbl_setorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -469,8 +466,8 @@ namespace deltarh {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tbl_empresaRowDeleted != null)) {
-                    this.tbl_empresaRowDeleted(this, new tbl_empresaRowChangeEvent(((tbl_empresaRow)(e.Row)), e.Action));
+                if ((this.tbl_setorRowDeleted != null)) {
+                    this.tbl_setorRowDeleted(this, new tbl_setorRowChangeEvent(((tbl_setorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -478,14 +475,14 @@ namespace deltarh {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tbl_empresaRowDeleting != null)) {
-                    this.tbl_empresaRowDeleting(this, new tbl_empresaRowChangeEvent(((tbl_empresaRow)(e.Row)), e.Action));
+                if ((this.tbl_setorRowDeleting != null)) {
+                    this.tbl_setorRowDeleting(this, new tbl_setorRowChangeEvent(((tbl_setorRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removetbl_empresaRow(tbl_empresaRow row) {
+            public void Removetbl_setorRow(tbl_setorRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -494,7 +491,7 @@ namespace deltarh {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BD_DELTADataSet3 ds = new BD_DELTADataSet3();
+                BD_DELTADataSet4 ds = new BD_DELTADataSet4();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -512,7 +509,7 @@ namespace deltarh {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tbl_empresaDataTable";
+                attribute2.FixedValue = "tbl_setorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -556,47 +553,36 @@ namespace deltarh {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tbl_empresaRow : global::System.Data.DataRow {
+        public partial class tbl_setorRow : global::System.Data.DataRow {
             
-            private tbl_empresaDataTable tabletbl_empresa;
+            private tbl_setorDataTable tabletbl_setor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tbl_empresaRow(global::System.Data.DataRowBuilder rb) : 
+            internal tbl_setorRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletbl_empresa = ((tbl_empresaDataTable)(this.Table));
+                this.tabletbl_setor = ((tbl_setorDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string razao_social {
+            public int id_setor {
                 get {
-                    return ((string)(this[this.tabletbl_empresa.razao_socialColumn]));
+                    return ((int)(this[this.tabletbl_setor.id_setorColumn]));
                 }
                 set {
-                    this[this.tabletbl_empresa.razao_socialColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string cnpj {
-                get {
-                    return ((string)(this[this.tabletbl_empresa.cnpjColumn]));
-                }
-                set {
-                    this[this.tabletbl_empresa.cnpjColumn] = value;
+                    this[this.tabletbl_setor.id_setorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string status {
+            public string nome_setor {
                 get {
-                    return ((string)(this[this.tabletbl_empresa.statusColumn]));
+                    return ((string)(this[this.tabletbl_setor.nome_setorColumn]));
                 }
                 set {
-                    this[this.tabletbl_empresa.statusColumn] = value;
+                    this[this.tabletbl_setor.nome_setorColumn] = value;
                 }
             }
         }
@@ -605,22 +591,22 @@ namespace deltarh {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class tbl_empresaRowChangeEvent : global::System.EventArgs {
+        public class tbl_setorRowChangeEvent : global::System.EventArgs {
             
-            private tbl_empresaRow eventRow;
+            private tbl_setorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaRowChangeEvent(tbl_empresaRow row, global::System.Data.DataRowAction action) {
+            public tbl_setorRowChangeEvent(tbl_setorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_empresaRow Row {
+            public tbl_setorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -636,7 +622,7 @@ namespace deltarh {
         }
     }
 }
-namespace deltarh.BD_DELTADataSet3TableAdapters {
+namespace deltarh.BD_DELTADataSet4TableAdapters {
     
     
     /// <summary>
@@ -648,7 +634,7 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tbl_empresaTableAdapter : global::System.ComponentModel.Component {
+    public partial class tbl_setorTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -662,7 +648,7 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public tbl_empresaTableAdapter() {
+        public tbl_setorTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -759,11 +745,27 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tbl_empresa";
-            tableMapping.ColumnMappings.Add("razao_social", "razao_social");
-            tableMapping.ColumnMappings.Add("cnpj", "cnpj");
-            tableMapping.ColumnMappings.Add("status", "status");
+            tableMapping.DataSetTable = "tbl_setor";
+            tableMapping.ColumnMappings.Add("id_setor", "id_setor");
+            tableMapping.ColumnMappings.Add("nome_setor", "nome_setor");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbl_setor] WHERE (([id_setor] = @Original_id_setor) AND ([nome" +
+                "_setor] = @Original_nome_setor))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_setor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_setor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_setor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_setor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbl_setor] SET [nome_setor] = @nome_setor WHERE (([id_setor] = @Ori" +
+                "ginal_id_setor) AND ([nome_setor] = @Original_nome_setor));\r\nSELECT id_setor, no" +
+                "me_setor FROM tbl_setor WHERE (id_setor = @id_setor)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_setor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_setor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_setor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_setor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_setor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_setor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_setor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_setor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -776,22 +778,27 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT razao_social, cnpj, status FROM dbo.tbl_empresa";
+            this._commandCollection[0].CommandText = "SELECT id_setor, nome_setor FROM dbo.tbl_setor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT razao_social, cnpj, status FROM dbo.tbl_empresa WHERE status = \'PENDENTE\'";
+            this._commandCollection[1].CommandText = "SELECT id_setor, nome_setor FROM dbo.tbl_setor WHERE id_empresa = @id_empresa";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_empresa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT id_setor, nome_setor FROM dbo.tbl_setor";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BD_DELTADataSet3.tbl_empresaDataTable dataTable) {
+        public virtual int Fill(BD_DELTADataSet4.tbl_setorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -804,9 +811,9 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BD_DELTADataSet3.tbl_empresaDataTable GetData() {
+        public virtual BD_DELTADataSet4.tbl_setorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BD_DELTADataSet3.tbl_empresaDataTable dataTable = new BD_DELTADataSet3.tbl_empresaDataTable();
+            BD_DELTADataSet4.tbl_setorDataTable dataTable = new BD_DELTADataSet4.tbl_setorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -815,13 +822,127 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(BD_DELTADataSet3.tbl_empresaDataTable dataTable) {
+        public virtual int FillBy(BD_DELTADataSet4.tbl_setorDataTable dataTable, int id_empresa) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_empresa));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int setoresEmpresa(BD_DELTADataSet4.tbl_setorDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BD_DELTADataSet4.tbl_setorDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BD_DELTADataSet4 dataSet) {
+            return this.Adapter.Update(dataSet, "tbl_setor");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id_setor, string Original_nome_setor) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_setor));
+            if ((Original_nome_setor == null)) {
+                throw new global::System.ArgumentNullException("Original_nome_setor");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome_setor));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nome_setor, int Original_id_setor, string Original_nome_setor, int id_setor) {
+            if ((nome_setor == null)) {
+                throw new global::System.ArgumentNullException("nome_setor");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nome_setor));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_id_setor));
+            if ((Original_nome_setor == null)) {
+                throw new global::System.ArgumentNullException("Original_nome_setor");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_nome_setor));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(id_setor));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nome_setor, int Original_id_setor, string Original_nome_setor) {
+            return this.Update(nome_setor, Original_id_setor, Original_nome_setor, Original_id_setor);
         }
     }
     
@@ -837,6 +958,8 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private tbl_setorTableAdapter _tbl_setorTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -849,6 +972,20 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public tbl_setorTableAdapter tbl_setorTableAdapter {
+            get {
+                return this._tbl_setorTableAdapter;
+            }
+            set {
+                this._tbl_setorTableAdapter = value;
             }
         }
         
@@ -871,6 +1008,10 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._tbl_setorTableAdapter != null) 
+                            && (this._tbl_setorTableAdapter.Connection != null))) {
+                    return this._tbl_setorTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -884,6 +1025,9 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._tbl_setorTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -893,8 +1037,17 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(BD_DELTADataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BD_DELTADataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tbl_setorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbl_setor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tbl_setorTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -903,8 +1056,16 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(BD_DELTADataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BD_DELTADataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tbl_setorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbl_setor.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tbl_setorTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -913,8 +1074,16 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(BD_DELTADataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BD_DELTADataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tbl_setorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbl_setor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tbl_setorTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -947,12 +1116,17 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(BD_DELTADataSet3 dataSet) {
+        public virtual int UpdateAll(BD_DELTADataSet4 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._tbl_setorTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tbl_setorTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -986,6 +1160,15 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._tbl_setorTableAdapter != null)) {
+                    revertConnections.Add(this._tbl_setorTableAdapter, this._tbl_setorTableAdapter.Connection);
+                    this._tbl_setorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tbl_setorTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tbl_setorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tbl_setorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tbl_setorTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1043,6 +1226,10 @@ namespace deltarh.BD_DELTADataSet3TableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._tbl_setorTableAdapter != null)) {
+                    this._tbl_setorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbl_setorTableAdapter]));
+                    this._tbl_setorTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

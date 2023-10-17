@@ -43,6 +43,7 @@ namespace deltarh
 
         public void BuscarSetor()
         {
+            //var x = cBoxEmpresa.SelectedValue as string;
             int idEmpresa = Convert.ToInt32(cBoxEmpresa.SelectedValue);
 
             ConsultaBanco consulta = new ConsultaBanco();
@@ -111,6 +112,7 @@ namespace deltarh
                         cadastro.editar();
                         cadastro.btnSalvar.Visible = false;
                         cadastro.btnCadastrar.Visible = true;
+                        cnpj = "";
                         cadastro.ShowDialog();
                     }
                 }
@@ -172,7 +174,7 @@ namespace deltarh
         {
             try
             {
-                this.tbl_empresaTableAdapter.status(this.bD_DELTADataSet.tbl_empresa);
+                this.tbl_empresaTableAdapter2.FillBy(this.bD_DELTADataSet3.tbl_empresa);
             }
             catch (System.Exception ex)
             {
@@ -201,12 +203,8 @@ namespace deltarh
         private void cBoxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SetStyle(ControlStyles.StandardClick, true);
-            
-        }
-
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
             BuscarSetor();
+            
         }
     }
 }

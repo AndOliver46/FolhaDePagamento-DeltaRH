@@ -97,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_DELTADataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD_DELTADataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DELTADataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cnpj.cs" />
     <Compile Include="FrmCadColaborador.cs">
       <SubType>Form</SubType>
@@ -233,6 +238,17 @@
     </None>
     <None Include="BD_DELTADataSet3.xss">
       <DependentUpon>BD_DELTADataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet4.xsc">
+      <DependentUpon>BD_DELTADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DELTADataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DELTADataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DELTADataSet4.xss">
+      <DependentUpon>BD_DELTADataSet4.xsd</DependentUpon>
     </None>
     <None Include="CNPJ.tlb" />
     <None Include="packages.config" />
