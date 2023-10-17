@@ -1025,6 +1025,7 @@ namespace deltarh
             // 
             this.txtSenha.Location = new System.Drawing.Point(118, 85);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(160, 22);
             this.txtSenha.TabIndex = 1;
             // 

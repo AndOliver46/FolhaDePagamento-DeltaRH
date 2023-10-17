@@ -43,24 +43,27 @@ namespace deltarh
 
         public void BuscarSetor()
         {
-            //var x = cBoxEmpresa.SelectedValue as string;
-            int idEmpresa = Convert.ToInt32(cBoxEmpresa.SelectedValue);
-
-            ConsultaBanco consulta = new ConsultaBanco();
-
-            List<mdlSetor> setores = new List<mdlSetor>();
-
-            try
+            if (cBoxEmpresa.SelectedValue is int)
             {
-                setores = consulta.ConsultarSetor(idEmpresa);
+                int idEmpresa = Convert.ToInt32(cBoxEmpresa.SelectedValue);
 
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
 
-            BuscarColabs(setores);
+                ConsultaBanco consulta = new ConsultaBanco();
+
+                List<mdlSetor> setores = new List<mdlSetor>();
+
+                try
+                {
+                    setores = consulta.ConsultarSetor(idEmpresa);
+
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+
+                BuscarColabs(setores);
+            }
         }
 
         public void BuscarColabs(List<mdlSetor> setores)
