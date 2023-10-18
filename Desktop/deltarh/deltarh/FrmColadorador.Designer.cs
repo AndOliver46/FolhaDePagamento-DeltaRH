@@ -135,6 +135,7 @@
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(243, 22);
             this.mskCpf.TabIndex = 6;
+            this.mskCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskCpf_KeyPress);
             // 
             // mskNascimento
             // 

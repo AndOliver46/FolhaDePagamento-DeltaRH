@@ -73,6 +73,7 @@ namespace deltarh
             this.mskSenha.Size = new System.Drawing.Size(118, 24);
             this.mskSenha.TabIndex = 1;
             this.mskSenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSenha_MaskInputRejected);
+            this.mskSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskSenha_KeyPress);
             // 
             // btnOk
             // 

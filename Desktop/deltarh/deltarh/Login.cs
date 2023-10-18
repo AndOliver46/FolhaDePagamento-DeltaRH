@@ -61,5 +61,13 @@ namespace deltarh
         {
             
         }
+
+        private void mskSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                EntrarMenu();
+            }
+        }
     }
 }

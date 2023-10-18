@@ -96,6 +96,10 @@ namespace deltarh
             this.label17 = new System.Windows.Forms.Label();
             this.txtSetor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idsetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomesetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblsetorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DELTADataSet4 = new deltarh.BD_DELTADataSet4();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPolitica = new System.Windows.Forms.TextBox();
@@ -133,11 +137,7 @@ namespace deltarh
             this.bD_DELTADataSet3 = new deltarh.BD_DELTADataSet3();
             this.bDDELTADataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDDELTADataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblsetorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bD_DELTADataSet4 = new deltarh.BD_DELTADataSet4();
             this.tbl_setorTableAdapter1 = new deltarh.BD_DELTADataSet4TableAdapters.tbl_setorTableAdapter();
-            this.idsetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomesetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.pgEndereco.SuspendLayout();
             this.gboxEndereco.SuspendLayout();
@@ -150,6 +150,8 @@ namespace deltarh
             this.gboxEdita.SuspendLayout();
             this.gboxCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -160,8 +162,6 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCnpj
@@ -172,6 +172,7 @@ namespace deltarh
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(232, 24);
             this.txtCnpj.TabIndex = 0;
+            this.txtCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnpj_KeyPress);
             // 
             // txtRazaoSocial
             // 
@@ -929,6 +930,32 @@ namespace deltarh
             this.dataGridView1.Size = new System.Drawing.Size(364, 243);
             this.dataGridView1.TabIndex = 0;
             // 
+            // idsetorDataGridViewTextBoxColumn
+            // 
+            this.idsetorDataGridViewTextBoxColumn.DataPropertyName = "id_setor";
+            this.idsetorDataGridViewTextBoxColumn.HeaderText = "id_setor";
+            this.idsetorDataGridViewTextBoxColumn.Name = "idsetorDataGridViewTextBoxColumn";
+            this.idsetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsetorDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // nomesetorDataGridViewTextBoxColumn
+            // 
+            this.nomesetorDataGridViewTextBoxColumn.DataPropertyName = "nome_setor";
+            this.nomesetorDataGridViewTextBoxColumn.HeaderText = "nome_setor";
+            this.nomesetorDataGridViewTextBoxColumn.Name = "nomesetorDataGridViewTextBoxColumn";
+            this.nomesetorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomesetorDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tblsetorBindingSource1
+            // 
+            this.tblsetorBindingSource1.DataMember = "tbl_setor";
+            this.tblsetorBindingSource1.DataSource = this.bD_DELTADataSet4;
+            // 
+            // bD_DELTADataSet4
+            // 
+            this.bD_DELTADataSet4.DataSetName = "BD_DELTADataSet4";
+            this.bD_DELTADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox2);
@@ -1172,7 +1199,7 @@ namespace deltarh
             // btnConsultaCnpj
             // 
             this.btnConsultaCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaCnpj.Location = new System.Drawing.Point(388, 28);
+            this.btnConsultaCnpj.Location = new System.Drawing.Point(399, 29);
             this.btnConsultaCnpj.Name = "btnConsultaCnpj";
             this.btnConsultaCnpj.Size = new System.Drawing.Size(90, 30);
             this.btnConsultaCnpj.TabIndex = 16;
@@ -1263,35 +1290,9 @@ namespace deltarh
             this.bDDELTADataSet2BindingSource.DataSource = this.BD_DELTADataSet2;
             this.bDDELTADataSet2BindingSource.Position = 0;
             // 
-            // tblsetorBindingSource1
-            // 
-            this.tblsetorBindingSource1.DataMember = "tbl_setor";
-            this.tblsetorBindingSource1.DataSource = this.bD_DELTADataSet4;
-            // 
-            // bD_DELTADataSet4
-            // 
-            this.bD_DELTADataSet4.DataSetName = "BD_DELTADataSet4";
-            this.bD_DELTADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbl_setorTableAdapter1
             // 
             this.tbl_setorTableAdapter1.ClearBeforeFill = true;
-            // 
-            // idsetorDataGridViewTextBoxColumn
-            // 
-            this.idsetorDataGridViewTextBoxColumn.DataPropertyName = "id_setor";
-            this.idsetorDataGridViewTextBoxColumn.HeaderText = "id_setor";
-            this.idsetorDataGridViewTextBoxColumn.Name = "idsetorDataGridViewTextBoxColumn";
-            this.idsetorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idsetorDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // nomesetorDataGridViewTextBoxColumn
-            // 
-            this.nomesetorDataGridViewTextBoxColumn.DataPropertyName = "nome_setor";
-            this.nomesetorDataGridViewTextBoxColumn.HeaderText = "nome_setor";
-            this.nomesetorDataGridViewTextBoxColumn.Name = "nomesetorDataGridViewTextBoxColumn";
-            this.nomesetorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomesetorDataGridViewTextBoxColumn.Width = 200;
             // 
             // FrmCadEmpresa
             // 
@@ -1343,6 +1344,8 @@ namespace deltarh
             this.gboxCadastro.ResumeLayout(false);
             this.gboxCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1356,8 +1359,6 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDELTADataSet2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

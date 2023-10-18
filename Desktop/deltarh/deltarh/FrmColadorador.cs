@@ -75,5 +75,13 @@ namespace deltarh
         {
             BuscarColab();
         }
+
+        private void mskCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                BuscarColab();
+            }
+        }
     }
 }

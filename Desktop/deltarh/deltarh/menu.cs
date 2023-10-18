@@ -90,8 +90,7 @@ namespace deltarh
             this.cBoxColaborador.DisplayMember = "nome";
             this.cBoxColaborador.ValueMember = "id";
         }
-
-        private void btnCnpj_Click(object sender, EventArgs e)
+        public void ConsultarEmpresas()
         {
             string cnpj = txtCnpj.Text;
 
@@ -131,11 +130,22 @@ namespace deltarh
             {
                 empresa = null;
             }
-
-
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCnpj_Click(object sender, EventArgs e)
+        {
+            ConsultarEmpresas();
+        }
+
+        private void txtCnpj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ConsultarEmpresas();
+            }
+        }
+
+        private void ConsultarColaborador()
         {
             string cpf = txtCpf.Text;
 
@@ -143,26 +153,39 @@ namespace deltarh
 
             mdlColaborador colab = null;
 
-                colab = consulta.ConsultarColab(cpf);
+            colab = consulta.ConsultarColab(cpf);
 
-                if (colab == null)
-                {
-                    var resposta = MessageBox.Show("Colaborador não cadastrado. Deseja cadastrá-lo?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (colab == null)
+            {
+                var resposta = MessageBox.Show("Colaborador não cadastrado. Deseja cadastrá-lo?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resposta == DialogResult.Yes)
-                    {
-                        FrmCadColadorador cadastro = new FrmCadColadorador();
-                        cadastro.mskCpf.Text = cpf;
-                        cadastro.ShowDialog();
-                    }
-                }
-                else
+                if (resposta == DialogResult.Yes)
                 {
-                    FrmColadorador busca = new FrmColadorador();
-                    busca.mskCpf.Text = cpf;
-                    busca.BuscarColab();
-                    busca.ShowDialog();
+                    FrmCadColadorador cadastro = new FrmCadColadorador();
+                    cadastro.mskCpf.Text = cpf;
+                    cadastro.ShowDialog();
                 }
+            }
+            else
+            {
+                FrmColadorador busca = new FrmColadorador();
+                busca.mskCpf.Text = cpf;
+                busca.BuscarColab();
+                busca.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsultarColaborador();
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ConsultarColaborador();
+            }
         }
         private void FrmMenu_Load(object sender, EventArgs e)
         {

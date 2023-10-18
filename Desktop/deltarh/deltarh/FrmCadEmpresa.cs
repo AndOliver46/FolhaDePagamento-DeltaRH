@@ -57,7 +57,7 @@ namespace deltarh
                 txtCodId.Text = Convert.ToString(empresa.id);
                 txtRazaoSocial.Text = empresa.razao;
                 txtCnpj.Text = empresa.cnpj;
-                txtNome.Text = empresa.responsavel; ;
+                txtNome.Text = empresa.responsavel;
                 txtCpf.Text = empresa.cpf;
                 txtStatus.Text = empresa.status;
                 txtLogradouro.Text = empresa.logradouro;
@@ -191,7 +191,7 @@ namespace deltarh
 
             empresa.razao = txtRazaoSocial.Text;
             empresa.cnpj = txtCnpj.Text;
-            empresa.responsavel = txtNome.Text; ;
+            empresa.responsavel = txtNome.Text;
             empresa.cpf = txtCpf.Text;
             empresa.logradouro = txtLogradouro.Text;
             empresa.numero = txtNumero.Text;
@@ -315,7 +315,7 @@ namespace deltarh
 
                 empresa.razao = txtRazaoSocial.Text;
                 empresa.cnpj = txtCnpj.Text;
-                empresa.responsavel = txtNome.Text; ;
+                empresa.responsavel = txtNome.Text;
                 empresa.cpf = txtCpf.Text;
                 empresa.logradouro = txtLogradouro.Text;
                 empresa.numero = txtNumero.Text;
@@ -357,6 +357,14 @@ namespace deltarh
             else
             {
                 Close();
+            }
+        }
+
+        private void txtCnpj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                consultaCnpj();
             }
         }
     }

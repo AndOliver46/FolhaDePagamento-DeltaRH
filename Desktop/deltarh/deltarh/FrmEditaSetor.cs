@@ -42,7 +42,6 @@ namespace deltarh
                 {
                     MessageBox.Show("NÃO CADASTRADO.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
             catch (Exception ex) 
             {
