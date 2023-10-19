@@ -75,6 +75,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,9 +96,9 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(536, 31);
+            this.txtId.Location = new System.Drawing.Point(430, 31);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(118, 22);
+            this.txtId.Size = new System.Drawing.Size(75, 22);
             this.txtId.TabIndex = 1;
             // 
             // txtLogradouro
@@ -133,7 +135,7 @@
             this.mskCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCpf.Location = new System.Drawing.Point(134, 31);
             this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(243, 22);
+            this.mskCpf.Size = new System.Drawing.Size(159, 22);
             this.mskCpf.TabIndex = 6;
             this.mskCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskCpf_KeyPress);
             // 
@@ -460,7 +462,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(492, 34);
+            this.label2.Location = new System.Drawing.Point(403, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 16);
             this.label2.TabIndex = 18;
@@ -469,9 +471,9 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(391, 31);
+            this.btnBuscar.Location = new System.Drawing.Point(302, 31);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(79, 23);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -571,11 +573,32 @@
             this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
             this.txtEmpresa.TabIndex = 31;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(527, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 16);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Status";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(576, 31);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(78, 22);
+            this.txtStatus.TabIndex = 24;
+            // 
             // FrmColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 727);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.button3);
@@ -652,5 +675,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtSetor;
         public System.Windows.Forms.MaskedTextBox mskCpf;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }

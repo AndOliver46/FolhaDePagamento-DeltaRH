@@ -12,15 +12,15 @@ CREATE TABLE [dbo].[tbl_politicadisciplinar](
 
 /****** Object:  Table [dbo].[tbl_empresa]    Script Date: 31/08/2023 21:30:24 ******/
 CREATE TABLE [dbo].[tbl_empresa](
-	[id_empresa] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[id_empresa] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
 	[razao_social] [varchar](90) NOT NULL,
-	[cnpj] [varchar](20) NOT NULL UNIQUE,
+	[cnpj] [varchar](20) NOT NULL,
 	[nome_responsavel] [varchar](50) NOT NULL,
 	[cpf_responsavel] [varchar](15) NOT NULL,
 	[logradouro] [varchar](128) NOT NULL,
 	[numero] [varchar](10) NOT NULL,
-	[complemento] [varchar](100),
+	[complemento] [varchar](100) NULL,
 	[bairro] [varchar](80) NOT NULL,
 	[cep] [varchar](15) NOT NULL,
 	[cidade] [varchar](60) NOT NULL,
@@ -29,6 +29,11 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[telefone2] [varchar](20) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[status] [varchar](20) NOT NULL,
+	[vt] [decimal](3, 2) NULL,
+	[vr] [decimal](3, 2) NULL,
+	[ass_medica] [decimal](3, 2) NULL,
+	[odonto] [decimal](3, 2) NULL,
+	[gympass] [decimal](3, 2) NULL,
 	[id_missaovisaovalores] [int] NOT NULL,
 	[id_politicadisciplinar] [int] NOT NULL,
 	CONSTRAINT FK_empresa_missaovisaovalores FOREIGN KEY (id_missaovisaovalores) 
@@ -56,10 +61,10 @@ CREATE TABLE [dbo].[tbl_setor](
 	REFERENCES tbl_empresa(id_empresa));
 
 CREATE TABLE [dbo].[tbl_colaborador](
-	[id_colaborador] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[id_colaborador] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[nome] [varchar](50) NOT NULL,
 	[data_nascimento] [date] NOT NULL,
-	[cpf] [varchar](15) NOT NULL UNIQUE,
+	[cpf] [varchar](15) NOT NULL,
 	[tipo_contrato] [varchar](20) NOT NULL,
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
@@ -76,6 +81,8 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[email] [varchar](50) NOT NULL,
 	[id_setor] [int] NOT NULL,
 	[cargo] [varchar](50) NOT NULL,
+	[status] [varchar](10) NOT NULL,
+	[id_empresa] [int] NOT NULL,
 	[horas_banco] [decimal](5, 2) NOT NULL,
 	CONSTRAINT FK_colaborador_setor FOREIGN KEY (id_setor) 
 	REFERENCES tbl_setor(id_setor));

@@ -52,7 +52,6 @@ namespace deltarh
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.pgContato = new System.Windows.Forms.TabPage();
             this.gboxContato = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.txtTelefone2 = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtTelefone1 = new System.Windows.Forms.TextBox();
@@ -76,16 +75,6 @@ namespace deltarh
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.gboxJornada = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gboxEdita = new System.Windows.Forms.GroupBox();
             this.btnEditarSetor = new System.Windows.Forms.Button();
@@ -145,7 +134,6 @@ namespace deltarh
             this.gboxContato.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gboxDesconto.SuspendLayout();
-            this.gboxJornada.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.gboxEdita.SuspendLayout();
             this.gboxCadastro.SuspendLayout();
@@ -373,7 +361,6 @@ namespace deltarh
             // 
             // gboxContato
             // 
-            this.gboxContato.Controls.Add(this.label24);
             this.gboxContato.Controls.Add(this.txtTelefone2);
             this.gboxContato.Controls.Add(this.lblEmail);
             this.gboxContato.Controls.Add(this.txtTelefone1);
@@ -386,15 +373,6 @@ namespace deltarh
             this.gboxContato.Size = new System.Drawing.Size(737, 214);
             this.gboxContato.TabIndex = 19;
             this.gboxContato.TabStop = false;
-            // 
-            // label24
-            // 
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(391, 96);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(98, 23);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "(OPCIONAL)";
             // 
             // txtTelefone2
             // 
@@ -450,7 +428,6 @@ namespace deltarh
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.gboxDesconto);
-            this.tabPage1.Controls.Add(this.gboxJornada);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -477,7 +454,7 @@ namespace deltarh
             this.gboxDesconto.Controls.Add(this.checkBox2);
             this.gboxDesconto.Controls.Add(this.checkBox1);
             this.gboxDesconto.Enabled = false;
-            this.gboxDesconto.Location = new System.Drawing.Point(332, 16);
+            this.gboxDesconto.Location = new System.Drawing.Point(9, 15);
             this.gboxDesconto.Name = "gboxDesconto";
             this.gboxDesconto.Size = new System.Drawing.Size(417, 222);
             this.gboxDesconto.TabIndex = 5;
@@ -613,213 +590,6 @@ namespace deltarh
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Vale Transporte";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // gboxJornada
-            // 
-            this.gboxJornada.Controls.Add(this.label9);
-            this.gboxJornada.Controls.Add(this.label11);
-            this.gboxJornada.Controls.Add(this.comboBox2);
-            this.gboxJornada.Controls.Add(this.comboBox4);
-            this.gboxJornada.Controls.Add(this.comboBox1);
-            this.gboxJornada.Controls.Add(this.label10);
-            this.gboxJornada.Controls.Add(this.comboBox3);
-            this.gboxJornada.Controls.Add(this.radioButton2);
-            this.gboxJornada.Controls.Add(this.radioButton1);
-            this.gboxJornada.Enabled = false;
-            this.gboxJornada.Location = new System.Drawing.Point(12, 16);
-            this.gboxJornada.Name = "gboxJornada";
-            this.gboxJornada.Size = new System.Drawing.Size(285, 222);
-            this.gboxJornada.TabIndex = 0;
-            this.gboxJornada.TabStop = false;
-            this.gboxJornada.Text = "Jornada";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(180, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 16);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "à";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 175);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 16);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Permite Horas Extras";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
-            this.comboBox2.Location = new System.Drawing.Point(210, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(57, 24);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "SIM",
-            "NÃO"});
-            this.comboBox4.Location = new System.Drawing.Point(174, 172);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(67, 24);
-            this.comboBox4.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(57, 24);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 132);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(149, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Carga Horária Semanal";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "20",
-            "30",
-            "40",
-            "44"});
-            this.comboBox3.Location = new System.Drawing.Point(173, 129);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(67, 24);
-            this.comboBox3.TabIndex = 1;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(14, 77);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Fixa de";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Flexível";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -1336,8 +1106,6 @@ namespace deltarh
             this.tabPage1.ResumeLayout(false);
             this.gboxDesconto.ResumeLayout(false);
             this.gboxDesconto.PerformLayout();
-            this.gboxJornada.ResumeLayout(false);
-            this.gboxJornada.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.gboxEdita.ResumeLayout(false);
             this.gboxEdita.PerformLayout();
@@ -1400,16 +1168,6 @@ namespace deltarh
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefone2;
         private System.Windows.Forms.TextBox txtTelefone1;
-        private System.Windows.Forms.GroupBox gboxJornada;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.GroupBox gboxDesconto;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox4;
@@ -1456,7 +1214,6 @@ namespace deltarh
         private System.Windows.Forms.Label label23;
         public System.Windows.Forms.TextBox txtCnpj;
         public System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label24;
         private BD_DELTADataSet2 BD_DELTADataSet2;
         private System.Windows.Forms.BindingSource tblsetorBindingSource;
         private BD_DELTADataSet2TableAdapters.tbl_setorTableAdapter tbl_setorTableAdapter;
