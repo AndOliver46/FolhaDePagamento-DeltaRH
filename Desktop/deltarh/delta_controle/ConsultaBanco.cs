@@ -51,8 +51,13 @@ namespace delta_controle
                         empresa.fone2 = rd.GetString(14);
                         empresa.email = rd.GetString(15);
                         empresa.status = rd.GetString(16);
-                        empresa.id_missao = rd.GetInt32(17);
-                        empresa.id_politica = rd.GetInt32(18);
+                        empresa.vt = rd.GetDecimal(17);
+                        empresa.vr = rd.GetDecimal(18);
+                        empresa.assMedica = rd.GetDecimal(19);
+                        empresa.odonto = rd.GetDecimal(20);
+                        empresa.gym = rd.GetDecimal(21);
+                        empresa.id_missao = rd.GetInt32(22);
+                        empresa.id_politica = rd.GetInt32(23);
                     }
                     rd.Close();
 
@@ -141,8 +146,13 @@ namespace delta_controle
                         empresa.fone2 = rd.GetString(14);
                         empresa.email = rd.GetString(15);
                         empresa.status = rd.GetString(16);
-                        empresa.id_missao = rd.GetInt32(17);
-                        empresa.id_politica = rd.GetInt32(18);
+                        empresa.vt = rd.GetDecimal(17);
+                        empresa.vr = rd.GetDecimal(18);
+                        empresa.assMedica = rd.GetDecimal(19);
+                        empresa.odonto = rd.GetDecimal(20);
+                        empresa.gym = rd.GetDecimal(21);
+                        empresa.id_missao = rd.GetInt32(22);
+                        empresa.id_politica = rd.GetInt32(23);
                     }
                     rd.Close();
 

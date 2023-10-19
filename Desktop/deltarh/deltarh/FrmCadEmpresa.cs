@@ -71,6 +71,11 @@ namespace deltarh
                 txtTelefone2.Text = empresa.fone2;
                 txtEmail.Text = empresa.email;
                 txtSenha.Text = empresa.senha;
+                txtVt.Text = Convert.ToString(empresa.vt);
+                txtVr.Text = Convert.ToString(empresa.vr);
+                txtAssMedica.Text = Convert.ToString(empresa.assMedica);
+                txtOdonto.Text = Convert.ToString(empresa.odonto);
+                txtGym.Text = Convert.ToString(empresa.gym);
 
                 txtRazaoSocial.Enabled = false;
                 txtUsuario.Text = txtCnpj.Text;
@@ -87,7 +92,6 @@ namespace deltarh
         {
             gboxEndereco.Enabled = true;
             gboxContato.Enabled = true;
-            gboxJornada.Enabled = true;
             gboxDesconto.Enabled = true;
             gboxCadastro.Enabled = true;
             gboxEdita.Enabled = true;
@@ -328,6 +332,11 @@ namespace deltarh
                 empresa.fone2 = txtTelefone2.Text;
                 empresa.email = txtEmail.Text;
                 empresa.senha = txtSenha.Text;
+                empresa.vt = Convert.ToDecimal(txtVt.Text);
+                empresa.vr = Convert.ToDecimal(txtVr.Text);
+                empresa.assMedica = Convert.ToDecimal(txtAssMedica.Text);
+                empresa.odonto = Convert.ToDecimal(txtOdonto.Text);
+                empresa.gym = Convert.ToDecimal(txtGym.Text);
 
                 setor.nome = nomeSetor;
 
@@ -366,6 +375,31 @@ namespace deltarh
             {
                 consultaCnpj();
             }
+        }
+
+        private void chbVt_CheckedChanged(object sender, EventArgs e)
+        {
+            txtVt.Enabled = chbVt.Checked;
+        }
+
+        private void chbVr_CheckedChanged(object sender, EventArgs e)
+        {
+            txtVr.Enabled = chbVr.Checked;
+        }
+
+        private void chbAssMedica_CheckedChanged(object sender, EventArgs e)
+        {
+            txtAssMedica.Enabled = chbAssMedica.Checked;
+        }
+
+        private void chbOdonto_CheckedChanged(object sender, EventArgs e)
+        {
+            txtOdonto.Enabled = chbOdonto.Checked;
+        }
+
+        private void chbGym_CheckedChanged(object sender, EventArgs e)
+        {
+            txtGym.Enabled = chbGym.Checked;
         }
     }
 }

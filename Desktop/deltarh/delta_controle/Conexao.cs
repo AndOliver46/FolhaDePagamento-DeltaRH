@@ -56,45 +56,10 @@ namespace delta_controle
                     conexaodb.Open();
 
                     string query = @"
-        INSERT INTO tbl_empresa (
-            senha, 
-            razao_social, 
-            cnpj, 
-            nome_responsavel, 
-            cpf_responsavel, 
-            logradouro, 
-            numero, 
-            complemento, 
-            bairro, 
-            cep, 
-            cidade, 
-            uf, 
-            telefone, 
-            telefone2, 
-            email, 
-            status,
-            id_missaovisaovalores, 
-            id_politicadisciplinar
-        ) VALUES (
-            @senha, 
-            @razao_social, 
-            @cnpj, 
-            @nome_responsavel, 
-            @cpf_responsavel, 
-            @logradouro, 
-            @numero, 
-            @complemento, 
-            @bairro, 
-            @cep, 
-            @cidade, 
-            @uf, 
-            @telefone, 
-            @telefone2, 
-            @email, 
-            @status,
-            @id_missaovisaovalores, 
-            @id_politicadisciplinar
-        );
+        INSERT INTO tbl_empresa (senha, razao_social, cnpj, nome_responsavel, cpf_responsavel, logradouro, numero, complemento, bairro, 
+        cep, cidade, uf, telefone, telefone2, email, status, vt, vr, ass_medica, odonto, gympass, id_missaovisaovalores, id_politicadisciplinar)
+        VALUES (@senha, @razao_social, @cnpj, @nome_responsavel, @cpf_responsavel, @logradouro, @numero, @complemento, @bairro, 
+        @cep, @cidade, @uf, @telefone, @telefone2, @email, @status, @vt, @vr, @ass_medica, @odonto, @gympass, @id_missaovisaovalores, @id_politicadisciplinar);
         SELECT CAST(scope_identity() AS int)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
@@ -115,6 +80,11 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@telefone2", empresa.fone2);
                     cmd.Parameters.AddWithValue("@email", empresa.email);
                     cmd.Parameters.AddWithValue("@status", empresa.status);
+                    cmd.Parameters.AddWithValue("vt", empresa.vt);
+                    cmd.Parameters.AddWithValue("vr", empresa.vr);
+                    cmd.Parameters.AddWithValue("ass_medica", empresa.assMedica);
+                    cmd.Parameters.AddWithValue("odonto", empresa.odonto);
+                    cmd.Parameters.AddWithValue("gympass", empresa.gym);
                     cmd.Parameters.AddWithValue("@id_missaovisaovalores", IdMissaoVisaoValores);
                     cmd.Parameters.AddWithValue("@id_politicadisciplinar", IdPoliticaDisciplinar);
 

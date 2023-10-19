@@ -61,20 +61,20 @@ namespace deltarh
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gboxDesconto = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtGym = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtOdonto = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAssMedica = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVr = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtVt = new System.Windows.Forms.TextBox();
+            this.chbGym = new System.Windows.Forms.CheckBox();
+            this.chbOdonto = new System.Windows.Forms.CheckBox();
+            this.chbAssMedica = new System.Windows.Forms.CheckBox();
+            this.chbVr = new System.Windows.Forms.CheckBox();
+            this.chbVt = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gboxEdita = new System.Windows.Forms.GroupBox();
             this.btnEditarSetor = new System.Windows.Forms.Button();
@@ -439,20 +439,20 @@ namespace deltarh
             // gboxDesconto
             // 
             this.gboxDesconto.Controls.Add(this.label16);
-            this.gboxDesconto.Controls.Add(this.textBox5);
+            this.gboxDesconto.Controls.Add(this.txtGym);
             this.gboxDesconto.Controls.Add(this.label15);
-            this.gboxDesconto.Controls.Add(this.textBox4);
+            this.gboxDesconto.Controls.Add(this.txtOdonto);
             this.gboxDesconto.Controls.Add(this.label14);
-            this.gboxDesconto.Controls.Add(this.textBox3);
+            this.gboxDesconto.Controls.Add(this.txtAssMedica);
             this.gboxDesconto.Controls.Add(this.label13);
-            this.gboxDesconto.Controls.Add(this.textBox2);
+            this.gboxDesconto.Controls.Add(this.txtVr);
             this.gboxDesconto.Controls.Add(this.label12);
-            this.gboxDesconto.Controls.Add(this.textBox1);
-            this.gboxDesconto.Controls.Add(this.checkBox5);
-            this.gboxDesconto.Controls.Add(this.checkBox4);
-            this.gboxDesconto.Controls.Add(this.checkBox3);
-            this.gboxDesconto.Controls.Add(this.checkBox2);
-            this.gboxDesconto.Controls.Add(this.checkBox1);
+            this.gboxDesconto.Controls.Add(this.txtVt);
+            this.gboxDesconto.Controls.Add(this.chbGym);
+            this.gboxDesconto.Controls.Add(this.chbOdonto);
+            this.gboxDesconto.Controls.Add(this.chbAssMedica);
+            this.gboxDesconto.Controls.Add(this.chbVr);
+            this.gboxDesconto.Controls.Add(this.chbVt);
             this.gboxDesconto.Enabled = false;
             this.gboxDesconto.Location = new System.Drawing.Point(9, 15);
             this.gboxDesconto.Name = "gboxDesconto";
@@ -470,12 +470,13 @@ namespace deltarh
             this.label16.TabIndex = 15;
             this.label16.Text = "%";
             // 
-            // textBox5
+            // txtGym
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(68, 22);
-            this.textBox5.TabIndex = 14;
+            this.txtGym.Enabled = false;
+            this.txtGym.Location = new System.Drawing.Point(180, 185);
+            this.txtGym.Name = "txtGym";
+            this.txtGym.Size = new System.Drawing.Size(68, 22);
+            this.txtGym.TabIndex = 14;
             // 
             // label15
             // 
@@ -486,12 +487,13 @@ namespace deltarh
             this.label15.TabIndex = 13;
             this.label15.Text = "%";
             // 
-            // textBox4
+            // txtOdonto
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 153);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(68, 22);
-            this.textBox4.TabIndex = 12;
+            this.txtOdonto.Enabled = false;
+            this.txtOdonto.Location = new System.Drawing.Point(180, 153);
+            this.txtOdonto.Name = "txtOdonto";
+            this.txtOdonto.Size = new System.Drawing.Size(68, 22);
+            this.txtOdonto.TabIndex = 12;
             // 
             // label14
             // 
@@ -502,12 +504,13 @@ namespace deltarh
             this.label14.TabIndex = 11;
             this.label14.Text = "%";
             // 
-            // textBox3
+            // txtAssMedica
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(68, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtAssMedica.Enabled = false;
+            this.txtAssMedica.Location = new System.Drawing.Point(180, 113);
+            this.txtAssMedica.Name = "txtAssMedica";
+            this.txtAssMedica.Size = new System.Drawing.Size(68, 22);
+            this.txtAssMedica.TabIndex = 10;
             // 
             // label13
             // 
@@ -518,12 +521,13 @@ namespace deltarh
             this.label13.TabIndex = 9;
             this.label13.Text = "%";
             // 
-            // textBox2
+            // txtVr
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(68, 22);
-            this.textBox2.TabIndex = 8;
+            this.txtVr.Enabled = false;
+            this.txtVr.Location = new System.Drawing.Point(180, 78);
+            this.txtVr.Name = "txtVr";
+            this.txtVr.Size = new System.Drawing.Size(68, 22);
+            this.txtVr.TabIndex = 8;
             // 
             // label12
             // 
@@ -534,62 +538,68 @@ namespace deltarh
             this.label12.TabIndex = 7;
             this.label12.Text = "%";
             // 
-            // textBox1
+            // txtVt
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtVt.Enabled = false;
+            this.txtVt.Location = new System.Drawing.Point(180, 42);
+            this.txtVt.Name = "txtVt";
+            this.txtVt.Size = new System.Drawing.Size(68, 22);
+            this.txtVt.TabIndex = 6;
             // 
-            // checkBox5
+            // chbGym
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(25, 187);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(88, 20);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Gym Pass";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chbGym.AutoSize = true;
+            this.chbGym.Location = new System.Drawing.Point(25, 187);
+            this.chbGym.Name = "chbGym";
+            this.chbGym.Size = new System.Drawing.Size(88, 20);
+            this.chbGym.TabIndex = 4;
+            this.chbGym.Text = "Gym Pass";
+            this.chbGym.UseVisualStyleBackColor = true;
+            this.chbGym.CheckedChanged += new System.EventHandler(this.chbGym_CheckedChanged);
             // 
-            // checkBox4
+            // chbOdonto
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(25, 155);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(149, 20);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Assist. Odontológica";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chbOdonto.AutoSize = true;
+            this.chbOdonto.Location = new System.Drawing.Point(25, 155);
+            this.chbOdonto.Name = "chbOdonto";
+            this.chbOdonto.Size = new System.Drawing.Size(149, 20);
+            this.chbOdonto.TabIndex = 3;
+            this.chbOdonto.Text = "Assist. Odontológica";
+            this.chbOdonto.UseVisualStyleBackColor = true;
+            this.chbOdonto.CheckedChanged += new System.EventHandler(this.chbOdonto_CheckedChanged);
             // 
-            // checkBox3
+            // chbAssMedica
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(25, 117);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(113, 20);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Assist. Médica";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chbAssMedica.AutoSize = true;
+            this.chbAssMedica.Location = new System.Drawing.Point(25, 117);
+            this.chbAssMedica.Name = "chbAssMedica";
+            this.chbAssMedica.Size = new System.Drawing.Size(113, 20);
+            this.chbAssMedica.TabIndex = 2;
+            this.chbAssMedica.Text = "Assist. Médica";
+            this.chbAssMedica.UseVisualStyleBackColor = true;
+            this.chbAssMedica.CheckedChanged += new System.EventHandler(this.chbAssMedica_CheckedChanged);
             // 
-            // checkBox2
+            // chbVr
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(25, 80);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(112, 20);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Vale Refeição";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chbVr.AutoSize = true;
+            this.chbVr.Location = new System.Drawing.Point(25, 80);
+            this.chbVr.Name = "chbVr";
+            this.chbVr.Size = new System.Drawing.Size(112, 20);
+            this.chbVr.TabIndex = 1;
+            this.chbVr.Text = "Vale Refeição";
+            this.chbVr.UseVisualStyleBackColor = true;
+            this.chbVr.CheckedChanged += new System.EventHandler(this.chbVr_CheckedChanged);
             // 
-            // checkBox1
+            // chbVt
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(25, 44);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Vale Transporte";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbVt.AutoSize = true;
+            this.chbVt.Location = new System.Drawing.Point(25, 44);
+            this.chbVt.Name = "chbVt";
+            this.chbVt.Size = new System.Drawing.Size(123, 20);
+            this.chbVt.TabIndex = 0;
+            this.chbVt.Text = "Vale Transporte";
+            this.chbVt.UseVisualStyleBackColor = true;
+            this.chbVt.CheckedChanged += new System.EventHandler(this.chbVt_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -1169,21 +1179,21 @@ namespace deltarh
         private System.Windows.Forms.TextBox txtTelefone2;
         private System.Windows.Forms.TextBox txtTelefone1;
         private System.Windows.Forms.GroupBox gboxDesconto;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbGym;
+        private System.Windows.Forms.CheckBox chbOdonto;
+        private System.Windows.Forms.CheckBox chbAssMedica;
+        private System.Windows.Forms.CheckBox chbVr;
+        private System.Windows.Forms.CheckBox chbVt;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtGym;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtOdonto;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAssMedica;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVr;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtVt;
         private System.Windows.Forms.TextBox txtSetor;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox gboxCadastro;

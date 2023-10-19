@@ -25,6 +25,11 @@ namespace delta_modelo
         public string fone2 { get; set; }
         public string email { get; set; }
         public string status { get; set; }
+        public decimal vt { get; set; }
+        public decimal vr { get; set; }
+        public decimal assMedica { get; set; }
+        public decimal odonto { get; set; }
+        public decimal gym { get; set; }
         public int id_missao { get; set; }
         public int id_politica {  get; set; }
         public mdlMissao missao { get; set; }

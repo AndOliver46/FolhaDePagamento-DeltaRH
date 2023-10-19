@@ -1,3 +1,5 @@
+
+
 USE [BD_DELTA]
 
 /****** Object:  Table [dbo].[tbl_MissaoVisaoValores]    Script Date: 31/08/2023 21:30:24 ******/
@@ -15,7 +17,7 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[id_empresa] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[senha] [varchar](200) NOT NULL,
 	[razao_social] [varchar](90) NOT NULL,
-	[cnpj] [varchar](20) NOT NULL,
+	[cnpj] [varchar](20) UNIQUE NOT NULL,
 	[nome_responsavel] [varchar](50) NOT NULL,
 	[cpf_responsavel] [varchar](15) NOT NULL,
 	[logradouro] [varchar](128) NOT NULL,
@@ -29,11 +31,11 @@ CREATE TABLE [dbo].[tbl_empresa](
 	[telefone2] [varchar](20) NOT NULL,
 	[email] [varchar](50) NOT NULL,
 	[status] [varchar](20) NOT NULL,
-	[vt] [decimal](3, 2) NULL,
-	[vr] [decimal](3, 2) NULL,
-	[ass_medica] [decimal](3, 2) NULL,
-	[odonto] [decimal](3, 2) NULL,
-	[gympass] [decimal](3, 2) NULL,
+	[vt] [decimal](5, 2) NULL,
+	[vr] [decimal](5, 2) NULL,
+	[ass_medica] [decimal](5, 2) NULL,
+	[odonto] [decimal](5, 2) NULL,
+	[gympass] [decimal](5, 2) NULL,
 	[id_missaovisaovalores] [int] NOT NULL,
 	[id_politicadisciplinar] [int] NOT NULL,
 	CONSTRAINT FK_empresa_missaovisaovalores FOREIGN KEY (id_missaovisaovalores) 
@@ -64,7 +66,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[id_colaborador] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[nome] [varchar](50) NOT NULL,
 	[data_nascimento] [date] NOT NULL,
-	[cpf] [varchar](15) NOT NULL,
+	[cpf] [varchar](15) UNIQUE NOT NULL,
 	[tipo_contrato] [varchar](20) NOT NULL,
 	[salario_bruto] [decimal](8, 2) NOT NULL,
 	[senha] [varchar](200) NOT NULL,

@@ -28,6 +28,8 @@ namespace delta_modelo
         public string email { get; set; }
         public int id_setor { get; set; }
         public string cargo { get; set; }
+        public string status { get; set; }
+        public int idEmpresa { get; set; }
         public decimal horas_banco { get; set; }
         public mdlSetor setor { get; set; }
     }
