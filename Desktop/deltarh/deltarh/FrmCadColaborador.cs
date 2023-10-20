@@ -46,13 +46,7 @@ namespace deltarh
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cpf.Check("29594421134");    // True
-            Cpf.Check("488.081.131-91"); // True
-            Cpf.Check("00000000000");    // False
-            Cpf.Check("lol");            // False
-
-            Cpf.Format("29594421134"); // "295.944.211-34"
-            Cpf.Format("lol");         // "lol"
+            BuscarColaborador();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -67,51 +61,56 @@ namespace deltarh
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            AlteraBanco altera = new AlteraBanco();
+
             mdlColaborador colab = new mdlColaborador();
+
+            colab.id = Convert.ToInt32(txtId.Text);
+
+            colab.nome = txtNome.Text;
+            colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
+            colab.cpf = mskCpf.Text;
+            colab.contrato = cboxTipoContrato.Text;
+            colab.salario = Convert.ToDecimal(txtSalario.Text);
+            colab.senha = txtSenha.Text;
+            colab.cHoraria = Convert.ToInt32(cboxHorario.Text);
+            colab.logradouro = txtLogradouro.Text;
+            colab.numero = txtNumero.Text;
+            colab.complemento = txtComplemento.Text;
+            colab.bairro = txtBairro.Text;
+            colab.cep = txtCep.Text;
+            colab.cidade = txtCidade.Text;
+            colab.uf = txtUf.Text;
+            colab.fone1 = txtTelefone1.Text;
+            colab.fone2 = txtTelefone2.Text;
+            colab.email = txtEmail.Text;
+            colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
+            colab.status = cboxStatus.Text;
+            colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+            colab.cargo = txtCargo.Text;
+            colab.horas_banco = 0.0M;
+
             try
             {
-                colab.nome = txtNome.Text;
-                colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
-                colab.cpf = mskCpf.Text;
-                colab.contrato = cboxTipoContrato.Text;
-                colab.salario = Convert.ToDecimal(txtSalario.Text);
-                colab.senha = txtSenha.Text;
-                colab.cHoraria = Convert.ToInt32(cboxHorario.Text);
-                colab.logradouro = txtLogradouro.Text;
-                colab.numero = txtNumero.Text;
-                colab.complemento = txtComplemento.Text;
-                colab.bairro = txtBairro.Text;
-                colab.cep = txtCep.Text;
-                colab.cidade = txtCidade.Text;
-                colab.uf = txtUf.Text;
-                colab.fone1 = txtTelefone1.Text;
-                colab.fone2 = txtTelefone2.Text;
-                colab.email = txtEmail.Text;
-                colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
-                colab.cargo = txtCargo.Text;
-                colab.horas_banco = 0.0M;
+                bool alterado = altera.AlterarColaborador(colab);
+                if (alterado)
+                {
+                    MessageBox.Show("Cadastro Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("NÃO CADASTRADO.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                CadColab conecta = new CadColab();
-
-                conecta.CadastrarColab(colab);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Novo Colaborador?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (resposta == DialogResult.Yes)
-            {
-                LimparCadastro();
-            }
-            else
-            {
-                Close();
+                throw;
             }
         }
 
-        private void BuscarSetor()
+        public void BuscarSetor()
         {
             int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
 
@@ -162,6 +161,101 @@ namespace deltarh
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            mdlColaborador colab = new mdlColaborador();
+            try
+            {
+                colab.nome = txtNome.Text;
+                colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
+                colab.cpf = mskCpf.Text;
+                colab.contrato = cboxTipoContrato.Text;
+                colab.salario = Convert.ToDecimal(txtSalario.Text);
+                colab.senha = txtSenha.Text;
+                colab.cHoraria = Convert.ToInt32(cboxHorario.Text);
+                colab.logradouro = txtLogradouro.Text;
+                colab.numero = txtNumero.Text;
+                colab.complemento = txtComplemento.Text;
+                colab.bairro = txtBairro.Text;
+                colab.cep = txtCep.Text;
+                colab.cidade = txtCidade.Text;
+                colab.uf = txtUf.Text;
+                colab.fone1 = txtTelefone1.Text;
+                colab.fone2 = txtTelefone2.Text;
+                colab.email = txtEmail.Text;
+                colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
+                colab.status = "ATIVO";
+                colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+                colab.cargo = txtCargo.Text;
+                colab.horas_banco = 0.0M;
+
+                CadColab conecta = new CadColab();
+
+                conecta.CadastrarColab(colab);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Novo Colaborador?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resposta == DialogResult.Yes)
+            {
+                LimparCadastro();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private void mskCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FrmColadorador colab = new FrmColadorador();
+            colab.BuscarColab();
+        }
+
+        public void BuscarColaborador()
+        {
+            string cpf = mskCpf.Text;
+
+            ConsultaBanco consulta = new ConsultaBanco();
+
+            mdlColaborador colab = null;
+
+            try
+            {
+                colab = consulta.ConsultarColab(cpf);
+
+                txtId.Text = Convert.ToString(colab.id);
+                txtNome.Text = colab.nome;
+                mskCpf.Text = colab.cpf;
+                mskNascimento.Text = Convert.ToString(colab.nascimento);
+                txtSalario.Text = Convert.ToString(colab.salario);
+                cboxTipoContrato.Text = colab.contrato;
+                cboxHorario.Text = Convert.ToString(colab.cHoraria);
+                txtLogradouro.Text = colab.logradouro;
+                txtNumero.Text = colab.numero;
+                txtComplemento.Text = colab.complemento;
+                txtBairro.Text = colab.bairro;
+                txtCep.Text = colab.cep;
+                txtCidade.Text = colab.cidade;
+                txtUf.Text = colab.uf;
+                txtTelefone1.Text = colab.fone1;
+                txtTelefone2.Text = colab.fone2;
+                txtEmail.Text = colab.email;
+                cboxStatus.Text = colab.status;
+                txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
+                txtSenha.Text = colab.senha;
+
+                cBoxSetor.Text = colab.setor.nome;
+            }
+            catch (Exception ex)
+            {
+                colab = null;
+            }
         }
     }
 }

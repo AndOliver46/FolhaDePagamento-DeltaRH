@@ -80,6 +80,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.cBoxSetor = new System.Windows.Forms.ComboBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cboxStatus = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -134,9 +139,10 @@
             this.mskCpf.Location = new System.Drawing.Point(134, 31);
             this.mskCpf.Mask = "###.###.###/##";
             this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(243, 22);
+            this.mskCpf.Size = new System.Drawing.Size(159, 22);
             this.mskCpf.TabIndex = 6;
             this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskCpf_KeyPress);
             // 
             // mskNascimento
             // 
@@ -502,7 +508,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(391, 31);
+            this.btnBuscar.Location = new System.Drawing.Point(313, 31);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 19;
@@ -519,6 +525,7 @@
             this.btnSalvar.TabIndex = 20;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Visible = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
@@ -626,11 +633,68 @@
             this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
             this.txtEmpresa.TabIndex = 24;
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(591, 696);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.TabIndex = 24;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(394, 34);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(20, 16);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "ID";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(510, 33);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 16);
+            this.label23.TabIndex = 25;
+            this.label23.Text = "Status";
+            // 
+            // cboxStatus
+            // 
+            this.cboxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxStatus.FormattingEnabled = true;
+            this.cboxStatus.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cboxStatus.Location = new System.Drawing.Point(560, 30);
+            this.cboxStatus.Name = "cboxStatus";
+            this.cboxStatus.Size = new System.Drawing.Size(94, 24);
+            this.cboxStatus.TabIndex = 24;
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(423, 31);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(81, 22);
+            this.txtId.TabIndex = 24;
+            // 
             // FrmCadColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 731);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.cboxStatus);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCancelar);
@@ -692,7 +756,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label label2;
@@ -711,5 +774,11 @@
         private System.Windows.Forms.TextBox txtIdEmpresa;
         private System.Windows.Forms.Button btnCep;
         public System.Windows.Forms.MaskedTextBox mskCpf;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cboxStatus;
+        private System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.Button btnSalvar;
+        public System.Windows.Forms.Button btnCadastrar;
     }
 }

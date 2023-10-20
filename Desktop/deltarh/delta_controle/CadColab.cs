@@ -1,6 +1,5 @@
 ﻿using delta_modelo;
 using System;
-using System.ComponentModel;
 using System.Data.SqlClient;
 
 
@@ -15,8 +14,6 @@ namespace delta_controle
             try
             {
                 int idSetor, carga;
-                double salario;
-                
 
                 using (SqlConnection conexaodb = new SqlConnection(conexao))
                 {
@@ -43,6 +40,8 @@ namespace delta_controle
             email, 
             id_setor,
             cargo,
+            status,
+            id_empresa,
             horas_banco) 
          VALUES (
             @nome, 
@@ -64,6 +63,8 @@ namespace delta_controle
             @email, 
             @id_setor,
             @cargo,
+            @status,
+            @id_empresa,
             @horas_banco);
         SELECT CAST(scope_identity() AS int)";
 
@@ -91,6 +92,8 @@ namespace delta_controle
                     idSetor = Convert.ToInt32(colab.id_setor);
                     cmd.Parameters.AddWithValue("@id_setor", idSetor);
                     cmd.Parameters.AddWithValue("@cargo", colab.cargo);
+                    cmd.Parameters.AddWithValue("@status", colab.status);
+                    cmd.Parameters.AddWithValue("@id_empresa", colab.idEmpresa);
                     cmd.Parameters.AddWithValue("@horas_banco", colab.horas_banco);
 
                     int idInserido = (int)cmd.ExecuteScalar();

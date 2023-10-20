@@ -103,6 +103,12 @@
       <DependentUpon>BD_DELTADataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Cnpj.cs" />
+    <Compile Include="FrmAprovaStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAprovaStatus.Designer.cs">
+      <DependentUpon>FrmAprovaStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAprovaStatus.resx">
+      <DependentUpon>FrmAprovaStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadColaborador.resx">
       <DependentUpon>FrmCadColaborador.cs</DependentUpon>
     </EmbeddedResource>

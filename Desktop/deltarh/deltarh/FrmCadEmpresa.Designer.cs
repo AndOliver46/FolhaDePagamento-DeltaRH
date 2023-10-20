@@ -90,9 +90,9 @@ namespace deltarh
             this.tblsetorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bD_DELTADataSet4 = new deltarh.BD_DELTADataSet4();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gboxPolitica = new System.Windows.Forms.GroupBox();
             this.txtPolitica = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboxMissao = new System.Windows.Forms.GroupBox();
             this.txtMissao = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -141,8 +141,8 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxPolitica.SuspendLayout();
+            this.gboxMissao.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource)).BeginInit();
@@ -738,8 +738,8 @@ namespace deltarh
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.gboxPolitica);
+            this.tabPage3.Controls.Add(this.gboxMissao);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -748,16 +748,17 @@ namespace deltarh
             this.tabPage3.Text = "Missão & Política";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // gboxPolitica
             // 
-            this.groupBox2.Controls.Add(this.txtPolitica);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 125);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(753, 124);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Política";
+            this.gboxPolitica.Controls.Add(this.txtPolitica);
+            this.gboxPolitica.Enabled = false;
+            this.gboxPolitica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxPolitica.Location = new System.Drawing.Point(9, 125);
+            this.gboxPolitica.Name = "gboxPolitica";
+            this.gboxPolitica.Size = new System.Drawing.Size(753, 124);
+            this.gboxPolitica.TabIndex = 2;
+            this.gboxPolitica.TabStop = false;
+            this.gboxPolitica.Text = "Política";
             // 
             // txtPolitica
             // 
@@ -767,16 +768,17 @@ namespace deltarh
             this.txtPolitica.Size = new System.Drawing.Size(741, 97);
             this.txtPolitica.TabIndex = 1;
             // 
-            // groupBox1
+            // gboxMissao
             // 
-            this.groupBox1.Controls.Add(this.txtMissao);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(753, 113);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Missão";
+            this.gboxMissao.Controls.Add(this.txtMissao);
+            this.gboxMissao.Enabled = false;
+            this.gboxMissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxMissao.Location = new System.Drawing.Point(9, 6);
+            this.gboxMissao.Name = "gboxMissao";
+            this.gboxMissao.Size = new System.Drawing.Size(753, 113);
+            this.gboxMissao.TabIndex = 2;
+            this.gboxMissao.TabStop = false;
+            this.gboxMissao.Text = "Missão";
             // 
             // txtMissao
             // 
@@ -1046,7 +1048,7 @@ namespace deltarh
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(702, 511);
+            this.btnCadastrar.Location = new System.Drawing.Point(413, 511);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(89, 30);
             this.btnCadastrar.TabIndex = 23;
@@ -1125,10 +1127,10 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.tblsetorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet4)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboxPolitica.ResumeLayout(false);
+            this.gboxPolitica.PerformLayout();
+            this.gboxMissao.ResumeLayout(false);
+            this.gboxMissao.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1209,8 +1211,8 @@ namespace deltarh
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox txtPolitica;
         private System.Windows.Forms.TextBox txtMissao;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboxPolitica;
+        private System.Windows.Forms.GroupBox gboxMissao;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label label19;

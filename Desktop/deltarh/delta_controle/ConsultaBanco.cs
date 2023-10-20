@@ -243,6 +243,10 @@ namespace delta_controle
                         colaborador.fone2 = rd.GetString(16);
                         colaborador.email = rd.GetString(17);
                         colaborador.id_setor = rd.GetInt32(18);
+                        colaborador.cargo = rd.GetString(19);
+                        colaborador.status = rd.GetString(20);
+                        colaborador.idEmpresa = rd.GetInt32(21);
+                        colaborador.horas_banco = rd.GetDecimal(22);
                     }
                     rd.Close();
 

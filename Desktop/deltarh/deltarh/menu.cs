@@ -232,5 +232,13 @@ namespace deltarh
             BuscarSetor();
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAprovaStatus status = new FrmAprovaStatus();
+            status.txtCnpj.Text = txtCnpjStatus.Text;
+            status.MostrarEmpresa();
+            status.ShowDialog();
+        }
     }
 }

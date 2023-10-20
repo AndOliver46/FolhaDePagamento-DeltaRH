@@ -69,6 +69,10 @@ namespace deltarh
             this.tbl_empresaTableAdapter1 = new deltarh.BD_DELTADataSet1TableAdapters.tbl_empresaTableAdapter();
             this.tbl_empresaTableAdapter = new deltarh.BD_DELTADataSetTableAdapters.tbl_empresaTableAdapter();
             this.tbl_empresaTableAdapter2 = new deltarh.BD_DELTADataSet3TableAdapters.tbl_empresaTableAdapter();
+            this.txtCnpjStatus = new System.Windows.Forms.TextBox();
+            this.btnStatus = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -84,6 +88,7 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,6 +105,7 @@ namespace deltarh
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.btnAtualiza);
@@ -123,7 +129,7 @@ namespace deltarh
             this.dataGridView3.DataSource = this.tblempresaBindingSource2;
             this.dataGridView3.Location = new System.Drawing.Point(0, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(512, 447);
+            this.dataGridView3.Size = new System.Drawing.Size(512, 336);
             this.dataGridView3.TabIndex = 3;
             // 
             // razaosocialDataGridViewTextBoxColumn
@@ -165,12 +171,12 @@ namespace deltarh
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(515, 450);
+            this.dataGridView2.Size = new System.Drawing.Size(515, 339);
             this.dataGridView2.TabIndex = 2;
             // 
             // btnAtualiza
             // 
-            this.btnAtualiza.Location = new System.Drawing.Point(437, 472);
+            this.btnAtualiza.Location = new System.Drawing.Point(437, 345);
             this.btnAtualiza.Name = "btnAtualiza";
             this.btnAtualiza.Size = new System.Drawing.Size(75, 23);
             this.btnAtualiza.TabIndex = 1;
@@ -432,6 +438,47 @@ namespace deltarh
             // 
             this.tbl_empresaTableAdapter2.ClearBeforeFill = true;
             // 
+            // txtCnpjStatus
+            // 
+            this.txtCnpjStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCnpjStatus.Location = new System.Drawing.Point(132, 47);
+            this.txtCnpjStatus.Name = "txtCnpjStatus";
+            this.txtCnpjStatus.Size = new System.Drawing.Size(196, 22);
+            this.txtCnpjStatus.TabIndex = 4;
+            // 
+            // btnStatus
+            // 
+            this.btnStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatus.Location = new System.Drawing.Point(349, 45);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnStatus.TabIndex = 5;
+            this.btnStatus.Text = "Status";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtCnpjStatus);
+            this.groupBox3.Controls.Add(this.btnStatus);
+            this.groupBox3.Location = new System.Drawing.Point(9, 394);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(503, 100);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Atualizar Status";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(71, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "CNPJ";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +507,8 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_DELTADataSet1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -505,5 +554,9 @@ namespace deltarh
         private System.Windows.Forms.DataGridViewTextBoxColumn razaosocialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnStatus;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtCnpjStatus;
     }
 }

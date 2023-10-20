@@ -147,3 +147,4 @@ C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.Cor
 C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.csproj.CopyComplete
 C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.exe
 C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.pdb
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmAprovaStatus.resources

@@ -95,6 +95,8 @@ namespace deltarh
             gboxDesconto.Enabled = true;
             gboxCadastro.Enabled = true;
             gboxEdita.Enabled = true;
+            gboxMissao.Enabled = true;
+            gboxPolitica.Enabled = true;
             txtFantasia.Enabled = true;
             txtCnpj.Enabled = false;
             btnSalvar.Visible = true;
@@ -209,6 +211,12 @@ namespace deltarh
             empresa.email = txtEmail.Text;
             empresa.senha = txtSenha.Text;
             empresa.status = txtStatus.Text;
+            empresa.vt = Convert.ToDecimal(txtVt.Text);
+            empresa.vr = Convert.ToDecimal(txtVr.Text);
+            empresa.assMedica = Convert.ToDecimal(txtAssMedica.Text);
+            empresa.odonto = Convert.ToDecimal(txtOdonto.Text);
+            empresa.gym = Convert.ToDecimal(txtGym.Text);
+
             try
             {
                 bool alterado = altera.AlterarEmpresa(missao, politica, empresa);

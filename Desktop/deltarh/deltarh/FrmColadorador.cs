@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using delta_controle;
 using delta_modelo;
@@ -47,11 +48,12 @@ namespace deltarh
                 txtTelefone1.Text = colab.fone1;
                 txtTelefone2.Text = colab.fone2;
                 txtEmail.Text = colab.email;
+                txtStatus.Text = colab.status;
+                txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
 
                 txtSetor.Text = colab.setor.nome;
 
-                // txtIdEmpresa.Text = colab.id.Text;
-                // txtEmpresa.Text = 
+                MostrarEmpresa();
             }
             catch (Exception ex)
             {
@@ -63,6 +65,11 @@ namespace deltarh
         {
             FrmCadColadorador edita = new FrmCadColadorador();
             edita.mskCpf.Text = mskCpf.Text;
+            edita.btnCadastrar.Visible = false;
+            edita.btnSalvar.Visible = true;
+            edita.BuscarColaborador();
+            edita.BuscarSetor();
+            Close();
             edita.ShowDialog();
         }
 
@@ -81,6 +88,27 @@ namespace deltarh
             if (e.KeyChar == 13)
             {
                 BuscarColab();
+            }
+        }
+
+        private void MostrarEmpresa()
+        {
+            int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+
+            ConsultaBanco consulta = new ConsultaBanco();
+
+            mdlEmpresa empresa = new mdlEmpresa();
+
+            try
+            {
+                empresa = consulta.ConsultarEmpresaId(idEmpresa);
+
+                txtEmpresa.Text = empresa.razao;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
     }
