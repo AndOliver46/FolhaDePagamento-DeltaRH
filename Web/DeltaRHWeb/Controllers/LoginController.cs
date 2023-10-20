@@ -11,14 +11,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
-using System.Data;
-using System.Data.SqlClient;
 
 
 public class LoginController : Controller
 {
 
-    public string consulta = @"Data Source=localhost; Initial Catalog=BD_DELTA; User Id=admin; Password=admin; TrustServerCertificate=True";
+    public string consulta = @"Data Source=DESKTOP-TJ31DK7\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
 
     private readonly ILogger<LoginController> _logger;
 
@@ -62,9 +60,14 @@ public class LoginController : Controller
                     dadosLogin = new LoginModel();
                     dadosLogin.senha = rd.GetString(1);
                     dadosLogin.cnpj = rd.GetString(3);
+                    dadosLogin.status = rd.GetString(16);
                 }
                 rd.Close();
 
+                if (dadosLogin.status != "Ativo")
+                {
+                    return RedirectToAction("LoginUsuario", "Login", new { statuserror = "true" });
+                }
 
                 if (dadosLogin.senha == loginModel.senha)
                 {
@@ -74,6 +77,7 @@ public class LoginController : Controller
 
                     return RedirectToAction("InfosEmpresa");
                 }
+
             }
         }
         

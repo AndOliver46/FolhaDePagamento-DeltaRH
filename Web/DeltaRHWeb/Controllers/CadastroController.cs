@@ -25,6 +25,10 @@ public class CadastroController : Controller
     [HttpPost]
     public IActionResult SalvarEmpresa(EmpresaModel empresaModel)
     {
+        var errors = ModelState
+        .Where(x => x.Value.Errors.Count > 0)
+        .Select(x => new { x.Key, x.Value.Errors })
+        .ToArray();
         if (ModelState.IsValid)
         {
             // Armazene a empresaModelJson na sessão

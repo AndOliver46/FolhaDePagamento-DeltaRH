@@ -21,42 +21,28 @@ namespace DeltaRHWeb.Models
         [Required(ErrorMessage = "CPF do Responsável é obrigatório")]
         public string CPFResponsavel { get; set; }
 
-        public string Logradouro { get; set; }
+        public string? Logradouro { get; set; }
 
-        public string Numero { get; set; }
+        public string? Numero { get; set; }
 
-        public string Cidade { get; set; }
+        public string? Cidade { get; set; }
 
         public string? Telefone { get; set; }
 
         [Required(ErrorMessage = "Celular é obrigatório")]
-        public string Telefone2 { get; set; }
+        public string? Telefone2 { get; set; }
 
         [Required(ErrorMessage = "Senha é obrigatória")]
         public string Senha { get; set; }
 
-        public int id_missao { get; set; }
+        public int? id_missao { get; set; }
 
-        public int id_politica { get; set; }
+        public int? id_politica { get; set; }
 
-        public string descricao_missao { get; set; }
+        public string? descricao_missao { get; set; }
 
-        public string descricao_politica { get; set; }
-        public List<FolhaModel> Lista_folha { get; set; }
-
-        public EmpresaModel() { }
-
-        public EmpresaModel(EmpresaModel model)
-        {
-            RazaoSocial = model.RazaoSocial;
-            CNPJ = model.CNPJ;
-            Email = model.Email;
-            Responsavel = model.Responsavel;
-            CPFResponsavel = model.CPFResponsavel;
-            Telefone = model.Telefone;
-            Telefone2 = model.Telefone2;
-            Senha = model.Senha;
-        }
+        public string? descricao_politica { get; set; }
+        public List<FolhaModel>? Lista_folha { get; set; }
 
         public override string? ToString()
         {
