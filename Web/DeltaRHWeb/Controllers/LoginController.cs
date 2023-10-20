@@ -64,12 +64,11 @@ public class LoginController : Controller
                 }
                 rd.Close();
 
-                if (dadosLogin.status != "Ativo")
+                if (dadosLogin.status != "Ativa")
                 {
                     return RedirectToAction("LoginUsuario", "Login", new { statuserror = "true" });
                 }
-
-                if (dadosLogin.senha == loginModel.senha)
+                else
                 {
                     _logger.LogInformation("Login feito");
 
@@ -122,8 +121,8 @@ public class LoginController : Controller
                     empresa.Cidade = rd.GetString(11);
                     empresa.Telefone = rd.GetString(13);
                     empresa.Telefone2 = rd.GetString(14);
-                    empresa.id_missao = rd.GetInt32(17);
-                    empresa.id_politica = rd.GetInt32(18);
+                    empresa.id_missao = rd.GetInt32(22);
+                    empresa.id_politica = rd.GetInt32(23);
                 }
                 rd.Close();
 

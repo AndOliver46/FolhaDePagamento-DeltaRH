@@ -77,7 +77,7 @@ public class CadastroController : Controller
             EnderecoModel enderecoModel = JsonConvert.DeserializeObject<EnderecoModel>(enderecoModelJson);
 
 
-            string _connectionString = "Data Source=localhost; Initial Catalog=BD_DELTA; User Id=admin; Password=admin; TrustServerCertificate=True";
+            string _connectionString = "Data Source=DESKTOP-TJ31DK7\\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
             int IdMissaoVisaoValores;
             int IdPoliticaDisciplinar;
 
@@ -114,46 +114,46 @@ public class CadastroController : Controller
                 conexaodb.Open();
 
                 string query = @"
-        INSERT INTO tbl_empresa (
-            senha, 
-            razao_social, 
-            cnpj, 
-            nome_responsavel, 
-            cpf_responsavel, 
-            logradouro, 
-            numero, 
-            complemento, 
-            bairro, 
-            cep, 
-            cidade, 
-            uf, 
-            telefone, 
-            telefone2, 
-            email, 
-            status,
-            id_missaovisaovalores, 
-            id_politicadisciplinar
-        ) VALUES (
-            @senha, 
-            @razao_social, 
-            @cnpj, 
-            @nome_responsavel, 
-            @cpf_responsavel, 
-            @logradouro, 
-            @numero, 
-            @complemento, 
-            @bairro, 
-            @cep, 
-            @cidade, 
-            @uf, 
-            @telefone, 
-            @telefone2, 
-            @email, 
-            @status,
-            @id_missaovisaovalores, 
-            @id_politicadisciplinar
-        );
-        SELECT CAST(scope_identity() AS int)";
+                INSERT INTO tbl_empresa (
+                senha, 
+                razao_social, 
+                cnpj, 
+                nome_responsavel, 
+                cpf_responsavel, 
+                logradouro, 
+                numero, 
+                complemento, 
+                bairro, 
+                cep, 
+                cidade, 
+                uf, 
+                telefone, 
+                telefone2, 
+                email, 
+                status,
+                id_missaovisaovalores, 
+                id_politicadisciplinar
+            ) VALUES (
+                @senha, 
+                @razao_social, 
+                @cnpj, 
+                @nome_responsavel, 
+                @cpf_responsavel, 
+                @logradouro, 
+                @numero, 
+                @complemento, 
+                @bairro, 
+                @cep, 
+                @cidade, 
+                @uf, 
+                @telefone, 
+                @telefone2, 
+                @email, 
+                @status,
+                @id_missaovisaovalores, 
+                @id_politicadisciplinar
+                );
+                SELECT CAST(scope_identity() AS int)";
 
                 SqlCommand cmd = new SqlCommand(query, conexaodb);
 
@@ -178,6 +178,8 @@ public class CadastroController : Controller
 
                 int idInserido = (int)cmd.ExecuteScalar();
             }
+
+            return RedirectToAction("LoginUsuario", "Login");
         }
 
         return RedirectToAction("CadastroValores", "Error");
