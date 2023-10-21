@@ -240,5 +240,10 @@ namespace deltarh
             status.MostrarEmpresa();
             status.ShowDialog();
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

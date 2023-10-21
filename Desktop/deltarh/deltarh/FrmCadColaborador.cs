@@ -11,7 +11,7 @@ namespace deltarh
 {
     public partial class FrmCadColadorador : Form
     {
-        public string consulta = @"Data Source=NITRO-5;Initial Catalog=BD_DELTA;Integrated Security=True";
+        public string consulta = Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User);
         public FrmCadColadorador()
         {
             InitializeComponent();

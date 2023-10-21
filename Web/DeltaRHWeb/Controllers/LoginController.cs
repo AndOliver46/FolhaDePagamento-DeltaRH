@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.Serialization.Formatters.Binary;
 
-
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
@@ -16,7 +15,7 @@ using System.IO;
 public class LoginController : Controller
 {
 
-    public string consulta = @"Data Source=DESKTOP-TJ31DK7\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
+    private string consulta = Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User);
 
     private readonly ILogger<LoginController> _logger;
 
@@ -64,19 +63,22 @@ public class LoginController : Controller
                 }
                 rd.Close();
 
-                if (dadosLogin.status != "Ativa")
-                {
-                    return RedirectToAction("LoginUsuario", "Login", new { statuserror = "true" });
+                if(dadosLogin != null) 
+                { 
+                    if (dadosLogin.senha.ToLower() == loginModel.senha.ToLower())
+                    {
+                            _contextAccessor.HttpContext.Session.SetString("cnpj", dadosLogin.cnpj);
+
+                            if (dadosLogin.status.ToLower() != "Ativo".ToLower())
+                            {
+                                return RedirectToAction("LoginUsuario", "Login", new { statuserror = "true" });
+                            }
+
+                            _logger.LogInformation("Login feito");
+
+                            return RedirectToAction("InfosEmpresa");
+                    }
                 }
-                else
-                {
-                    _logger.LogInformation("Login feito");
-
-                    _contextAccessor.HttpContext.Session.SetString("cnpj", dadosLogin.cnpj);
-
-                    return RedirectToAction("InfosEmpresa");
-                }
-
             }
         }
         

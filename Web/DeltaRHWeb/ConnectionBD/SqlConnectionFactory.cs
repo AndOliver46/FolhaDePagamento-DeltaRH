@@ -6,7 +6,7 @@ public class SqlConnectionFactory
 {
     public SqlConnection CreateConnection()
     {
-        string _connectionString = @"Data Source=DESKTOP-TJ31DK7\\SQLEXPRESS;Initial Catalog=BD_DELTA;Integrated Security=True";
+        string _connectionString = Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User);
 
         SqlConnection connection = new SqlConnection(_connectionString);
         connection.Open();

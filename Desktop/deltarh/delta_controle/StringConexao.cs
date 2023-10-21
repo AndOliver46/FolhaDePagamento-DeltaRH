@@ -11,6 +11,6 @@ namespace delta_controle
     
     public class StringConexao
     {
-        public string stringSql = "Data Source=desktop-dk36nf7\\sqlexpress;Initial Catalog=BD_DELTA;Integrated Security=True";
+        public string stringSql = Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User);
     }
 }

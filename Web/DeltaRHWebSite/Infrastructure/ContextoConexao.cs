@@ -17,7 +17,7 @@ namespace DeltaRHWebSite.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=Nitro-5;Initial Catalog=BD_DELTA;User Id=admin;Password=admin;TrustServerCertificate=Yes;");
+            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User));
             base.OnConfiguring(optionsBuilder);
         }
     }

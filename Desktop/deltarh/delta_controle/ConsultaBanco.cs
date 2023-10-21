@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Net.Configuration;
 using delta_modelo;
 
 namespace delta_controle
@@ -51,11 +50,11 @@ namespace delta_controle
                         empresa.fone2 = rd.GetString(14);
                         empresa.email = rd.GetString(15);
                         empresa.status = rd.GetString(16);
-                        empresa.vt = rd.GetDecimal(17);
-                        empresa.vr = rd.GetDecimal(18);
-                        empresa.assMedica = rd.GetDecimal(19);
-                        empresa.odonto = rd.GetDecimal(20);
-                        empresa.gym = rd.GetDecimal(21);
+                        empresa.vt = rd["vt"] == DBNull.Value ? null : (decimal?)rd["vt"];
+                        empresa.vr = rd["vr"] == DBNull.Value ? null : (decimal?)rd["vr"];
+                        empresa.assMedica = rd["ass_medica"] == DBNull.Value ? null : (decimal?)rd["ass_medica"];
+                        empresa.odonto = rd["odonto"] == DBNull.Value ? null : (decimal?)rd["odonto"];
+                        empresa.gym = rd["gympass"] == DBNull.Value ? null : (decimal?)rd["gympass"];
                         empresa.id_missao = rd.GetInt32(22);
                         empresa.id_politica = rd.GetInt32(23);
                     }
