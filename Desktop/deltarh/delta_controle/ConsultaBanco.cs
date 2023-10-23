@@ -442,25 +442,5 @@ namespace delta_controle
                 return null;
             }
         }
-
-        public void BuscarPendentes()
-        {
-            string consulta = conecta.stringSql;
-
-            using (SqlConnection conexaodb = new SqlConnection(consulta))
-            {
-                conexaodb.Open();
-
-                var sqlQuery = "SELECT cnpj, razao_social, status FROM tbl_empresa WHERE status = 'Pendente'";
-
-                using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conexaodb))
-                {
-                    using (DataTable dt = new DataTable())
-                    {
-                        da.Fill(dt);
-                    }
-                }
-            }
-        }
     }
 }

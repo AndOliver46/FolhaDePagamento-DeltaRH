@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using delta_modelo;
 using delta_controle;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace deltarh
 {
@@ -289,9 +291,7 @@ namespace deltarh
 
         private void FrmCadEmpresa_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet4.tbl_setor'. Você pode movê-la ou removê-la conforme necessário.
-           // this.tbl_setorTableAdapter1.Fill(this.bD_DELTADataSet4.tbl_setor);
-
+            ListarSetores();
         }
 
         private void setorToolStripButton_Click(object sender, EventArgs e)
@@ -302,13 +302,33 @@ namespace deltarh
 
         public void ListarSetores()
         {
-            try
+            StringConexao conecta = new StringConexao();
+            string consulta = conecta.stringSql;
+
+            using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
-                this.tbl_setorTableAdapter1.FillBy(this.bD_DELTADataSet4.tbl_setor, ((int)(System.Convert.ChangeType(txtCodId.Text, typeof(int)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                conexaodb.Open();
+
+                var sqlQuery = "SELECT id_setor, nome_setor FROM tbl_setor WHERE id_empresa = @id_empresa";
+
+                SqlCommand cmd = new SqlCommand(sqlQuery, conexaodb);
+
+                cmd.Parameters.AddWithValue("@id_empresa", txtCodId.Text);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                DataTable dt = new DataTable();
+
+
+
+                da.Fill(dt);
+
+                gridSetor.DataSource = dt;
+                gridSetor.Columns[0].Width = 100;
+                gridSetor.Columns[1].Width = 200;
+
+
             }
         }
 
@@ -408,6 +428,11 @@ namespace deltarh
         private void chbGym_CheckedChanged(object sender, EventArgs e)
         {
             txtGym.Enabled = chbGym.Checked;
+        }
+
+        private void gridSetor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

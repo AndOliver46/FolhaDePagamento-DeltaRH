@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -189,8 +190,6 @@ namespace deltarh
         }
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'bD_DELTADataSet3.tbl_empresa'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_empresaTableAdapter2.Fill(this.bD_DELTADataSet3.tbl_empresa);
             ListarEmpresa();
             BuscarSetor();
             BuscarStatus();
@@ -198,52 +197,50 @@ namespace deltarh
 
         public void BuscarStatus()
         {
-            try
+            StringConexao conecta = new StringConexao();
+            string consulta = conecta.stringSql;
+
+            using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
-                this.tbl_empresaTableAdapter2.FillBy(this.bD_DELTADataSet3.tbl_empresa);
+                conexaodb.Open();
+
+                var sqlQuery = "SELECT cnpj, razao_social, status FROM tbl_empresa WHERE status = 'Pendente'";
+
+                SqlCommand cmd = new SqlCommand(sqlQuery, conexaodb);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                gridPendentes.DataSource = dt;
+                gridPendentes.Columns[0].Width = 105;
+                gridPendentes.Columns[1].Width = 260;
+                gridPendentes.Columns[2].Width = 105;
+
             }
-            catch (System.Exception ex)
+        }
+
+            private void btnAtualiza_Click(object sender, EventArgs e)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                BuscarStatus();
             }
-        }
 
-        private void btnAtualiza_Click(object sender, EventArgs e)
-        {
-            BuscarStatus();
-        }
-
-        private void statusToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
+            private void cBoxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
             {
-                this.tbl_empresaTableAdapter.status(this.bD_DELTADataSet.tbl_empresa);
+                this.SetStyle(ControlStyles.StandardClick, true);
+                BuscarSetor();
+
             }
-            catch (System.Exception ex)
+
+            private void button1_Click(object sender, EventArgs e)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                FrmAprovaStatus status = new FrmAprovaStatus();
+                status.txtCnpj.Text = txtCnpjStatus.Text;
+                status.MostrarEmpresa();
+                status.ShowDialog();
             }
-
-        }
-
-        private void cBoxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.SetStyle(ControlStyles.StandardClick, true);
-            BuscarSetor();
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmAprovaStatus status = new FrmAprovaStatus();
-            status.txtCnpj.Text = txtCnpjStatus.Text;
-            status.MostrarEmpresa();
-            status.ShowDialog();
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
