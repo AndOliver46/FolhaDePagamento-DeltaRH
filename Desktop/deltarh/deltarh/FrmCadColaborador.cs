@@ -186,29 +186,34 @@ namespace deltarh
                 colab.fone2 = txtTelefone2.Text;
                 colab.email = txtEmail.Text;
                 colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
-                colab.status = "ATIVO";
+                colab.status = cboxStatus.Text;
                 colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
                 colab.cargo = txtCargo.Text;
                 colab.horas_banco = 0.0M;
 
                 CadColab conecta = new CadColab();
 
-                conecta.CadastrarColab(colab);
+                bool sucesso = conecta.CadastrarColab(colab);
+
+                if (sucesso)
+                {
+                    DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Novo Colaborador?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if (resposta == DialogResult.Yes)
+                    {
+                        LimparCadastro();
+                    }
+                    else
+                    {
+                        Close();
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Novo Colaborador?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (resposta == DialogResult.Yes)
-            {
-                LimparCadastro();
-            }
-            else
-            {
-                Close();
-            }
+            
         }
 
         private void mskCpf_KeyPress(object sender, KeyPressEventArgs e)
@@ -247,6 +252,7 @@ namespace deltarh
                 txtTelefone2.Text = colab.fone2;
                 txtEmail.Text = colab.email;
                 cboxStatus.Text = colab.status;
+                txtCargo.Text = colab.cargo;
                 txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
                 txtSenha.Text = colab.senha;
 
@@ -256,6 +262,16 @@ namespace deltarh
             {
                 colab = null;
             }
+        }
+
+        private void cboxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

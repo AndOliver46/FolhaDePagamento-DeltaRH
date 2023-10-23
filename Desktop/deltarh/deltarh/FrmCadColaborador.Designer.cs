@@ -357,6 +357,7 @@
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(107, 22);
             this.txtCargo.TabIndex = 22;
+            this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
             // 
             // label7
             // 
@@ -675,6 +676,7 @@
             this.cboxStatus.Name = "cboxStatus";
             this.cboxStatus.Size = new System.Drawing.Size(94, 24);
             this.cboxStatus.TabIndex = 24;
+            this.cboxStatus.SelectedIndexChanged += new System.EventHandler(this.cboxStatus_SelectedIndexChanged);
             // 
             // txtId
             // 
