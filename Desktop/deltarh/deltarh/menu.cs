@@ -219,7 +219,6 @@ namespace deltarh
                 gridPendentes.Columns[0].Width = 105;
                 gridPendentes.Columns[1].Width = 260;
                 gridPendentes.Columns[2].Width = 105;
-
             }
         }
 
@@ -242,5 +241,48 @@ namespace deltarh
                 status.MostrarEmpresa();
                 status.ShowDialog();
             }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            BuscarPonto();
+        }
+
+        public void BuscarPonto()
+        {
+            StringConexao conecta = new StringConexao();
+            string consulta = conecta.stringSql;
+
+            using (SqlConnection conexaodb = new SqlConnection(consulta))
+            {
+                int idcolab = Convert.ToInt32(cBoxColaborador.SelectedValue);
+                conexaodb.Open();
+
+                var sqlQuery = "SELECT id_colaborador, data, entrada, saida_almoco, retorno_almoco, saida FROM tbl_pontoeletronico WHERE id_colaborador = @idcolab";
+
+                SqlCommand cmd = new SqlCommand(sqlQuery, conexaodb);
+
+                cmd.Parameters.AddWithValue("@idcolab", idcolab);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                gridPendentes.DataSource = dt;
+                gridPendentes.Columns[0].Width = 40;
+                gridPendentes.Columns[1].Width = 70;
+                gridPendentes.Columns[2].Width = 70;
+                gridPendentes.Columns[3].Width = 70;
+                gridPendentes.Columns[4].Width = 70;
+                gridPendentes.Columns[5].Width = 70;
+            }
+        }
+
+        private void cBoxColaborador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

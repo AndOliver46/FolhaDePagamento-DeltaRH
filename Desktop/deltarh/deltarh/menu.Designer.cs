@@ -36,7 +36,6 @@ namespace deltarh
             this.label5 = new System.Windows.Forms.Label();
             this.txtCnpjStatus = new System.Windows.Forms.TextBox();
             this.btnStatus = new System.Windows.Forms.Button();
-            this.tblempresaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.gridPendentes = new System.Windows.Forms.DataGridView();
             this.btnAtualiza = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -52,7 +51,7 @@ namespace deltarh
             this.btnProcessar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnJustificar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridPonto = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,21 +60,22 @@ namespace deltarh
             this.cBoxColaborador = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxEmpresa = new System.Windows.Forms.ComboBox();
+            this.tblempresaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendentes)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).BeginInit();
-
             this.SuspendLayout();
             // 
             // tabControl1
@@ -143,12 +143,6 @@ namespace deltarh
             this.btnStatus.Text = "Status";
             this.btnStatus.UseVisualStyleBackColor = true;
             this.btnStatus.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tblempresaBindingSource2
-            // 
-            this.tblempresaBindingSource2.DataMember = "tbl_empresa";
-            // 
-
             // 
             // gridPendentes
             // 
@@ -264,10 +258,11 @@ namespace deltarh
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnFiltrar);
             this.tabPage3.Controls.Add(this.btnProcessar);
             this.tabPage3.Controls.Add(this.btnCancelar);
             this.tabPage3.Controls.Add(this.btnJustificar);
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.gridPonto);
             this.tabPage3.Controls.Add(this.dateTimePicker2);
             this.tabPage3.Controls.Add(this.dateTimePicker1);
             this.tabPage3.Controls.Add(this.label4);
@@ -314,15 +309,15 @@ namespace deltarh
             this.btnJustificar.Text = "Justificar";
             this.btnJustificar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridPonto
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(499, 305);
-            this.dataGridView1.TabIndex = 8;
+            this.gridPonto.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.gridPonto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPonto.Location = new System.Drawing.Point(9, 161);
+            this.gridPonto.Name = "gridPonto";
+            this.gridPonto.ReadOnly = true;
+            this.gridPonto.Size = new System.Drawing.Size(499, 305);
+            this.gridPonto.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
@@ -375,6 +370,7 @@ namespace deltarh
             this.cBoxColaborador.Name = "cBoxColaborador";
             this.cBoxColaborador.Size = new System.Drawing.Size(282, 21);
             this.cBoxColaborador.TabIndex = 2;
+            this.cBoxColaborador.SelectedIndexChanged += new System.EventHandler(this.cBoxColaborador_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -394,6 +390,10 @@ namespace deltarh
             this.cBoxEmpresa.TabIndex = 0;
             this.cBoxEmpresa.SelectedIndexChanged += new System.EventHandler(this.cBoxEmpresa_SelectedIndexChanged);
             // 
+            // tblempresaBindingSource2
+            // 
+            this.tblempresaBindingSource2.DataMember = "tbl_empresa";
+            // 
             // tblempresaBindingSource
             // 
             this.tblempresaBindingSource.DataMember = "tbl_empresa";
@@ -401,6 +401,17 @@ namespace deltarh
             // tblempresaBindingSource1
             // 
             this.tblempresaBindingSource1.DataMember = "tbl_empresa";
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Location = new System.Drawing.Point(433, 130);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // frmMenu
             // 
@@ -416,7 +427,6 @@ namespace deltarh
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendentes)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -425,7 +435,8 @@ namespace deltarh
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -439,7 +450,7 @@ namespace deltarh
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridPonto;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
@@ -467,5 +478,6 @@ namespace deltarh
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtCnpjStatus;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }

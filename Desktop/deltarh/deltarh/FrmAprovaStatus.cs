@@ -65,7 +65,6 @@ namespace deltarh
                     MessageBox.Show("Status Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     Close();
                     menu.BuscarStatus();
-                    
                 }
                 else
                 {

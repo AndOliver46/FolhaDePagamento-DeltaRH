@@ -327,8 +327,6 @@ namespace deltarh
                 gridSetor.DataSource = dt;
                 gridSetor.Columns[0].Width = 100;
                 gridSetor.Columns[1].Width = 200;
-
-
             }
         }
 
