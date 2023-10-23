@@ -71,7 +71,6 @@ const getEndereco = async (cep) => {
         return;
     }
 
-    cepInput.value = data.cep;
     cidadeInput.value = data.localidade;
     ruaInput.value = data.logradouro;
     bairroInput.value = data.bairro;

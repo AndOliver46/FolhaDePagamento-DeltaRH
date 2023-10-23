@@ -251,6 +251,75 @@ public class LoginController : Controller
         }
     }
 
+    [HttpGet]
+    public IActionResult Sair()
+    {
+        if (_contextAccessor.HttpContext.Session != null)
+        {
+            _contextAccessor.HttpContext.Session.Clear();
+            return RedirectToAction("LoginUsuario");
+        }
+        else
+        {
+            _contextAccessor.HttpContext.Session.Clear();
+            return RedirectToAction("LoginUsuario");
+        }
+
+    }
+
+    [HttpPost("/Login/AprovarFolha/{id_folha}")]
+    public IActionResult AprovarFolha(int id_folha)
+    {
+        // Suponha que você já tenha uma conexão SQL configurada.
+        using (SqlConnection conexaodb = new SqlConnection(consulta))
+        {
+            conexaodb.Open();
+
+             string queryUp = "UPDATE tbl_folhadepagamento SET status_folha = @status_folha WHERE id_folhadepagamento = @id_folha";
+             using (SqlCommand cmdUp = new SqlCommand(queryUp, conexaodb))
+             {
+                cmdUp.Parameters.AddWithValue("@status_folha", "Aprovado");
+                cmdUp.Parameters.AddWithValue("@id_folha", id_folha);
+                
+                int updateStatus = cmdUp.ExecuteNonQuery();
+
+                if (updateStatus > 0)
+                {
+                    return RedirectToAction("InfosEmpresa");
+                }
+             }
+        }
+
+        return RedirectToAction("InfosEmpresa", "Login", new { aproveerror = "true" });
+    }
+
+
+    [HttpPost("/Login/ReprovarFolha/{id_folha}")]
+    public IActionResult ReprovarFolha(int id_folha)
+    {
+        // Suponha que você já tenha uma conexão SQL configurada.
+        using (SqlConnection conexaodb = new SqlConnection(consulta))
+        {
+            conexaodb.Open();
+
+            string queryUp = "UPDATE tbl_folhadepagamento SET status_folha = @status_folha WHERE id_folhadepagamento = @id_folha";
+            using (SqlCommand cmdUp = new SqlCommand(queryUp, conexaodb))
+            {
+                cmdUp.Parameters.AddWithValue("@status_folha", "Reprovado");
+                cmdUp.Parameters.AddWithValue("@id_folha", id_folha);
+
+                int updateStatus = cmdUp.ExecuteNonQuery();
+
+                if (updateStatus > 0)
+                {
+                    return RedirectToAction("InfosEmpresa");
+                }
+            }
+        }
+
+        return RedirectToAction("InfosEmpresa", "Login", new { aproveerror = "true" });
+    }
+
 
 
 

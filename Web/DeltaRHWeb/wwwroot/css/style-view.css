@@ -63,6 +63,10 @@ main {
     text-align: end;
 }
 
+.botao-sair {
+    color: black;
+}
+
 /*Container da visualização das informações, sendo nome, endereço, entre outros*/
 
 .container-infos-missao {
@@ -160,15 +164,38 @@ h2 {
     border: 1px solid #ccc;
 }
 
-    /* links de ação na última coluna */
+    /* links */
     #conteudo-tabela td a {
-        text-decoration: none;
         color: #007bff; /* Cor do link */
     }
 
-        #conteudo-tabela td a:hover {
-            text-decoration: underline;
-        }
+    #conteudo-tabela td a:hover {
+        text-decoration: underline;
+    }
+
+    td > a{
+        text-decoration: none;
+    }
+
+    i {
+        font-size: 20px;
+    }
+
+    .botao-ap-rp:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    .button-disabled {
+        pointer-events: none; /* Impede interações do mouse */
+        opacity: 0.6; /* Reduz a opacidade para indicar desativação */
+    }
+
+    .acoes{
+        display: flex;
+        gap: 8px;
+    }
 
 
 .sumiu {

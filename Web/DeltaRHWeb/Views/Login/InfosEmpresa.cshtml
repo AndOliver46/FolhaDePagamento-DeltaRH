@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/style-view.css">
     <title>Delta RH</title>
 </head>
@@ -15,6 +16,7 @@
             <div id="container-abas">
                 <a class="botao botao-infos">Informações da empresa</a>
                 <a class="botao botao-aprovacoes">Aprovações</a>
+                <a href="/Login/Sair" class="botao botao-sair">Sair</a>
             </div>
             <div class="container-infos-missao">
                 <h2>Informações da empresa</h2>
@@ -66,15 +68,23 @@
                             
                             @foreach (var objeto in Model.Lista_folha)
                             {
-                                <tr>
+                                <tr class="folha">
                                     <td><a href="/Login/DownloadDocumento/@objeto.id_folha" target="_blank">Icone</a></td>
                                     <td>@objeto.Periodo_inicio.ToShortDateString()</td>
                                     <td>@objeto.Periodo_fim.ToShortDateString()</td>
                                     <td>@objeto.Valor_liq_final</td>
                                     <td>@objeto.Valor_desconto_final</td>
                                     <td>@objeto.Valor_final</td>
-                                    <td>@objeto.Status</td>
-                                    <td>Y / N</td>
+                                    <td class="status-item">@objeto.Status</td>
+                                    <td class="acoes">
+                                        <form method="post" action="/Login/AprovarFolha/@objeto.id_folha">
+                                            <button class="botao-ap-rp botao-aprove" type="submit"><i class="bi bi-clipboard2-check"></i></button>
+                                        </form>
+
+                                        <form method="post" action="/Login/ReprovarFolha/@objeto.id_folha">
+                                            <button class="botao-ap-rp botao-aprove" type="submit"><i class="bi bi-clipboard-x"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                             }
 
