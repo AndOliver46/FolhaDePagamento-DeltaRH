@@ -101,6 +101,7 @@ CREATE TABLE [dbo].[tbl_folhadepagamento](
 	[periodo_fim] [date] NOT NULL,
 	[status_folha] [varchar](15) NOT NULL,
 	[id_empresa] [int] NOT NULL,
+	[mes_referencia] [varchar](20) NOT NULL,
 	CONSTRAINT FK_folhadepagamento_empresa FOREIGN KEY (id_empresa) 
 	REFERENCES tbl_empresa(id_empresa));
 
@@ -115,6 +116,7 @@ CREATE TABLE [dbo].[tbl_folhaindividual](
 	[salario_liq] [decimal](12, 2) NOT NULL,
 	[id_folhadepagamento] [int] NOT NULL,
 	[id_colaborador] [int] NOT NULL,
+	[mes_referencia] [varchar](20) NOT NULL,
 	CONSTRAINT FK_folhaindividual_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
 	REFERENCES tbl_folhadepagamento(id_folhadepagamento),
 	CONSTRAINT FK_folhaindividual_colaborador FOREIGN KEY (id_colaborador) 
