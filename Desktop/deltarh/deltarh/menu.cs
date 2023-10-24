@@ -32,9 +32,13 @@ namespace deltarh
                 empresas = consulta.ListarEmpresas();
 
                 cBoxEmpresa.DataSource = empresas;
-
                 this.cBoxEmpresa.DisplayMember = "razao";
                 this.cBoxEmpresa.ValueMember = "id";
+
+                cboxRazao.DataSource = empresas;
+                this.cboxRazao.DisplayMember = "razao";
+                this.cboxRazao.ValueMember = "id";
+
             }
             catch (Exception ex)
             {
@@ -86,10 +90,6 @@ namespace deltarh
                     throw;
                 }
             }
-            cBoxColaborador.DataSource = colabs;
-
-            this.cBoxColaborador.DisplayMember = "nome";
-            this.cBoxColaborador.ValueMember = "id";
         }
         public void ConsultarEmpresas()
         {
@@ -254,14 +254,14 @@ namespace deltarh
 
             using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
-                int idcolab = Convert.ToInt32(cBoxColaborador.SelectedValue);
+              //  int idcolab = Convert.ToInt32(cBoxColaborador.SelectedValue);
                 conexaodb.Open();
 
                 var sqlQuery = "SELECT id_colaborador, data, entrada, saida_almoco, retorno_almoco, saida FROM tbl_pontoeletronico WHERE id_colaborador = @idcolab";
 
                 SqlCommand cmd = new SqlCommand(sqlQuery, conexaodb);
 
-                cmd.Parameters.AddWithValue("@idcolab", idcolab);
+                //cmd.Parameters.AddWithValue("@idcolab", idcolab);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
@@ -283,6 +283,32 @@ namespace deltarh
         private void cBoxColaborador_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnJustificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProcessar_Click(object sender, EventArgs e)
+        {
+            string mes = cboxMes.Text;
+            string ano = cboxAno.Text;
+            int idEmpresa = Convert.ToInt32(cboxRazao.SelectedValue);
+            FrmProcessamento processa = new FrmProcessamento();
+            processa.txtId.Text = Convert.ToString(idEmpresa);
+            processa.txtMesReferencia.Text = mes + "/" + ano;
+            processa.ShowDialog();
         }
     }
 }

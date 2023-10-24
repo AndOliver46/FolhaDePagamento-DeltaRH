@@ -149,3 +149,4 @@ C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.exe
 C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.pdb
 C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmAprovaStatus.resources
 C:\Users\ander\Projetos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmAprovaStatus.resources
+C:\Users\mauri\OneDrive\Documentos\pim\Desktop\deltarh\deltarh\obj\Debug\deltarh.FrmProcessamento.resources

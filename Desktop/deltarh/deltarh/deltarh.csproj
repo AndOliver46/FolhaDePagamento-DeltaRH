@@ -120,6 +120,12 @@
     <Compile Include="FrmEndereco.Designer.cs">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProcessamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessamento.Designer.cs">
+      <DependentUpon>FrmProcessamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEndereco.resx">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcessamento.resx">
+      <DependentUpon>FrmProcessamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegras.resx">
       <DependentUpon>FrmRegras.cs</DependentUpon>
