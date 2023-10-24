@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CpfLibrary;
 using delta_controle;
 using delta_modelo;
 using DLL_CLASS_CNPJ;
@@ -31,10 +33,6 @@ namespace deltarh
             {
                 empresas = consulta.ListarEmpresas();
 
-                cBoxEmpresa.DataSource = empresas;
-                this.cBoxEmpresa.DisplayMember = "razao";
-                this.cBoxEmpresa.ValueMember = "id";
-
                 cboxRazao.DataSource = empresas;
                 this.cboxRazao.DisplayMember = "razao";
                 this.cboxRazao.ValueMember = "id";
@@ -46,7 +44,7 @@ namespace deltarh
             }
         }
 
-        public void BuscarSetor()
+        /*public void BuscarSetor()
         {
             if (cBoxEmpresa.SelectedValue is int)
             {
@@ -69,7 +67,7 @@ namespace deltarh
 
                 BuscarColabs(setores);
             }
-        }
+        }*/
 
         public void BuscarColabs(List<mdlSetor> setores)
         {
@@ -191,7 +189,6 @@ namespace deltarh
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             ListarEmpresa();
-            BuscarSetor();
             BuscarStatus();
         }
 
@@ -225,13 +222,6 @@ namespace deltarh
             private void btnAtualiza_Click(object sender, EventArgs e)
             {
                 BuscarStatus();
-            }
-
-            private void cBoxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                this.SetStyle(ControlStyles.StandardClick, true);
-                BuscarSetor();
-
             }
 
             private void button1_Click(object sender, EventArgs e)
@@ -302,13 +292,69 @@ namespace deltarh
 
         private void btnProcessar_Click(object sender, EventArgs e)
         {
+            int idEmpresa = Convert.ToInt32(cboxRazao.SelectedValue);
             string mes = cboxMes.Text;
             string ano = cboxAno.Text;
-            int idEmpresa = Convert.ToInt32(cboxRazao.SelectedValue);
-            FrmProcessamento processa = new FrmProcessamento();
-            processa.txtId.Text = Convert.ToString(idEmpresa);
-            processa.txtMesReferencia.Text = mes + "/" + ano;
-            processa.ShowDialog();
+            DateTime[] dias = GetFirstAndLastDayOfMonth(mes, ano);
+
+            mdlFolhaDePagamento folha = new mdlFolhaDePagamento();
+            folha.id_empresa = idEmpresa;
+            folha.mes_referencia = mes + "/" + ano;
+            folha.periodo_inicio = dias[0];
+            folha.periodo_fim = dias[1];
+            folha.salario_liquido = 0.0M;
+            folha.valor_final = 0.0M;
+            folha.valor_desconto = 0.0M;
+            folha.horas_trabalhadas = 0.0M;
+            folha.relatorio = null;
+            folha.status_folha = "PENDENTE";
+           
+            ConsultaBanco consulta = new ConsultaBanco();
+            mdlFolhaDePagamento folha_existente = consulta.BuscarFolha(folha);
+
+            if (folha_existente != null)
+            {
+                var resposta = MessageBox.Show("Folha do mês " + folha.mes_referencia + " ja cadastrada. Abrir consulta?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    mdlFolhaDePagamento folha_de_pagamento = folha_existente;
+                    FrmProcessamento processa = new FrmProcessamento(folha_de_pagamento);
+                    processa.ShowDialog();
+                }
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Folha do mês " + folha.mes_referencia + " ainda não cadastrada. Deseja cadastrar?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    CadFolha cadFolha = new CadFolha();
+                    cadFolha.CadastrarFolha(folha);
+
+                    mdlFolhaDePagamento folhaDePagamento = consulta.BuscarFolha(folha);
+                    FrmProcessamento processa = new FrmProcessamento(folhaDePagamento);
+                    processa.ShowDialog();
+                }
+            }
+            
+        }
+
+        private DateTime[] GetFirstAndLastDayOfMonth(string month, string year)
+        {
+            CultureInfo cultureInfo = new CultureInfo("pt-BR");
+
+            string formattedMonth = cultureInfo.DateTimeFormat.GetMonthName(Array.IndexOf(cultureInfo.DateTimeFormat.AbbreviatedMonthNames, month.ToLower()) + 1);
+            DateTime firstDayOfMonth = DateTime.ParseExact($"01-{formattedMonth}-{year}", "dd-MMMMM-yyyy", cultureInfo);
+            int lastDay = DateTime.DaysInMonth(int.Parse(year), firstDayOfMonth.Month);
+            DateTime lastDayOfMonth = DateTime.ParseExact($"{lastDay}-{formattedMonth}-{year}", "dd-MMMMM-yyyy", cultureInfo);
+
+            return new DateTime[] { firstDayOfMonth, lastDayOfMonth };
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

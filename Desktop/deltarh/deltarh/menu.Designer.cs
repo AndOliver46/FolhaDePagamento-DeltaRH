@@ -48,22 +48,17 @@ namespace deltarh
             this.btnCnpj = new System.Windows.Forms.Button();
             this.lblCadCnpj = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cBoxEmpresa = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cboxAno = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboxMes = new System.Windows.Forms.ComboBox();
             this.cboxRazao = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnProcessar = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tblempresaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cboxMes = new System.Windows.Forms.ComboBox();
-            this.cboxAno = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,7 +67,6 @@ namespace deltarh
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
@@ -260,7 +254,6 @@ namespace deltarh
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox5);
-            this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -269,48 +262,6 @@ namespace deltarh
             this.tabPage3.Text = "Fechar Folha";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mês";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Empresa";
-            // 
-            // cBoxEmpresa
-            // 
-            this.cBoxEmpresa.FormattingEnabled = true;
-            this.cBoxEmpresa.Location = new System.Drawing.Point(93, 31);
-            this.cBoxEmpresa.Name = "cBoxEmpresa";
-            this.cBoxEmpresa.Size = new System.Drawing.Size(377, 21);
-            this.cBoxEmpresa.TabIndex = 0;
-            this.cBoxEmpresa.SelectedIndexChanged += new System.EventHandler(this.cBoxEmpresa_SelectedIndexChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dateTimePicker2);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.cBoxEmpresa);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(506, 226);
-            this.groupBox4.TabIndex = 10;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Consultar Folha";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // groupBox5
             // 
@@ -321,90 +272,13 @@ namespace deltarh
             this.groupBox5.Controls.Add(this.btnProcessar);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Location = new System.Drawing.Point(6, 238);
+            this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(506, 258);
+            this.groupBox5.Size = new System.Drawing.Size(506, 166);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Processar Folha";
-            // 
-            // cboxRazao
-            // 
-            this.cboxRazao.FormattingEnabled = true;
-            this.cboxRazao.Location = new System.Drawing.Point(93, 50);
-            this.cboxRazao.Name = "cboxRazao";
-            this.cboxRazao.Size = new System.Drawing.Size(377, 21);
-            this.cboxRazao.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 23);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Empresa";
-            // 
-            // btnProcessar
-            // 
-            this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessar.Location = new System.Drawing.Point(392, 98);
-            this.btnProcessar.Name = "btnProcessar";
-            this.btnProcessar.Size = new System.Drawing.Size(78, 23);
-            this.btnProcessar.TabIndex = 4;
-            this.btnProcessar.Text = "Processar";
-            this.btnProcessar.UseVisualStyleBackColor = true;
-            this.btnProcessar.Click += new System.EventHandler(this.btnProcessar_Click);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(133, 75);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(148, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Mês Referência";
-            // 
-            // tblempresaBindingSource2
-            // 
-            this.tblempresaBindingSource2.DataMember = "tbl_empresa";
-            // 
-            // tblempresaBindingSource
-            // 
-            this.tblempresaBindingSource.DataMember = "tbl_empresa";
-            // 
-            // tblempresaBindingSource1
-            // 
-            this.tblempresaBindingSource1.DataMember = "tbl_empresa";
-            // 
-            // cboxMes
-            // 
-            this.cboxMes.FormattingEnabled = true;
-            this.cboxMes.Items.AddRange(new object[] {
-            "JAN",
-            "FEV",
-            "MAR",
-            "ABR",
-            "MAI",
-            "JUN",
-            "JUL",
-            "AGO",
-            "SET",
-            "OUT",
-            "NOV",
-            "DEZ"});
-            this.cboxMes.Location = new System.Drawing.Point(93, 94);
-            this.cboxMes.Name = "cboxMes";
-            this.cboxMes.Size = new System.Drawing.Size(96, 21);
-            this.cboxMes.TabIndex = 5;
+            this.groupBox5.Text = "Consultar Folha";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // cboxAno
             // 
@@ -486,6 +360,77 @@ namespace deltarh
             this.label2.TabIndex = 6;
             this.label2.Text = "Ano";
             // 
+            // cboxMes
+            // 
+            this.cboxMes.FormattingEnabled = true;
+            this.cboxMes.Items.AddRange(new object[] {
+            "JAN",
+            "FEV",
+            "MAR",
+            "ABR",
+            "MAI",
+            "JUN",
+            "JUL",
+            "AGO",
+            "SET",
+            "OUT",
+            "NOV",
+            "DEZ"});
+            this.cboxMes.Location = new System.Drawing.Point(93, 94);
+            this.cboxMes.Name = "cboxMes";
+            this.cboxMes.Size = new System.Drawing.Size(96, 21);
+            this.cboxMes.TabIndex = 5;
+            // 
+            // cboxRazao
+            // 
+            this.cboxRazao.FormattingEnabled = true;
+            this.cboxRazao.Location = new System.Drawing.Point(93, 50);
+            this.cboxRazao.Name = "cboxRazao";
+            this.cboxRazao.Size = new System.Drawing.Size(377, 21);
+            this.cboxRazao.TabIndex = 2;
+            // 
+            // btnProcessar
+            // 
+            this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcessar.Location = new System.Drawing.Point(392, 98);
+            this.btnProcessar.Name = "btnProcessar";
+            this.btnProcessar.Size = new System.Drawing.Size(78, 23);
+            this.btnProcessar.TabIndex = 4;
+            this.btnProcessar.Text = "Consultar";
+            this.btnProcessar.UseVisualStyleBackColor = true;
+            this.btnProcessar.Click += new System.EventHandler(this.btnProcessar_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 23);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Empresa";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mês";
+            // 
+            // tblempresaBindingSource2
+            // 
+            this.tblempresaBindingSource2.DataMember = "tbl_empresa";
+            // 
+            // tblempresaBindingSource
+            // 
+            this.tblempresaBindingSource.DataMember = "tbl_empresa";
+            // 
+            // tblempresaBindingSource1
+            // 
+            this.tblempresaBindingSource1.DataMember = "tbl_empresa";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,8 +452,6 @@ namespace deltarh
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).EndInit();
@@ -524,7 +467,6 @@ namespace deltarh
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCnpj;
         private System.Windows.Forms.Label lblCpf;
@@ -533,7 +475,6 @@ namespace deltarh
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCpf;
         public System.Windows.Forms.TextBox txtCpf;
-        public System.Windows.Forms.ComboBox cBoxEmpresa;
         private System.Windows.Forms.BindingSource tblempresaBindingSource;
         private System.Windows.Forms.BindingSource tblempresaBindingSource1;
         private System.Windows.Forms.Button btnAtualiza;
@@ -544,13 +485,10 @@ namespace deltarh
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtCnpjStatus;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnProcessar;
         public System.Windows.Forms.ComboBox cboxRazao;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cboxMes;
         public System.Windows.Forms.ComboBox cboxAno;

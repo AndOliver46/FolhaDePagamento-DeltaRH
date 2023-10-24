@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="mdlColaborador.cs" />
     <Compile Include="mdlEmpresa.cs" />
+    <Compile Include="mdlFolhaDePagamento.cs" />
     <Compile Include="mdlSetor.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="mdlMissao.cs" />

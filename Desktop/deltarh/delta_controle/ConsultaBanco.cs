@@ -442,5 +442,57 @@ namespace delta_controle
                 return null;
             }
         }
+
+        public mdlFolhaDePagamento BuscarFolha(mdlFolhaDePagamento folha)
+        {
+            string consulta = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_folhadepagamento WHERE mes_referencia = @mes_referencia AND id_empresa = @id_empresa";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@mes_referencia", folha.mes_referencia);
+                    cmd.Parameters.AddWithValue("@id_empresa", folha.id_empresa);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    mdlFolhaDePagamento folha_banco = null;
+                    while (rd.Read())
+                    {
+                        folha_banco = new mdlFolhaDePagamento();
+                        folha_banco.id_folha = (int)rd["id_folhadepagamento"];
+                        if (rd["doc_folhadepagamento"] == DBNull.Value)
+                        {
+                            folha_banco.relatorio = null;
+                        }
+                        else
+                        {
+                            folha_banco.relatorio = (byte[])rd["doc_folhadepagamento"];
+                        }
+                        folha_banco.valor_final = (decimal)rd["valor_folhafinal"];
+                        folha_banco.valor_desconto = (decimal)rd["valor_desc_total"];
+                        folha_banco.horas_trabalhadas = (decimal)rd["horas_trab"];
+                        folha_banco.salario_liquido = (decimal)rd["salario_liq"];
+                        folha_banco.periodo_inicio = (DateTime)rd["periodo_inicio"];
+                        folha_banco.periodo_fim = (DateTime)rd["periodo_fim"];
+                        folha_banco.status_folha = (string)rd["status_folha"];
+                        folha_banco.id_empresa = (int)rd["id_empresa"];
+                        folha_banco.mes_referencia = (string)rd["mes_referencia"];
+                    }
+                    rd.Close();
+                    
+                    return folha_banco;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AlteraBanco.cs" />
     <Compile Include="CadColab.cs" />
+    <Compile Include="CadFolha.cs" />
     <Compile Include="CadSetor.cs" />
     <Compile Include="InativaBanco.cs" />
     <Compile Include="StringConexao.cs" />
