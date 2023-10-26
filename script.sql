@@ -85,7 +85,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
 	[cargo] [varchar](50) NOT NULL,
 	[status] [varchar](10) NOT NULL,
 	[id_empresa] [int] NOT NULL,
-	[horas_banco] [decimal](5, 2) NOT NULL,
+	[horas_banco] [time](0),
 	CONSTRAINT FK_colaborador_setor FOREIGN KEY (id_setor) 
 	REFERENCES tbl_setor(id_setor));
 
@@ -95,7 +95,7 @@ CREATE TABLE [dbo].[tbl_folhadepagamento](
 	[doc_folhadepagamento] VARBINARY(MAX),
 	[valor_folhafinal] [decimal](12, 2) NOT NULL,
 	[valor_desc_total] [decimal](12, 2) NOT NULL,
-	[horas_trab] [decimal](5, 2) NOT NULL,
+	[horas_trab] [time](0) NOT NULL,
 	[salario_liq] [decimal](12, 2) NOT NULL,
 	[periodo_inicio] [date] NOT NULL,
 	[periodo_fim] [date] NOT NULL,
@@ -112,11 +112,12 @@ CREATE TABLE [dbo].[tbl_folhaindividual](
 	[periodo_fim] [date] NOT NULL,
 	[valor_folhafinal] [decimal](12, 2) NOT NULL,
 	[valor_desc_total] [decimal](12, 2) NOT NULL,
-	[horas_trab] [decimal](5, 2) NOT NULL,
+	[horas_trab] [time](0) NOT NULL,
 	[salario_liq] [decimal](12, 2) NOT NULL,
 	[id_folhadepagamento] [int] NOT NULL,
 	[id_colaborador] [int] NOT NULL,
 	[mes_referencia] [varchar](20) NOT NULL,
+	[status] [varchar](20) NOT NULL,
 	CONSTRAINT FK_folhaindividual_folhadepagamento FOREIGN KEY (id_folhadepagamento) 
 	REFERENCES tbl_folhadepagamento(id_folhadepagamento),
 	CONSTRAINT FK_folhaindividual_colaborador FOREIGN KEY (id_colaborador) 
@@ -133,7 +134,7 @@ CREATE TABLE [dbo].[tbl_holerite](
 	[id_colaborador] [int] NOT NULL,
 	[nome_colaborador] [varchar](70) NOT NULL,
 	[cargo_colaborador] [varchar](50) NOT NULL,
-	[horas_trab] [decimal](5, 2) NOT NULL,
+	[horas_trab] [time](0) NOT NULL,
 	[porcentagem_vt] [decimal](5, 2),
 	[porcentagem_vr] [decimal](5, 2),
 	[porcentagem_assis_odonto] [decimal](5, 2),

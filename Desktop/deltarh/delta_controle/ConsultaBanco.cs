@@ -245,7 +245,7 @@ namespace delta_controle
                         colaborador.cargo = rd.GetString(19);
                         colaborador.status = rd.GetString(20);
                         colaborador.idEmpresa = rd.GetInt32(21);
-                        colaborador.horas_banco = rd.GetDecimal(22);
+                        colaborador.horas_banco = rd.GetTimeSpan(22);
                     }
                     rd.Close();
 
@@ -443,7 +443,7 @@ namespace delta_controle
             }
         }
 
-        public mdlFolhaDePagamento BuscarFolha(mdlFolhaDePagamento folha)
+        public mdlFolhaDePagamento BuscarFolha(int id_empresa, string mes_referencia)
         {
             string consulta = conecta.stringSql;
             try
@@ -456,8 +456,8 @@ namespace delta_controle
 
                     SqlCommand cmd = new SqlCommand(sql, conexaodb);
 
-                    cmd.Parameters.AddWithValue("@mes_referencia", folha.mes_referencia);
-                    cmd.Parameters.AddWithValue("@id_empresa", folha.id_empresa);
+                    cmd.Parameters.AddWithValue("@mes_referencia", mes_referencia);
+                    cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
 
                     SqlDataReader rd = cmd.ExecuteReader();
 
@@ -476,7 +476,7 @@ namespace delta_controle
                         }
                         folha_banco.valor_final = (decimal)rd["valor_folhafinal"];
                         folha_banco.valor_desconto = (decimal)rd["valor_desc_total"];
-                        folha_banco.horas_trabalhadas = (decimal)rd["horas_trab"];
+                        folha_banco.horas_trabalhadas = (TimeSpan)rd["horas_trab"];
                         folha_banco.salario_liquido = (decimal)rd["salario_liq"];
                         folha_banco.periodo_inicio = (DateTime)rd["periodo_inicio"];
                         folha_banco.periodo_fim = (DateTime)rd["periodo_fim"];
@@ -494,5 +494,285 @@ namespace delta_controle
                 return null;
             }
         }
+
+        private List<mdlColaborador> BuscarColaboradoresAtivosEmpresa(int id_empresa)
+        {
+            string consulta = conecta.stringSql;
+
+            List<mdlColaborador> colaboradores = new List<mdlColaborador>();
+
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_colaborador WHERE id_empresa = @id_empresa AND status = 'ATIVO'";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        mdlColaborador colaborador = new mdlColaborador();
+                        colaborador.id = (int)rd["id_colaborador"];
+                        colaborador.nome = (string)rd["nome"];
+                        colaborador.salario = (decimal)rd["salario_bruto"];
+                        colaborador.cHoraria = (int)rd["carga_horaria"];
+                        colaborador.horas_banco = (TimeSpan)rd["horas_banco"];
+                        colaborador.cargo = (string)rd["cargo"];
+                        colaboradores.Add(colaborador);
+                    }
+                    rd.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return colaboradores;
+        }
+
+        private mdlColaborador BuscarColaboradorPorId(int id_colaborador)
+        {
+            string consulta = conecta.stringSql;
+
+            mdlColaborador colaborador = null;
+
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_colaborador WHERE id_colaborador = @id_colaborador";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@id_colaborador", id_colaborador);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        colaborador = new mdlColaborador();
+                        colaborador.id = (int)rd["id_colaborador"];
+                        colaborador.nome = (string)rd["nome"];
+                        colaborador.salario = (decimal)rd["salario_bruto"];
+                        colaborador.cHoraria = (int)rd["carga_horaria"];
+                        colaborador.horas_banco = (TimeSpan)rd["horas_banco"];
+                        colaborador.cargo = (string)rd["cargo"];
+                    }
+                    rd.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return colaborador;
+        }
+
+        public List<mdlFolhaIndividual> GerarFolhasIndividuais(int id_empresa, int id_folha_de_pagamento, DateTime periodo_inicio, DateTime periodo_fim, string mes_referencia)
+        {
+            List<mdlFolhaIndividual> folhas_individuais = new List<mdlFolhaIndividual>();
+            
+            string consulta = conecta.stringSql;
+
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    List<mdlColaborador> colaboradores = BuscarColaboradoresAtivosEmpresa(id_empresa);
+
+                    foreach (mdlColaborador colaborador in colaboradores)
+                    {
+                        string sql = "SELECT * FROM tbl_pontoeletronico WHERE id_colaborador = @id_colaborador AND data >= @periodo_inicio AND data <= @periodo_fim";
+
+                        SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                        cmd.Parameters.AddWithValue("@id_colaborador", colaborador.id);
+                        cmd.Parameters.AddWithValue("@periodo_inicio", periodo_inicio);
+                        cmd.Parameters.AddWithValue("@periodo_fim", periodo_fim);
+
+                        SqlDataReader rd = cmd.ExecuteReader();
+
+                        List<mdlPontoEletronico> pontos_eletronicos = new List<mdlPontoEletronico>();
+                        while (rd.Read())
+                        {
+                            mdlPontoEletronico ponto = new mdlPontoEletronico();
+
+                            ponto.id_pontoeletronico = (int)rd["id_pontoeletronico"];
+                            ponto.data = (DateTime)rd["data"];
+                            ponto.entrada = rd["entrada"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["entrada"];
+                            ponto.saida_almoco = rd["saida_almoco"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["saida_almoco"];
+                            ponto.retorno_almoco = rd["retorno_almoco"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["retorno_almoco"];
+                            ponto.saida = rd["saida"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["saida"];
+                            ponto.tipo_justificativa = rd["tipo_justificativa"] == DBNull.Value ? null : (string)rd["tipo_justificativa"];
+                            ponto.descricao = rd["descricao"] == DBNull.Value ? null : (string)rd["descricao"];
+                            ponto.documento = rd["documento"] == DBNull.Value ? null : (byte[])rd["documento"];
+                            ponto.id_colaborador = (int)rd["id_colaborador"];
+
+                            pontos_eletronicos.Add(ponto);
+                        }
+                        rd.Close();
+
+
+                        mdlFolhaIndividual folhaIndividual = new mdlFolhaIndividual();
+
+                        folhaIndividual.id_folhadepagamento = id_folha_de_pagamento;
+                        folhaIndividual.mes_referencia = mes_referencia;
+                        folhaIndividual.colaborador = colaborador;
+                        folhaIndividual.id_colaborador = colaborador.id;
+                        folhaIndividual.pontos_eletronicos = pontos_eletronicos;
+                        folhaIndividual.periodo_inicio = periodo_inicio;
+                        folhaIndividual.periodo_fim = periodo_fim;
+
+                        folhaIndividual.CalcularNovaFolha();
+
+                        folhas_individuais.Add(folhaIndividual);
+                    }
+                }
+
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
+                    {
+                        string sql = "INSERT INTO tbl_folhaindividual " +
+                            "(periodo_inicio, periodo_fim, valor_folhafinal, valor_desc_total, horas_trab, salario_liq, id_folhadepagamento, id_colaborador, mes_referencia, status) " +
+                            "VALUES " +
+                            "(@periodo_inicio, @periodo_fim, @valor_folhafinal, @valor_desc_total, @horas_trab, @salario_liq, @id_folhadepagamento, @id_colaborador, @mes_referencia, @status)";
+
+                        SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                        cmd.Parameters.AddWithValue("@valor_folhafinal", folha_individual.valor_final);
+                        cmd.Parameters.AddWithValue("@valor_desc_total", folha_individual.valor_desconto);
+                        cmd.Parameters.AddWithValue("@horas_trab", folha_individual.horas_trabalhadas);
+                        cmd.Parameters.AddWithValue("@salario_liq", folha_individual.salario_liquido);
+                        cmd.Parameters.AddWithValue("@id_folhadepagamento", folha_individual.id_folhadepagamento);
+                        cmd.Parameters.AddWithValue("@id_colaborador", folha_individual.id_colaborador);
+                        cmd.Parameters.AddWithValue("@mes_referencia", folha_individual.mes_referencia);
+                        cmd.Parameters.AddWithValue("@status", folha_individual.status);
+                        cmd.Parameters.AddWithValue("@periodo_inicio", folha_individual.periodo_inicio);
+                        cmd.Parameters.AddWithValue("@periodo_fim", folha_individual.periodo_fim);
+
+                        int afetados = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return folhas_individuais;
+        }
+
+        public List<mdlFolhaIndividual> BuscarFolhasIndividuais(int id_folhadepagamento)
+        {
+            List<mdlFolhaIndividual> folhas_individuais = new List<mdlFolhaIndividual>();
+
+            string consulta = conecta.stringSql;
+
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_folhaindividual WHERE id_folhadepagamento = @id_folhadepagamento";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@id_folhadepagamento", id_folhadepagamento);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        mdlFolhaIndividual folhaIndividual = new mdlFolhaIndividual
+                        {
+                            valor_final = (decimal)rd["valor_folhafinal"],
+                            valor_desconto = (decimal)rd["valor_desc_total"],
+                            horas_trabalhadas = (TimeSpan)rd["horas_trab"],
+                            salario_liquido = (decimal)rd["salario_liq"],
+                            id_folhadepagamento = (int)rd["id_folhadepagamento"],
+                            id_colaborador = (int)rd["id_colaborador"],
+                            mes_referencia = (string)rd["mes_referencia"],
+                            status = (string)rd["status"],
+                            periodo_inicio = (DateTime)rd["periodo_inicio"],
+                            periodo_fim = (DateTime)rd["periodo_fim"]
+                        };
+
+                        folhas_individuais.Add(folhaIndividual);
+                    }
+                }
+
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
+                    {
+                        mdlColaborador colaborador = BuscarColaboradorPorId(folha_individual.id_colaborador);
+                        List<mdlPontoEletronico> pontos_eletronicos = new List<mdlPontoEletronico>();
+
+                        string sql = "SELECT * FROM tbl_pontoeletronico WHERE id_colaborador = @id_colaborador AND data >= @periodo_inicio AND data <= @periodo_fim";
+
+                        SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                        cmd.Parameters.AddWithValue("@id_colaborador", folha_individual.id_colaborador);
+                        cmd.Parameters.AddWithValue("@periodo_inicio", folha_individual.periodo_inicio);
+                        cmd.Parameters.AddWithValue("@periodo_fim", folha_individual.periodo_fim);
+
+                        SqlDataReader rd = cmd.ExecuteReader();
+
+                        while (rd.Read())
+                        {
+                            mdlPontoEletronico ponto = new mdlPontoEletronico();
+
+                            ponto.id_pontoeletronico = (int)rd["id_pontoeletronico"];
+                            ponto.data = (DateTime)rd["data"];
+                            ponto.entrada = rd["entrada"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["entrada"];
+                            ponto.saida_almoco = rd["saida_almoco"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["saida_almoco"];
+                            ponto.retorno_almoco = rd["retorno_almoco"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["retorno_almoco"];
+                            ponto.saida = rd["saida"] == DBNull.Value ? TimeSpan.Zero : (TimeSpan)rd["saida"];
+                            ponto.tipo_justificativa = rd["tipo_justificativa"] == DBNull.Value ? null : (string)rd["tipo_justificativa"];
+                            ponto.descricao = rd["descricao"] == DBNull.Value ? null : (string)rd["descricao"];
+                            ponto.documento = rd["documento"] == DBNull.Value ? null : (byte[])rd["documento"];
+                            ponto.id_colaborador = (int)rd["id_colaborador"];
+
+                            pontos_eletronicos.Add(ponto);
+                        }
+                        rd.Close();
+
+                        folha_individual.colaborador = colaborador;
+                        folha_individual.pontos_eletronicos = pontos_eletronicos;
+
+                        folha_individual.PopularFolhaExistente();
+                    }
+                }
+
+                return folhas_individuais;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
+
     }
 }

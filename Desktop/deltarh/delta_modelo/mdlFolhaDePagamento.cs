@@ -12,7 +12,7 @@ namespace delta_modelo
         public byte[] relatorio { get; set; }
         public decimal valor_final { get; set; }
         public decimal valor_desconto { get; set; }
-        public decimal horas_trabalhadas { get; set; }
+        public TimeSpan horas_trabalhadas { get; set; }
         public decimal salario_liquido { get; set; }
         public DateTime periodo_inicio { get; set; }
         public DateTime periodo_fim { get; set; }

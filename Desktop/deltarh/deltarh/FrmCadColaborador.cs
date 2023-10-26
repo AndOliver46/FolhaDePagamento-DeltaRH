@@ -88,7 +88,7 @@ namespace deltarh
             colab.status = cboxStatus.Text;
             colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
             colab.cargo = txtCargo.Text;
-            colab.horas_banco = 0.0M;
+            colab.horas_banco = TimeSpan.Zero;
 
             try
             {
@@ -189,7 +189,7 @@ namespace deltarh
                 colab.status = cboxStatus.Text;
                 colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
                 colab.cargo = txtCargo.Text;
-                colab.horas_banco = 0.0M;
+                colab.horas_banco = TimeSpan.Zero;
 
                 CadColab conecta = new CadColab();
 

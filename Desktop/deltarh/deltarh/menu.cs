@@ -292,48 +292,46 @@ namespace deltarh
 
         private void btnProcessar_Click(object sender, EventArgs e)
         {
-            int idEmpresa = Convert.ToInt32(cboxRazao.SelectedValue);
+            int id_empresa = Convert.ToInt32(cboxRazao.SelectedValue);
             string mes = cboxMes.Text;
             string ano = cboxAno.Text;
+
+            string mes_referencia = mes + "/" + ano;
             DateTime[] dias = GetFirstAndLastDayOfMonth(mes, ano);
 
-            mdlFolhaDePagamento folha = new mdlFolhaDePagamento();
-            folha.id_empresa = idEmpresa;
-            folha.mes_referencia = mes + "/" + ano;
-            folha.periodo_inicio = dias[0];
-            folha.periodo_fim = dias[1];
-            folha.salario_liquido = 0.0M;
-            folha.valor_final = 0.0M;
-            folha.valor_desconto = 0.0M;
-            folha.horas_trabalhadas = 0.0M;
-            folha.relatorio = null;
-            folha.status_folha = "PENDENTE";
            
             ConsultaBanco consulta = new ConsultaBanco();
-            mdlFolhaDePagamento folha_existente = consulta.BuscarFolha(folha);
+            mdlFolhaDePagamento folha_existente = consulta.BuscarFolha(id_empresa, mes_referencia);
 
             if (folha_existente != null)
             {
-                var resposta = MessageBox.Show("Folha do mês " + folha.mes_referencia + " ja cadastrada. Abrir consulta?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resposta = MessageBox.Show("Folha do mês " + mes_referencia + " ja cadastrada. Abrir consulta?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resposta == DialogResult.Yes)
                 {
-                    mdlFolhaDePagamento folha_de_pagamento = folha_existente;
-                    FrmProcessamento processa = new FrmProcessamento(folha_de_pagamento);
+                    FrmProcessamento processa = new FrmProcessamento(folha_existente);
                     processa.ShowDialog();
                 }
             }
             else
             {
-                var resposta = MessageBox.Show("Folha do mês " + folha.mes_referencia + " ainda não cadastrada. Deseja cadastrar?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resposta = MessageBox.Show("Folha do mês " + mes_referencia + " ainda não cadastrada. Deseja cadastrar?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resposta == DialogResult.Yes)
                 {
-                    CadFolha cadFolha = new CadFolha();
-                    cadFolha.CadastrarFolha(folha);
+                    mdlFolhaDePagamento folha = new mdlFolhaDePagamento();
+                    folha.id_empresa = id_empresa;
+                    folha.mes_referencia = mes + "/" + ano;
+                    folha.periodo_inicio = dias[0];
+                    folha.periodo_fim = dias[1];
+                    folha.salario_liquido = 0.0M;
+                    folha.valor_final = 0.0M;
+                    folha.valor_desconto = 0.0M;
+                    folha.horas_trabalhadas = TimeSpan.Zero;
+                    folha.relatorio = null;
+                    folha.status_folha = "Rascunho";
 
-                    mdlFolhaDePagamento folhaDePagamento = consulta.BuscarFolha(folha);
-                    FrmProcessamento processa = new FrmProcessamento(folhaDePagamento);
+                    FrmProcessamento processa = new FrmProcessamento(folha);
                     processa.ShowDialog();
                 }
             }

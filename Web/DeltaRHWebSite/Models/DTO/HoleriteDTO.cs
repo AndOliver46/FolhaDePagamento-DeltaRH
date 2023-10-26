@@ -11,7 +11,7 @@
         public int id_colaborador { get; set; }
         public string nome_colaborador { get; set; }
         public string cargo_colaborador { get; set; }
-        public decimal horas_trab { get; set; }
+        public TimeSpan horas_trab { get; set; }
         public decimal porcentagem_vt { get; set; }
         public decimal porcentagem_vr { get; set; }
         public decimal porcentagem_assis_odonto { get; set; }
