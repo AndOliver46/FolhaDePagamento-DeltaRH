@@ -32,7 +32,6 @@
             this.dataGridFolhasIndividuais = new System.Windows.Forms.DataGridView();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.btnProcessaFolha = new System.Windows.Forms.Button();
-            this.btnRecalcular = new System.Windows.Forms.Button();
             this.txtInicio = new System.Windows.Forms.TextBox();
             this.txtTermino = new System.Windows.Forms.TextBox();
             this.txtValorBruto = new System.Windows.Forms.TextBox();
@@ -46,14 +45,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtValorLiquido = new System.Windows.Forms.TextBox();
             this.txtHorasTotais = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMesReferencia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSolicitarAprovacao = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFolhasIndividuais)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,7 +79,7 @@
             // btnVisualizar
             // 
             this.btnVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizar.Location = new System.Drawing.Point(384, 528);
+            this.btnVisualizar.Location = new System.Drawing.Point(458, 527);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(136, 35);
             this.btnVisualizar.TabIndex = 3;
@@ -96,16 +95,6 @@
             this.btnProcessaFolha.TabIndex = 2;
             this.btnProcessaFolha.Text = "Processar Folha";
             this.btnProcessaFolha.UseVisualStyleBackColor = true;
-            // 
-            // btnRecalcular
-            // 
-            this.btnRecalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecalcular.Location = new System.Drawing.Point(531, 528);
-            this.btnRecalcular.Name = "btnRecalcular";
-            this.btnRecalcular.Size = new System.Drawing.Size(136, 35);
-            this.btnRecalcular.TabIndex = 4;
-            this.btnRecalcular.Text = "Salvar Rascunho";
-            this.btnRecalcular.UseVisualStyleBackColor = true;
             // 
             // txtInicio
             // 
@@ -233,15 +222,6 @@
             this.txtHorasTotais.Size = new System.Drawing.Size(105, 20);
             this.txtHorasTotais.TabIndex = 20;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Enabled = false;
-            this.txtStatus.Location = new System.Drawing.Point(815, 29);
-            this.txtStatus.Multiline = true;
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(173, 21);
-            this.txtStatus.TabIndex = 25;
-            // 
             // txtEmpresa
             // 
             this.txtEmpresa.Enabled = false;
@@ -286,15 +266,16 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Status Folha";
             // 
-            // button1
+            // btnSolicitarAprovacao
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(696, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Solicitar Aprovação";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSolicitarAprovacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitarAprovacao.Location = new System.Drawing.Point(696, 73);
+            this.btnSolicitarAprovacao.Name = "btnSolicitarAprovacao";
+            this.btnSolicitarAprovacao.Size = new System.Drawing.Size(136, 35);
+            this.btnSolicitarAprovacao.TabIndex = 1;
+            this.btnSolicitarAprovacao.Text = "Solicitar Aprovação";
+            this.btnSolicitarAprovacao.UseVisualStyleBackColor = true;
+            this.btnSolicitarAprovacao.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -306,20 +287,27 @@
             this.label10.TabIndex = 30;
             this.label10.Text = "Mês Referência";
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Location = new System.Drawing.Point(809, 30);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(179, 20);
+            this.txtStatus.TabIndex = 31;
+            // 
             // FrmProcessamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 632);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSolicitarAprovacao);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtMesReferencia);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.btnRecalcular);
             this.Controls.Add(this.txtEmpresa);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnProcessaFolha);
@@ -344,7 +332,6 @@
         private System.Windows.Forms.DataGridView dataGridFolhasIndividuais;
         private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Button btnProcessaFolha;
-        private System.Windows.Forms.Button btnRecalcular;
         private System.Windows.Forms.TextBox txtValorBruto;
         private System.Windows.Forms.TextBox txtDescontos;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -355,7 +342,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValorLiquido;
         private System.Windows.Forms.TextBox txtHorasTotais;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtEmpresa;
@@ -364,7 +350,8 @@
         public System.Windows.Forms.TextBox txtInicio;
         public System.Windows.Forms.TextBox txtTermino;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSolicitarAprovacao;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txtStatus;
     }
 }

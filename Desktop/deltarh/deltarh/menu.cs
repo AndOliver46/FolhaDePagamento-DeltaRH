@@ -219,18 +219,18 @@ namespace deltarh
             }
         }
 
-            private void btnAtualiza_Click(object sender, EventArgs e)
-            {
-                BuscarStatus();
-            }
+        private void btnAtualiza_Click(object sender, EventArgs e)
+        {
+            BuscarStatus();
+        }
 
-            private void button1_Click(object sender, EventArgs e)
-            {
-                FrmAprovaStatus status = new FrmAprovaStatus();
-                status.txtCnpj.Text = txtCnpjStatus.Text;
-                status.MostrarEmpresa();
-                status.ShowDialog();
-            }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAprovaStatus status = new FrmAprovaStatus();
+            status.txtCnpj.Text = txtCnpjStatus.Text;
+            status.MostrarEmpresa();
+            status.ShowDialog();
+        }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {

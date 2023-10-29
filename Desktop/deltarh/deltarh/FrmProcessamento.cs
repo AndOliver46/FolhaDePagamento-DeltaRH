@@ -2,12 +2,6 @@
 using delta_modelo;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace deltarh
@@ -25,22 +19,33 @@ namespace deltarh
 
             if (folha_de_pagamento.id_folha == 0)
             {
-                CadFolha cadFolha = new CadFolha();
-                cadFolha.CadastrarFolha(folhaDePagamento);
-
-                ConsultaBanco consulta = new ConsultaBanco();
-                this.folha_de_pagamento = consulta.BuscarFolha(folhaDePagamento.id_empresa, folhaDePagamento.mes_referencia);
-
-                GerarFolhasIndividuais();
+                CriarNovaFolha();
             }
             else
             {
                 BuscarFolhasIndividuais();
             }
 
+            CarregarViewComDados();
+        }
+
+        private void CriarNovaFolha()
+        {
+            CadFolha cadFolha = new CadFolha();
+            cadFolha.CadastrarFolha(folha_de_pagamento);
+
+            ConsultaBanco consulta = new ConsultaBanco();
+            this.folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
+
+            GerarFolhasIndividuais();
+        }
+
+        private void CarregarViewComDados()
+        {
             PopularCamposFolhaPagamento();
             PopularCamposEmpresa();
             RealizarSomasTotais();
+            AjustarComportamentoBotoes();
         }
 
         private void PopularCamposFolhaPagamento()
@@ -89,15 +94,86 @@ namespace deltarh
                 valor_liquido += folha_individual.salario_liquido;
             }
 
+            folha_de_pagamento.horas_trabalhadas = horas_totais;
+            folha_de_pagamento.valor_final = valor_bruto;
+            folha_de_pagamento.valor_desconto = descontos;
+            folha_de_pagamento.salario_liquido = valor_liquido;
+
+            CadFolha cadFolha = new CadFolha();
+            cadFolha.UpdateFolha(folha_de_pagamento);
+
             txtHorasTotais.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", (int)horas_totais.TotalHours, horas_totais.Minutes, horas_totais.Seconds);
             txtValorBruto.Text = Convert.ToString(valor_bruto);
             txtDescontos.Text = Convert.ToString(descontos);
             txtValorLiquido.Text = Convert.ToString(valor_liquido);
         }
 
-        private void SalvarRascunhoFolha()
+        private void button1_Click(object sender, EventArgs e)
         {
+            bool pronto_para_aprovar = true;
 
+            foreach(mdlFolhaIndividual folha_individual in folhas_individuais)
+            {
+                if(folha_individual.status == "Pendente")
+                {
+                    pronto_para_aprovar = false; 
+                    break;
+                }
+            }
+
+            if (pronto_para_aprovar)
+            {
+                folha_de_pagamento.status_folha = "Pendente";
+                CadFolha cadFolha = new CadFolha();
+                cadFolha.UpdateFolha(folha_de_pagamento);
+
+                MessageBox.Show("Solicitação de aprovação enviada ao cliente.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ReiniciarFormulario();
+            }
+            else
+            {
+                MessageBox.Show("Ainda há folhas individuais não aprovadas, aprove e tente novamente.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
+
+        private void ReiniciarFormulario()
+        {
+            this.Close();
+            FrmProcessamento novoForm = new FrmProcessamento(folha_de_pagamento);
+            novoForm.Show();
+        }
+
+        private void AjustarComportamentoBotoes()
+        {
+            switch (folha_de_pagamento.status_folha.ToLower())
+            {
+                case "pendente":
+                    btnSolicitarAprovacao.Enabled = false;
+                    btnProcessaFolha.Enabled = false;
+                    break;
+
+                case "aprovado":
+                    btnSolicitarAprovacao.Enabled = false;
+                    btnProcessaFolha.Enabled = true;
+                    break;
+
+                case "reprovado":
+                case "rascunho":
+                    btnSolicitarAprovacao.Enabled = true;
+                    btnProcessaFolha.Enabled = false;
+                    break;
+
+                case "processado":
+                    btnSolicitarAprovacao.Enabled = false;
+                    btnProcessaFolha.Enabled = false;
+                    break;
+
+                default:
+                    MessageBox.Show("Status inválido, contatar administrador.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
     }
 }

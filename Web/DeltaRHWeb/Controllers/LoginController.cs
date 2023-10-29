@@ -238,7 +238,10 @@ public class LoginController : Controller
                     folha.Valor_liq_final = rd.GetDecimal(5);
                     folha.Status = rd.GetString(8);
 
-                    Lista_folha.Add(folha);
+                    if(folha.Status.ToLower() != "rascunho")
+                    {
+                        Lista_folha.Add(folha);
+                    }
                 }
                 rd.Close();
 
