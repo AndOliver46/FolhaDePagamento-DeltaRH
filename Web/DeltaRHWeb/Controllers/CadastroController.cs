@@ -164,7 +164,7 @@ public class CadastroController : Controller
                 cmd.Parameters.AddWithValue("@cpf_responsavel", empresaModel.CPFResponsavel);
                 cmd.Parameters.AddWithValue("@logradouro", enderecoModel.Logradouro);
                 cmd.Parameters.AddWithValue("@numero", enderecoModel.Numero);
-                cmd.Parameters.AddWithValue("@complemento", enderecoModel.Complemento);
+                cmd.Parameters.AddWithValue("@complemento", enderecoModel.Complemento == null ? "" : enderecoModel.Complemento);
                 cmd.Parameters.AddWithValue("@bairro", enderecoModel.Bairro);
                 cmd.Parameters.AddWithValue("@cep", enderecoModel.CEP);
                 cmd.Parameters.AddWithValue("@cidade", enderecoModel.Cidade);

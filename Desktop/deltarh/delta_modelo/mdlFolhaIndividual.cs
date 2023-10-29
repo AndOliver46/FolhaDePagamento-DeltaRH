@@ -25,7 +25,11 @@ namespace delta_modelo
         public TimeSpan horas_trabalhadas { get; set; }
         [DisplayName("Salário Bruto")]
         public decimal valor_final { get; set; }
-        [DisplayName("Descontos")]
+        [DisplayName("Desconto IRRF")]
+        public decimal desconto_irrf { get; set; }
+        [DisplayName("Desconto INSS")]
+        public decimal desconto_inss { get; set; }
+        [DisplayName("Descontos Totais")]
         public decimal valor_desconto { get; set; }
         [DisplayName("Salario Liquido")]
         public decimal salario_liquido { get; set; }
@@ -47,19 +51,16 @@ namespace delta_modelo
         [Browsable(false)]
         public mdlColaborador colaborador { get; set; }
         [Browsable(false)]
+        public mdlEmpresa empresa { get; set; }
+        [Browsable(false)]
         public List<mdlPontoEletronico> pontos_eletronicos { get; set; }
 
-        public void PopularFolhaExistente()
+        public void CalcularFolhaIndividual()
         {
             PopularDadosColaborador();
-            CalcularHoras();
-        }
 
-        public void CalcularNovaFolha()
-        {
-            PopularDadosColaborador();
             CalcularHoras();
-            this.status = "Pendente";
+            CalcularDescontos();
         }
 
         private void PopularDadosColaborador()
@@ -90,6 +91,60 @@ namespace delta_modelo
                     this.horas_trabalhadas = this.horas_trabalhadas + horas_dia;
                 }
             }
+        }
+
+        private void CalcularDescontos()
+        {
+            valor_desconto = 0;
+
+            CalcularDescontosHoras();
+            CalcularDescontosBeneficios();
+            CalcularDescontosGoverno();
+        }
+
+        private void CalcularDescontosHoras()
+        {
+            double horas_totais = carga_horaria * 4;
+            decimal valor_hora = valor_final / (decimal)horas_totais;
+
+            TimeSpan horasComoTimeSpan = TimeSpan.FromHours(horas_totais);
+            TimeSpan horas_calculadas = horasComoTimeSpan - horas_trabalhadas; //176 - 170 = -3
+
+            if (horas_calculadas > TimeSpan.Zero)
+            {
+                if (colaborador.horas_banco > TimeSpan.Zero)
+                {
+                    //Logica banco de horas
+                }
+
+                decimal desconto_horas_devidas = (decimal)horas_calculadas.TotalHours * valor_hora;
+                valor_desconto += desconto_horas_devidas;
+            }
+            else
+            {
+                colaborador.horas_banco += -horas_calculadas;
+            }
+
+            salario_liquido = valor_final - valor_desconto;
+        }
+
+        private void CalcularDescontosBeneficios()
+        {
+            decimal valor_descontos_beneficios = 0;
+
+            valor_descontos_beneficios += salario_liquido * ((decimal)empresa.assMedica / 100);
+            valor_descontos_beneficios += salario_liquido * ((decimal)empresa.odonto / 100);
+            valor_descontos_beneficios += salario_liquido * ((decimal)empresa.vt / 100);
+            valor_descontos_beneficios += salario_liquido * ((decimal)empresa.vr / 100);
+            valor_descontos_beneficios += salario_liquido * ((decimal)empresa.gym / 100);
+
+            salario_liquido = salario_liquido - valor_descontos_beneficios;
+        }
+
+        private void CalcularDescontosGoverno()
+        {
+            //Logica IRRF
+            //Logica INSS
         }
     }
 }

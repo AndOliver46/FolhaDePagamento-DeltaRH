@@ -50,11 +50,11 @@ namespace delta_controle
                         empresa.fone2 = rd.GetString(14);
                         empresa.email = rd.GetString(15);
                         empresa.status = rd.GetString(16);
-                        empresa.vt = rd["vt"] == DBNull.Value ? null : (decimal?)rd["vt"];
-                        empresa.vr = rd["vr"] == DBNull.Value ? null : (decimal?)rd["vr"];
-                        empresa.assMedica = rd["ass_medica"] == DBNull.Value ? null : (decimal?)rd["ass_medica"];
-                        empresa.odonto = rd["odonto"] == DBNull.Value ? null : (decimal?)rd["odonto"];
-                        empresa.gym = rd["gympass"] == DBNull.Value ? null : (decimal?)rd["gympass"];
+                        empresa.vt = rd["vt"] == DBNull.Value ? 0.0M : (decimal?)rd["vt"];
+                        empresa.vr = rd["vr"] == DBNull.Value ? 0.0M : (decimal?)rd["vr"];
+                        empresa.assMedica = rd["ass_medica"] == DBNull.Value ? 0.0M : (decimal?)rd["ass_medica"];
+                        empresa.odonto = rd["odonto"] == DBNull.Value ? 0.0M : (decimal?)rd["odonto"];
+                        empresa.gym = rd["gympass"] == DBNull.Value ? 0.0M : (decimal?)rd["gympass"];
                         empresa.id_missao = rd.GetInt32(22);
                         empresa.id_politica = rd.GetInt32(23);
                     }
@@ -145,11 +145,11 @@ namespace delta_controle
                         empresa.fone2 = rd.GetString(14);
                         empresa.email = rd.GetString(15);
                         empresa.status = rd.GetString(16);
-                        empresa.vt = rd["vt"] == DBNull.Value ? null : (decimal?)rd["vt"];
-                        empresa.vr = rd["vr"] == DBNull.Value ? null : (decimal?)rd["vr"];
-                        empresa.assMedica = rd["ass_medica"] == DBNull.Value ? null : (decimal?)rd["ass_medica"];
-                        empresa.odonto = rd["odonto"] == DBNull.Value ? null : (decimal?)rd["odonto"];
-                        empresa.gym = rd["gympass"] == DBNull.Value ? null : (decimal?)rd["gympass"];
+                        empresa.vt = rd["vt"] == DBNull.Value ? 0.0M : (decimal?)rd["vt"];
+                        empresa.vr = rd["vr"] == DBNull.Value ? 0.0M : (decimal?)rd["vr"];
+                        empresa.assMedica = rd["ass_medica"] == DBNull.Value ? 0.0M : (decimal?)rd["ass_medica"];
+                        empresa.odonto = rd["odonto"] == DBNull.Value ? 0.0M : (decimal?)rd["odonto"];
+                        empresa.gym = rd["gympass"] == DBNull.Value ? 0.0M : (decimal?)rd["gympass"];
                         empresa.id_missao = rd.GetInt32(22);
                         empresa.id_politica = rd.GetInt32(23);
                     }
@@ -578,7 +578,7 @@ namespace delta_controle
             return colaborador;
         }
 
-        public List<mdlFolhaIndividual> GerarFolhasIndividuais(int id_empresa, int id_folha_de_pagamento, DateTime periodo_inicio, DateTime periodo_fim, string mes_referencia)
+        public List<mdlFolhaIndividual> GerarFolhasIndividuais(mdlEmpresa empresa, int id_folha_de_pagamento, DateTime periodo_inicio, DateTime periodo_fim, string mes_referencia)
         {
             List<mdlFolhaIndividual> folhas_individuais = new List<mdlFolhaIndividual>();
             
@@ -590,7 +590,7 @@ namespace delta_controle
                 {
                     conexaodb.Open();
 
-                    List<mdlColaborador> colaboradores = BuscarColaboradoresAtivosEmpresa(id_empresa);
+                    List<mdlColaborador> colaboradores = BuscarColaboradoresAtivosEmpresa(empresa.id);
 
                     foreach (mdlColaborador colaborador in colaboradores)
                     {
@@ -634,8 +634,10 @@ namespace delta_controle
                         folhaIndividual.pontos_eletronicos = pontos_eletronicos;
                         folhaIndividual.periodo_inicio = periodo_inicio;
                         folhaIndividual.periodo_fim = periodo_fim;
+                        folhaIndividual.empresa = empresa;
+                        folhaIndividual.status = "Pendente";
 
-                        folhaIndividual.CalcularNovaFolha();
+                        folhaIndividual.CalcularFolhaIndividual();
 
                         folhas_individuais.Add(folhaIndividual);
                     }
@@ -677,7 +679,7 @@ namespace delta_controle
             return folhas_individuais;
         }
 
-        public List<mdlFolhaIndividual> BuscarFolhasIndividuais(int id_folhadepagamento)
+        public List<mdlFolhaIndividual> BuscarFolhasIndividuais(mdlEmpresa empresa, int id_folhadepagamento)
         {
             List<mdlFolhaIndividual> folhas_individuais = new List<mdlFolhaIndividual>();
 
@@ -757,8 +759,7 @@ namespace delta_controle
 
                         folha_individual.colaborador = colaborador;
                         folha_individual.pontos_eletronicos = pontos_eletronicos;
-
-                        folha_individual.PopularFolhaExistente();
+                        folha_individual.empresa = empresa;
                     }
                 }
 

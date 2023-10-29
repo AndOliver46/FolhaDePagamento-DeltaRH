@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var status = statusElement.textContent.trim(); // Obter o valor do status e remover espaços em branco
 
         // Verificar se o status é igual a "Aprovado".
-        if (status === "Aprovado") {
+        if (status === "Aprovado" || status === "Reprovado") {
             // Encontrar a linha (elemento pai) que contém o status.
             var folhaElement = statusElement.closest('.folha');
 

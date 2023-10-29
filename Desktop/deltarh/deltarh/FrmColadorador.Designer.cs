@@ -34,7 +34,6 @@
             this.cboxTipoContrato = new System.Windows.Forms.ComboBox();
             this.cboxHorario = new System.Windows.Forms.ComboBox();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
-            this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -77,6 +76,7 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
+            this.mskNascimento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -138,15 +138,6 @@
             this.mskCpf.Size = new System.Drawing.Size(159, 22);
             this.mskCpf.TabIndex = 6;
             this.mskCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskCpf_KeyPress);
-            // 
-            // mskNascimento
-            // 
-            this.mskNascimento.Enabled = false;
-            this.mskNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
-            this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
-            this.mskNascimento.TabIndex = 7;
             // 
             // txtSalario
             // 
@@ -308,6 +299,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.mskNascimento);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -317,7 +309,6 @@
             this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Controls.Add(this.txtSalario);
             this.groupBox2.Controls.Add(this.cboxTipoContrato);
-            this.groupBox2.Controls.Add(this.mskNascimento);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 75);
@@ -592,6 +583,13 @@
             this.txtStatus.Size = new System.Drawing.Size(78, 22);
             this.txtStatus.TabIndex = 24;
             // 
+            // mskNascimento
+            // 
+            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
+            this.mskNascimento.Name = "mskNascimento";
+            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
+            this.mskNascimento.TabIndex = 26;
+            // 
             // FrmColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,7 +631,6 @@
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.ComboBox cboxTipoContrato;
         private System.Windows.Forms.ComboBox cboxHorario;
-        private System.Windows.Forms.MaskedTextBox mskNascimento;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
@@ -677,5 +674,6 @@
         public System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.DateTimePicker mskNascimento;
     }
 }

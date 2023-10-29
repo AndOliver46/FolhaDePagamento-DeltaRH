@@ -55,12 +55,12 @@
                 <div class="container-tabela">
                     <table class="tabela-aprovacoes" border="1">
                         <thead id="cabecalho-tabela">
-                            <th>Folha</th>
+                            <th>Relatório</th>
                             <th>Inicio</th>
                             <th>Fim</th>
-                            <th>Salario liquido</th>
-                            <th>Valor total de desc.</th>
-                            <th>Valor final</th>
+                            <th>Valor Bruto</th>
+                            <th>Total Descontos</th>
+                            <th>Valor Liquido</th>
                             <th>Status</th>
                             <th>Ações</th>
                         </thead>
@@ -69,12 +69,13 @@
                             @foreach (var objeto in Model.Lista_folha)
                             {
                                 <tr class="folha">
-                                    <td><a href="/Login/DownloadDocumento/@objeto.id_folha" target="_blank">Icone</a></td>
+
+                                    <td><a href="/Login/DownloadDocumento/@objeto.id_folha" target="_blank"><i class="bi bi-filetype-xlsx"></i></a></td>
                                     <td>@objeto.Periodo_inicio.ToShortDateString()</td>
                                     <td>@objeto.Periodo_fim.ToShortDateString()</td>
-                                    <td>@objeto.Valor_liq_final</td>
-                                    <td>@objeto.Valor_desconto_final</td>
                                     <td>@objeto.Valor_final</td>
+                                    <td>@objeto.Valor_desconto_final</td>
+                                    <td>@objeto.Valor_liq_final</td>
                                     <td class="status-item">@objeto.Status</td>
                                     <td class="acoes">
                                         <form method="post" action="/Login/AprovarFolha/@objeto.id_folha">
