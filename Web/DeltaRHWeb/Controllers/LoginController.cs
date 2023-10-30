@@ -172,8 +172,6 @@ public class LoginController : Controller
     [HttpGet("/Login/DownloadDocumento/{id_folha}")]
     public IActionResult DownloadDocumento(int id_folha)
     {
-        AtualizarArquivoExcelFicticioNoBanco(consulta);
-
         // Suponha que você já tenha uma conexão SQL configurada.
         using (SqlConnection conexaodb = new SqlConnection(consulta))
         {
@@ -322,44 +320,4 @@ public class LoginController : Controller
 
         return RedirectToAction("InfosEmpresa", "Login", new { aproveerror = "true" });
     }
-
-
-
-
-    //Função teste arquivo 
-    public void AtualizarArquivoExcelFicticioNoBanco(string connectionString)
-    {
-        // Criar um arquivo Excel fictício com dados fictícios
-        IWorkbook workbook = new XSSFWorkbook();
-        ISheet sheet = workbook.CreateSheet("Folha de Pagamento");
-
-        // Adicionar dados fictícios à planilha
-        IRow headerRow = sheet.CreateRow(0);
-        headerRow.CreateCell(0).SetCellValue("Nome");
-        headerRow.CreateCell(1).SetCellValue("Salário");
-
-        IRow dataRow = sheet.CreateRow(1);
-        dataRow.CreateCell(0).SetCellValue("Maria");
-        dataRow.CreateCell(1).SetCellValue(6000.00);
-
-        // Salvar o arquivo Excel em memória
-        using (MemoryStream memoryStream = new MemoryStream())
-        {
-            workbook.Write(memoryStream);
-            byte[] bytes = memoryStream.ToArray();
-
-            // Atualizar o registro existente na tabela com ID 1
-            using (SqlConnection conexao = new SqlConnection(connectionString))
-            {
-                conexao.Open();
-
-                using (SqlCommand cmd = new SqlCommand("UPDATE tbl_folhadepagamento SET doc_folhadepagamento = @doc_folhadepagamento WHERE id_folhadepagamento = 1", conexao))
-                {
-                    cmd.Parameters.Add("@doc_folhadepagamento", SqlDbType.VarBinary, bytes.Length).Value = bytes;
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-    }
-
 }
