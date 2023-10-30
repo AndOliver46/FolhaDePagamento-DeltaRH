@@ -2,8 +2,6 @@
 using delta_modelo;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using NPOI.SS.UserModel;
@@ -21,13 +19,13 @@ namespace deltarh
         {
             InitializeComponent();
 
-            //Associei a folha que veio do menu anterior
+            //Associar a folha que veio do menu anterior
             this.folha_de_pagamento = folhaDePagamento;
 
-            //Busco a empresa para popular os campos e ficar disponível
+            //Buscar a empresa para popular os campos e ficar disponível
             BuscarEmpresa();
 
-            //Verifica se deverá ser criada uma nova folha ou buscada do banco
+            //Verifica se deverá ser criada uma nova folha ou buscar do banco
             CriarOuBuscarFolha();
 
             //Com a folha principal e folhas individuais buscadas, realizar somas totais
@@ -213,7 +211,7 @@ namespace deltarh
 
             // Adicionar os headers a planilha, após cada dado adicionado, é aplicado o estilo definido para header
             IRow headerRow = sheet.CreateRow(0);
-            headerRow.CreateCell(0).SetCellValue("ID Colaborador");
+            headerRow.CreateCell(0).SetCellValue("RE");
             headerRow.GetCell(0).CellStyle = headerStyle;
             headerRow.CreateCell(1).SetCellValue("Nome Colaborador");
             headerRow.GetCell(1).CellStyle = headerStyle;
@@ -223,7 +221,7 @@ namespace deltarh
             headerRow.GetCell(3).CellStyle = headerStyle;
             headerRow.CreateCell(4).SetCellValue("Periodo Fim");
             headerRow.GetCell(4).CellStyle = headerStyle;
-            headerRow.CreateCell(5).SetCellValue("Mes Referência");
+            headerRow.CreateCell(5).SetCellValue("Mes Ref");
             headerRow.GetCell(5).CellStyle = headerStyle;
             headerRow.CreateCell(6).SetCellValue("Carga Horaria");
             headerRow.GetCell(6).CellStyle = headerStyle;
