@@ -182,6 +182,12 @@
     <Compile Include="FrmEndereco.Designer.cs">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFolhaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFolhaIndividual.Designer.cs">
+      <DependentUpon>FrmFolhaIndividual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProcessamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEndereco.resx">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFolhaIndividual.resx">
+      <DependentUpon>FrmFolhaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProcessamento.resx">
       <DependentUpon>FrmProcessamento.cs</DependentUpon>
