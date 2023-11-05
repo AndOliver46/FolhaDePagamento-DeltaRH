@@ -86,6 +86,7 @@
             this.btnVisualizar.TabIndex = 3;
             this.btnVisualizar.Text = "Visualizar";
             this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // btnProcessaFolha
             // 

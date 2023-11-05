@@ -1,3 +1,5 @@
+CREATE DATABASE BD_DELTA;
+
 USE [BD_DELTA]
 
 -- Create the MissaoVisaoValores table

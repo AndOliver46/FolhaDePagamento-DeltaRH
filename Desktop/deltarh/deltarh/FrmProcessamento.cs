@@ -403,5 +403,21 @@ namespace deltarh
 
             ReiniciarFormulario();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            if (dataGridFolhasIndividuais.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridFolhasIndividuais.SelectedRows[0].Index;
+                mdlFolhaIndividual entidadeSelecionada = folhas_individuais[rowIndex];
+
+                FrmFolhaIndividual folha = new FrmFolhaIndividual(entidadeSelecionada);
+                folha.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma linha selecionada na DataGridView.");
+            }
+        }
     }
 }

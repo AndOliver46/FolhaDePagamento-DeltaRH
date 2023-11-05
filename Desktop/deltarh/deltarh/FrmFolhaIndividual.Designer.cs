@@ -80,49 +80,50 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRef = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnProcessar = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDescontos = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtSalarioBruto = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtAtrasos = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtHorasExtras = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtSalarioLiquido = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtBeneficios = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtSalarioBase = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.btnComprovante = new System.Windows.Forms.Button();
+            this.txtJustificativa = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtHorasTrabalhadas = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtEntrada = new System.Windows.Forms.TextBox();
+            this.txtSaidaAlmoco = new System.Windows.Forms.TextBox();
+            this.txtRetornoAlmoco = new System.Windows.Forms.TextBox();
+            this.txtSaida = new System.Windows.Forms.TextBox();
+            this.txtTempoAlmoco = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.gridPontos = new System.Windows.Forms.DataGridView();
+            this.picBoxComprovante = new System.Windows.Forms.PictureBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPontos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxComprovante)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -591,31 +592,31 @@
             this.label20.TabIndex = 322;
             this.label20.Text = "Nome";
             // 
-            // textBox5
+            // txtRef
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(402, 68);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 321;
+            this.txtRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRef.Location = new System.Drawing.Point(402, 68);
+            this.txtRef.Name = "txtRef";
+            this.txtRef.Size = new System.Drawing.Size(100, 22);
+            this.txtRef.TabIndex = 321;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnProcessar);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtDescontos);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtSalarioBruto);
             this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtAtrasos);
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtHorasExtras);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.txtSalarioLiquido);
             this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.txtBeneficios);
             this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.txtSalarioBase);
             this.groupBox1.Location = new System.Drawing.Point(508, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(542, 105);
@@ -623,14 +624,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resumo";
             // 
-            // button3
+            // btnProcessar
             // 
-            this.button3.Location = new System.Drawing.Point(454, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 23);
-            this.button3.TabIndex = 276;
-            this.button3.Text = "PROCESSAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnProcessar.Location = new System.Drawing.Point(454, 77);
+            this.btnProcessar.Name = "btnProcessar";
+            this.btnProcessar.Size = new System.Drawing.Size(82, 23);
+            this.btnProcessar.TabIndex = 276;
+            this.btnProcessar.Text = "PROCESSAR";
+            this.btnProcessar.UseVisualStyleBackColor = true;
+            this.btnProcessar.Click += new System.EventHandler(this.button3_Click);
             // 
             // label21
             // 
@@ -642,13 +644,13 @@
             this.label21.TabIndex = 287;
             this.label21.Text = "Descontos R$";
             // 
-            // textBox6
+            // txtDescontos
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(454, 43);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(82, 22);
-            this.textBox6.TabIndex = 286;
+            this.txtDescontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescontos.Location = new System.Drawing.Point(454, 43);
+            this.txtDescontos.Name = "txtDescontos";
+            this.txtDescontos.Size = new System.Drawing.Size(82, 22);
+            this.txtDescontos.TabIndex = 286;
             // 
             // label22
             // 
@@ -660,13 +662,13 @@
             this.label22.TabIndex = 285;
             this.label22.Text = "Total R$";
             // 
-            // textBox7
+            // txtSalarioBruto
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(454, 15);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(82, 22);
-            this.textBox7.TabIndex = 284;
+            this.txtSalarioBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalarioBruto.Location = new System.Drawing.Point(454, 15);
+            this.txtSalarioBruto.Name = "txtSalarioBruto";
+            this.txtSalarioBruto.Size = new System.Drawing.Size(82, 22);
+            this.txtSalarioBruto.TabIndex = 284;
             // 
             // label23
             // 
@@ -678,13 +680,13 @@
             this.label23.TabIndex = 283;
             this.label23.Text = "Atrasos R$";
             // 
-            // textBox8
+            // txtAtrasos
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(268, 47);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(82, 22);
-            this.textBox8.TabIndex = 282;
+            this.txtAtrasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAtrasos.Location = new System.Drawing.Point(268, 47);
+            this.txtAtrasos.Name = "txtAtrasos";
+            this.txtAtrasos.Size = new System.Drawing.Size(82, 22);
+            this.txtAtrasos.TabIndex = 282;
             // 
             // label24
             // 
@@ -696,13 +698,13 @@
             this.label24.TabIndex = 281;
             this.label24.Text = "H. Extras R$";
             // 
-            // textBox11
+            // txtHorasExtras
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(268, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(82, 22);
-            this.textBox11.TabIndex = 280;
+            this.txtHorasExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorasExtras.Location = new System.Drawing.Point(268, 19);
+            this.txtHorasExtras.Name = "txtHorasExtras";
+            this.txtHorasExtras.Size = new System.Drawing.Size(82, 22);
+            this.txtHorasExtras.TabIndex = 280;
             // 
             // label25
             // 
@@ -714,13 +716,13 @@
             this.label25.TabIndex = 279;
             this.label25.Text = "Salário Líquido R$";
             // 
-            // textBox12
+            // txtSalarioLiquido
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(268, 77);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(177, 22);
-            this.textBox12.TabIndex = 278;
+            this.txtSalarioLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalarioLiquido.Location = new System.Drawing.Point(268, 77);
+            this.txtSalarioLiquido.Name = "txtSalarioLiquido";
+            this.txtSalarioLiquido.Size = new System.Drawing.Size(177, 22);
+            this.txtSalarioLiquido.TabIndex = 278;
             // 
             // label26
             // 
@@ -732,13 +734,13 @@
             this.label26.TabIndex = 277;
             this.label26.Text = "Benefícios R$";
             // 
-            // textBox13
+            // txtBeneficios
             // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(95, 47);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(82, 22);
-            this.textBox13.TabIndex = 276;
+            this.txtBeneficios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBeneficios.Location = new System.Drawing.Point(95, 47);
+            this.txtBeneficios.Name = "txtBeneficios";
+            this.txtBeneficios.Size = new System.Drawing.Size(82, 22);
+            this.txtBeneficios.TabIndex = 276;
             // 
             // label27
             // 
@@ -750,37 +752,37 @@
             this.label27.TabIndex = 275;
             this.label27.Text = "Salário R$";
             // 
-            // textBox14
+            // txtSalarioBase
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(95, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(82, 22);
-            this.textBox14.TabIndex = 273;
+            this.txtSalarioBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalarioBase.Location = new System.Drawing.Point(95, 19);
+            this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.Size = new System.Drawing.Size(82, 22);
+            this.txtSalarioBase.TabIndex = 273;
             // 
-            // textBox15
+            // txtCargo
             // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(94, 68);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(248, 22);
-            this.textBox15.TabIndex = 317;
+            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(94, 68);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(248, 22);
+            this.txtCargo.TabIndex = 317;
             // 
-            // textBox16
+            // txtNome
             // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(94, 40);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(408, 22);
-            this.textBox16.TabIndex = 316;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(94, 40);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(408, 22);
+            this.txtNome.TabIndex = 316;
             // 
-            // textBox17
+            // txtEmpresa
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(94, 12);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(408, 22);
-            this.textBox17.TabIndex = 315;
+            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpresa.Location = new System.Drawing.Point(94, 12);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(408, 22);
+            this.txtEmpresa.TabIndex = 315;
             // 
             // label30
             // 
@@ -802,22 +804,22 @@
             this.label31.TabIndex = 336;
             this.label31.Text = "Justificativa";
             // 
-            // button5
+            // btnComprovante
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1010, 449);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(44, 23);
-            this.button5.TabIndex = 335;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnComprovante.Image = ((System.Drawing.Image)(resources.GetObject("btnComprovante.Image")));
+            this.btnComprovante.Location = new System.Drawing.Point(1000, 373);
+            this.btnComprovante.Name = "btnComprovante";
+            this.btnComprovante.Size = new System.Drawing.Size(44, 23);
+            this.btnComprovante.TabIndex = 335;
+            this.btnComprovante.UseVisualStyleBackColor = true;
             // 
-            // textBox18
+            // txtJustificativa
             // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(634, 449);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(109, 22);
-            this.textBox18.TabIndex = 334;
+            this.txtJustificativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJustificativa.Location = new System.Drawing.Point(634, 449);
+            this.txtJustificativa.Name = "txtJustificativa";
+            this.txtJustificativa.Size = new System.Drawing.Size(109, 22);
+            this.txtJustificativa.TabIndex = 334;
             // 
             // label32
             // 
@@ -847,20 +849,20 @@
             this.label34.TabIndex = 331;
             this.label34.Text = "Data";
             // 
-            // textBox19
+            // txtHorasTrabalhadas
             // 
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(537, 449);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(91, 22);
-            this.textBox19.TabIndex = 330;
+            this.txtHorasTrabalhadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorasTrabalhadas.Location = new System.Drawing.Point(537, 449);
+            this.txtHorasTrabalhadas.Name = "txtHorasTrabalhadas";
+            this.txtHorasTrabalhadas.Size = new System.Drawing.Size(91, 22);
+            this.txtHorasTrabalhadas.TabIndex = 330;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox20);
-            this.groupBox3.Controls.Add(this.textBox21);
-            this.groupBox3.Controls.Add(this.textBox22);
-            this.groupBox3.Controls.Add(this.textBox23);
+            this.groupBox3.Controls.Add(this.txtEntrada);
+            this.groupBox3.Controls.Add(this.txtSaidaAlmoco);
+            this.groupBox3.Controls.Add(this.txtRetornoAlmoco);
+            this.groupBox3.Controls.Add(this.txtSaida);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(134, 418);
             this.groupBox3.Name = "groupBox3";
@@ -869,107 +871,120 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "   Entrada       Almoço        Retorno         Saída";
             // 
-            // textBox20
+            // txtEntrada
             // 
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(6, 31);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(66, 22);
-            this.textBox20.TabIndex = 4;
+            this.txtEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntrada.Location = new System.Drawing.Point(6, 31);
+            this.txtEntrada.Name = "txtEntrada";
+            this.txtEntrada.Size = new System.Drawing.Size(66, 22);
+            this.txtEntrada.TabIndex = 4;
             // 
-            // textBox21
+            // txtSaidaAlmoco
             // 
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(78, 31);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(66, 22);
-            this.textBox21.TabIndex = 5;
+            this.txtSaidaAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaidaAlmoco.Location = new System.Drawing.Point(78, 31);
+            this.txtSaidaAlmoco.Name = "txtSaidaAlmoco";
+            this.txtSaidaAlmoco.Size = new System.Drawing.Size(66, 22);
+            this.txtSaidaAlmoco.TabIndex = 5;
             // 
-            // textBox22
+            // txtRetornoAlmoco
             // 
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(150, 31);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(66, 22);
-            this.textBox22.TabIndex = 6;
+            this.txtRetornoAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRetornoAlmoco.Location = new System.Drawing.Point(150, 31);
+            this.txtRetornoAlmoco.Name = "txtRetornoAlmoco";
+            this.txtRetornoAlmoco.Size = new System.Drawing.Size(66, 22);
+            this.txtRetornoAlmoco.TabIndex = 6;
             // 
-            // textBox23
+            // txtSaida
             // 
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(222, 31);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(66, 22);
-            this.textBox23.TabIndex = 7;
+            this.txtSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaida.Location = new System.Drawing.Point(222, 31);
+            this.txtSaida.Name = "txtSaida";
+            this.txtSaida.Size = new System.Drawing.Size(66, 22);
+            this.txtSaida.TabIndex = 7;
             // 
-            // textBox24
+            // txtTempoAlmoco
             // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(435, 449);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(96, 22);
-            this.textBox24.TabIndex = 328;
+            this.txtTempoAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTempoAlmoco.Location = new System.Drawing.Point(435, 449);
+            this.txtTempoAlmoco.Name = "txtTempoAlmoco";
+            this.txtTempoAlmoco.Size = new System.Drawing.Size(96, 22);
+            this.txtTempoAlmoco.TabIndex = 328;
             // 
-            // textBox25
+            // txtDescricao
             // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(749, 449);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(255, 22);
-            this.textBox25.TabIndex = 327;
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(749, 449);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(224, 22);
+            this.txtDescricao.TabIndex = 327;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
-            // textBox26
+            // txtData
             // 
-            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(28, 449);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 22);
-            this.textBox26.TabIndex = 326;
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Location = new System.Drawing.Point(28, 449);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(100, 22);
+            this.txtData.TabIndex = 326;
             // 
-            // dataGridView1
+            // gridPontos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 129);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 264);
-            this.dataGridView1.TabIndex = 338;
+            this.gridPontos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.gridPontos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPontos.Location = new System.Drawing.Point(23, 129);
+            this.gridPontos.Name = "gridPontos";
+            this.gridPontos.Size = new System.Drawing.Size(586, 264);
+            this.gridPontos.TabIndex = 338;
+            this.gridPontos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPontos_CellContentClick);
             // 
-            // pictureBox1
+            // picBoxComprovante
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(643, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(401, 264);
-            this.pictureBox1.TabIndex = 339;
-            this.pictureBox1.TabStop = false;
+            this.picBoxComprovante.Location = new System.Drawing.Point(643, 129);
+            this.picBoxComprovante.Name = "picBoxComprovante";
+            this.picBoxComprovante.Size = new System.Drawing.Size(401, 238);
+            this.picBoxComprovante.TabIndex = 339;
+            this.picBoxComprovante.TabStop = false;
+            this.picBoxComprovante.Click += new System.EventHandler(this.picBoxComprovante_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(979, 449);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(71, 23);
+            this.btnSalvar.TabIndex = 288;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // FrmFolhaIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 537);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.picBoxComprovante);
+            this.Controls.Add(this.gridPontos);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label31);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.btnComprovante);
+            this.Controls.Add(this.txtJustificativa);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label34);
-            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.txtHorasTrabalhadas);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox24);
-            this.Controls.Add(this.textBox25);
-            this.Controls.Add(this.textBox26);
+            this.Controls.Add(this.txtTempoAlmoco);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtData);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtRef);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.txtCargo);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -1004,14 +1019,15 @@
             this.Controls.Add(this.textBox1);
             this.Name = "FrmFolhaIndividual";
             this.Text = "FrmFolhaIndividual";
+            this.Load += new System.EventHandler(this.FrmFolhaIndividual_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPontos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxComprovante)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1070,43 +1086,44 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRef;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnProcessar;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDescontos;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtSalarioBruto;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtAtrasos;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtHorasExtras;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtSalarioLiquido;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtBeneficios;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtSalarioBase;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Button btnComprovante;
+        private System.Windows.Forms.TextBox txtJustificativa;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtHorasTrabalhadas;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtEntrada;
+        private System.Windows.Forms.TextBox txtSaidaAlmoco;
+        private System.Windows.Forms.TextBox txtRetornoAlmoco;
+        private System.Windows.Forms.TextBox txtSaida;
+        private System.Windows.Forms.TextBox txtTempoAlmoco;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.DataGridView gridPontos;
+        private System.Windows.Forms.PictureBox picBoxComprovante;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }
