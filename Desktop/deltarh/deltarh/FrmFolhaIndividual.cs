@@ -14,10 +14,14 @@ namespace deltarh
     public partial class FrmFolhaIndividual : Form
     {
         private mdlFolhaIndividual folhaIndividual;
+        private mdlPontoEletronico ponto_selecionado;
         public FrmFolhaIndividual(mdlFolhaIndividual folha)
         {
             InitializeComponent();
+
             this.folhaIndividual = folha;
+
+            PopularForm();
         }
 
         private void PopularForm()
@@ -41,30 +45,26 @@ namespace deltarh
 
         }
 
-        private void gridPontos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void SelecionarPonto(object sender, EventArgs e)
         {
             if (gridPontos.SelectedRows.Count > 0)
             {
                 int rowIndex = gridPontos.SelectedRows[0].Index;
-                mdlPontoEletronico ponto = folhaIndividual.pontos_eletronicos[rowIndex];
+                ponto_selecionado = folhaIndividual.pontos_eletronicos[rowIndex];
 
-                txtData.Text = Convert.ToString(ponto.data);
-                txtEntrada.Text = Convert.ToString(ponto.entrada);
-                txtSaidaAlmoco.Text = Convert.ToString(ponto.saida_almoco);
-                txtRetornoAlmoco.Text = Convert.ToString(ponto.retorno_almoco);
-                txtSaida.Text = Convert.ToString(ponto.saida);
-                txtJustificativa.Text = ponto.tipo_justificativa;
-                txtDescricao.Text = ponto.descricao;
+                txtData.Text = Convert.ToString(ponto_selecionado.data);
+                txtEntrada.Text = Convert.ToString(ponto_selecionado.entrada);
+                txtSaidaAlmoco.Text = Convert.ToString(ponto_selecionado.saida_almoco);
+                txtRetornoAlmoco.Text = Convert.ToString(ponto_selecionado.retorno_almoco);
+                txtSaida.Text = Convert.ToString(ponto_selecionado.saida);
+                txtJustificativa.Text = ponto_selecionado.tipo_justificativa;
+                txtDescricao.Text = ponto_selecionado.descricao;
 
-                TimeSpan tempoAlmoco = (TimeSpan)ponto.retorno_almoco - (TimeSpan)ponto.saida_almoco;
-                TimeSpan horasTrabalhadas = (TimeSpan)ponto.saida - (TimeSpan)ponto.entrada;
+                TimeSpan tempoAlmoco = (TimeSpan)ponto_selecionado.retorno_almoco - (TimeSpan)ponto_selecionado.saida_almoco;
+                TimeSpan horasTrabalhadas = (TimeSpan)ponto_selecionado.saida - (TimeSpan)ponto_selecionado.entrada;
 
                 txtHorasTrabalhadas.Text = Convert.ToString(horasTrabalhadas);
                 txtTempoAlmoco.Text = Convert.ToString(tempoAlmoco);
-            }
-            else
-            {
-                MessageBox.Show("Nenhuma linha selecionada na DataGridView.");
             }
         }
 

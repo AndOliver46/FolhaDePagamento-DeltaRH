@@ -936,7 +936,7 @@
             this.gridPontos.Name = "gridPontos";
             this.gridPontos.Size = new System.Drawing.Size(586, 264);
             this.gridPontos.TabIndex = 338;
-            this.gridPontos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPontos_CellContentClick);
+            this.gridPontos.SelectionChanged += new System.EventHandler(this.SelecionarPonto);
             // 
             // picBoxComprovante
             // 

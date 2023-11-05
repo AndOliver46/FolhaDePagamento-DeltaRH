@@ -416,7 +416,7 @@ namespace deltarh
             }
             else
             {
-                MessageBox.Show("Nenhuma linha selecionada na DataGridView.");
+                MessageBox.Show("Nenhuma folha individual foi selecionada.");
             }
         }
     }
