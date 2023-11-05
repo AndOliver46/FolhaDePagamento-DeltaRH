@@ -45,6 +45,7 @@
     <Compile Include="mdlEmpresa.cs" />
     <Compile Include="mdlFolhaDePagamento.cs" />
     <Compile Include="mdlFolhaIndividual.cs" />
+    <Compile Include="mdlHolerite.cs" />
     <Compile Include="mdlPontoEletronico.cs" />
     <Compile Include="mdlSetor.cs" />
     <Compile Include="Class1.cs" />

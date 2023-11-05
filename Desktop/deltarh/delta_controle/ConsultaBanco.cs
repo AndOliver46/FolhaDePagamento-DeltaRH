@@ -245,7 +245,7 @@ namespace delta_controle
                         colaborador.cargo = rd.GetString(19);
                         colaborador.status = rd.GetString(20);
                         colaborador.idEmpresa = rd.GetInt32(21);
-                        colaborador.horas_banco = rd.GetTimeSpan(22);
+                        colaborador.horas_banco = rd.GetDecimal(22);
                     }
                     rd.Close();
 
@@ -474,9 +474,9 @@ namespace delta_controle
                         {
                             folha_banco.relatorio = (byte[])rd["doc_folhadepagamento"];
                         }
-                        folha_banco.valor_final = (decimal)rd["valor_folhafinal"];
+                        folha_banco.salario_base = (decimal)rd["valor_folhafinal"];
                         folha_banco.valor_desconto = (decimal)rd["valor_desc_total"];
-                        folha_banco.horas_trabalhadas = (TimeSpan)rd["horas_trab"];
+                        folha_banco.horas_trabalhadas = (decimal)rd["horas_trab"];
                         folha_banco.salario_liquido = (decimal)rd["salario_liq"];
                         folha_banco.periodo_inicio = (DateTime)rd["periodo_inicio"];
                         folha_banco.periodo_fim = (DateTime)rd["periodo_fim"];
@@ -522,7 +522,7 @@ namespace delta_controle
                         colaborador.nome = (string)rd["nome"];
                         colaborador.salario = (decimal)rd["salario_bruto"];
                         colaborador.cHoraria = (int)rd["carga_horaria"];
-                        colaborador.horas_banco = (TimeSpan)rd["horas_banco"];
+                        colaborador.horas_banco = (decimal)rd["horas_banco"];
                         colaborador.cargo = (string)rd["cargo"];
                         colaboradores.Add(colaborador);
                     }
@@ -564,7 +564,7 @@ namespace delta_controle
                         colaborador.nome = (string)rd["nome"];
                         colaborador.salario = (decimal)rd["salario_bruto"];
                         colaborador.cHoraria = (int)rd["carga_horaria"];
-                        colaborador.horas_banco = (TimeSpan)rd["horas_banco"];
+                        colaborador.horas_banco = (decimal)rd["horas_banco"];
                         colaborador.cargo = (string)rd["cargo"];
                     }
                     rd.Close();
@@ -650,15 +650,20 @@ namespace delta_controle
                     foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
                     {
                         string sql = "INSERT INTO tbl_folhaindividual " +
-                            "(periodo_inicio, periodo_fim, valor_folhafinal, valor_desc_total, horas_trab, salario_liq, id_folhadepagamento, id_colaborador, mes_referencia, status) " +
+                            "(periodo_inicio, periodo_fim, valor_folhafinal, valor_venc_total, valor_desc_total, horas_trab, horas_extras, valor_horas_extras, horas_atraso, valor_desc_atrasos, salario_liq, id_folhadepagamento, id_colaborador, mes_referencia, status) " +
                             "VALUES " +
-                            "(@periodo_inicio, @periodo_fim, @valor_folhafinal, @valor_desc_total, @horas_trab, @salario_liq, @id_folhadepagamento, @id_colaborador, @mes_referencia, @status)";
+                            "(@periodo_inicio, @periodo_fim, @valor_folhafinal, @valor_venc_total, @valor_desc_total, @horas_trab, @horas_extras, @valor_horas_extras, @horas_atraso, @valor_desc_atrasos, @salario_liq, @id_folhadepagamento, @id_colaborador, @mes_referencia, @status)";
 
                         SqlCommand cmd = new SqlCommand(sql, conexaodb);
 
-                        cmd.Parameters.AddWithValue("@valor_folhafinal", folha_individual.valor_final);
+                        cmd.Parameters.AddWithValue("@valor_folhafinal", folha_individual.salario_base);
+                        cmd.Parameters.AddWithValue("@valor_venc_total", folha_individual.valor_vencimento);
                         cmd.Parameters.AddWithValue("@valor_desc_total", folha_individual.valor_desconto);
                         cmd.Parameters.AddWithValue("@horas_trab", folha_individual.horas_trabalhadas);
+                        cmd.Parameters.AddWithValue("@horas_extras", folha_individual.horas_extras);
+                        cmd.Parameters.AddWithValue("@valor_horas_extras", folha_individual.valor_horas_extras);
+                        cmd.Parameters.AddWithValue("@horas_atraso", folha_individual.horas_atraso);
+                        cmd.Parameters.AddWithValue("@valor_desc_atrasos", folha_individual.valor_desc_atraso);
                         cmd.Parameters.AddWithValue("@salario_liq", folha_individual.salario_liquido);
                         cmd.Parameters.AddWithValue("@id_folhadepagamento", folha_individual.id_folhadepagamento);
                         cmd.Parameters.AddWithValue("@id_colaborador", folha_individual.id_colaborador);
@@ -703,9 +708,14 @@ namespace delta_controle
                     {
                         mdlFolhaIndividual folhaIndividual = new mdlFolhaIndividual
                         {
-                            valor_final = (decimal)rd["valor_folhafinal"],
+                            salario_base = (decimal)rd["valor_folhafinal"],
+                            valor_vencimento = (decimal)rd["valor_venc_total"],
                             valor_desconto = (decimal)rd["valor_desc_total"],
-                            horas_trabalhadas = (TimeSpan)rd["horas_trab"],
+                            horas_trabalhadas = (decimal)rd["horas_trab"],
+                            horas_extras = (decimal)rd["horas_extras"],
+                            valor_horas_extras = (decimal)rd["valor_horas_extras"],
+                            horas_atraso = (decimal)rd["horas_atraso"],
+                            valor_desc_atraso = (decimal)rd["valor_desc_atrasos"],
                             salario_liquido = (decimal)rd["salario_liq"],
                             id_folhadepagamento = (int)rd["id_folhadepagamento"],
                             id_colaborador = (int)rd["id_colaborador"],

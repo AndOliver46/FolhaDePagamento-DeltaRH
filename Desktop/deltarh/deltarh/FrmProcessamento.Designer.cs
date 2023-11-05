@@ -96,6 +96,7 @@
             this.btnProcessaFolha.TabIndex = 2;
             this.btnProcessaFolha.Text = "Processar Folha";
             this.btnProcessaFolha.UseVisualStyleBackColor = true;
+            this.btnProcessaFolha.Click += new System.EventHandler(this.btnProcessaFolha_Click);
             // 
             // txtInicio
             // 

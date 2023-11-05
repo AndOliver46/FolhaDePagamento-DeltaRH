@@ -11,13 +11,13 @@
         public int id_colaborador { get; set; }
         public string nome_colaborador { get; set; }
         public string cargo_colaborador { get; set; }
-        public TimeSpan horas_trab { get; set; }
+        public decimal horas_trab { get; set; }
         public decimal porcentagem_vt { get; set; }
         public decimal porcentagem_vr { get; set; }
         public decimal porcentagem_assis_odonto { get; set; }
         public decimal porcentagem_assis_medica { get; set; }
         public decimal porcentagem_adiantamento { get; set; }
-        public TimeSpan horas_extras { get; set; }
+        public decimal horas_extras { get; set; }
         public decimal salario_base { get; set; }
         public decimal total_vencimentos { get; set; }
         public decimal total_descontos { get; set; }

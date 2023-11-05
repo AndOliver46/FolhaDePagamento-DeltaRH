@@ -11,7 +11,7 @@ namespace DeltaRHWebSite.Models
         public int id_folhadepagamento { get; private set; }
         public decimal valor_folhafinal { get; private set; }
         public decimal valor_desc_total { get; private set; }
-        public TimeSpan horas_trab { get; private set; }
+        public decimal horas_trab { get; private set; }
         public decimal salario_liq { get; private set; }
         public DateTime? periodo_inicio { get; private set; }
         public DateTime? periodo_fim { get; private set; }
@@ -20,7 +20,7 @@ namespace DeltaRHWebSite.Models
         public int id_empresa { get; set; }
         public virtual Empresa? empresa { get; set; }
 
-        public FolhaDePagamento(decimal valor_folhafinal, decimal valor_desc_total, TimeSpan horas_trab, decimal salario_liq, DateTime? periodo_inicio, DateTime? periodo_fim, int id_empresa, Empresa? empresa)
+        public FolhaDePagamento(decimal valor_folhafinal, decimal valor_desc_total, decimal horas_trab, decimal salario_liq, DateTime? periodo_inicio, DateTime? periodo_fim, int id_empresa, Empresa? empresa)
         {
             this.valor_folhafinal = valor_folhafinal;
             this.valor_desc_total = valor_desc_total;

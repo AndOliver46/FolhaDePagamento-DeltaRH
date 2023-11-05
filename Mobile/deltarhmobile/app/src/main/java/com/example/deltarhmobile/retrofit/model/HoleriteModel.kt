@@ -12,7 +12,7 @@ data class HoleriteModel(
     @SerializedName("id_colaborador") val idColaborador: Int,
     @SerializedName("nome_colaborador") val nomeColaborador: String,
     @SerializedName("cargo_colaborador") val cargoColaborador: String,
-    @SerializedName("horas_trab") val horasTrabalhadas: Double,
+    @SerializedName("horas_trab") val horasTrabalhadas: String,
     @SerializedName("porcentagem_vt") val porcentagemVT: Double,
     @SerializedName("porcentagem_vr") val porcentagemVR: Double,
     @SerializedName("porcentagem_assis_odonto") val porcentagemAssistenciaOdonto: Double,

@@ -29,7 +29,7 @@ namespace DeltaRHWebSite.Models
         public string? telefone2 { get; private set; }
         public string? email { get; private set; }
         public string? cargo { get; private set; }
-        public TimeSpan? horas_banco { get; private set; }
+        public decimal? horas_banco { get; private set; }
 
         //Associacoes
         public int id_setor { get; set; }

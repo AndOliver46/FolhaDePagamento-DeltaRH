@@ -30,7 +30,7 @@ namespace delta_modelo
         public string cargo { get; set; }
         public string status { get; set; }
         public int idEmpresa { get; set; }
-        public TimeSpan horas_banco { get; set; }
+        public decimal horas_banco { get; set; }
         public mdlSetor setor { get; set; }
     }
 }

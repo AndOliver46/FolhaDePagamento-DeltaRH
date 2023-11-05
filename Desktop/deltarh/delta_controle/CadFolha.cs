@@ -35,7 +35,7 @@ namespace delta_controle
                     {
                         cmd.Parameters.Add("@doc_folhadepagamento", SqlDbType.VarBinary).Value = folha_recebida.relatorio;
                     }
-                    cmd.Parameters.AddWithValue("@valor_folhafinal", folha_recebida.valor_final);
+                    cmd.Parameters.AddWithValue("@valor_folhafinal", folha_recebida.salario_base);
                     cmd.Parameters.AddWithValue("@valor_desc_total", folha_recebida.valor_desconto);
                     cmd.Parameters.AddWithValue("@horas_trab", folha_recebida.horas_trabalhadas);
                     cmd.Parameters.AddWithValue("@salario_liq", folha_recebida.salario_liquido);
@@ -93,7 +93,7 @@ namespace delta_controle
                     {
                         cmd.Parameters.Add("@doc_folhadepagamento", SqlDbType.VarBinary).Value = folha_recebida.relatorio;
                     }
-                    cmd.Parameters.AddWithValue("@valor_folhafinal", folha_recebida.valor_final);
+                    cmd.Parameters.AddWithValue("@valor_folhafinal", folha_recebida.salario_base);
                     cmd.Parameters.AddWithValue("@valor_desc_total", folha_recebida.valor_desconto);
                     cmd.Parameters.AddWithValue("@horas_trab", folha_recebida.horas_trabalhadas);
                     cmd.Parameters.AddWithValue("@salario_liq", folha_recebida.salario_liquido);

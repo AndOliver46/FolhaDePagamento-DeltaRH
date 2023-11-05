@@ -325,9 +325,9 @@ namespace deltarh
                     folha.periodo_inicio = dias[0];
                     folha.periodo_fim = dias[1];
                     folha.salario_liquido = 0.0M;
-                    folha.valor_final = 0.0M;
+                    folha.salario_base = 0.0M;
                     folha.valor_desconto = 0.0M;
-                    folha.horas_trabalhadas = TimeSpan.Zero;
+                    folha.horas_trabalhadas = 0;
                     folha.relatorio = null;
                     folha.status_folha = "Rascunho";
 

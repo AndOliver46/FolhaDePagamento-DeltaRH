@@ -124,10 +124,9 @@
             this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxHorario.FormattingEnabled = true;
             this.cboxHorario.Items.AddRange(new object[] {
-            "20",
-            "30",
-            "40",
-            "44"});
+            "80",
+            "120",
+            "220"});
             this.cboxHorario.Location = new System.Drawing.Point(396, 106);
             this.cboxHorario.Name = "cboxHorario";
             this.cboxHorario.Size = new System.Drawing.Size(75, 24);

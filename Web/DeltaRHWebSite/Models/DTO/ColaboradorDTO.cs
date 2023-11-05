@@ -24,7 +24,7 @@ namespace DeltaRHWebSite.Models.DTO
         public string? email { get; set; }
         public int id_setor { get; set; }
         public string? cargo { get; private set; }
-        public TimeSpan? horas_banco { get; private set; }
+        public decimal? horas_banco { get; private set; }
 
         public ColaboradorDTO(Colaborador colaborador)
         {

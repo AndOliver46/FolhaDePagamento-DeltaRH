@@ -50,6 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.mskNascimento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
-            this.mskNascimento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -317,6 +317,13 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações Pessoais";
+            // 
+            // mskNascimento
+            // 
+            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
+            this.mskNascimento.Name = "mskNascimento";
+            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
+            this.mskNascimento.TabIndex = 26;
             // 
             // label7
             // 
@@ -582,13 +589,6 @@
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(78, 22);
             this.txtStatus.TabIndex = 24;
-            // 
-            // mskNascimento
-            // 
-            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
-            this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
-            this.mskNascimento.TabIndex = 26;
             // 
             // FrmColadorador
             // 

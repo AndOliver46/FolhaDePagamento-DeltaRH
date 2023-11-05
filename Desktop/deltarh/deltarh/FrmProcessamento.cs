@@ -76,7 +76,7 @@ namespace deltarh
 
         private void RealizarSomasTotais()
         {
-            TimeSpan horas_totais = TimeSpan.Zero;
+            decimal horas_totais = 0;
             decimal valor_bruto = 0;
             decimal descontos = 0;
             decimal valor_liquido = 0;
@@ -84,13 +84,13 @@ namespace deltarh
             foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
             {
                 horas_totais += folha_individual.horas_trabalhadas;
-                valor_bruto += folha_individual.valor_final;
+                valor_bruto += folha_individual.salario_base;
                 descontos += folha_individual.valor_desconto;
                 valor_liquido += folha_individual.salario_liquido;
             }
 
             folha_de_pagamento.horas_trabalhadas = horas_totais;
-            folha_de_pagamento.valor_final = valor_bruto;
+            folha_de_pagamento.salario_base = valor_bruto;
             folha_de_pagamento.valor_desconto = descontos;
             folha_de_pagamento.salario_liquido = valor_liquido;
 
@@ -114,8 +114,8 @@ namespace deltarh
 
             dataGridFolhasIndividuais.DataSource = folhas_individuais;
 
-            dataGridFolhasIndividuais.Columns["valor_final"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["valor_final"].HeaderText = "Salário Bruto";
+            dataGridFolhasIndividuais.Columns["salario_base"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["salario_base"].HeaderText = "Salário Bruto";
 
             dataGridFolhasIndividuais.Columns["valor_desconto"].DefaultCellStyle.Format = "N2";
             dataGridFolhasIndividuais.Columns["valor_desconto"].HeaderText = "Descontos Totais";
@@ -126,8 +126,8 @@ namespace deltarh
             dataGridFolhasIndividuais.Refresh();
 
 
-            txtHorasTotais.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", (int)folha_de_pagamento.horas_trabalhadas.TotalHours, folha_de_pagamento.horas_trabalhadas.Minutes, folha_de_pagamento.horas_trabalhadas.Seconds);
-            txtValorBruto.Text = folha_de_pagamento.valor_final.ToString("N2");
+            txtHorasTotais.Text = string.Format("{0:D2}:{1:D2}", (int)folha_de_pagamento.horas_trabalhadas, (int)((folha_de_pagamento.horas_trabalhadas - (int)folha_de_pagamento.horas_trabalhadas) * 60));
+            txtValorBruto.Text = folha_de_pagamento.salario_base.ToString("N2");
             txtDescontos.Text = folha_de_pagamento.valor_desconto.ToString("N2");
             txtValorLiquido.Text = folha_de_pagamento.salario_liquido.ToString("N2");
 
@@ -243,7 +243,7 @@ namespace deltarh
             //Salva somas totais em variaveis para jogar na ultima linha da planilha o fim do loop
             int rowIndex = 1;
             decimal totalCargaHoraria = 0;
-            TimeSpan totalHorasTrabalhadas = TimeSpan.Zero;
+            decimal totalHorasTrabalhadas = 0;
             double totalSalarioBruto = 0;
             double totalDescontoIRRF = 0;
             double totalDescontoINSS = 0;
@@ -260,15 +260,15 @@ namespace deltarh
                 dataRow.CreateCell(3).SetCellValue(folha_individual.periodo_inicio.ToString("dd/MM/yyyy"));
                 dataRow.CreateCell(4).SetCellValue(folha_individual.periodo_fim.ToString("dd/MM/yyyy"));
                 dataRow.CreateCell(5).SetCellValue(folha_individual.mes_referencia);
-                dataRow.CreateCell(6).SetCellValue((double)folha_individual.carga_horaria);
+                dataRow.CreateCell(6).SetCellValue(folha_individual.carga_horaria);
 
                 // A cada linha adicionada, é adicionado também o style para a mesma
                 ICell horasTrabalhadasCell = dataRow.CreateCell(7);
-                horasTrabalhadasCell.SetCellValue(folha_individual.horas_trabalhadas.TotalSeconds / 86400); // Converter para fração do dia
+                horasTrabalhadasCell.SetCellValue((double)(folha_individual.horas_trabalhadas / 1440)); // Converter para fração do dia
                 horasTrabalhadasCell.CellStyle = timeSpanStyle;
 
                 ICell salarioBrutoCell = dataRow.CreateCell(8);
-                salarioBrutoCell.SetCellValue((double)folha_individual.valor_final);
+                salarioBrutoCell.SetCellValue((double)folha_individual.salario_base);
                 salarioBrutoCell.CellStyle = currencyStyle;
 
                 ICell descontoIrrfCell = dataRow.CreateCell(9);
@@ -291,8 +291,8 @@ namespace deltarh
 
                 //Ao fim de cada iteração é acrescido o valor total de cada coluna para criação da linha de totais
                 totalCargaHoraria += folha_individual.carga_horaria;
-                totalHorasTrabalhadas = totalHorasTrabalhadas.Add(folha_individual.horas_trabalhadas);
-                totalSalarioBruto += (double)folha_individual.valor_final;
+                totalHorasTrabalhadas += folha_individual.horas_trabalhadas;
+                totalSalarioBruto += (double)folha_individual.salario_base;
                 totalDescontoIRRF += (double)folha_individual.desconto_irrf;
                 totalDescontoINSS += (double)folha_individual.desconto_inss;
                 totalDescontosTotais += (double)folha_individual.valor_desconto;
@@ -308,7 +308,7 @@ namespace deltarh
             totalRow.CreateCell(6).SetCellValue((double)totalCargaHoraria);
 
             ICell totalHorasTrabalhadasCell = totalRow.CreateCell(7);
-            totalHorasTrabalhadasCell.SetCellValue(totalHorasTrabalhadas.TotalSeconds / 86400); // Converter para fração do dia
+            totalHorasTrabalhadasCell.SetCellValue((double)(totalHorasTrabalhadas / 1440)); // Converter para fração do dia
             totalHorasTrabalhadasCell.CellStyle = timeSpanStyle;
 
             ICell totalSalarioBrutoCell = totalRow.CreateCell(8);
@@ -373,9 +373,35 @@ namespace deltarh
             }
         }
 
+        private void ProcessarFolha()
+        {
+            foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
+            {
+                mdlHolerite holerite = new mdlHolerite();
+                holerite.PopularHolerite(folha_individual);
+
+                CadHolerite cadHolerite = new CadHolerite();
+                cadHolerite.InserirHolerite(holerite);
+            }
+        }
+
         private void btnRecalcular_Click(object sender, EventArgs e)
         {
             RecalcularFolha();
+        }
+
+        private void btnProcessaFolha_Click(object sender, EventArgs e)
+        {
+            folha_de_pagamento.status_folha = "Processado";
+
+            ProcessarFolha();
+
+            CadFolha cadFolha = new CadFolha();
+            cadFolha.UpdateFolha(folha_de_pagamento);
+
+            MessageBox.Show("Folha de pagamento processada com sucesso.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ReiniciarFormulario();
         }
     }
 }
