@@ -1,4 +1,5 @@
 ﻿using delta_modelo;
+using NPOI.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace deltarh
             if (gridPontos.SelectedRows.Count > 0)
             {
                 int rowIndex = gridPontos.SelectedRows[0].Index;
-                ponto_selecionado = folhaIndividual.pontos_eletronicos[rowIndex];
+                ponto_selecionado = folhaIndividual.pontos_eletronicos[rowIndex].Copy();
 
                 txtData.Text = Convert.ToString(ponto_selecionado.data);
                 txtEntrada.Text = Convert.ToString(ponto_selecionado.entrada);

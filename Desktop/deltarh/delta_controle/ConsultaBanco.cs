@@ -763,6 +763,7 @@ namespace delta_controle
                             ponto.descricao = rd["descricao"] == DBNull.Value ? null : (string)rd["descricao"];
                             ponto.documento = rd["documento"] == DBNull.Value ? null : (byte[])rd["documento"];
                             ponto.id_colaborador = (int)rd["id_colaborador"];
+                            ponto.abono = rd["abono"] == DBNull.Value ? false : (bool)rd["abono"];
 
                             pontos_eletronicos.Add(ponto);
                         }
