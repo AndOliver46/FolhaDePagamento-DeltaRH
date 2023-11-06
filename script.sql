@@ -160,6 +160,7 @@ CREATE TABLE [dbo].[tbl_pontoeletronico](
 	[descricao] [varchar](200),
 	[documento] VARBINARY(MAX),
 	[id_colaborador] [int] NOT NULL,
+	[abono] bit,
 	CONSTRAINT FK_pontoeletronico_colaborador FOREIGN KEY (id_colaborador) 
 	REFERENCES tbl_colaborador(id_colaborador));
 

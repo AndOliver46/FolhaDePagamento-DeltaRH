@@ -59,6 +59,7 @@ namespace deltarh
                 txtSaida.Text = Convert.ToString(ponto_selecionado.saida);
                 txtJustificativa.Text = ponto_selecionado.tipo_justificativa;
                 txtDescricao.Text = ponto_selecionado.descricao;
+                chBoxAbonar.Checked = ponto_selecionado.abono;
 
                 TimeSpan tempoAlmoco = (TimeSpan)ponto_selecionado.retorno_almoco - (TimeSpan)ponto_selecionado.saida_almoco;
                 TimeSpan horasTrabalhadas = (TimeSpan)ponto_selecionado.saida - (TimeSpan)ponto_selecionado.entrada;

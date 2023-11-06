@@ -20,5 +20,6 @@ namespace delta_modelo
         public string descricao { get; set; }
         public Byte[] documento { get; set; }
         public int id_colaborador { get; set; }
+        public bool abono {  get; set; }
     }
 }

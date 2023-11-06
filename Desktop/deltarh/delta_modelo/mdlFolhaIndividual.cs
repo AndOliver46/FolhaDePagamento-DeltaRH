@@ -104,36 +104,41 @@ namespace delta_modelo
 
             foreach (mdlPontoEletronico ponto in this.pontos_eletronicos)
             {
-                dias_trabalhados++;
-
-                if (ponto.entrada != TimeSpan.Zero && ponto.saida != TimeSpan.Zero &&
-                    ponto.saida_almoco != TimeSpan.Zero && ponto.retorno_almoco != TimeSpan.Zero)
+                if(ponto.abono)
                 {
-                    decimal horas_dia = 0;
-
-                    TimeSpan tempoAlmoco = (TimeSpan)ponto.retorno_almoco - (TimeSpan)ponto.saida_almoco;
-                    TimeSpan horasTrabalhadas = (TimeSpan)ponto.saida - (TimeSpan)ponto.entrada;
-
-                    horas_dia = (decimal)(horasTrabalhadas.TotalMinutes - tempoAlmoco.TotalMinutes) / 60;
-
-                    decimal horas_fds = 0;
-                    if(ponto.data.DayOfWeek == DayOfWeek.Saturday || ponto.data.DayOfWeek == DayOfWeek.Sunday)
+                    this.horas_trabalhadas += horas_esperadas;
+                }
+                else
+                {
+                    if (ponto.entrada != TimeSpan.Zero && ponto.saida != TimeSpan.Zero &&
+                        ponto.saida_almoco != TimeSpan.Zero && ponto.retorno_almoco != TimeSpan.Zero)
                     {
-                        horas_fds += horas_esperadas;
-                    }
+                        decimal horas_dia = 0;
 
-                    decimal calculo_horas =  horas_dia - (horas_esperadas - horas_fds); //7.30 - (8 - 8) = -0.30
+                        TimeSpan tempoAlmoco = (TimeSpan)ponto.retorno_almoco - (TimeSpan)ponto.saida_almoco;
+                        TimeSpan horasTrabalhadas = (TimeSpan)ponto.saida - (TimeSpan)ponto.entrada;
 
-                    if (calculo_horas >= 0)
-                    {
-                        this.horas_extras += calculo_horas;
+                        horas_dia = (decimal)(horasTrabalhadas.TotalMinutes - tempoAlmoco.TotalMinutes) / 60;
+
+                        decimal horas_fds = 0;
+                        if (ponto.data.DayOfWeek == DayOfWeek.Saturday || ponto.data.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            horas_fds += horas_esperadas;
+                        }
+
+                        decimal calculo_horas = horas_dia - (horas_esperadas - horas_fds); //7.30 - (8 - 8) = -0.30
+
+                        if (calculo_horas >= 0)
+                        {
+                            this.horas_extras += calculo_horas;
+                        }
+                        else
+                        {
+                            this.horas_atraso += calculo_horas;
+                        }
+                        this.horas_trabalhadas += horas_dia; 
                     }
-                    else 
-                    {
-                        this.horas_atraso += calculo_horas;
-                    }
-                    
-                    this.horas_trabalhadas += horas_dia;
+                    dias_trabalhados++;
                 }
             }
 

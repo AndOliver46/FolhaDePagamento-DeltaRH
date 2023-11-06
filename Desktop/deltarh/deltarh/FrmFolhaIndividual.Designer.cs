@@ -119,6 +119,7 @@
             this.gridPontos = new System.Windows.Forms.DataGridView();
             this.picBoxComprovante = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.chBoxAbonar = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -949,18 +950,29 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(979, 449);
+            this.btnSalvar.Location = new System.Drawing.Point(981, 448);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(71, 23);
             this.btnSalvar.TabIndex = 288;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
+            // chBoxAbonar
+            // 
+            this.chBoxAbonar.AutoSize = true;
+            this.chBoxAbonar.Location = new System.Drawing.Point(643, 379);
+            this.chBoxAbonar.Name = "chBoxAbonar";
+            this.chBoxAbonar.Size = new System.Drawing.Size(71, 17);
+            this.chBoxAbonar.TabIndex = 340;
+            this.chBoxAbonar.Text = "ABONAR";
+            this.chBoxAbonar.UseVisualStyleBackColor = true;
+            // 
             // FrmFolhaIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 537);
+            this.Controls.Add(this.chBoxAbonar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.picBoxComprovante);
             this.Controls.Add(this.gridPontos);
@@ -1125,5 +1137,6 @@
         private System.Windows.Forms.DataGridView gridPontos;
         private System.Windows.Forms.PictureBox picBoxComprovante;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.CheckBox chBoxAbonar;
     }
 }

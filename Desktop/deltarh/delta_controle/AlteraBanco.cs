@@ -261,5 +261,36 @@ namespace delta_controle
                 }
                 return true;
         }
+
+        public bool AlterarPonto(mdlEmpresa empresa)
+        {
+            string conexao = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(conexao))
+                {
+                    conexaodb.Open();
+
+                    string query = @"UPDATE tbl_pontoeletronico SET status = @status WHERE cnpj = @cnpj";
+
+                    SqlCommand cmd = new SqlCommand(query, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@cnpj", empresa.cnpj);
+                    cmd.Parameters.AddWithValue("@status", empresa.status);
+
+                    Int32 idInseriro = cmd.ExecuteNonQuery();
+
+                    if (idInseriro > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
