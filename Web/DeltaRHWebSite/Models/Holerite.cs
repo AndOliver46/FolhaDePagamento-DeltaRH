@@ -21,12 +21,18 @@ namespace DeltaRHWebSite.Models
         public decimal porcentagem_assis_odonto { get; set; }
         public decimal porcentagem_assis_medica { get; set; }
         public decimal porcentagem_adiantamento { get; set; }
+        public decimal porcentagem_gympass { get; set; }
         public decimal horas_extras { get; set; }
         public decimal salario_base { get; set; }
         public decimal total_vencimentos { get; set; }
         public decimal total_descontos { get; set; }
         public decimal salario_liq { get; set; }
         public string mes_ano_ref { get; set; }
+        public decimal valor_horas_extras { get; set; }
+        public decimal horas_atraso { get; set; }
+        public decimal valor_desc_atrasos { get; set; }
+        public decimal desconto_inss { get; set; }
+        public decimal desconto_irrf { get; set; }
 
         //Associacoes
         public int id_folhadepagamento { get; set; }
