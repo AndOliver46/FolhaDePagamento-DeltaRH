@@ -1,11 +1,11 @@
 ﻿using delta_controle;
 using delta_modelo;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
 
 namespace deltarh
 {
@@ -20,7 +20,7 @@ namespace deltarh
             InitializeComponent();
 
             //Associar a folha que veio do menu anterior
-            this.folha_de_pagamento = folhaDePagamento;
+            folha_de_pagamento = folhaDePagamento;
 
             //Buscar a empresa para popular os campos e ficar disponível
             BuscarEmpresa();
@@ -62,16 +62,16 @@ namespace deltarh
 
             ConsultaBanco consulta = new ConsultaBanco();
 
-            this.folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
-            this.folhas_individuais = consulta.GerarFolhasIndividuais(empresa, folha_de_pagamento.id_folha, folha_de_pagamento.periodo_inicio, folha_de_pagamento.periodo_fim, folha_de_pagamento.mes_referencia);
+            folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
+            folhas_individuais = consulta.GerarFolhasIndividuais(empresa, folha_de_pagamento.id_folha, folha_de_pagamento.periodo_inicio, folha_de_pagamento.periodo_fim, folha_de_pagamento.mes_referencia);
         }
 
         private void BuscarFolha()
         {
             ConsultaBanco consulta = new ConsultaBanco();
 
-            this.folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
-            this.folhas_individuais = consulta.BuscarFolhasIndividuais(empresa, folha_de_pagamento.id_folha);
+            folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
+            folhas_individuais = consulta.BuscarFolhasIndividuais(empresa, folha_de_pagamento.id_folha);
         }
 
         private void RealizarSomasTotais()
@@ -173,7 +173,7 @@ namespace deltarh
 
         private void ReiniciarFormulario()
         {
-            this.Close();
+            Close();
             FrmProcessamento novoForm = new FrmProcessamento(folha_de_pagamento);
             novoForm.Show();
         }
@@ -200,7 +200,7 @@ namespace deltarh
             headerStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.LightGreen.Index;
             headerStyle.FillPattern = FillPattern.SolidForeground;
             IFont headerFont = workbook.CreateFont();
-            headerFont.Boldweight = (short)FontBoldWeight.Bold;
+            headerFont.IsBold = true;
             headerStyle.SetFont(headerFont);
 
             // Criar um estilo para os valores formatados como "R$ #,##0.00"

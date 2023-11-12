@@ -25,7 +25,7 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@id_missaovisaovalores", empresa.id_missao);
                     cmd.Parameters.AddWithValue("@descricao", missao.descricao);
 
-                   int mvv = cmd.ExecuteNonQuery();
+                    int mvv = cmd.ExecuteNonQuery();
 
                     if (mvv > 0)
                     {
@@ -116,7 +116,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -138,15 +138,15 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@nome_setor", setor.nome);
                     cmd.Parameters.AddWithValue("@id_setor", setor.id);
 
-                    Int32 recordsAffected = cmd.ExecuteNonQuery(); 
+                    Int32 recordsAffected = cmd.ExecuteNonQuery();
 
-                    if(recordsAffected > 0) 
+                    if (recordsAffected > 0)
                     {
                         return true;
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -223,7 +223,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -233,33 +233,33 @@ namespace delta_controle
 
         public bool AlterarStatus(mdlEmpresa empresa)
         {
-                string conexao = conecta.stringSql;
-                try
+            string conexao = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(conexao))
                 {
-                    using (SqlConnection conexaodb = new SqlConnection(conexao))
+                    conexaodb.Open();
+
+                    string query = @"UPDATE tbl_empresa SET status = @status WHERE cnpj = @cnpj";
+
+                    SqlCommand cmd = new SqlCommand(query, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@cnpj", empresa.cnpj);
+                    cmd.Parameters.AddWithValue("@status", empresa.status);
+
+                    Int32 idInseriro = cmd.ExecuteNonQuery();
+
+                    if (idInseriro > 0)
                     {
-                        conexaodb.Open();
-
-                        string query = @"UPDATE tbl_empresa SET status = @status WHERE cnpj = @cnpj";
-
-                        SqlCommand cmd = new SqlCommand(query, conexaodb);
-
-                        cmd.Parameters.AddWithValue("@cnpj", empresa.cnpj);
-                        cmd.Parameters.AddWithValue("@status", empresa.status);
-
-                        Int32 idInseriro = cmd.ExecuteNonQuery();
-
-                        if (idInseriro > 0)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
-                catch (Exception ex)
-                {
-                    return false;
-                }
-                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool AlterarPonto(mdlEmpresa empresa)
@@ -286,7 +286,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

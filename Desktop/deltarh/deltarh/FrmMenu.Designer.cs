@@ -59,6 +59,10 @@ namespace deltarh
             this.tblempresaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblempresaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridFolhaDePagamento = new System.Windows.Forms.DataGridView();
+            this.btnAcessar = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +75,8 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFolhaDePagamento)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,7 +87,7 @@ namespace deltarh
             this.tabControl1.Location = new System.Drawing.Point(-1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(526, 537);
+            this.tabControl1.Size = new System.Drawing.Size(560, 537);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -168,10 +174,11 @@ namespace deltarh
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(518, 511);
+            this.tabPage2.Size = new System.Drawing.Size(552, 511);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // groupBox2
             // 
@@ -253,11 +260,12 @@ namespace deltarh
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(518, 511);
+            this.tabPage3.Size = new System.Drawing.Size(552, 511);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fechar Folha";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -274,10 +282,10 @@ namespace deltarh
             this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(506, 166);
+            this.groupBox5.Size = new System.Drawing.Size(536, 111);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Consultar Folha";
+            this.groupBox5.Text = "Cadastrar Folha";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // cboxAno
@@ -345,7 +353,7 @@ namespace deltarh
             "2048",
             "2049",
             "2050"});
-            this.cboxAno.Location = new System.Drawing.Point(266, 95);
+            this.cboxAno.Location = new System.Drawing.Point(266, 72);
             this.cboxAno.Name = "cboxAno";
             this.cboxAno.Size = new System.Drawing.Size(96, 21);
             this.cboxAno.TabIndex = 7;
@@ -354,7 +362,7 @@ namespace deltarh
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(226, 98);
+            this.label2.Location = new System.Drawing.Point(226, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 18);
             this.label2.TabIndex = 6;
@@ -376,7 +384,7 @@ namespace deltarh
             "OUT",
             "NOV",
             "DEZ"});
-            this.cboxMes.Location = new System.Drawing.Point(93, 94);
+            this.cboxMes.Location = new System.Drawing.Point(93, 71);
             this.cboxMes.Name = "cboxMes";
             this.cboxMes.Size = new System.Drawing.Size(96, 21);
             this.cboxMes.TabIndex = 5;
@@ -384,26 +392,26 @@ namespace deltarh
             // cboxRazao
             // 
             this.cboxRazao.FormattingEnabled = true;
-            this.cboxRazao.Location = new System.Drawing.Point(93, 50);
+            this.cboxRazao.Location = new System.Drawing.Point(93, 27);
             this.cboxRazao.Name = "cboxRazao";
-            this.cboxRazao.Size = new System.Drawing.Size(377, 21);
+            this.cboxRazao.Size = new System.Drawing.Size(429, 21);
             this.cboxRazao.TabIndex = 2;
             // 
             // btnProcessar
             // 
             this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessar.Location = new System.Drawing.Point(392, 98);
+            this.btnProcessar.Location = new System.Drawing.Point(388, 70);
             this.btnProcessar.Name = "btnProcessar";
-            this.btnProcessar.Size = new System.Drawing.Size(78, 23);
+            this.btnProcessar.Size = new System.Drawing.Size(134, 23);
             this.btnProcessar.TabIndex = 4;
-            this.btnProcessar.Text = "Consultar";
+            this.btnProcessar.Text = "Cadastrar";
             this.btnProcessar.UseVisualStyleBackColor = true;
             this.btnProcessar.Click += new System.EventHandler(this.btnProcessar_Click);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 50);
+            this.label6.Location = new System.Drawing.Point(7, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 23);
             this.label6.TabIndex = 3;
@@ -413,7 +421,7 @@ namespace deltarh
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 97);
+            this.label3.Location = new System.Drawing.Point(42, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 18);
             this.label3.TabIndex = 4;
@@ -431,11 +439,53 @@ namespace deltarh
             // 
             this.tblempresaBindingSource1.DataMember = "tbl_empresa";
             // 
+            // dataGridFolhaDePagamento
+            // 
+            this.dataGridFolhaDePagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFolhaDePagamento.Location = new System.Drawing.Point(6, 24);
+            this.dataGridFolhaDePagamento.Name = "dataGridFolhaDePagamento";
+            this.dataGridFolhaDePagamento.Size = new System.Drawing.Size(524, 325);
+            this.dataGridFolhaDePagamento.TabIndex = 12;
+            // 
+            // btnAcessar
+            // 
+            this.btnAcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcessar.Location = new System.Drawing.Point(89, 355);
+            this.btnAcessar.Name = "btnAcessar";
+            this.btnAcessar.Size = new System.Drawing.Size(177, 23);
+            this.btnAcessar.TabIndex = 8;
+            this.btnAcessar.Text = "Acessar Folha";
+            this.btnAcessar.UseVisualStyleBackColor = true;
+            this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.dataGridFolhaDePagamento);
+            this.groupBox4.Controls.Add(this.btnAcessar);
+            this.groupBox4.Location = new System.Drawing.Point(6, 123);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(536, 384);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Consultar Folha";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(272, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Atualizar Lista";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 543);
+            this.ClientSize = new System.Drawing.Size(557, 543);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -457,6 +507,8 @@ namespace deltarh
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblempresaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFolhaDePagamento)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +544,9 @@ namespace deltarh
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cboxMes;
         public System.Windows.Forms.ComboBox cboxAno;
+        private System.Windows.Forms.Button btnAcessar;
+        private System.Windows.Forms.DataGridView dataGridFolhaDePagamento;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
     }
 }

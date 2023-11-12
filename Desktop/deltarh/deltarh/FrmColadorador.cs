@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using delta_controle;
+﻿using delta_controle;
 using delta_modelo;
-using DLL_CLASS_CNPJ;
+using System;
+using System.Windows.Forms;
 
 namespace deltarh
 {
@@ -55,7 +53,7 @@ namespace deltarh
 
                 MostrarEmpresa();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 colab = null;
             }
@@ -106,7 +104,7 @@ namespace deltarh
                 txtEmpresa.Text = empresa.razao;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Threading;
 
 namespace delta_modelo
 {
@@ -78,11 +77,11 @@ namespace delta_modelo
 
         private void PopularDadosColaborador()
         {
-            this.id_colaborador = colaborador.id;
-            this.nome_colaborador = colaborador.nome;
-            this.carga_horaria = colaborador.cHoraria;
-            this.salario_base = colaborador.salario;
-            this.cargo_colaborador = colaborador.cargo;
+            id_colaborador = colaborador.id;
+            nome_colaborador = colaborador.nome;
+            carga_horaria = colaborador.cHoraria;
+            salario_base = colaborador.salario;
+            cargo_colaborador = colaborador.cargo;
         }
 
         private void SomarPontosEletronicos()
@@ -105,11 +104,11 @@ namespace delta_modelo
                     horas_esperadas = 8; break;
             }
 
-            foreach (mdlPontoEletronico ponto in this.pontos_eletronicos)
+            foreach (mdlPontoEletronico ponto in pontos_eletronicos)
             {
-                if(ponto.abono)
+                if (ponto.abono)
                 {
-                    this.horas_trabalhadas += horas_esperadas;
+                    horas_trabalhadas += horas_esperadas;
                 }
                 else
                 {
@@ -125,27 +124,27 @@ namespace delta_modelo
 
                         if (ponto.data.DayOfWeek == DayOfWeek.Saturday || ponto.data.DayOfWeek == DayOfWeek.Sunday)
                         {
-                            this.horas_extras += horas_dia;
+                            horas_extras += horas_dia;
                         }
-                        else 
+                        else
                         {
                             decimal calculo_horas = horas_dia - horas_esperadas; //7.30 - 8 = -0.30
                             if (calculo_horas >= 0)
                             {
-                                this.horas_extras += calculo_horas;
+                                horas_extras += calculo_horas;
                             }
                             else
                             {
-                                this.horas_atraso += calculo_horas;
+                                horas_atraso += calculo_horas;
                             }
-                            this.horas_trabalhadas += horas_dia;
+                            horas_trabalhadas += horas_dia;
                         }
                     }
                 }
                 dias_trabalhados++;
             }
 
-            if(horas_extras > horas_atraso)
+            if (horas_extras > horas_atraso)
             {
                 horas_extras = horas_extras - horas_atraso;
                 horas_atraso = 0;
@@ -161,7 +160,7 @@ namespace delta_modelo
                 horas_extras = 0;
             }
 
-            if(dias_trabalhados < dias_esperados)
+            if (dias_trabalhados < dias_esperados)
             {
                 int faltas = dias_esperados - dias_trabalhados;
 

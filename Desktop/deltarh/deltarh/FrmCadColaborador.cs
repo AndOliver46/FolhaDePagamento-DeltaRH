@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using ViaCep;
-using System.Windows.Forms;
-using CpfLibrary;
-using delta_controle;
+﻿using delta_controle;
 using delta_modelo;
-using DLL_CLASS_CNPJ;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using ViaCep;
 
 namespace deltarh
 {
@@ -104,7 +102,7 @@ namespace deltarh
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -126,15 +124,15 @@ namespace deltarh
 
                 cBoxSetor.DataSource = setores;
 
-                this.cBoxSetor.DisplayMember = "nome";
-                this.cBoxSetor.ValueMember = "id";
+                cBoxSetor.DisplayMember = "nome";
+                cBoxSetor.ValueMember = "id";
 
                 empresa = consulta.ConsultarEmpresaId(idEmpresa);
 
                 txtEmpresa.Text = empresa.razao;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -209,11 +207,11 @@ namespace deltarh
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void mskCpf_KeyPress(object sender, KeyPressEventArgs e)
@@ -258,7 +256,7 @@ namespace deltarh
 
                 cBoxSetor.Text = colab.setor.nome;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 colab = null;
             }

@@ -1,26 +1,22 @@
-﻿using System;
+﻿using delta_controle;
+using delta_modelo;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CpfLibrary;
-using delta_controle;
-using delta_modelo;
-using DLL_CLASS_CNPJ;
 
 namespace deltarh
 {
     public partial class frmMenu : Form
     {
+        private List<mdlFolhaDePagamento> folhas_pagamento;
+
         public frmMenu()
         {
             InitializeComponent();
+            ListarFolhasDePagamento();
         }
 
         public void ListarEmpresa()
@@ -34,14 +30,23 @@ namespace deltarh
                 empresas = consulta.ListarEmpresas();
 
                 cboxRazao.DataSource = empresas;
-                this.cboxRazao.DisplayMember = "razao";
-                this.cboxRazao.ValueMember = "id";
+                cboxRazao.DisplayMember = "razao";
+                cboxRazao.ValueMember = "id";
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
+        }
+
+        private void ListarFolhasDePagamento()
+        {
+            ConsultaBanco consulta = new ConsultaBanco();
+            folhas_pagamento = consulta.BuscarFolhasDePagamento();
+
+            dataGridFolhaDePagamento.DataSource = folhas_pagamento;
+            dataGridFolhaDePagamento.Refresh();
         }
 
         /*public void BuscarSetor()
@@ -83,7 +88,7 @@ namespace deltarh
                     colabs.AddRange(colaboradores);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw;
                 }
@@ -125,7 +130,7 @@ namespace deltarh
                     cadastro.ShowDialog();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 empresa = null;
             }
@@ -244,7 +249,7 @@ namespace deltarh
 
             using (SqlConnection conexaodb = new SqlConnection(consulta))
             {
-              //  int idcolab = Convert.ToInt32(cBoxColaborador.SelectedValue);
+                //  int idcolab = Convert.ToInt32(cBoxColaborador.SelectedValue);
                 conexaodb.Open();
 
                 var sqlQuery = "SELECT id_colaborador, data, entrada, saida_almoco, retorno_almoco, saida FROM tbl_pontoeletronico WHERE id_colaborador = @idcolab";
@@ -277,7 +282,6 @@ namespace deltarh
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnJustificar_Click(object sender, EventArgs e)
@@ -299,7 +303,7 @@ namespace deltarh
             string mes_referencia = mes + "/" + ano;
             DateTime[] dias = GetFirstAndLastDayOfMonth(mes, ano);
 
-           
+
             ConsultaBanco consulta = new ConsultaBanco();
             mdlFolhaDePagamento folha_existente = consulta.BuscarFolha(id_empresa, mes_referencia);
 
@@ -335,7 +339,7 @@ namespace deltarh
                     processa.ShowDialog();
                 }
             }
-            
+
         }
 
         private DateTime[] GetFirstAndLastDayOfMonth(string month, string year)
@@ -352,7 +356,32 @@ namespace deltarh
 
         private void groupBox5_Enter(object sender, EventArgs e)
         {
+        }
 
+        private void btnAcessar_Click(object sender, EventArgs e)
+        {
+            if (dataGridFolhaDePagamento.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridFolhaDePagamento.SelectedRows[0].Index;
+                mdlFolhaDePagamento entidadeSelecionada = folhas_pagamento[rowIndex];
+
+                FrmProcessamento processa = new FrmProcessamento(entidadeSelecionada);
+                processa.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma folha de pagamento foi selecionada.");
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ListarEmpresa();
+            ListarFolhasDePagamento();
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using delta_controle;
+﻿using delta_controle;
 using delta_modelo;
+using System;
+using System.Windows.Forms;
 
 namespace deltarh
 {
@@ -27,12 +27,12 @@ namespace deltarh
             mdlSetor setor = new mdlSetor();
 
             setor.id = Convert.ToInt32(txtId.Text);
-           
+
             setor.nome = txtNome.Text;
             try
             {
                 bool alterado = altera.AlterarSetor(setor);
-                if(alterado)
+                if (alterado)
                 {
                     MessageBox.Show("Setor Alterado com Sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     atualizarEmpresa();
@@ -43,7 +43,7 @@ namespace deltarh
                     MessageBox.Show("NÃO CADASTRADO.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception)
             {
                 throw;
             }

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using delta_modelo;
+using System;
 using System.Data.SqlClient;
-using delta_modelo;
 
 namespace delta_controle
 {
-    public class Conexao
+    public class CadEmpresa
     {
         StringConexao conecta = new StringConexao();
 
@@ -97,7 +97,7 @@ namespace delta_controle
                     int IdSetor = (int)cmd.ExecuteScalar();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
