@@ -24,12 +24,18 @@ namespace delta_modelo
         public decimal? PorcentagemAssisOdonto { get; set; }
         public decimal? PorcentagemAssisMedica { get; set; }
         public decimal? PorcentagemAdiantamento { get; set; }
+        public decimal? PorcentagemGympass { get; set; }
         public decimal? HorasExtras { get; set; }
         public decimal SalarioBase { get; set; }
         public decimal TotalVencimentos { get; set; }
         public decimal TotalDescontos { get; set; }
         public decimal SalarioLiquido { get; set; }
         public string MesAnoReferencia { get; set; }
+        public decimal ValorHorasExtras { get; set; }
+        public decimal HorasAtraso { get; set; }
+        public decimal ValorHorasAtraso { get; set; }
+        public decimal DescontoINSS { get; set; }
+        public decimal DescontoIRRF { get; set; }
 
 
         public void PopularHolerite(mdlFolhaIndividual folha_individual)
@@ -47,6 +53,7 @@ namespace delta_modelo
             this.PorcentagemVR = folha_individual.empresa.vr;
             this.PorcentagemAssisOdonto = folha_individual.empresa.odonto;
             this.PorcentagemAssisMedica = folha_individual.empresa.assMedica;
+            this.PorcentagemGympass = folha_individual.empresa.gym;
             this.PorcentagemAdiantamento = 0.0M;
             this.HorasExtras = folha_individual.horas_extras;
             this.SalarioBase = folha_individual.salario_base;
@@ -54,6 +61,11 @@ namespace delta_modelo
             this.TotalDescontos = folha_individual.valor_desconto;
             this.SalarioLiquido = folha_individual.salario_liquido;
             this.MesAnoReferencia = folha_individual.mes_referencia;
+            this.ValorHorasExtras = folha_individual.valor_horas_extras;
+            this.HorasAtraso = folha_individual.horas_atraso;
+            this.ValorHorasAtraso = folha_individual.valor_desc_atraso;
+            this.DescontoINSS = folha_individual.desconto_inss;
+            this.DescontoIRRF = folha_individual.desconto_irrf;
         }
     }
 }

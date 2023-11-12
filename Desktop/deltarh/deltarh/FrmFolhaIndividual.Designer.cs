@@ -1030,7 +1030,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "FrmFolhaIndividual";
-            this.Text = "FrmFolhaIndividual";
+            this.Text = "Folha Individual";
             this.Load += new System.EventHandler(this.FrmFolhaIndividual_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

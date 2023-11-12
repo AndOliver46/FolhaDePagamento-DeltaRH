@@ -115,13 +115,14 @@ namespace deltarh
             dataGridFolhasIndividuais.DataSource = folhas_individuais;
 
             dataGridFolhasIndividuais.Columns["salario_base"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["salario_base"].HeaderText = "Salário Bruto";
-
             dataGridFolhasIndividuais.Columns["valor_desconto"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["valor_desconto"].HeaderText = "Descontos Totais";
-
             dataGridFolhasIndividuais.Columns["salario_liquido"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["salario_liquido"].HeaderText = "Salário Líquido";
+            dataGridFolhasIndividuais.Columns["valor_horas_extras"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["valor_desc_atraso"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_irrf"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_inss"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["valor_vencimento"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_beneficios"].DefaultCellStyle.Format = "N2";
 
             dataGridFolhasIndividuais.Refresh();
 
@@ -131,7 +132,8 @@ namespace deltarh
             txtDescontos.Text = folha_de_pagamento.valor_desconto.ToString("N2");
             txtValorLiquido.Text = folha_de_pagamento.salario_liquido.ToString("N2");
 
-            txtEmpresa.Text = Convert.ToString(empresa.razao);
+            txtEmpresa.Text = empresa.razao;
+            txtCNPJ.Text = empresa.cnpj;
         }
 
         private void AjustarComportamentoBotoes()
@@ -264,8 +266,7 @@ namespace deltarh
 
                 // A cada linha adicionada, é adicionado também o style para a mesma
                 ICell horasTrabalhadasCell = dataRow.CreateCell(7);
-                horasTrabalhadasCell.SetCellValue((double)(folha_individual.horas_trabalhadas / 1440)); // Converter para fração do dia
-                horasTrabalhadasCell.CellStyle = timeSpanStyle;
+                horasTrabalhadasCell.SetCellValue((double)(folha_individual.horas_trabalhadas));
 
                 ICell salarioBrutoCell = dataRow.CreateCell(8);
                 salarioBrutoCell.SetCellValue((double)folha_individual.salario_base);
@@ -308,8 +309,7 @@ namespace deltarh
             totalRow.CreateCell(6).SetCellValue((double)totalCargaHoraria);
 
             ICell totalHorasTrabalhadasCell = totalRow.CreateCell(7);
-            totalHorasTrabalhadasCell.SetCellValue((double)(totalHorasTrabalhadas / 1440)); // Converter para fração do dia
-            totalHorasTrabalhadasCell.CellStyle = timeSpanStyle;
+            totalHorasTrabalhadasCell.SetCellValue((double)(totalHorasTrabalhadas)); // Converter para fração do dia
 
             ICell totalSalarioBrutoCell = totalRow.CreateCell(8);
             totalSalarioBrutoCell.SetCellValue(totalSalarioBruto);

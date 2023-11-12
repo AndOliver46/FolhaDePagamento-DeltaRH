@@ -31,6 +31,8 @@ namespace delta_modelo
         public decimal valor_desc_atraso { get; set; }
         [DisplayName("Salário Bruto")]
         public decimal salario_base { get; set; }
+        [DisplayName("Desconto Beneficios")]
+        public decimal desconto_beneficios { get; set; }
         [DisplayName("Desconto IRRF")]
         public decimal desconto_irrf { get; set; }
         [DisplayName("Desconto INSS")]
@@ -87,6 +89,7 @@ namespace delta_modelo
         {
             horas_atraso = 0;
             horas_extras = 0;
+            horas_trabalhadas = 0;
 
             int dias_trabalhados = 0;
             int dias_esperados = ObterDiasUteis(periodo_inicio);
@@ -120,26 +123,26 @@ namespace delta_modelo
 
                         horas_dia = (decimal)(horasTrabalhadas.TotalMinutes - tempoAlmoco.TotalMinutes) / 60;
 
-                        decimal horas_fds = 0;
                         if (ponto.data.DayOfWeek == DayOfWeek.Saturday || ponto.data.DayOfWeek == DayOfWeek.Sunday)
                         {
-                            horas_fds += horas_esperadas;
+                            this.horas_extras += horas_dia;
                         }
-
-                        decimal calculo_horas = horas_dia - (horas_esperadas - horas_fds); //7.30 - (8 - 8) = -0.30
-
-                        if (calculo_horas >= 0)
+                        else 
                         {
-                            this.horas_extras += calculo_horas;
+                            decimal calculo_horas = horas_dia - horas_esperadas; //7.30 - 8 = -0.30
+                            if (calculo_horas >= 0)
+                            {
+                                this.horas_extras += calculo_horas;
+                            }
+                            else
+                            {
+                                this.horas_atraso += calculo_horas;
+                            }
+                            this.horas_trabalhadas += horas_dia;
                         }
-                        else
-                        {
-                            this.horas_atraso += calculo_horas;
-                        }
-                        this.horas_trabalhadas += horas_dia; 
                     }
-                    dias_trabalhados++;
                 }
+                dias_trabalhados++;
             }
 
             if(horas_extras > horas_atraso)
@@ -182,15 +185,15 @@ namespace delta_modelo
 
         private void CalcularDescontosBeneficios()
         {
-            decimal valor_descontos_beneficios = 0;
+            desconto_beneficios = 0;
 
-            valor_descontos_beneficios += salario_base * ((decimal)empresa.assMedica / 100);
-            valor_descontos_beneficios += salario_base * ((decimal)empresa.odonto / 100);
-            valor_descontos_beneficios += salario_base * ((decimal)empresa.vt / 100);
-            valor_descontos_beneficios += salario_base * ((decimal)empresa.vr / 100);
-            valor_descontos_beneficios += salario_base * ((decimal)empresa.gym / 100);
+            desconto_beneficios += salario_base * ((decimal)empresa.assMedica / 100);
+            desconto_beneficios += salario_base * ((decimal)empresa.odonto / 100);
+            desconto_beneficios += salario_base * ((decimal)empresa.vt / 100);
+            desconto_beneficios += salario_base * ((decimal)empresa.vr / 100);
+            desconto_beneficios += salario_base * ((decimal)empresa.gym / 100);
 
-            valor_desconto += valor_descontos_beneficios;
+            valor_desconto += desconto_beneficios;
         }
 
         private void CalcularDescontosObrigatórios()

@@ -35,12 +35,18 @@ namespace delta_controle
                     [porcentagem_assis_odonto],
                     [porcentagem_assis_medica],
                     [porcentagem_adiantamento],
+                    [porcentagem_gympass],
                     [horas_extras],
                     [salario_base],
                     [total_vencimentos],
                     [total_descontos],
                     [salario_liq],
-                    [mes_ano_ref]
+                    [mes_ano_ref],
+                    [valor_horas_extras],
+                    [horas_atraso],
+                    [valor_desc_atrasos],
+                    [desconto_inss],
+                    [desconto_irrf]
                 ) VALUES (
                     @NomeEmpresa,
                     @CnpjEmpresa,
@@ -56,12 +62,18 @@ namespace delta_controle
                     @PorcentagemAssisOdonto,
                     @PorcentagemAssisMedica,
                     @PorcentagemAdiantamento,
+                    @PorcentagemGympass,
                     @HorasExtras,
                     @SalarioBase,
                     @TotalVencimentos,
                     @TotalDescontos,
                     @SalarioLiquido,
-                    @MesAnoReferencia
+                    @MesAnoReferencia,
+                    @ValorHorasExtras,
+                    @HorasAtraso,
+                    @ValorHorasAtraso,
+                    @DescontoINSS,
+                    @DescontoIRRF
                 )";
 
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
@@ -74,18 +86,24 @@ namespace delta_controle
                     command.Parameters.Add("@IdColaborador", SqlDbType.Int).Value = holerite.IdColaborador;
                     command.Parameters.Add("@NomeColaborador", SqlDbType.VarChar, 70).Value = holerite.NomeColaborador;
                     command.Parameters.Add("@CargoColaborador", SqlDbType.VarChar, 50).Value = holerite.CargoColaborador;
-                    command.Parameters.Add("@HorasTrabalhadas", SqlDbType.Time).Value = holerite.HorasTrabalhadas;
+                    command.Parameters.Add("@HorasTrabalhadas", SqlDbType.Decimal).Value = holerite.HorasTrabalhadas;
                     command.Parameters.Add("@PorcentagemVT", SqlDbType.Decimal).Value = holerite.PorcentagemVT;
                     command.Parameters.Add("@PorcentagemVR", SqlDbType.Decimal).Value = holerite.PorcentagemVR;
                     command.Parameters.Add("@PorcentagemAssisOdonto", SqlDbType.Decimal).Value = holerite.PorcentagemAssisOdonto;
                     command.Parameters.Add("@PorcentagemAssisMedica", SqlDbType.Decimal).Value = holerite.PorcentagemAssisMedica;
                     command.Parameters.Add("@PorcentagemAdiantamento", SqlDbType.Decimal).Value = holerite.PorcentagemAdiantamento;
-                    command.Parameters.Add("@HorasExtras", SqlDbType.Time).Value = holerite.HorasExtras;
+                    command.Parameters.Add("@PorcentagemGympass", SqlDbType.Decimal).Value = holerite.PorcentagemGympass;
+                    command.Parameters.Add("@HorasExtras", SqlDbType.Decimal).Value = holerite.HorasExtras;
                     command.Parameters.Add("@SalarioBase", SqlDbType.Decimal).Value = holerite.SalarioBase;
                     command.Parameters.Add("@TotalVencimentos", SqlDbType.Decimal).Value = holerite.TotalVencimentos;
                     command.Parameters.Add("@TotalDescontos", SqlDbType.Decimal).Value = holerite.TotalDescontos;
                     command.Parameters.Add("@SalarioLiquido", SqlDbType.Decimal).Value = holerite.SalarioLiquido;
                     command.Parameters.Add("@MesAnoReferencia", SqlDbType.VarChar, 25).Value = holerite.MesAnoReferencia;
+                    command.Parameters.Add("@ValorHorasExtras", SqlDbType.Decimal).Value = holerite.ValorHorasExtras;
+                    command.Parameters.Add("@HorasAtraso", SqlDbType.Decimal).Value = holerite.HorasAtraso;
+                    command.Parameters.Add("@ValorHorasAtraso", SqlDbType.Decimal).Value = holerite.ValorHorasAtraso;
+                    command.Parameters.Add("@DescontoINSS", SqlDbType.Decimal).Value = holerite.DescontoINSS;
+                    command.Parameters.Add("@DescontoIRRF", SqlDbType.Decimal).Value = holerite.DescontoIRRF;
 
                     command.ExecuteNonQuery();
                 }
