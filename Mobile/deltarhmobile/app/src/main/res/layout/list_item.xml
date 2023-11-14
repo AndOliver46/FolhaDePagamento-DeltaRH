@@ -70,20 +70,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="--"
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/vencimentos_salario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -98,20 +98,20 @@
                 android:id="@+id/porcentagem_adiantamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/valor_adiantamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -126,20 +126,48 @@
                 android:id="@+id/quantidade_horas_extras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
-
+                android:id="@+id/valor_horas_extras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
+                android:layout_column="4"
+                android:textStyle="normal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horas Atraso"
+                android:layout_column="1"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/quantidade_horas_atraso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="2"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="3"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/valor_desc_atraso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -154,20 +182,20 @@
                 android:id="@+id/porcentagem_vt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/valor_desconto_vt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -182,20 +210,20 @@
                 android:id="@+id/porcentagem_vr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/valor_desconto_vr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -210,20 +238,20 @@
                 android:id="@+id/porcentagem_assisMedica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/valor_desconto_assisMedica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
@@ -238,23 +266,107 @@
                 android:id="@+id/porcentagem_assisOdonto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="2"
                 android:textStyle="normal"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="normal"/>
             <TextView
                 android:id="@+id/valor_desconto_assisOdonto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="normal"/>
         </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GymPass"
+                android:layout_column="1"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/porcentagem_gympass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="2"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="3"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/valor_desconto_gympass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="4"
+                android:textStyle="normal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSS"
+                android:layout_column="1"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="2"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="3"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/valor_desconto_inss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="4"
+                android:textStyle="normal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IRRF"
+                android:layout_column="1"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="2"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="3"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/valor_desconto_irrf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_column="4"
+                android:textStyle="normal"/>
+        </TableRow>
+
+
         <TableRow
             android:layout_marginTop="10dp">
             <TextView
@@ -273,14 +385,14 @@
                 android:id="@+id/total_vencimentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/total_descontos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="4"
                 android:textStyle="bold"/>
         </TableRow>
@@ -301,7 +413,7 @@
                 android:id="@+id/salario_liquido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="-"
                 android:layout_column="3"
                 android:textStyle="bold"/>
             <TextView

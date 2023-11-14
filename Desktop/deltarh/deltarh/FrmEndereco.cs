@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MosaicoSolutions.ViaCep;
-using MosaicoSolutions.ViaCep.Modelos;
 
 namespace deltarh
 {
@@ -46,19 +37,19 @@ namespace deltarh
 
         private void btnCep_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-          /*  txtLogradouro.Text = "";
-            txtBairro.Text = "";
-            txtCidade.Text = "";
-            txtUf.Text = "";
-            txtNumero = "";
-            txtComplemento = "";
+            /*  txtLogradouro.Text = "";
+              txtBairro.Text = "";
+              txtCidade.Text = "";
+              txtUf.Text = "";
+              txtNumero = "";
+              txtComplemento = "";
 
-            txtCep.Focus;*/
+              txtCep.Focus;*/
         }
     }
 }

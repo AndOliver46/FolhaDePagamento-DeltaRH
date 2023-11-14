@@ -18,10 +18,17 @@ data class HoleriteModel(
     @SerializedName("porcentagem_assis_odonto") val porcentagemAssistenciaOdonto: Double,
     @SerializedName("porcentagem_assis_medica") val porcentagemAssistenciaMedica: Double,
     @SerializedName("porcentagem_adiantamento") val porcentagemAdiantamento: Double,
+    @SerializedName("porcentagem_gympass") val porcentagemGympass: Double,
     @SerializedName("horas_extras") val horasExtras: String,
     @SerializedName("salario_base") val salarioBase: Double,
     @SerializedName("total_vencimentos") val totalVencimentos: Double,
     @SerializedName("total_descontos") val totalDescontos: Double,
     @SerializedName("salario_liq") val salarioLiquido: Double,
-    @SerializedName("mes_ano_ref") val mesAnoReferencia: String
+    @SerializedName("mes_ano_ref") val mesAnoReferencia: String,
+
+    @SerializedName("valor_horas_extras") val valorHorasExtras: Double,
+    @SerializedName("horas_atraso") val horasAtraso: String,
+    @SerializedName("valor_desc_atrasos") val valorDescAtrasos: Double,
+    @SerializedName("desconto_inss") val descontoINSS: Double,
+    @SerializedName("desconto_irrf") val descontoIRRF: Double
 )

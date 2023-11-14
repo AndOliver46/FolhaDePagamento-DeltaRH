@@ -1,11 +1,11 @@
 ﻿using delta_controle;
 using delta_modelo;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
 
 namespace deltarh
 {
@@ -20,7 +20,7 @@ namespace deltarh
             InitializeComponent();
 
             //Associar a folha que veio do menu anterior
-            this.folha_de_pagamento = folhaDePagamento;
+            folha_de_pagamento = folhaDePagamento;
 
             //Buscar a empresa para popular os campos e ficar disponível
             BuscarEmpresa();
@@ -62,16 +62,16 @@ namespace deltarh
 
             ConsultaBanco consulta = new ConsultaBanco();
 
-            this.folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
-            this.folhas_individuais = consulta.GerarFolhasIndividuais(empresa, folha_de_pagamento.id_folha, folha_de_pagamento.periodo_inicio, folha_de_pagamento.periodo_fim, folha_de_pagamento.mes_referencia);
+            folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
+            folhas_individuais = consulta.GerarFolhasIndividuais(empresa, folha_de_pagamento.id_folha, folha_de_pagamento.periodo_inicio, folha_de_pagamento.periodo_fim, folha_de_pagamento.mes_referencia);
         }
 
         private void BuscarFolha()
         {
             ConsultaBanco consulta = new ConsultaBanco();
 
-            this.folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
-            this.folhas_individuais = consulta.BuscarFolhasIndividuais(empresa, folha_de_pagamento.id_folha);
+            folha_de_pagamento = consulta.BuscarFolha(folha_de_pagamento.id_empresa, folha_de_pagamento.mes_referencia);
+            folhas_individuais = consulta.BuscarFolhasIndividuais(empresa, folha_de_pagamento.id_folha);
         }
 
         private void RealizarSomasTotais()
@@ -115,13 +115,14 @@ namespace deltarh
             dataGridFolhasIndividuais.DataSource = folhas_individuais;
 
             dataGridFolhasIndividuais.Columns["salario_base"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["salario_base"].HeaderText = "Salário Bruto";
-
             dataGridFolhasIndividuais.Columns["valor_desconto"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["valor_desconto"].HeaderText = "Descontos Totais";
-
             dataGridFolhasIndividuais.Columns["salario_liquido"].DefaultCellStyle.Format = "N2";
-            dataGridFolhasIndividuais.Columns["salario_liquido"].HeaderText = "Salário Líquido";
+            dataGridFolhasIndividuais.Columns["valor_horas_extras"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["valor_desc_atraso"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_irrf"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_inss"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["valor_vencimento"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["desconto_beneficios"].DefaultCellStyle.Format = "N2";
 
             dataGridFolhasIndividuais.Refresh();
 
@@ -131,7 +132,8 @@ namespace deltarh
             txtDescontos.Text = folha_de_pagamento.valor_desconto.ToString("N2");
             txtValorLiquido.Text = folha_de_pagamento.salario_liquido.ToString("N2");
 
-            txtEmpresa.Text = Convert.ToString(empresa.razao);
+            txtEmpresa.Text = empresa.razao;
+            txtCNPJ.Text = empresa.cnpj;
         }
 
         private void AjustarComportamentoBotoes()
@@ -171,7 +173,7 @@ namespace deltarh
 
         private void ReiniciarFormulario()
         {
-            this.Close();
+            Close();
             FrmProcessamento novoForm = new FrmProcessamento(folha_de_pagamento);
             novoForm.Show();
         }
@@ -198,7 +200,7 @@ namespace deltarh
             headerStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.LightGreen.Index;
             headerStyle.FillPattern = FillPattern.SolidForeground;
             IFont headerFont = workbook.CreateFont();
-            headerFont.Boldweight = (short)FontBoldWeight.Bold;
+            headerFont.IsBold = true;
             headerStyle.SetFont(headerFont);
 
             // Criar um estilo para os valores formatados como "R$ #,##0.00"
@@ -264,8 +266,7 @@ namespace deltarh
 
                 // A cada linha adicionada, é adicionado também o style para a mesma
                 ICell horasTrabalhadasCell = dataRow.CreateCell(7);
-                horasTrabalhadasCell.SetCellValue((double)(folha_individual.horas_trabalhadas / 1440)); // Converter para fração do dia
-                horasTrabalhadasCell.CellStyle = timeSpanStyle;
+                horasTrabalhadasCell.SetCellValue((double)(folha_individual.horas_trabalhadas));
 
                 ICell salarioBrutoCell = dataRow.CreateCell(8);
                 salarioBrutoCell.SetCellValue((double)folha_individual.salario_base);
@@ -308,8 +309,7 @@ namespace deltarh
             totalRow.CreateCell(6).SetCellValue((double)totalCargaHoraria);
 
             ICell totalHorasTrabalhadasCell = totalRow.CreateCell(7);
-            totalHorasTrabalhadasCell.SetCellValue((double)(totalHorasTrabalhadas / 1440)); // Converter para fração do dia
-            totalHorasTrabalhadasCell.CellStyle = timeSpanStyle;
+            totalHorasTrabalhadasCell.SetCellValue((double)(totalHorasTrabalhadas)); // Converter para fração do dia
 
             ICell totalSalarioBrutoCell = totalRow.CreateCell(8);
             totalSalarioBrutoCell.SetCellValue(totalSalarioBruto);

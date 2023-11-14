@@ -1,10 +1,9 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using delta_controle;
 using delta_modelo;
-using delta_controle;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace deltarh
 {
@@ -84,7 +83,7 @@ namespace deltarh
 
                 ListarSetores();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 empresa = null;
             }
@@ -232,7 +231,7 @@ namespace deltarh
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -259,7 +258,7 @@ namespace deltarh
         private void button1_Click(object sender, EventArgs e)
         {
             mdlSetor setor = new mdlSetor();
-            
+
             try
             {
                 setor.nome = txtSetor.Text;
@@ -282,7 +281,7 @@ namespace deltarh
                 btnCancelar.Visible = false;
 
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -375,23 +374,24 @@ namespace deltarh
                     empresa.status = txtStatus.Text;
                 }
 
-                Conexao conecta = new Conexao();
+                CadEmpresa conecta = new CadEmpresa();
 
                 conecta.CadastrarEmpresa(missao, politica, empresa, setor);
+
+                DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Nova Empresa?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    limparCadastro();
+                }
+                else
+                {
+                    Close();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Erro ao Cadastrar.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            DialogResult resposta = MessageBox.Show("Cadastro Realizado com Sucesso! Cadastrar Nova Empresa?", "PARABÉNS!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (resposta == DialogResult.Yes)
-            {
-                limparCadastro();
-            }
-            else
-            {
-                Close();
             }
         }
 

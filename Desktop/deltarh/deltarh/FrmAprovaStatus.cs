@@ -36,7 +36,7 @@ namespace deltarh
                 lblStatus.Text = empresa.status;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -71,7 +71,7 @@ namespace deltarh
                     MessageBox.Show("Não Alterado.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -102,7 +102,7 @@ namespace deltarh
                     MessageBox.Show("Não Alterado.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

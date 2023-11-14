@@ -26,7 +26,7 @@ namespace delta_controle
                     int IdSetor = (int)cmd.ExecuteScalar();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

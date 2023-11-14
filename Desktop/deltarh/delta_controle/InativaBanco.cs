@@ -59,7 +59,7 @@ namespace delta_controle
                     Int32 idInseriro = cmd.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

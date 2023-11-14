@@ -1,5 +1,3 @@
-CREATE DATABASE BD_DELTA;
-
 USE [BD_DELTA]
 
 -- Create the MissaoVisaoValores table
@@ -136,6 +134,7 @@ CREATE TABLE [dbo].[tbl_holerite](
     [porcentagem_assis_odonto] [decimal](5, 2),
     [porcentagem_assis_medica] [decimal](5, 2),
     [porcentagem_adiantamento] [decimal](5, 2),
+    [porcentagem_gympass] [decimal](5, 2),
     [horas_extras] [decimal](8, 2) NOT NULL, -- New column to store time as decimal (in minutes)
     [salario_base] [decimal](12, 2) NOT NULL,
     [total_vencimentos] [decimal](12, 2) NOT NULL,
@@ -144,7 +143,9 @@ CREATE TABLE [dbo].[tbl_holerite](
     [mes_ano_ref] [varchar](25) NOT NULL,
     [valor_horas_extras] [decimal](12, 2) NOT NULL,
     [horas_atraso] [decimal](8, 2),
-    [valor_desc_atrasos] [decimal](12, 2) NOT NULL
+    [valor_desc_atrasos] [decimal](12, 2) NOT NULL,
+    [desconto_inss] [decimal](12, 2) NOT NULL,
+    [desconto_irrf] [decimal](12, 2) NOT NULL
 );
 
 

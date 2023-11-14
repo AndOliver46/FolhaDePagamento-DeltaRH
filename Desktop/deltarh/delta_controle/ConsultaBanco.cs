@@ -1,8 +1,7 @@
-﻿using System;
+﻿using delta_modelo;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using delta_modelo;
 
 namespace delta_controle
 {
@@ -100,7 +99,7 @@ namespace delta_controle
                     return empresa;
                 }
             }
-            catch(Exception ex) 
+            catch (Exception)
             {
                 return null;
             }
@@ -195,7 +194,7 @@ namespace delta_controle
                     return empresa;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -272,7 +271,7 @@ namespace delta_controle
                     return colaborador;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -297,7 +296,7 @@ namespace delta_controle
                     List<mdlSetor> setores = new List<mdlSetor>();
                     while (rd.Read())
                     {
-                       mdlSetor setor = new mdlSetor();
+                        mdlSetor setor = new mdlSetor();
                         setor.id = rd.GetInt32(0);
                         setor.nome = rd.GetString(1);
                         setor.idEmpresa = rd.GetInt32(2);
@@ -309,13 +308,13 @@ namespace delta_controle
                     return setores;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
         }
 
-        public List<mdlEmpresa> ListarEmpresas() 
+        public List<mdlEmpresa> ListarEmpresas()
         {
             string consulta = conecta.stringSql;
             try
@@ -343,7 +342,7 @@ namespace delta_controle
                     return empresas;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -380,7 +379,7 @@ namespace delta_controle
                     return colabs;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -406,7 +405,7 @@ namespace delta_controle
                     mdlSetor setor = new mdlSetor(); ;
                     while (rd.Read())
                     {
-                        
+
                         setor.id = rd.GetInt32(0);
                         setor.nome = rd.GetString(1);
                         setor.idEmpresa = rd.GetInt32(2);
@@ -437,7 +436,7 @@ namespace delta_controle
                     return setor;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -485,11 +484,61 @@ namespace delta_controle
                         folha_banco.mes_referencia = (string)rd["mes_referencia"];
                     }
                     rd.Close();
-                    
+
                     return folha_banco;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<mdlFolhaDePagamento> BuscarFolhasDePagamento()
+        {
+            string consulta = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT * FROM tbl_folhadepagamento";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    List<mdlFolhaDePagamento> folhas_pagamento = new List<mdlFolhaDePagamento>();
+                    while (rd.Read())
+                    {
+                        mdlFolhaDePagamento folha_banco = new mdlFolhaDePagamento();
+                        folha_banco.id_folha = (int)rd["id_folhadepagamento"];
+                        if (rd["doc_folhadepagamento"] == DBNull.Value)
+                        {
+                            folha_banco.relatorio = null;
+                        }
+                        else
+                        {
+                            folha_banco.relatorio = (byte[])rd["doc_folhadepagamento"];
+                        }
+                        folha_banco.salario_base = (decimal)rd["valor_folhafinal"];
+                        folha_banco.valor_desconto = (decimal)rd["valor_desc_total"];
+                        folha_banco.horas_trabalhadas = (decimal)rd["horas_trab"];
+                        folha_banco.salario_liquido = (decimal)rd["salario_liq"];
+                        folha_banco.periodo_inicio = (DateTime)rd["periodo_inicio"];
+                        folha_banco.periodo_fim = (DateTime)rd["periodo_fim"];
+                        folha_banco.status_folha = (string)rd["status_folha"];
+                        folha_banco.id_empresa = (int)rd["id_empresa"];
+                        folha_banco.mes_referencia = (string)rd["mes_referencia"];
+                        folhas_pagamento.Add(folha_banco);
+                    }
+                    rd.Close();
+
+                    return folhas_pagamento;
+                }
+            }
+            catch (Exception)
             {
                 return null;
             }
@@ -529,7 +578,7 @@ namespace delta_controle
                     rd.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -570,7 +619,7 @@ namespace delta_controle
                     rd.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -581,7 +630,7 @@ namespace delta_controle
         public List<mdlFolhaIndividual> GerarFolhasIndividuais(mdlEmpresa empresa, int id_folha_de_pagamento, DateTime periodo_inicio, DateTime periodo_fim, string mes_referencia)
         {
             List<mdlFolhaIndividual> folhas_individuais = new List<mdlFolhaIndividual>();
-            
+
             string consulta = conecta.stringSql;
 
             try
@@ -677,7 +726,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -777,7 +826,7 @@ namespace delta_controle
 
                 return folhas_individuais;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

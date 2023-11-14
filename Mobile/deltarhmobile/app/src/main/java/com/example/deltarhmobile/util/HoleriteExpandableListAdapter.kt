@@ -79,9 +79,14 @@ class HoleriteExpandableListAdapter(private val context: Context, private val ex
         adiantamentoValorTextView.text = "R$$valorAdiantamento"
 
         val horaExtraTextView: TextView = childView.findViewById(R.id.quantidade_horas_extras)
-        horaExtraTextView.text = holerite.horasExtras.substring(0,5)
+        horaExtraTextView.text = holerite.horasExtras
+        val horaExtraValorTextView: TextView = childView.findViewById(R.id.valor_horas_extras)
+        horaExtraValorTextView.text = "R$" + holerite.valorHorasExtras.toString()
 
-        //Lógica das horas extras tem que ser no desktop valor já calculado
+        val horaAtrasoTextView: TextView = childView.findViewById(R.id.quantidade_horas_atraso)
+        horaAtrasoTextView.text = holerite.horasAtraso
+        val horaAtrasoValorTextView: TextView = childView.findViewById(R.id.valor_desc_atraso)
+        horaAtrasoValorTextView.text = "R$" + holerite.valorDescAtrasos.toString()
 
         val vtPorcentagemTextView: TextView = childView.findViewById(R.id.porcentagem_vt)
         vtPorcentagemTextView.text = holerite.porcentagemVT.toString() + "%"
@@ -106,6 +111,18 @@ class HoleriteExpandableListAdapter(private val context: Context, private val ex
         val assisOdontoValorTextView: TextView = childView.findViewById(R.id.valor_desconto_assisOdonto)
         val valorAssisOdonto = (holerite.salarioBase / 100) * holerite.porcentagemAssistenciaOdonto
         assisOdontoValorTextView.text = "R$$valorAssisOdonto"
+
+        val gymPassPorcentagemTextView: TextView = childView.findViewById(R.id.porcentagem_gympass)
+        gymPassPorcentagemTextView.text = holerite.porcentagemGympass.toString() + "%"
+        val gymPassValorTextView: TextView = childView.findViewById(R.id.valor_desconto_gympass)
+        val valorGympass = (holerite.salarioBase / 100) * holerite.porcentagemGympass
+        gymPassValorTextView.text = "R$$valorGympass"
+
+        val descontoINSSTextView: TextView = childView.findViewById(R.id.valor_desconto_inss)
+        descontoINSSTextView.text = "R$" + holerite.descontoINSS.toString()
+
+        val descontoIRFFTextView: TextView = childView.findViewById(R.id.valor_desconto_irrf)
+        descontoIRFFTextView.text = "R$" + holerite.descontoIRRF.toString()
 
         val totalVencimentosTextView: TextView = childView.findViewById(R.id.total_vencimentos)
         totalVencimentosTextView.text = "R$" + holerite.totalVencimentos

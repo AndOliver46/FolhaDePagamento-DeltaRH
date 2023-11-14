@@ -158,7 +158,7 @@ namespace deltarh
             this.txtRazaoSocial.Location = new System.Drawing.Point(148, 70);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(431, 24);
-            this.txtRazaoSocial.TabIndex = 2;
+            this.txtRazaoSocial.TabIndex = 3;
             // 
             // txtCodId
             // 
@@ -167,7 +167,7 @@ namespace deltarh
             this.txtCodId.Location = new System.Drawing.Point(688, 70);
             this.txtCodId.Name = "txtCodId";
             this.txtCodId.Size = new System.Drawing.Size(100, 24);
-            this.txtCodId.TabIndex = 3;
+            this.txtCodId.TabIndex = 4;
             // 
             // tabControl1
             // 
@@ -182,7 +182,7 @@ namespace deltarh
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 284);
-            this.tabControl1.TabIndex = 3;
+            this.tabControl1.TabIndex = 29;
             // 
             // pgEndereco
             // 
@@ -233,7 +233,7 @@ namespace deltarh
             this.txtComplemento.Location = new System.Drawing.Point(363, 91);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(191, 24);
-            this.txtComplemento.TabIndex = 12;
+            this.txtComplemento.TabIndex = 11;
             // 
             // label7
             // 
@@ -250,7 +250,7 @@ namespace deltarh
             this.txtLogradouro.Location = new System.Drawing.Point(123, 43);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(431, 24);
-            this.txtLogradouro.TabIndex = 11;
+            this.txtLogradouro.TabIndex = 9;
             // 
             // label6
             // 
@@ -267,7 +267,7 @@ namespace deltarh
             this.txtNumero.Location = new System.Drawing.Point(123, 91);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(98, 24);
-            this.txtNumero.TabIndex = 11;
+            this.txtNumero.TabIndex = 10;
             // 
             // lblBairro
             // 
@@ -294,7 +294,7 @@ namespace deltarh
             this.txtCep.Location = new System.Drawing.Point(125, 187);
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(98, 24);
-            this.txtCep.TabIndex = 16;
+            this.txtCep.TabIndex = 13;
             // 
             // lblNumero
             // 
@@ -311,7 +311,7 @@ namespace deltarh
             this.txtUf.Location = new System.Drawing.Point(293, 187);
             this.txtUf.Name = "txtUf";
             this.txtUf.Size = new System.Drawing.Size(45, 24);
-            this.txtUf.TabIndex = 15;
+            this.txtUf.TabIndex = 14;
             // 
             // label5
             // 
@@ -328,7 +328,7 @@ namespace deltarh
             this.txtCidade.Location = new System.Drawing.Point(430, 187);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(126, 24);
-            this.txtCidade.TabIndex = 14;
+            this.txtCidade.TabIndex = 15;
             // 
             // txtBairro
             // 
@@ -336,7 +336,7 @@ namespace deltarh
             this.txtBairro.Location = new System.Drawing.Point(125, 133);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(302, 24);
-            this.txtBairro.TabIndex = 13;
+            this.txtBairro.TabIndex = 12;
             // 
             // pgContato
             // 
@@ -370,7 +370,7 @@ namespace deltarh
             this.txtTelefone2.Location = new System.Drawing.Point(137, 93);
             this.txtTelefone2.Name = "txtTelefone2";
             this.txtTelefone2.Size = new System.Drawing.Size(232, 24);
-            this.txtTelefone2.TabIndex = 15;
+            this.txtTelefone2.TabIndex = 18;
             // 
             // lblEmail
             // 
@@ -387,7 +387,7 @@ namespace deltarh
             this.txtTelefone1.Location = new System.Drawing.Point(137, 39);
             this.txtTelefone1.Name = "txtTelefone1";
             this.txtTelefone1.Size = new System.Drawing.Size(232, 24);
-            this.txtTelefone1.TabIndex = 14;
+            this.txtTelefone1.TabIndex = 17;
             // 
             // txtEmail
             // 
@@ -395,7 +395,7 @@ namespace deltarh
             this.txtEmail.Location = new System.Drawing.Point(137, 149);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(377, 24);
-            this.txtEmail.TabIndex = 16;
+            this.txtEmail.TabIndex = 19;
             // 
             // lblTelefone2
             // 
@@ -466,7 +466,7 @@ namespace deltarh
             this.txtGym.Location = new System.Drawing.Point(180, 185);
             this.txtGym.Name = "txtGym";
             this.txtGym.Size = new System.Drawing.Size(68, 22);
-            this.txtGym.TabIndex = 14;
+            this.txtGym.TabIndex = 25;
             // 
             // label15
             // 
@@ -483,7 +483,7 @@ namespace deltarh
             this.txtOdonto.Location = new System.Drawing.Point(180, 153);
             this.txtOdonto.Name = "txtOdonto";
             this.txtOdonto.Size = new System.Drawing.Size(68, 22);
-            this.txtOdonto.TabIndex = 12;
+            this.txtOdonto.TabIndex = 24;
             // 
             // label14
             // 
@@ -500,7 +500,7 @@ namespace deltarh
             this.txtAssMedica.Location = new System.Drawing.Point(180, 113);
             this.txtAssMedica.Name = "txtAssMedica";
             this.txtAssMedica.Size = new System.Drawing.Size(68, 22);
-            this.txtAssMedica.TabIndex = 10;
+            this.txtAssMedica.TabIndex = 23;
             // 
             // label13
             // 
@@ -517,7 +517,7 @@ namespace deltarh
             this.txtVr.Location = new System.Drawing.Point(180, 78);
             this.txtVr.Name = "txtVr";
             this.txtVr.Size = new System.Drawing.Size(68, 22);
-            this.txtVr.TabIndex = 8;
+            this.txtVr.TabIndex = 22;
             // 
             // label12
             // 
@@ -534,7 +534,7 @@ namespace deltarh
             this.txtVt.Location = new System.Drawing.Point(180, 42);
             this.txtVt.Name = "txtVt";
             this.txtVt.Size = new System.Drawing.Size(68, 22);
-            this.txtVt.TabIndex = 6;
+            this.txtVt.TabIndex = 21;
             // 
             // chbGym
             // 
@@ -652,7 +652,7 @@ namespace deltarh
             this.txtEditaSetor.Location = new System.Drawing.Point(105, 31);
             this.txtEditaSetor.Name = "txtEditaSetor";
             this.txtEditaSetor.Size = new System.Drawing.Size(232, 22);
-            this.txtEditaSetor.TabIndex = 1;
+            this.txtEditaSetor.TabIndex = 28;
             // 
             // gboxCadastro
             // 
@@ -691,7 +691,7 @@ namespace deltarh
             this.txtSetor.Location = new System.Drawing.Point(105, 31);
             this.txtSetor.Name = "txtSetor";
             this.txtSetor.Size = new System.Drawing.Size(232, 22);
-            this.txtSetor.TabIndex = 1;
+            this.txtSetor.TabIndex = 27;
             // 
             // tabPage3
             // 
@@ -723,7 +723,7 @@ namespace deltarh
             this.txtPolitica.Multiline = true;
             this.txtPolitica.Name = "txtPolitica";
             this.txtPolitica.Size = new System.Drawing.Size(741, 97);
-            this.txtPolitica.TabIndex = 1;
+            this.txtPolitica.TabIndex = 31;
             // 
             // gboxMissao
             // 
@@ -743,7 +743,7 @@ namespace deltarh
             this.txtMissao.Multiline = true;
             this.txtMissao.Name = "txtMissao";
             this.txtMissao.Size = new System.Drawing.Size(741, 86);
-            this.txtMissao.TabIndex = 0;
+            this.txtMissao.TabIndex = 30;
             // 
             // tabPage4
             // 
@@ -793,7 +793,7 @@ namespace deltarh
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(160, 22);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.TabIndex = 32;
             // 
             // txtUsuario
             // 
@@ -819,7 +819,7 @@ namespace deltarh
             this.txtFantasia.Location = new System.Drawing.Point(148, 111);
             this.txtFantasia.Name = "txtFantasia";
             this.txtFantasia.Size = new System.Drawing.Size(341, 24);
-            this.txtFantasia.TabIndex = 4;
+            this.txtFantasia.TabIndex = 5;
             // 
             // txtSituacao
             // 
@@ -828,7 +828,7 @@ namespace deltarh
             this.txtSituacao.Location = new System.Drawing.Point(688, 111);
             this.txtSituacao.Name = "txtSituacao";
             this.txtSituacao.Size = new System.Drawing.Size(100, 24);
-            this.txtSituacao.TabIndex = 5;
+            this.txtSituacao.TabIndex = 6;
             // 
             // lblCnpj
             // 
@@ -881,7 +881,7 @@ namespace deltarh
             this.btnSalvar.Location = new System.Drawing.Point(702, 511);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(89, 30);
-            this.btnSalvar.TabIndex = 11;
+            this.btnSalvar.TabIndex = 103;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Visible = false;
@@ -893,7 +893,7 @@ namespace deltarh
             this.btnLimpar.Location = new System.Drawing.Point(527, 511);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 30);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 101;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Visible = false;
@@ -905,7 +905,7 @@ namespace deltarh
             this.btnEditar.Location = new System.Drawing.Point(12, 511);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 30);
-            this.btnEditar.TabIndex = 13;
+            this.btnEditar.TabIndex = 104;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -927,7 +927,7 @@ namespace deltarh
             this.btnCancelar.Location = new System.Drawing.Point(621, 511);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 30);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 102;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Visible = false;
@@ -939,7 +939,7 @@ namespace deltarh
             this.btnConsultaCnpj.Location = new System.Drawing.Point(399, 29);
             this.btnConsultaCnpj.Name = "btnConsultaCnpj";
             this.btnConsultaCnpj.Size = new System.Drawing.Size(90, 30);
-            this.btnConsultaCnpj.TabIndex = 16;
+            this.btnConsultaCnpj.TabIndex = 1;
             this.btnConsultaCnpj.Text = "Consultar";
             this.btnConsultaCnpj.UseVisualStyleBackColor = true;
             this.btnConsultaCnpj.Click += new System.EventHandler(this.btnConsultaCnpj_Click);
@@ -950,7 +950,7 @@ namespace deltarh
             this.txtNome.Location = new System.Drawing.Point(148, 156);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(341, 24);
-            this.txtNome.TabIndex = 17;
+            this.txtNome.TabIndex = 7;
             // 
             // txtCpf
             // 
@@ -958,7 +958,7 @@ namespace deltarh
             this.txtCpf.Location = new System.Drawing.Point(588, 156);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(203, 24);
-            this.txtCpf.TabIndex = 18;
+            this.txtCpf.TabIndex = 8;
             // 
             // label19
             // 
@@ -985,7 +985,7 @@ namespace deltarh
             this.txtStatus.Location = new System.Drawing.Point(688, 29);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(100, 24);
-            this.txtStatus.TabIndex = 21;
+            this.txtStatus.TabIndex = 2;
             // 
             // label21
             // 
@@ -1002,7 +1002,7 @@ namespace deltarh
             this.btnCadastrar.Location = new System.Drawing.Point(413, 511);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(89, 30);
-            this.btnCadastrar.TabIndex = 23;
+            this.btnCadastrar.TabIndex = 100;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Visible = false;

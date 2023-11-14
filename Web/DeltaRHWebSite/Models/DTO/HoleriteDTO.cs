@@ -17,12 +17,18 @@
         public decimal porcentagem_assis_odonto { get; set; }
         public decimal porcentagem_assis_medica { get; set; }
         public decimal porcentagem_adiantamento { get; set; }
+        public decimal porcentagem_gympass { get; set; }
         public decimal horas_extras { get; set; }
         public decimal salario_base { get; set; }
         public decimal total_vencimentos { get; set; }
         public decimal total_descontos { get; set; }
         public decimal salario_liq { get; set; }
         public string mes_ano_ref { get; set; }
+        public decimal valor_horas_extras { get; set; }
+        public decimal horas_atraso { get; set; }
+        public decimal valor_desc_atrasos { get; set; }
+        public decimal desconto_inss { get; set; }
+        public decimal desconto_irrf { get; set; }
 
         public HoleriteDTO(Holerite model)
         {
@@ -41,12 +47,18 @@
             porcentagem_assis_odonto = model.porcentagem_assis_odonto;
             porcentagem_assis_medica = model.porcentagem_assis_medica;
             porcentagem_adiantamento = model.porcentagem_adiantamento;
+            porcentagem_gympass = model.porcentagem_gympass;
             horas_extras = model.horas_extras;
             salario_base = model.salario_base;
             total_vencimentos = model.total_vencimentos;
             total_descontos = model.total_descontos;
             salario_liq = model.salario_liq;
             mes_ano_ref = model.mes_ano_ref;
+            valor_horas_extras = model.valor_horas_extras;
+            horas_atraso = model.horas_atraso;
+            valor_desc_atrasos = model.valor_desc_atrasos;
+            desconto_inss = model.desconto_inss;
+            desconto_irrf = model.desconto_irrf;
         }
     }
 }

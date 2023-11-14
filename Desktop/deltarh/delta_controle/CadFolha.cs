@@ -1,11 +1,7 @@
 ﻿using delta_modelo;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace delta_controle
 {
@@ -54,7 +50,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -115,7 +111,7 @@ namespace delta_controle
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Lide com exceções aqui, se necessário
                 return false;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace delta_modelo
+﻿namespace delta_modelo
 {
     public class mdlEmpresa
     {
@@ -31,7 +25,7 @@ namespace delta_modelo
         public decimal? odonto { get; set; }
         public decimal? gym { get; set; }
         public int id_missao { get; set; }
-        public int id_politica {  get; set; }
+        public int id_politica { get; set; }
         public mdlMissao missao { get; set; }
         public mdlPolitica politica { get; set; }
 

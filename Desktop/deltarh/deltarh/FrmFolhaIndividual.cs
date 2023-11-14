@@ -16,7 +16,7 @@ namespace deltarh
         {
             InitializeComponent();
 
-            this.folhaIndividual = folha;
+            folhaIndividual = folha;
 
             PopularForm();
         }
