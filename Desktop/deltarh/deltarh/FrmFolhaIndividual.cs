@@ -78,12 +78,49 @@ namespace deltarh
                 {
                      img = Image.FromStream(mStream);
                 }
-                picBoxComprovante.Image = img;
+                RedimensionarImagemParaPictureBox(img, picBoxComprovante);
             }
             catch (Exception ex)
             {
                MessageBox.Show("Imagem Não Encontrada","ATENÇÂO",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void RedimensionarImagemParaPictureBox(Image originalImage, PictureBox pictureBox)
+        {
+            // Define o modo de redimensionamento do PictureBox
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // ou PictureBoxSizeMode.StretchImage, dependendo da sua preferência
+
+            // Obtém as dimensões do PictureBox
+            int pictureBoxWidth = pictureBox.Width;
+            int pictureBoxHeight = pictureBox.Height;
+
+            // Cria um objeto Bitmap com as dimensões do PictureBox
+            Bitmap resizedImage = new Bitmap(pictureBoxWidth, pictureBoxHeight);
+
+            // Cria um objeto Graphics para desenhar na imagem redimensionada
+            using (Graphics g = Graphics.FromImage(resizedImage))
+            {
+                // Limpa a imagem
+                g.Clear(Color.Transparent);
+
+                // Calcula as novas dimensões da imagem mantendo a proporção
+                float ratioX = (float)pictureBoxWidth / (float)originalImage.Width;
+                float ratioY = (float)pictureBoxHeight / (float)originalImage.Height;
+                float ratio = Math.Min(ratioX, ratioY);
+
+                int newWidth = (int)(originalImage.Width * ratio);
+                int newHeight = (int)(originalImage.Height * ratio);
+
+                // Calcula a posição para centralizar a imagem no PictureBox
+                int posX = (pictureBoxWidth - newWidth) / 2;
+                int posY = (pictureBoxHeight - newHeight) / 2;
+
+                // Desenha a imagem redimensionada no objeto Graphics
+                g.DrawImage(originalImage, posX, posY, newWidth, newHeight);
+            }
+
+            // Define a imagem redimensionada como a imagem do PictureBox
+            pictureBox.Image = resizedImage;
         }
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)
