@@ -4,6 +4,8 @@ using ICSharpCode.SharpZipLib.Zip;
 using NPOI.Util;
 using NPOI.XSSF.UserModel;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace deltarh
@@ -67,19 +69,20 @@ namespace deltarh
         }
         public void MostrarComprovante()
         {
-            ConsultaBanco consulta = new ConsultaBanco();
-
-            mdlPontoEletronico ponto = null;
-
             try
             {
-                picBoxComprovante = ponto.documento;
+                byte[] imagem = ponto_selecionado.documento;
+                Image img;
 
-
+                using (MemoryStream mStream = new MemoryStream(imagem))
+                {
+                     img = Image.FromStream(mStream);
+                }
+                picBoxComprovante.Image = img;
             }
             catch (Exception ex)
             {
-                colab = null;
+               MessageBox.Show("Imagem Não Encontrada","ATENÇÂO",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,6 +99,16 @@ namespace deltarh
         private void FrmFolhaIndividual_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComprovante_Click(object sender, EventArgs e)
+        {
+            MostrarComprovante();
         }
     }
 }

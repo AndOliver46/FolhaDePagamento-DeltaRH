@@ -813,6 +813,7 @@
             this.btnComprovante.Size = new System.Drawing.Size(44, 23);
             this.btnComprovante.TabIndex = 335;
             this.btnComprovante.UseVisualStyleBackColor = true;
+            this.btnComprovante.Click += new System.EventHandler(this.btnComprovante_Click);
             // 
             // txtJustificativa
             // 
@@ -956,6 +957,7 @@
             this.btnSalvar.TabIndex = 288;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // chBoxAbonar
             // 
