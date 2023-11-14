@@ -1,13 +1,9 @@
-﻿using delta_modelo;
+﻿using delta_controle;
+using delta_modelo;
+using ICSharpCode.SharpZipLib.Zip;
 using NPOI.Util;
+using NPOI.XSSF.UserModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace deltarh
@@ -67,6 +63,23 @@ namespace deltarh
 
                 txtHorasTrabalhadas.Text = Convert.ToString(horasTrabalhadas);
                 txtTempoAlmoco.Text = Convert.ToString(tempoAlmoco);
+            }
+        }
+        public void MostrarComprovante()
+        {
+            ConsultaBanco consulta = new ConsultaBanco();
+
+            mdlPontoEletronico ponto = null;
+
+            try
+            {
+                picBoxComprovante = ponto.documento;
+
+
+            }
+            catch (Exception ex)
+            {
+                colab = null;
             }
         }
 

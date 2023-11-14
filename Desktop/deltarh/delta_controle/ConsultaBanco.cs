@@ -782,10 +782,40 @@ namespace delta_controle
                 return null;
             }
         }
+        private mdlPontoEletronico BuscarComprovante(int id_pontoeletronico)
+        {
+            string consulta = conecta.stringSql;
 
+            mdlPontoEletronico ponto = null;
 
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
 
+                    string sql = "SELECT documento FROM tbl_pontoeletronico WHERE id_pontoeletronico = @id_pontoeletronico";
 
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
 
+                    cmd.Parameters.AddWithValue("@id_pontoeletronico", id_pontoeletronico);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        ponto = new mdlPontoEletronico();
+                        ponto.documento = (byte[])rd["documento"];
+                    }
+                    rd.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return ponto;
+        }
     }
 }
