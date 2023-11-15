@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPOI.SS.Formula.Functions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -204,21 +205,32 @@ namespace delta_modelo
                 Acima de R$ 6.244,48: R$ 751,99 (valor fixo)
             */
 
-            decimal salario = valor_vencimento; // Substitua salario_base pelo valor do salário que você deseja calcular
+            decimal salario = valor_vencimento; // salario_base pelo valor do salário que você deseja calcular
             desconto_inss = 0;
             desconto_irrf = 0;
 
-            if (salario <= 1100.00m)
+            // Definição das alíquotas do INSS em 2023
+            decimal aliquotaAte1100 = 0.075m;
+            decimal aliquotaDe1101Ate2203 = 0.09m;
+            decimal aliquotaDe2204Ate3305 = 0.12m;
+            decimal aliquotaAcima3305 = 0.14m;
+
+            // Definição dos limites para cada faixa de alíquota
+            decimal limiteFaixa1 = 1320.00m;
+            decimal limiteFaixa2 = 2571.29m;
+            decimal limiteFaixa3 = 3856.94m;
+
+            if (salario <= limiteFaixa1)
             {
-                desconto_inss = salario * 0.075m;
+                desconto_inss = salario * aliquotaAte1100;
             }
-            else if (salario <= 2203.48m)
+            else if (salario <= limiteFaixa2)
             {
-                desconto_inss = salario * 0.09m;
+                desconto_inss = (limiteFaixa1 * aliquotaAte1100) + ((salario - limiteFaixa1) * aliquotaDe1101Ate2203);
             }
-            else if (salario <= 3672.29m)
+            else if (salario <= limiteFaixa3)
             {
-                desconto_inss = salario * 0.12m;
+                desconto_inss = (limiteFaixa1 * aliquotaAte1100) + ((limiteFaixa2 - limiteFaixa1) * aliquotaDe1101Ate2203) + ((salario - limiteFaixa2) * aliquotaDe2204Ate3305);
             }
             else if (salario <= 6244.48m)
             {
@@ -226,7 +238,7 @@ namespace delta_modelo
             }
             else
             {
-                desconto_inss = 751.99m;
+                desconto_inss = (limiteFaixa1 * aliquotaAte1100) + ((limiteFaixa2 - limiteFaixa1) * aliquotaDe1101Ate2203) + ((limiteFaixa3 - limiteFaixa2) * aliquotaDe2204Ate3305) + ((salario - limiteFaixa3) * aliquotaAcima3305);
             }
 
             /*
@@ -238,25 +250,36 @@ namespace delta_modelo
                 Acima de R$ 4.664,68: 27,5%
              */
 
-            if (salario <= 1903.98m)
+            // Definição das alíquotas do IRRF em 2023
+            decimal aliquotaFaixa1 = 0.075m;
+            decimal aliquotaFaixa2 = 0.15m;
+            decimal aliquotaFaixa3 = 0.225m;
+            decimal aliquotaFaixa4 = 0.275m;
+
+            // Definição dos limites para cada faixa de alíquota
+            decimal limiteFaixaIRRF1 = 2112.00m;
+            decimal limiteFaixaIRRF2 = 2826.65m;
+            decimal limiteFaixaIRRF3 = 3751.06m;
+            decimal limiteFaixaIRRF4 = 4664.68m;
+
+            decimal baseCalculo = salario - desconto_inss;
+
+
+            if (baseCalculo > limiteFaixaIRRF1)
             {
-                desconto_irrf = 0;
+                desconto_irrf += (Math.Min(baseCalculo, limiteFaixaIRRF2) - limiteFaixaIRRF1) * aliquotaFaixa1;
             }
-            else if (salario <= 2826.65m)
+            if (baseCalculo > limiteFaixaIRRF2)
             {
-                desconto_irrf = salario * 0.075m;
+                desconto_irrf += (Math.Min(baseCalculo, limiteFaixaIRRF3) - limiteFaixaIRRF2) * aliquotaFaixa2;
             }
-            else if (salario <= 3751.05m)
+            if (baseCalculo > limiteFaixaIRRF3)
             {
-                desconto_irrf = salario * 0.15m;
+                desconto_irrf += (Math.Min(baseCalculo, limiteFaixaIRRF4) - limiteFaixaIRRF3) * aliquotaFaixa3;
             }
-            else if (salario <= 4664.68m)
+            if (baseCalculo > limiteFaixaIRRF4)
             {
-                desconto_irrf = salario * 0.225m;
-            }
-            else
-            {
-                desconto_irrf = salario * 0.275m;
+                desconto_irrf += (baseCalculo - limiteFaixaIRRF4) * aliquotaFaixa4;
             }
 
             valor_desconto += desconto_irrf + desconto_inss;

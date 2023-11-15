@@ -90,8 +90,12 @@ public class LoginController : Controller
     {
         string cnpj = _contextAccessor.HttpContext.Session.GetString("cnpj");
         EmpresaModel empresa = ConsultarEmpresa(cnpj);
-        empresa.Lista_folha = ConsultarFolhas(empresa.id_empresa);
-        return View(empresa);
+        if(empresa != null)
+        {
+            empresa.Lista_folha = ConsultarFolhas(empresa.id_empresa);
+            return View(empresa);
+        }
+        return RedirectToAction("LoginUsuario", "Login", new {sessaoInvalida="true"});
 
     }
 
