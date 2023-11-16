@@ -29,14 +29,15 @@ namespace deltarh
             txtNome.Text = folhaIndividual.colaborador.nome;
             txtCargo.Text = folhaIndividual.colaborador.cargo;
             txtRef.Text = folhaIndividual.mes_referencia;
-            txtSalarioBase.Text = Convert.ToString(folhaIndividual.colaborador.salario);
-            txtHorasExtras.Text = Convert.ToString(folhaIndividual.valor_horas_extras);
-            txtAtrasos.Text = Convert.ToString(folhaIndividual.valor_desc_atraso);
-            txtSalarioBruto.Text = Convert.ToString(folhaIndividual.valor_vencimento);
-            txtDescontos.Text = Convert.ToString(folhaIndividual.valor_desconto);
-            txtSalarioLiquido.Text = Convert.ToString(folhaIndividual.salario_liquido);
+            txtSalarioBase.Text = folhaIndividual.colaborador.salario.ToString("N2");
+            txtHorasExtras.Text = folhaIndividual.valor_horas_extras.ToString("N2");
+            txtAtrasos.Text = folhaIndividual.valor_desc_atraso.ToString("N2");
+            txtSalarioBase.Text = folhaIndividual.valor_vencimento.ToString("N2");
+            txtDescontos.Text = folhaIndividual.valor_desconto.ToString("N2");
+            txtSalarioLiquido.Text = folhaIndividual.salario_liquido.ToString("N2");
             //txtBeneficios.Text = 
 
+  
             gridPontos.DataSource = folhaIndividual.pontos_eletronicos;
         }
         private void button3_Click(object sender, EventArgs e)

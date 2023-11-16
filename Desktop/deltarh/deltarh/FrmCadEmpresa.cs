@@ -100,6 +100,8 @@ namespace deltarh
             gboxPolitica.Enabled = true;
             txtFantasia.Enabled = true;
             txtCnpj.Enabled = false;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
             btnSalvar.Visible = true;
             btnLimpar.Visible = true;
             btnCancelar.Visible = true;
@@ -357,12 +359,46 @@ namespace deltarh
                 empresa.fone2 = txtTelefone2.Text;
                 empresa.email = txtEmail.Text;
                 empresa.senha = txtSenha.Text;
-                empresa.vt = Convert.ToDecimal(txtVt.Text);
-                empresa.vr = Convert.ToDecimal(txtVr.Text);
-                empresa.assMedica = Convert.ToDecimal(txtAssMedica.Text);
-                empresa.odonto = Convert.ToDecimal(txtOdonto.Text);
-                empresa.gym = Convert.ToDecimal(txtGym.Text);
-
+                if(txtVt.Text == "")
+                {
+                    empresa.vt = 0;
+                }
+                else
+                {
+                    empresa.vt = Convert.ToDecimal(txtVt.Text);
+                }
+                if (txtVr.Text == "")
+                {
+                    empresa.vr = 0;
+                }
+                else
+                {
+                    empresa.vr = Convert.ToDecimal(txtVr.Text);
+                }
+                if (txtAssMedica.Text == "")
+                {
+                    empresa.assMedica = 0;
+                }
+                else
+                {
+                    empresa.assMedica = Convert.ToDecimal(txtAssMedica.Text);
+                }
+                if (txtOdonto.Text == "")
+                {
+                    empresa.odonto = 0;
+                }
+                else
+                {
+                    empresa.odonto = Convert.ToDecimal(txtOdonto.Text);
+                }
+                if (txtGym.Text == "")
+                {
+                    empresa.gym = 0;
+                }
+                else
+                {
+                    empresa.gym = Convert.ToDecimal(txtGym.Text);
+                }
                 setor.nome = nomeSetor;
 
                 if (txtStatus.Text == "")
@@ -429,6 +465,11 @@ namespace deltarh
         }
 
         private void gridSetor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gboxEdita_Enter(object sender, EventArgs e)
         {
 
         }

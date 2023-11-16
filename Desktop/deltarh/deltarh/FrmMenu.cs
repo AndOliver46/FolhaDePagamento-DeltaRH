@@ -119,6 +119,8 @@ namespace deltarh
                         cadastro.btnSalvar.Visible = false;
                         cadastro.btnCadastrar.Visible = true;
                         cnpj = "";
+                        cadastro.gboxCadastro.Enabled = false;
+                        cadastro.gboxEdita.Enabled = false;
                         cadastro.ShowDialog();
                     }
                 }

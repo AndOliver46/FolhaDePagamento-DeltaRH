@@ -598,6 +598,7 @@
             this.txtRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRef.Location = new System.Drawing.Point(402, 68);
             this.txtRef.Name = "txtRef";
+            this.txtRef.ReadOnly = true;
             this.txtRef.Size = new System.Drawing.Size(100, 22);
             this.txtRef.TabIndex = 321;
             // 
@@ -650,6 +651,7 @@
             this.txtDescontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescontos.Location = new System.Drawing.Point(454, 43);
             this.txtDescontos.Name = "txtDescontos";
+            this.txtDescontos.ReadOnly = true;
             this.txtDescontos.Size = new System.Drawing.Size(82, 22);
             this.txtDescontos.TabIndex = 286;
             // 
@@ -668,6 +670,7 @@
             this.txtSalarioBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioBruto.Location = new System.Drawing.Point(454, 15);
             this.txtSalarioBruto.Name = "txtSalarioBruto";
+            this.txtSalarioBruto.ReadOnly = true;
             this.txtSalarioBruto.Size = new System.Drawing.Size(82, 22);
             this.txtSalarioBruto.TabIndex = 284;
             // 
@@ -686,6 +689,7 @@
             this.txtAtrasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAtrasos.Location = new System.Drawing.Point(268, 47);
             this.txtAtrasos.Name = "txtAtrasos";
+            this.txtAtrasos.ReadOnly = true;
             this.txtAtrasos.Size = new System.Drawing.Size(82, 22);
             this.txtAtrasos.TabIndex = 282;
             // 
@@ -704,6 +708,7 @@
             this.txtHorasExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHorasExtras.Location = new System.Drawing.Point(268, 19);
             this.txtHorasExtras.Name = "txtHorasExtras";
+            this.txtHorasExtras.ReadOnly = true;
             this.txtHorasExtras.Size = new System.Drawing.Size(82, 22);
             this.txtHorasExtras.TabIndex = 280;
             // 
@@ -722,6 +727,7 @@
             this.txtSalarioLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioLiquido.Location = new System.Drawing.Point(268, 77);
             this.txtSalarioLiquido.Name = "txtSalarioLiquido";
+            this.txtSalarioLiquido.ReadOnly = true;
             this.txtSalarioLiquido.Size = new System.Drawing.Size(177, 22);
             this.txtSalarioLiquido.TabIndex = 278;
             // 
@@ -740,6 +746,7 @@
             this.txtBeneficios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBeneficios.Location = new System.Drawing.Point(95, 47);
             this.txtBeneficios.Name = "txtBeneficios";
+            this.txtBeneficios.ReadOnly = true;
             this.txtBeneficios.Size = new System.Drawing.Size(82, 22);
             this.txtBeneficios.TabIndex = 276;
             // 
@@ -758,6 +765,7 @@
             this.txtSalarioBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioBase.Location = new System.Drawing.Point(95, 19);
             this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.ReadOnly = true;
             this.txtSalarioBase.Size = new System.Drawing.Size(82, 22);
             this.txtSalarioBase.TabIndex = 273;
             // 
@@ -766,6 +774,7 @@
             this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargo.Location = new System.Drawing.Point(94, 68);
             this.txtCargo.Name = "txtCargo";
+            this.txtCargo.ReadOnly = true;
             this.txtCargo.Size = new System.Drawing.Size(248, 22);
             this.txtCargo.TabIndex = 317;
             // 
@@ -774,6 +783,7 @@
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(94, 40);
             this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(408, 22);
             this.txtNome.TabIndex = 316;
             // 
@@ -782,6 +792,7 @@
             this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresa.Location = new System.Drawing.Point(94, 12);
             this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.ReadOnly = true;
             this.txtEmpresa.Size = new System.Drawing.Size(408, 22);
             this.txtEmpresa.TabIndex = 315;
             // 
@@ -820,6 +831,7 @@
             this.txtJustificativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJustificativa.Location = new System.Drawing.Point(634, 449);
             this.txtJustificativa.Name = "txtJustificativa";
+            this.txtJustificativa.ReadOnly = true;
             this.txtJustificativa.Size = new System.Drawing.Size(109, 22);
             this.txtJustificativa.TabIndex = 334;
             // 
@@ -856,6 +868,7 @@
             this.txtHorasTrabalhadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHorasTrabalhadas.Location = new System.Drawing.Point(537, 449);
             this.txtHorasTrabalhadas.Name = "txtHorasTrabalhadas";
+            this.txtHorasTrabalhadas.ReadOnly = true;
             this.txtHorasTrabalhadas.Size = new System.Drawing.Size(91, 22);
             this.txtHorasTrabalhadas.TabIndex = 330;
             // 
@@ -878,6 +891,7 @@
             this.txtEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEntrada.Location = new System.Drawing.Point(6, 31);
             this.txtEntrada.Name = "txtEntrada";
+            this.txtEntrada.ReadOnly = true;
             this.txtEntrada.Size = new System.Drawing.Size(66, 22);
             this.txtEntrada.TabIndex = 4;
             // 
@@ -886,6 +900,7 @@
             this.txtSaidaAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaidaAlmoco.Location = new System.Drawing.Point(78, 31);
             this.txtSaidaAlmoco.Name = "txtSaidaAlmoco";
+            this.txtSaidaAlmoco.ReadOnly = true;
             this.txtSaidaAlmoco.Size = new System.Drawing.Size(66, 22);
             this.txtSaidaAlmoco.TabIndex = 5;
             // 
@@ -894,6 +909,7 @@
             this.txtRetornoAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRetornoAlmoco.Location = new System.Drawing.Point(150, 31);
             this.txtRetornoAlmoco.Name = "txtRetornoAlmoco";
+            this.txtRetornoAlmoco.ReadOnly = true;
             this.txtRetornoAlmoco.Size = new System.Drawing.Size(66, 22);
             this.txtRetornoAlmoco.TabIndex = 6;
             // 
@@ -902,6 +918,7 @@
             this.txtSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaida.Location = new System.Drawing.Point(222, 31);
             this.txtSaida.Name = "txtSaida";
+            this.txtSaida.ReadOnly = true;
             this.txtSaida.Size = new System.Drawing.Size(66, 22);
             this.txtSaida.TabIndex = 7;
             // 
@@ -910,6 +927,7 @@
             this.txtTempoAlmoco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTempoAlmoco.Location = new System.Drawing.Point(435, 449);
             this.txtTempoAlmoco.Name = "txtTempoAlmoco";
+            this.txtTempoAlmoco.ReadOnly = true;
             this.txtTempoAlmoco.Size = new System.Drawing.Size(96, 22);
             this.txtTempoAlmoco.TabIndex = 328;
             // 
@@ -918,6 +936,7 @@
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(749, 449);
             this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(224, 22);
             this.txtDescricao.TabIndex = 327;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
@@ -927,6 +946,7 @@
             this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(28, 449);
             this.txtData.Name = "txtData";
+            this.txtData.ReadOnly = true;
             this.txtData.Size = new System.Drawing.Size(100, 22);
             this.txtData.TabIndex = 326;
             // 

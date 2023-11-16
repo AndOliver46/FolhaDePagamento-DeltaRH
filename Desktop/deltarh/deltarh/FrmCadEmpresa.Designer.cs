@@ -627,6 +627,7 @@ namespace deltarh
             this.gboxEdita.TabIndex = 3;
             this.gboxEdita.TabStop = false;
             this.gboxEdita.Text = "Editar Setor";
+            this.gboxEdita.Enter += new System.EventHandler(this.gboxEdita_Enter);
             // 
             // btnEditarSetor
             // 
@@ -946,6 +947,7 @@ namespace deltarh
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(148, 156);
             this.txtNome.Name = "txtNome";
@@ -954,6 +956,7 @@ namespace deltarh
             // 
             // txtCpf
             // 
+            this.txtCpf.Enabled = false;
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.Location = new System.Drawing.Point(588, 156);
             this.txtCpf.Name = "txtCpf";
@@ -1126,10 +1129,8 @@ namespace deltarh
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtVt;
         private System.Windows.Forms.TextBox txtSetor;
-        private System.Windows.Forms.GroupBox gboxCadastro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.GroupBox gboxEdita;
         private System.Windows.Forms.Button btnEditarSetor;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtEditaSetor;
@@ -1164,5 +1165,7 @@ namespace deltarh
         public System.Windows.Forms.Button btnOk;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView gridSetor;
+        public System.Windows.Forms.GroupBox gboxCadastro;
+        public System.Windows.Forms.GroupBox gboxEdita;
     }
 }
