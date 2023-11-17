@@ -4,7 +4,6 @@ import android.content.Context
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 object NetworkConfig {
@@ -25,8 +24,8 @@ object NetworkConfig {
 
     private fun okHttpClient(context : Context?): OkHttpClient {
         return OkHttpClient.Builder()
-            .readTimeout(40, TimeUnit.SECONDS)
-            .connectTimeout(40, TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
             .addInterceptor(AuthInterceptor(context))
             .build()
     }

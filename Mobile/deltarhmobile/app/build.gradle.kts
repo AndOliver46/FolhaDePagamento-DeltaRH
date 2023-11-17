@@ -36,6 +36,9 @@ android {
 }
 
 dependencies {
+    //Lifecycle para criar threads para requisições
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+
     //Retrofit para comunicação API
     implementation("com.squareup.retrofit2:retrofit:2.5.0>")
     implementation("com.squareup.retrofit2:converter-gson:2.5.0")

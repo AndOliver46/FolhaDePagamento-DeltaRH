@@ -2,10 +2,7 @@ package com.example.deltarhmobile.ui
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.os.Build
 import android.os.Bundle
-import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +19,9 @@ import com.example.deltarhmobile.retrofit.model.UserResponse
 import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Call
 import retrofit2.Response
-
+import kotlinx.coroutines.launch
+import androidx.lifecycle.lifecycleScope
+import retrofit2.Callback
 
 class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,13 +35,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val SDK_INT = Build.VERSION.SDK_INT
-        if (SDK_INT > 8) {
-            val policy = ThreadPolicy.Builder()
-                .permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-            //your codes here
-        }
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
@@ -52,7 +44,7 @@ class LoginFragment : Fragment() {
 
         val loginButton = view.findViewById<Button>(R.id.entrar_button)
 
-        loginButton.setOnClickListener{
+        loginButton.setOnClickListener {
 
             val cpfInput = view.findViewById<TextInputEditText>(R.id.cpf_edit_text)
             val passwordInput = view.findViewById<TextInputEditText>(R.id.senha_edit_text)
@@ -60,43 +52,23 @@ class LoginFragment : Fragment() {
             val cpf = cpfInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
 
-            if(cpf.isEmpty()){
+            if (cpf.isEmpty()) {
                 cpfInput.error = "Insira o CPF"
                 cpfInput.requestFocus()
                 return@setOnClickListener
             }
 
-            if(password.isEmpty()){
+            if (password.isEmpty()) {
                 passwordInput.error = "Insira a senha"
                 passwordInput.requestFocus()
                 return@setOnClickListener
             }
 
             val userRequest = UserRequest(cpf, password, true)
-            val messageTextView = view.findViewById<TextView>(R.id.message_text_view)
-
-            try {
-                val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
-                val call: Call<UserResponse> = userAPI.onLogin(userRequest)
-                val response: Response<UserResponse> = call.execute()
-                val responseBody = response.body()
-
-                if(response.isSuccessful){
-                    val token = responseBody?.token
-                    val sessionManager = SessionManager(context)
-
-                    if (token != null) {
-                        sessionManager.saveAuthToken(token)
-                    }
-
-                    (activity as NavigationHost).navigateTo(MenuFragment(), false)
-                }else if(response.code() == 401){
-                    messageTextView.text = "Credenciais inválidas."
-                }
-            }catch (e : Exception){
-                messageTextView.text = "ERRO DE API"
-            }
+            doLogin(view, userRequest)
         }
+
+
 
         val esqueciSenhaButton = view.findViewById<Button>(R.id.esqueci_senha_button)
         esqueciSenhaButton.setOnClickListener{
@@ -112,7 +84,43 @@ class LoginFragment : Fragment() {
             val dialog = builder.create()
             dialog.show()
         }
+    }
 
+    @SuppressLint("SetTextI18n")
+    fun doLogin(view : View, userRequest : UserRequest){
+        val messageTextView = view.findViewById<TextView>(R.id.message_text_view)
+
+        // Use lifecycleScope para obter um CoroutineScope vinculado ao ciclo de vida do fragmento
+        lifecycleScope.launch {
+            try {
+                val userAPI: UserAPI =
+                    NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, requireContext())
+                val call: Call<UserResponse> = userAPI.onLogin(userRequest)
+
+                call.enqueue(object : Callback<UserResponse> {
+                    override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                        if (response.isSuccessful) {
+                            val responseBody = response.body()
+                            val token = responseBody?.token
+                            val sessionManager = SessionManager(requireContext())
+
+                            if (token != null) {
+                                sessionManager.saveAuthToken(token)
+                            }
+
+                            (activity as NavigationHost).navigateTo(MenuFragment(), false)
+                        } else if (response.code() == 401) {
+                            messageTextView.text = "Credenciais inválidas."
+                        }
+                    }
+                    override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                        messageTextView.text = "ERRO DE API"
+                    }
+                })
+            } catch (e: Exception) {
+                messageTextView.text = "ERRO DE API"
+            }
+        }
     }
 
     companion object

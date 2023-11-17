@@ -17,13 +17,16 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.lifecycleScope
 import com.example.deltarhmobile.NavigationHost
 import com.example.deltarhmobile.R
 import com.example.deltarhmobile.retrofit.api.UserAPI
 import com.example.deltarhmobile.retrofit.config.NetworkConfig
 import com.example.deltarhmobile.retrofit.model.JustificativaModel
 import com.example.deltarhmobile.retrofit.model.PontoModel
+import kotlinx.coroutines.launch
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -68,6 +71,11 @@ class JustificativaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val spinnerJustificativas = view.findViewById<Spinner>(R.id.spinner_tipo_justificativa)
+        val textDescricao = view.findViewById<EditText>(R.id.textbox_descricao)
+        val buttonDocument = view.findViewById<Button>(R.id.anexar_button)
+        val registrarJustificativaButton = view.findViewById<Button>(R.id.registrar_justificativa_button)
+
         val dateText = view.findViewById<TextView>(R.id.text_data_justificativa)
         val timeText = view.findViewById<TextView>(R.id.text_hora_justificativa)
         val dataHoraAtual = Date()
@@ -84,36 +92,37 @@ class JustificativaFragment : Fragment() {
         try {
             val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
             val callCarregarPonto: Call<PontoModel> = userAPI.carregarPonto()
-            val response: Response<PontoModel> = callCarregarPonto.execute()
-            val responseBodyIncial = response.body()
-
-            //Mapeamento dos componentes
-            val spinnerJustificativas = view.findViewById<Spinner>(R.id.spinner_tipo_justificativa)
-            val textDescricao = view.findViewById<EditText>(R.id.textbox_descricao)
-            val buttonDocument = view.findViewById<Button>(R.id.anexar_button)
-            val registrarJustificativaButton = view.findViewById<Button>(R.id.registrar_justificativa_button)
-            val justificativaRegistradaText = view.findViewById<TextView>(R.id.justificativa_registrado_text)
-
-            if (responseBodyIncial != null){
-                carregarJustificativa(responseBodyIncial, view)
-
-                buttonDocument.setOnClickListener{
-                    startFileSelection()
-                }
-
-                registrarJustificativaButton.setOnClickListener{
-                    val justificativa = JustificativaModel(
-                        spinnerJustificativas.selectedItem.toString(),
-                        textDescricao.text.toString(),
-                        documentString
-                    )
-
-                    val responseBody = registrarJustificativa(justificativa)
-                    if (responseBody != null) {
-                        carregarJustificativa(responseBody, view)
-                        justificativaRegistradaText.visibility = View.VISIBLE
+            
+            lifecycleScope.launch{
+                callCarregarPonto.enqueue(object : Callback<PontoModel> {
+                    override fun onResponse(
+                        call: Call<PontoModel>,
+                        response: Response<PontoModel>
+                    ) {
+                        val responseBodyIncial = response.body()
+                        carregarJustificativa(responseBodyIncial, view)
                     }
-                }
+
+                    override fun onFailure(call: Call<PontoModel>, t: Throwable) {
+                        val responseBodyIncial = null
+                        carregarJustificativa(responseBodyIncial, view)
+                    }
+
+                })
+            }
+
+            buttonDocument.setOnClickListener{
+                startFileSelection()
+            }
+
+            registrarJustificativaButton.setOnClickListener{
+                val justificativa = JustificativaModel(
+                    spinnerJustificativas.selectedItem.toString(),
+                    textDescricao.text.toString(),
+                    documentString
+                )
+
+                registrarJustificativa(justificativa, view)
             }
         }catch (e : Exception){
             Log.d("Erro busca:", e.stackTraceToString())
@@ -121,7 +130,7 @@ class JustificativaFragment : Fragment() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun carregarJustificativa(pontoModel: PontoModel, view: View){
+    private fun carregarJustificativa(pontoModel: PontoModel?, view: View){
         val spinnerJustificativas = view.findViewById<Spinner>(R.id.spinner_tipo_justificativa)
         val textDescricao = view.findViewById<EditText>(R.id.textbox_descricao)
         val buttonDocument = view.findViewById<Button>(R.id.anexar_button)
@@ -133,12 +142,15 @@ class JustificativaFragment : Fragment() {
             spinnerJustificativas.adapter = adapter
         }
 
-        if (pontoModel.tipoJustificativa != null){
+        if(pontoModel?.tipoJustificativa != null){
             spinnerJustificativas.setSelection(tiposJustificativa.indexOf(pontoModel.tipoJustificativa))
+
             textDescricao.setText(pontoModel.descricao)
 
             if(pontoModel.documento != null){
                 buttonDocument.text = "Documento anexado"
+            }else{
+                buttonDocument.text = "Sem anexo"
             }
 
             spinnerJustificativas.isEnabled = false
@@ -148,16 +160,30 @@ class JustificativaFragment : Fragment() {
         }
     }
 
-    private fun registrarJustificativa(justificativa: JustificativaModel) : PontoModel?{
+    @SuppressLint("SetTextI18n")
+    private fun registrarJustificativa(justificativa: JustificativaModel, view : View){
+
+        val justificativaRegistradaText = view.findViewById<TextView>(R.id.justificativa_registrado_text)
+
         try {
             val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
             val callRegistrarJustificativa: Call<PontoModel> = userAPI.registrarJustificativa(justificativa)
-            val response: Response<PontoModel> = callRegistrarJustificativa.execute()
-            return response.body()
+
+            callRegistrarJustificativa.enqueue(object : Callback<PontoModel> {
+                override fun onResponse(call: Call<PontoModel>, response: Response<PontoModel>) {
+                    carregarJustificativa(response.body(), view)
+                    justificativaRegistradaText.visibility = View.VISIBLE
+                }
+                override fun onFailure(call: Call<PontoModel>, t: Throwable) {
+                    carregarJustificativa(null, view)
+                    justificativaRegistradaText.text = "Erro ao registrar justificativa"
+                    justificativaRegistradaText.visibility = View.VISIBLE
+                }
+
+            })
         }catch (e : Exception){
             Log.d("Erro busca:", e.stackTraceToString())
         }
-        return null
     }
 
     private fun startFileSelection() {

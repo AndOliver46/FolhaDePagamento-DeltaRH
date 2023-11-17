@@ -9,13 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.example.deltarhmobile.NavigationHost
 import com.example.deltarhmobile.R
 import com.example.deltarhmobile.retrofit.api.UserAPI
 import com.example.deltarhmobile.retrofit.config.NetworkConfig
 import com.example.deltarhmobile.retrofit.model.PontoModel
 import com.example.deltarhmobile.retrofit.model.TipoPonto
+import kotlinx.coroutines.launch
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -48,7 +51,6 @@ class PontoFragment : Fragment() {
         val pausaButton = view.findViewById<Button>(R.id.pausa_button)
         val retornoButton = view.findViewById<Button>(R.id.retorno_button)
         val saidaButton = view.findViewById<Button>(R.id.saida_button)
-        val mensagemPonto = view.findViewById<TextView>(R.id.ponto_registrado_text)
 
         val dataHoraAtual = Date()
         val formatoData = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
@@ -58,10 +60,19 @@ class PontoFragment : Fragment() {
 
         val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
         val callCarregarPonto: Call<PontoModel> = userAPI.carregarPonto()
-        val response: Response<PontoModel> = callCarregarPonto.execute()
-        val responseBodyIncial = response.body()
 
-        carregarBotoes(view, responseBodyIncial)
+        lifecycleScope.launch{
+            callCarregarPonto.enqueue(object : Callback<PontoModel> {
+                override fun onResponse(call: Call<PontoModel>, response: Response<PontoModel>) {
+                    val responseBodyIncial = response.body()
+                    carregarBotoes(view, responseBodyIncial)
+                }
+
+                override fun onFailure(call: Call<PontoModel>, t: Throwable) {
+                    carregarBotoes(view, null)
+                }
+            })
+        }
 
         backButton.setOnClickListener{
             (activity as NavigationHost).navigateTo(MenuFragment(), false)
@@ -69,40 +80,54 @@ class PontoFragment : Fragment() {
 
         entradaButton.setOnClickListener {
             val tipoPonto = TipoPonto("entrada")
-            val responseBody = registrarPonto(tipoPonto)
-            carregarBotoes(view, responseBody)
-            mensagemPonto.visibility = View.VISIBLE
+            registrarPonto(tipoPonto, view)
         }
         pausaButton.setOnClickListener {
             val tipoPonto = TipoPonto("pausa")
-            val responseBody = registrarPonto(tipoPonto)
-            carregarBotoes(view, responseBody)
-            mensagemPonto.visibility = View.VISIBLE
+            registrarPonto(tipoPonto, view)
         }
         retornoButton.setOnClickListener {
             val tipoPonto = TipoPonto("retorno")
-            val responseBody = registrarPonto(tipoPonto)
-            carregarBotoes(view, responseBody)
-            mensagemPonto.visibility = View.VISIBLE
+            registrarPonto(tipoPonto, view)
         }
         saidaButton.setOnClickListener {
             val tipoPonto = TipoPonto("saida")
-            val responseBody = registrarPonto(tipoPonto)
-            carregarBotoes(view, responseBody)
-            mensagemPonto.visibility = View.VISIBLE
+            registrarPonto(tipoPonto, view)
         }
     }
+    @SuppressLint("SetTextI18n")
+    fun registrarPonto(tipoPonto: TipoPonto, view : View) {
 
-    fun registrarPonto(tipoPonto: TipoPonto) : PontoModel?{
-        try {
-            val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
-            val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
-            val response: Response<PontoModel> = callRegistrarPonto.execute()
-            return response.body()
-        }catch (e : Exception){
-            Log.d("Erro busca:", e.stackTraceToString())
+        val mensagemPonto = view.findViewById<TextView>(R.id.ponto_registrado_text)
+
+        val userAPI: UserAPI = NetworkConfig.provideApi<UserAPI>(UserAPI::class.java, context)
+        val callRegistrarPonto: Call<PontoModel> = userAPI.registrarPonto(tipoPonto)
+
+        var responseBody : PontoModel?
+
+        lifecycleScope.launch {
+            try {
+                callRegistrarPonto.enqueue(object :
+                    Callback<PontoModel> {
+                    override fun onResponse(
+                        call: Call<PontoModel>,
+                        response: Response<PontoModel>
+                    ) {
+                        responseBody = response.body()
+                        carregarBotoes(view, responseBody)
+                        mensagemPonto.text = "Ponto registrado com sucesso"
+                    }
+
+                    override fun onFailure(call: Call<PontoModel>, t: Throwable) {
+                        responseBody = null
+                        carregarBotoes(view, responseBody)
+                        mensagemPonto.text = "Erro ao registrar ponto"
+                    }
+                })
+            } catch (e: Exception) {
+                Log.d("Erro busca:", e.stackTraceToString())
+            }
         }
-        return null
     }
 
     @SuppressLint("SetTextI18n")
