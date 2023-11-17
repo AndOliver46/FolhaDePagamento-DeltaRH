@@ -12,6 +12,7 @@ namespace deltarh
     public partial class frmMenu : Form
     {
         private List<mdlFolhaDePagamento> folhas_pagamento;
+        private DataTable dt = new DataTable();
 
         public frmMenu()
         {
@@ -214,15 +215,17 @@ namespace deltarh
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
-
-                DataTable dt = new DataTable();
-
+                dt = new DataTable();
                 da.Fill(dt);
 
                 gridPendentes.DataSource = dt;
                 gridPendentes.Columns[0].Width = 105;
+                gridPendentes.Columns[0].HeaderCell.Value = "CNPJ";
                 gridPendentes.Columns[1].Width = 260;
+                gridPendentes.Columns[0].HeaderCell.Value = "Razao Social";
                 gridPendentes.Columns[2].Width = 105;
+                gridPendentes.Columns[0].HeaderCell.Value = "Status";
+
             }
         }
 
@@ -233,10 +236,22 @@ namespace deltarh
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmAprovaStatus status = new FrmAprovaStatus();
-            status.txtCnpj.Text = txtCnpjStatus.Text;
-            status.MostrarEmpresa();
-            status.ShowDialog();
+            if (gridPendentes.SelectedRows.Count > 0)
+            {
+                int selectedrowindex = gridPendentes.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = gridPendentes.Rows[selectedrowindex];
+                string cnpj = Convert.ToString(selectedRow.Cells["cnpj"].Value);
+
+                FrmAprovaStatus status = new FrmAprovaStatus();
+                status.txtCnpj.Text = cnpj;
+                status.MostrarEmpresa();
+                status.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma empresa na lista acima para alterar o status.", "ATENÇÂO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -372,7 +387,7 @@ namespace deltarh
             }
             else
             {
-                MessageBox.Show("Nenhuma folha de pagamento foi selecionada.");
+                MessageBox.Show("Nenhuma folha de pagamento foi selecionada.", "ATENÇÂO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

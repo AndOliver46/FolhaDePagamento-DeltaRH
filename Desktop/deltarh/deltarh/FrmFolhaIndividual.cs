@@ -81,7 +81,7 @@ namespace deltarh
                 }
                 RedimensionarImagemParaPictureBox(img, picBoxComprovante);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                MessageBox.Show("Imagem Não Encontrada","ATENÇÂO",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

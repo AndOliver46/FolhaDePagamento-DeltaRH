@@ -859,7 +859,7 @@ namespace delta_controle
                     rd.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
