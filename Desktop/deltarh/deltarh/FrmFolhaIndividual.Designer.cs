@@ -82,7 +82,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtRef = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnProcessar = new System.Windows.Forms.Button();
+            this.btnAprovar = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.txtDescontos = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -604,7 +604,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnProcessar);
+            this.groupBox1.Controls.Add(this.btnAprovar);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtDescontos);
             this.groupBox1.Controls.Add(this.label22);
@@ -626,15 +626,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resumo";
             // 
-            // btnProcessar
+            // btnAprovar
             // 
-            this.btnProcessar.Location = new System.Drawing.Point(454, 77);
-            this.btnProcessar.Name = "btnProcessar";
-            this.btnProcessar.Size = new System.Drawing.Size(82, 23);
-            this.btnProcessar.TabIndex = 276;
-            this.btnProcessar.Text = "PROCESSAR";
-            this.btnProcessar.UseVisualStyleBackColor = true;
-            this.btnProcessar.Click += new System.EventHandler(this.button3_Click);
+            this.btnAprovar.Location = new System.Drawing.Point(454, 77);
+            this.btnAprovar.Name = "btnAprovar";
+            this.btnAprovar.Size = new System.Drawing.Size(82, 23);
+            this.btnAprovar.TabIndex = 276;
+            this.btnAprovar.Text = "APROVAR";
+            this.btnAprovar.UseVisualStyleBackColor = true;
+            this.btnAprovar.Click += new System.EventHandler(this.button3_Click);
             // 
             // label21
             // 
@@ -1051,6 +1051,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFolhaIndividual";
             this.Text = "Folha Individual";
             this.Load += new System.EventHandler(this.FrmFolhaIndividual_Load);
@@ -1122,7 +1123,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtRef;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnProcessar;
+        private System.Windows.Forms.Button btnAprovar;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtDescontos;
         private System.Windows.Forms.Label label22;

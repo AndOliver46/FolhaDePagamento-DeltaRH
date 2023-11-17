@@ -29,18 +29,21 @@ namespace deltarh
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.mskSenha = new System.Windows.Forms.MaskedTextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
             // 
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(18, 35);
+            this.lblUsuario.Location = new System.Drawing.Point(153, 164);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(63, 24);
             this.lblUsuario.TabIndex = 0;
@@ -49,7 +52,7 @@ namespace deltarh
             // lblSenha
             // 
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(18, 84);
+            this.lblSenha.Location = new System.Drawing.Point(153, 213);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(63, 24);
             this.lblSenha.TabIndex = 1;
@@ -58,19 +61,19 @@ namespace deltarh
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(87, 36);
+            this.txtUsuario.Location = new System.Drawing.Point(222, 165);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(118, 24);
+            this.txtUsuario.Size = new System.Drawing.Size(239, 24);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // mskSenha
             // 
             this.mskSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskSenha.Location = new System.Drawing.Point(87, 85);
+            this.mskSenha.Location = new System.Drawing.Point(222, 214);
             this.mskSenha.Name = "mskSenha";
             this.mskSenha.PasswordChar = '*';
-            this.mskSenha.Size = new System.Drawing.Size(118, 24);
+            this.mskSenha.Size = new System.Drawing.Size(239, 24);
             this.mskSenha.TabIndex = 1;
             this.mskSenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSenha_MaskInputRejected);
             this.mskSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskSenha_KeyPress);
@@ -78,9 +81,9 @@ namespace deltarh
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(121, 148);
+            this.btnOk.Location = new System.Drawing.Point(350, 270);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(84, 34);
+            this.btnOk.Size = new System.Drawing.Size(111, 34);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -89,29 +92,42 @@ namespace deltarh
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(21, 148);
+            this.btnCancelar.Location = new System.Drawing.Point(222, 270);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(111, 34);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(613, 126);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 213);
+            this.ClientSize = new System.Drawing.Size(636, 327);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.mskSenha);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +141,7 @@ namespace deltarh
         private System.Windows.Forms.MaskedTextBox mskSenha;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

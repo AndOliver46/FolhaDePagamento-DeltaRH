@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProcessamento));
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridFolhasIndividuais = new System.Windows.Forms.DataGridView();
             this.btnVisualizar = new System.Windows.Forms.Button();
@@ -351,6 +352,7 @@
             this.Controls.Add(this.dataGridFolhasIndividuais);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmProcessamento";
             this.Text = "Folha de Pagamento";

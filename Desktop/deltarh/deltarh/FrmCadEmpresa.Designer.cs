@@ -30,6 +30,7 @@ namespace deltarh
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadEmpresa));
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.txtCodId = new System.Windows.Forms.TextBox();
@@ -1040,6 +1041,7 @@ namespace deltarh
             this.Controls.Add(this.txtCodId);
             this.Controls.Add(this.txtRazaoSocial);
             this.Controls.Add(this.txtCnpj);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadEmpresa";
             this.Text = "Empresa";
             this.Load += new System.EventHandler(this.FrmCadEmpresa_Load);

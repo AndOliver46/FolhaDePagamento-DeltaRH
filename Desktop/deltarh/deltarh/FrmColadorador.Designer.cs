@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmColadorador));
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
@@ -608,6 +609,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.txtId);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmColadorador";
             this.Text = "Coladorador";
             this.Load += new System.EventHandler(this.Coladorador_Load);
