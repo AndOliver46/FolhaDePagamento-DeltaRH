@@ -993,7 +993,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 537);
+            this.ClientSize = new System.Drawing.Size(1064, 495);
             this.Controls.Add(this.chBoxAbonar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.picBoxComprovante);
