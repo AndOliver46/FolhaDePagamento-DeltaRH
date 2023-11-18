@@ -32,10 +32,10 @@ namespace deltarh
             txtSalarioBase.Text = folhaIndividual.colaborador.salario.ToString("N2");
             txtHorasExtras.Text = folhaIndividual.valor_horas_extras.ToString("N2");
             txtAtrasos.Text = folhaIndividual.valor_desc_atraso.ToString("N2");
-            txtSalarioBase.Text = folhaIndividual.valor_vencimento.ToString("N2");
+            txtSalarioBruto.Text = folhaIndividual.valor_vencimento.ToString("N2");
             txtDescontos.Text = folhaIndividual.valor_desconto.ToString("N2");
             txtSalarioLiquido.Text = folhaIndividual.salario_liquido.ToString("N2");
-            //txtBeneficios.Text = 
+            txtBeneficios.Text = folhaIndividual.desconto_beneficios.ToString("N2");
 
   
             gridPontos.DataSource = folhaIndividual.pontos_eletronicos;
