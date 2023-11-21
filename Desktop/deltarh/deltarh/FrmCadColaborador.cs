@@ -33,13 +33,27 @@ namespace deltarh
             txtTelefone1.Text = "";
             txtTelefone2.Text = "";
             txtEmail.Text = "";
+            mskAdmissao.Text = "";
 
             mskCpf.Focus();
         }
 
         private void Coladorador_Load(object sender, EventArgs e)
         {
+            try
+            {
+                ConsultaBanco consulta = new ConsultaBanco();
+                List<mdlEmpresa> empresas = consulta.ListarEmpresas();
 
+                cboxEmpresas.DataSource = empresas;
+                cboxEmpresas.DisplayMember = "razao";
+                cboxEmpresas.ValueMember = "id";
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,9 +98,10 @@ namespace deltarh
             colab.email = txtEmail.Text;
             colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
             colab.status = cboxStatus.Text;
-            colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+            colab.idEmpresa = Convert.ToInt32(cboxEmpresas.SelectedValue);
             colab.cargo = txtCargo.Text;
             colab.horas_banco = 0;
+            colab.data_admissao = Convert.ToDateTime(mskAdmissao.Text);
 
             try
             {
@@ -110,7 +125,7 @@ namespace deltarh
 
         public void BuscarSetor()
         {
-            int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+            int idEmpresa = Convert.ToInt32(cboxEmpresas.SelectedValue);
 
             ConsultaBanco consulta = new ConsultaBanco();
 
@@ -185,9 +200,10 @@ namespace deltarh
                 colab.email = txtEmail.Text;
                 colab.id_setor = Convert.ToInt32(cBoxSetor.SelectedValue);
                 colab.status = cboxStatus.Text;
-                colab.idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
+                colab.idEmpresa = Convert.ToInt32(cboxEmpresas.SelectedValue);
                 colab.cargo = txtCargo.Text;
                 colab.horas_banco = 0;
+                colab.data_admissao = Convert.ToDateTime(mskAdmissao.Text);
 
                 CadColab conecta = new CadColab();
 
@@ -251,8 +267,9 @@ namespace deltarh
                 txtEmail.Text = colab.email;
                 cboxStatus.Text = colab.status;
                 txtCargo.Text = colab.cargo;
-                txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
+                cboxEmpresas.Text = Convert.ToString(colab.idEmpresa);
                 txtSenha.Text = colab.senha;
+                mskAdmissao.Text = Convert.ToString(colab.data_admissao);
 
                 cBoxSetor.Text = colab.setor.nome;
             }
@@ -268,6 +285,11 @@ namespace deltarh
         }
 
         private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

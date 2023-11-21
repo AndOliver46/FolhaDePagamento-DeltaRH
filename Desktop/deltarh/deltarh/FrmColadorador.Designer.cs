@@ -32,10 +32,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
-            this.cboxTipoContrato = new System.Windows.Forms.ComboBox();
-            this.cboxHorario = new System.Windows.Forms.ComboBox();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -51,11 +48,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.mskNascimento = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -78,6 +70,18 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.mskAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cboxHorario = new System.Windows.Forms.ComboBox();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.cboxTipoContrato = new System.Windows.Forms.ComboBox();
+            this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,26 +115,6 @@
             this.txtLogradouro.Size = new System.Drawing.Size(520, 22);
             this.txtLogradouro.TabIndex = 2;
             // 
-            // cboxTipoContrato
-            // 
-            this.cboxTipoContrato.Enabled = false;
-            this.cboxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxTipoContrato.FormattingEnabled = true;
-            this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
-            this.cboxTipoContrato.Name = "cboxTipoContrato";
-            this.cboxTipoContrato.Size = new System.Drawing.Size(159, 24);
-            this.cboxTipoContrato.TabIndex = 3;
-            // 
-            // cboxHorario
-            // 
-            this.cboxHorario.Enabled = false;
-            this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxHorario.FormattingEnabled = true;
-            this.cboxHorario.Location = new System.Drawing.Point(483, 106);
-            this.cboxHorario.Name = "cboxHorario";
-            this.cboxHorario.Size = new System.Drawing.Size(159, 24);
-            this.cboxHorario.TabIndex = 4;
-            // 
             // mskCpf
             // 
             this.mskCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,15 +123,6 @@
             this.mskCpf.Size = new System.Drawing.Size(159, 22);
             this.mskCpf.TabIndex = 6;
             this.mskCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskCpf_KeyPress);
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Enabled = false;
-            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(483, 69);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(159, 22);
-            this.txtSalario.TabIndex = 8;
             // 
             // txtNumero
             // 
@@ -300,16 +275,20 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.mskNascimento);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.mskAdmissao);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtCargo);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cboxHorario);
-            this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Controls.Add(this.txtSalario);
             this.groupBox2.Controls.Add(this.cboxTipoContrato);
+            this.groupBox2.Controls.Add(this.mskNascimento);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 75);
@@ -318,53 +297,6 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações Pessoais";
-            // 
-            // mskNascimento
-            // 
-            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
-            this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
-            this.mskNascimento.TabIndex = 26;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(370, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 16);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Carga Horária";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 16);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Contrato";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(370, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 16);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Salário Bruto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Nascimento";
             // 
             // label3
             // 
@@ -591,6 +523,127 @@
             this.txtStatus.Size = new System.Drawing.Size(78, 22);
             this.txtStatus.TabIndex = 24;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(462, 109);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 16);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Admissão";
+            // 
+            // mskAdmissao
+            // 
+            this.mskAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskAdmissao.Location = new System.Drawing.Point(536, 106);
+            this.mskAdmissao.Mask = "00/00/0000";
+            this.mskAdmissao.Name = "mskAdmissao";
+            this.mskAdmissao.Size = new System.Drawing.Size(106, 22);
+            this.mskAdmissao.TabIndex = 36;
+            this.mskAdmissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(251, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Cargo";
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(301, 69);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(118, 22);
+            this.txtCargo.TabIndex = 34;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(246, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 16);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Carga Horária";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Contrato";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(432, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 16);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Salário Bruto";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(21, 72);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(79, 16);
+            this.label22.TabIndex = 31;
+            this.label22.Text = "Nascimento";
+            // 
+            // cboxHorario
+            // 
+            this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxHorario.FormattingEnabled = true;
+            this.cboxHorario.Items.AddRange(new object[] {
+            "80",
+            "120",
+            "220"});
+            this.cboxHorario.Location = new System.Drawing.Point(344, 106);
+            this.cboxHorario.Name = "cboxHorario";
+            this.cboxHorario.Size = new System.Drawing.Size(75, 24);
+            this.cboxHorario.TabIndex = 27;
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalario.Location = new System.Drawing.Point(535, 69);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(107, 22);
+            this.txtSalario.TabIndex = 29;
+            // 
+            // cboxTipoContrato
+            // 
+            this.cboxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxTipoContrato.FormattingEnabled = true;
+            this.cboxTipoContrato.Items.AddRange(new object[] {
+            "Fixo",
+            "Flexível"});
+            this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
+            this.cboxTipoContrato.Name = "cboxTipoContrato";
+            this.cboxTipoContrato.Size = new System.Drawing.Size(111, 24);
+            this.cboxTipoContrato.TabIndex = 26;
+            // 
+            // mskNascimento
+            // 
+            this.mskNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
+            this.mskNascimento.Mask = "00/00/0000";
+            this.mskNascimento.Name = "mskNascimento";
+            this.mskNascimento.Size = new System.Drawing.Size(106, 22);
+            this.mskNascimento.TabIndex = 28;
+            this.mskNascimento.ValidatingType = typeof(System.DateTime);
+            // 
             // FrmColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,9 +684,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtLogradouro;
-        private System.Windows.Forms.ComboBox cboxTipoContrato;
-        private System.Windows.Forms.ComboBox cboxHorario;
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtBairro;
@@ -645,7 +695,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefone2;
         private System.Windows.Forms.TextBox txtTelefone1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -655,9 +704,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
@@ -676,6 +722,17 @@
         public System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.DateTimePicker mskNascimento;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.MaskedTextBox mskAdmissao;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cboxHorario;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.ComboBox cboxTipoContrato;
+        private System.Windows.Forms.MaskedTextBox mskNascimento;
     }
 }

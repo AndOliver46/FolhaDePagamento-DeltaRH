@@ -42,7 +42,21 @@ namespace deltarh
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            AlteraBanco processa = new AlteraBanco();
 
+            folhaIndividual.status = "Aprovada";
+
+           bool aprova = processa.AlteraFolhaIndividual(folhaIndividual);
+
+            if (aprova)
+            {
+                MessageBox.Show("Folha Individual Aprovada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Erro na Aprovação", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Close();
         }
 
         public void SelecionarPonto(object sender, EventArgs e)
@@ -141,12 +155,28 @@ namespace deltarh
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            AlteraBanco altera = new AlteraBanco();
 
+            bool validacao = altera.AlterarPonto(ponto_selecionado);
+
+            if(validacao)
+            {
+                MessageBox.Show("Alteração Realizada","Sucesso!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na Alteração", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnComprovante_Click(object sender, EventArgs e)
         {
             MostrarComprovante();
+        }
+
+        private void Abonar(object sender, EventArgs e)
+        {
+            ponto_selecionado.abono = chBoxAbonar.Checked;
         }
     }
 }

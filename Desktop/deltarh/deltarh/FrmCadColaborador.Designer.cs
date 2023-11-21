@@ -52,6 +52,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.mskAdmissao = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,7 +76,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtIdEmpresa = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -86,6 +87,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.cboxStatus = new System.Windows.Forms.ComboBox();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -117,7 +119,7 @@
             "Flexível"});
             this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
             this.cboxTipoContrato.Name = "cboxTipoContrato";
-            this.cboxTipoContrato.Size = new System.Drawing.Size(159, 24);
+            this.cboxTipoContrato.Size = new System.Drawing.Size(111, 24);
             this.cboxTipoContrato.TabIndex = 3;
             // 
             // cboxHorario
@@ -128,7 +130,7 @@
             "80",
             "120",
             "220"});
-            this.cboxHorario.Location = new System.Drawing.Point(396, 106);
+            this.cboxHorario.Location = new System.Drawing.Point(344, 106);
             this.cboxHorario.Name = "cboxHorario";
             this.cboxHorario.Size = new System.Drawing.Size(75, 24);
             this.cboxHorario.TabIndex = 4;
@@ -150,16 +152,16 @@
             this.mskNascimento.Location = new System.Drawing.Point(122, 69);
             this.mskNascimento.Mask = "00/00/0000";
             this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(159, 22);
+            this.mskNascimento.Size = new System.Drawing.Size(106, 22);
             this.mskNascimento.TabIndex = 7;
             this.mskNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // txtSalario
             // 
             this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(483, 69);
+            this.txtSalario.Location = new System.Drawing.Point(535, 69);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(159, 22);
+            this.txtSalario.Size = new System.Drawing.Size(107, 22);
             this.txtSalario.TabIndex = 8;
             // 
             // txtNumero
@@ -320,6 +322,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.mskAdmissao);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtCargo);
             this.groupBox2.Controls.Add(this.label7);
@@ -339,12 +343,33 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações Pessoais";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(462, 109);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 16);
+            this.label24.TabIndex = 25;
+            this.label24.Text = "Admissão";
+            // 
+            // mskAdmissao
+            // 
+            this.mskAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskAdmissao.Location = new System.Drawing.Point(536, 106);
+            this.mskAdmissao.Mask = "00/00/0000";
+            this.mskAdmissao.Name = "mskAdmissao";
+            this.mskAdmissao.Size = new System.Drawing.Size(106, 22);
+            this.mskAdmissao.TabIndex = 24;
+            this.mskAdmissao.ValidatingType = typeof(System.DateTime);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(485, 109);
+            this.label17.Location = new System.Drawing.Point(251, 72);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 16);
             this.label17.TabIndex = 23;
@@ -353,9 +378,9 @@
             // txtCargo
             // 
             this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCargo.Location = new System.Drawing.Point(535, 106);
+            this.txtCargo.Location = new System.Drawing.Point(301, 69);
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(107, 22);
+            this.txtCargo.Size = new System.Drawing.Size(118, 22);
             this.txtCargo.TabIndex = 22;
             this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
             // 
@@ -363,7 +388,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(298, 109);
+            this.label7.Location = new System.Drawing.Point(246, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 21;
@@ -383,7 +408,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(370, 72);
+            this.label5.Location = new System.Drawing.Point(432, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 19;
@@ -553,7 +578,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtIdEmpresa);
+            this.groupBox4.Controls.Add(this.cboxEmpresas);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label20);
@@ -567,14 +592,6 @@
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empregador";
-            // 
-            // txtIdEmpresa
-            // 
-            this.txtIdEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEmpresa.Location = new System.Drawing.Point(122, 19);
-            this.txtIdEmpresa.Name = "txtIdEmpresa";
-            this.txtIdEmpresa.Size = new System.Drawing.Size(111, 22);
-            this.txtIdEmpresa.TabIndex = 29;
             // 
             // button1
             // 
@@ -687,6 +704,14 @@
             this.txtId.Size = new System.Drawing.Size(81, 22);
             this.txtId.TabIndex = 24;
             // 
+            // cboxEmpresas
+            // 
+            this.cboxEmpresas.FormattingEnabled = true;
+            this.cboxEmpresas.Location = new System.Drawing.Point(122, 18);
+            this.cboxEmpresas.Name = "cboxEmpresas";
+            this.cboxEmpresas.Size = new System.Drawing.Size(121, 24);
+            this.cboxEmpresas.TabIndex = 29;
+            // 
             // FrmCadColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,7 +799,6 @@
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtIdEmpresa;
         private System.Windows.Forms.Button btnCep;
         public System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label22;
@@ -783,5 +807,8 @@
         private System.Windows.Forms.TextBox txtId;
         public System.Windows.Forms.Button btnSalvar;
         public System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.MaskedTextBox mskAdmissao;
+        private System.Windows.Forms.ComboBox cboxEmpresas;
     }
 }

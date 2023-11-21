@@ -264,7 +264,7 @@ namespace delta_controle
             return true;
         }
 
-        public bool AlterarPonto(mdlEmpresa empresa)
+        public bool AlterarPonto(mdlPontoEletronico ponto)
         {
             string conexao = conecta.stringSql;
             try
@@ -273,12 +273,12 @@ namespace delta_controle
                 {
                     conexaodb.Open();
 
-                    string query = @"UPDATE tbl_pontoeletronico SET status = @status WHERE cnpj = @cnpj";
+                    string query = @"UPDATE tbl_pontoeletronico SET abono = @abono WHERE id_pontoeletronico = @id_pontoeletronico";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
 
-                    cmd.Parameters.AddWithValue("@cnpj", empresa.cnpj);
-                    cmd.Parameters.AddWithValue("@status", empresa.status);
+                    cmd.Parameters.AddWithValue("@abono", ponto.abono);
+                    cmd.Parameters.AddWithValue("@id_pontoeletronico", ponto.id_pontoeletronico);
 
                     Int32 idInseriro = cmd.ExecuteNonQuery();
 
@@ -293,6 +293,38 @@ namespace delta_controle
                 return false;
             }
             return true;
+        }
+
+        public bool AlteraFolhaIndividual(mdlFolhaIndividual folha_individual)
+        {
+            string conexao = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(conexao))
+                {
+                    conexaodb.Open();
+                    string sql = @"UPDATE tbl_folhaindividual SET status = @status WHERE id_folhaindividual = @id_folhaindividual";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    cmd.Parameters.AddWithValue("@id_folhaindividual", folha_individual.id_folhaindividual);
+                    cmd.Parameters.AddWithValue("@status", folha_individual.status);
+
+
+                    int afetados = cmd.ExecuteNonQuery();
+
+                    if (afetados > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return false;
+
         }
     }
 }

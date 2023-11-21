@@ -48,6 +48,8 @@ namespace deltarh
                 txtEmail.Text = colab.email;
                 txtStatus.Text = colab.status;
                 txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
+                txtCargo.Text = colab.cargo;
+                mskAdmissao.Text = Convert.ToString(colab.data_admissao);
 
                 txtSetor.Text = colab.setor.nome;
 

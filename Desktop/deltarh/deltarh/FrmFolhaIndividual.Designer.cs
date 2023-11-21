@@ -988,6 +988,7 @@
             this.chBoxAbonar.TabIndex = 340;
             this.chBoxAbonar.Text = "ABONAR";
             this.chBoxAbonar.UseVisualStyleBackColor = true;
+            this.chBoxAbonar.CheckedChanged += new System.EventHandler(this.Abonar);
             // 
             // FrmFolhaIndividual
             // 

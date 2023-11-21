@@ -33,7 +33,6 @@ namespace deltarh
                 mskSenha.Text = "";
                 txtUsuario.Focus();
             }
-            Console.WriteLine(progressBar1.Value);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

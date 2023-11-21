@@ -66,7 +66,7 @@ namespace delta_controle
             @cargo,
             @status,
             @id_empresa,
-            @horas_banco
+            @horas_banco,
             @data_admissao);
         SELECT CAST(scope_identity() AS int)";
 
@@ -97,7 +97,7 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@status", colab.status);
                     cmd.Parameters.AddWithValue("@id_empresa", colab.idEmpresa);
                     cmd.Parameters.AddWithValue("@horas_banco", colab.horas_banco);
-                    cmd.Parameters.AddWithValue("@data_admissao", colab.data_admissao);
+                    cmd.Parameters.AddWithValue("@data_admissao", Convert.ToDateTime(colab.data_admissao));
 
                     int idInserido = (int)cmd.ExecuteScalar();
                 }
