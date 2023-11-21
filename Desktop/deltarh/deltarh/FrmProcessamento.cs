@@ -117,6 +117,7 @@ namespace deltarh
             txtInicio.Text = folha_de_pagamento.periodo_inicio.ToString("dd/MM/yyyy");
             txtTermino.Text = folha_de_pagamento.periodo_fim.ToString("dd/MM/yyyy");
 
+            dataGridFolhasIndividuais.DataSource = null;
             dataGridFolhasIndividuais.DataSource = folhas_individuais;
 
             dataGridFolhasIndividuais.Columns["salario_base"].DefaultCellStyle.Format = "N2";
@@ -130,7 +131,6 @@ namespace deltarh
             dataGridFolhasIndividuais.Columns["desconto_beneficios"].DefaultCellStyle.Format = "N2";
 
             dataGridFolhasIndividuais.Refresh();
-
 
             txtHorasTotais.Text = string.Format("{0:D2}:{1:D2}", (int)folha_de_pagamento.horas_trabalhadas, (int)((folha_de_pagamento.horas_trabalhadas - (int)folha_de_pagamento.horas_trabalhadas) * 60));
             txtValorBruto.Text = folha_de_pagamento.salario_base.ToString("N2");
@@ -192,6 +192,8 @@ namespace deltarh
 
         private void RecalcularFolha()
         {
+            BuscarFolha();
+
             foreach (mdlFolhaIndividual folha_individual in folhas_individuais)
             {
                 folha_individual.CalcularFolhaIndividual();
