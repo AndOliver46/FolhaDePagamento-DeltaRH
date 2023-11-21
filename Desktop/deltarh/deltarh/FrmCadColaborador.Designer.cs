@@ -76,18 +76,16 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.cBoxSetor = new System.Windows.Forms.ComboBox();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.cboxStatus = new System.Windows.Forms.ComboBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -582,9 +580,7 @@
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.cBoxSetor);
-            this.groupBox4.Controls.Add(this.txtEmpresa);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(12, 578);
             this.groupBox4.Name = "groupBox4";
@@ -593,14 +589,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empregador";
             // 
+            // cboxEmpresas
+            // 
+            this.cboxEmpresas.FormattingEnabled = true;
+            this.cboxEmpresas.Location = new System.Drawing.Point(103, 27);
+            this.cboxEmpresas.Name = "cboxEmpresas";
+            this.cboxEmpresas.Size = new System.Drawing.Size(389, 24);
+            this.cboxEmpresas.TabIndex = 29;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(258, 19);
+            this.button1.Location = new System.Drawing.Point(511, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(131, 24);
             this.button1.TabIndex = 24;
-            this.button1.Text = "Buscar";
+            this.button1.Text = "Buscar Setores";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -608,7 +612,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(380, 22);
+            this.label21.Location = new System.Drawing.Point(39, 67);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(39, 16);
             this.label21.TabIndex = 28;
@@ -618,38 +622,19 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(27, 62);
+            this.label20.Location = new System.Drawing.Point(30, 30);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 16);
             this.label20.TabIndex = 27;
             this.label20.Text = "Empresa";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(58, 22);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(20, 16);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "ID";
-            // 
             // cBoxSetor
             // 
             this.cBoxSetor.FormattingEnabled = true;
-            this.cBoxSetor.Location = new System.Drawing.Point(435, 21);
+            this.cBoxSetor.Location = new System.Drawing.Point(103, 64);
             this.cBoxSetor.Name = "cBoxSetor";
-            this.cBoxSetor.Size = new System.Drawing.Size(207, 24);
+            this.cBoxSetor.Size = new System.Drawing.Size(539, 24);
             this.cBoxSetor.TabIndex = 25;
-            // 
-            // txtEmpresa
-            // 
-            this.txtEmpresa.Enabled = false;
-            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(122, 59);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
-            this.txtEmpresa.TabIndex = 24;
             // 
             // btnCadastrar
             // 
@@ -704,14 +689,6 @@
             this.txtId.Size = new System.Drawing.Size(81, 22);
             this.txtId.TabIndex = 24;
             // 
-            // cboxEmpresas
-            // 
-            this.cboxEmpresas.FormattingEnabled = true;
-            this.cboxEmpresas.Location = new System.Drawing.Point(122, 18);
-            this.cboxEmpresas.Name = "cboxEmpresas";
-            this.cboxEmpresas.Size = new System.Drawing.Size(121, 24);
-            this.cboxEmpresas.TabIndex = 29;
-            // 
             // FrmCadColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,7 +712,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadColadorador";
             this.Text = " Cadastro de Colaborador";
-            this.Load += new System.EventHandler(this.Coladorador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -794,9 +770,7 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cBoxSetor;
-        private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCep;

@@ -1,6 +1,7 @@
 ﻿using delta_controle;
 using delta_modelo;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace deltarh
@@ -15,6 +16,23 @@ namespace deltarh
         private void Coladorador_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void PopularEmpresas()
+        {
+            try
+            {
+                ConsultaBanco consulta = new ConsultaBanco();
+                List<mdlEmpresa> empresas = consulta.ListarEmpresas();
+
+                cboxEmpresas.DataSource = empresas;
+                cboxEmpresas.DisplayMember = "razao";
+                cboxEmpresas.ValueMember = "id";
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         public void BuscarColab()
@@ -47,13 +65,31 @@ namespace deltarh
                 txtTelefone2.Text = colab.fone2;
                 txtEmail.Text = colab.email;
                 txtStatus.Text = colab.status;
-                txtIdEmpresa.Text = Convert.ToString(colab.idEmpresa);
+
+                PopularEmpresas();
+                cboxEmpresas.SelectedValue = colab.idEmpresa;
                 txtCargo.Text = colab.cargo;
                 mskAdmissao.Text = Convert.ToString(colab.data_admissao);
 
-                txtSetor.Text = colab.setor.nome;
+                try
+                {
+                    List<mdlSetor> setores = new List<mdlSetor>();
+                    setores = consulta.ConsultarSetor(colab.idEmpresa);
 
-                MostrarEmpresa();
+                    cBoxSetor.DataSource = setores;
+
+                    cBoxSetor.DisplayMember = "nome";
+                    cBoxSetor.ValueMember = "id";
+
+                    cBoxSetor.SelectedValue = colab.id_setor;
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Erro ao buscar setores.", "ERRO.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+
+                
             }
             catch (Exception)
             {
@@ -68,7 +104,6 @@ namespace deltarh
             edita.btnCadastrar.Visible = false;
             edita.btnSalvar.Visible = true;
             edita.BuscarColaborador();
-            edita.BuscarSetor();
             Close();
             edita.ShowDialog();
         }
@@ -88,27 +123,6 @@ namespace deltarh
             if (e.KeyChar == 13)
             {
                 BuscarColab();
-            }
-        }
-
-        private void MostrarEmpresa()
-        {
-            int idEmpresa = Convert.ToInt32(txtIdEmpresa.Text);
-
-            ConsultaBanco consulta = new ConsultaBanco();
-
-            mdlEmpresa empresa = new mdlEmpresa();
-
-            try
-            {
-                empresa = consulta.ConsultarEmpresaId(idEmpresa);
-
-                txtEmpresa.Text = empresa.razao;
-
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
     }

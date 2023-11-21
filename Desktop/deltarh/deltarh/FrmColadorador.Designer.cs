@@ -48,6 +48,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.mskAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cboxHorario = new System.Windows.Forms.ComboBox();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.cboxTipoContrato = new System.Windows.Forms.ComboBox();
+            this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -61,27 +73,14 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtSetor = new System.Windows.Forms.TextBox();
-            this.txtIdEmpresa = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.mskAdmissao = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.cboxHorario = new System.Windows.Forms.ComboBox();
-            this.txtSalario = new System.Windows.Forms.TextBox();
-            this.cboxTipoContrato = new System.Windows.Forms.ComboBox();
-            this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboxEmpresas = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cBoxSetor = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -298,6 +297,127 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações Pessoais";
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(462, 109);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 16);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Admissão";
+            // 
+            // mskAdmissao
+            // 
+            this.mskAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskAdmissao.Location = new System.Drawing.Point(536, 106);
+            this.mskAdmissao.Mask = "00/00/0000";
+            this.mskAdmissao.Name = "mskAdmissao";
+            this.mskAdmissao.Size = new System.Drawing.Size(106, 22);
+            this.mskAdmissao.TabIndex = 36;
+            this.mskAdmissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(251, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Cargo";
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(301, 69);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(118, 22);
+            this.txtCargo.TabIndex = 34;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(246, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 16);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Carga Horária";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Contrato";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(432, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 16);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Salário Bruto";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(21, 72);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(79, 16);
+            this.label22.TabIndex = 31;
+            this.label22.Text = "Nascimento";
+            // 
+            // cboxHorario
+            // 
+            this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxHorario.FormattingEnabled = true;
+            this.cboxHorario.Items.AddRange(new object[] {
+            "80",
+            "120",
+            "220"});
+            this.cboxHorario.Location = new System.Drawing.Point(344, 106);
+            this.cboxHorario.Name = "cboxHorario";
+            this.cboxHorario.Size = new System.Drawing.Size(75, 24);
+            this.cboxHorario.TabIndex = 27;
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalario.Location = new System.Drawing.Point(535, 69);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(107, 22);
+            this.txtSalario.TabIndex = 29;
+            // 
+            // cboxTipoContrato
+            // 
+            this.cboxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxTipoContrato.FormattingEnabled = true;
+            this.cboxTipoContrato.Items.AddRange(new object[] {
+            "Fixo",
+            "Flexível"});
+            this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
+            this.cboxTipoContrato.Name = "cboxTipoContrato";
+            this.cboxTipoContrato.Size = new System.Drawing.Size(111, 24);
+            this.cboxTipoContrato.TabIndex = 26;
+            // 
+            // mskNascimento
+            // 
+            this.mskNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
+            this.mskNascimento.Mask = "00/00/0000";
+            this.mskNascimento.Name = "mskNascimento";
+            this.mskNascimento.Size = new System.Drawing.Size(106, 22);
+            this.mskNascimento.TabIndex = 28;
+            this.mskNascimento.ValidatingType = typeof(System.DateTime);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -432,78 +552,6 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtSetor);
-            this.groupBox4.Controls.Add(this.txtIdEmpresa);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.txtEmpresa);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(15, 582);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(652, 103);
-            this.groupBox4.TabIndex = 23;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Empregador";
-            // 
-            // txtSetor
-            // 
-            this.txtSetor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSetor.Location = new System.Drawing.Point(459, 24);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(175, 22);
-            this.txtSetor.TabIndex = 37;
-            // 
-            // txtIdEmpresa
-            // 
-            this.txtIdEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEmpresa.Location = new System.Drawing.Point(114, 24);
-            this.txtIdEmpresa.Name = "txtIdEmpresa";
-            this.txtIdEmpresa.Size = new System.Drawing.Size(111, 22);
-            this.txtIdEmpresa.TabIndex = 36;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(372, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(39, 16);
-            this.label21.TabIndex = 35;
-            this.label21.Text = "Setor";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(19, 67);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 16);
-            this.label20.TabIndex = 34;
-            this.label20.Text = "Empresa";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(49, 27);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(20, 16);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "ID";
-            // 
-            // txtEmpresa
-            // 
-            this.txtEmpresa.Enabled = false;
-            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(114, 64);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(520, 22);
-            this.txtEmpresa.TabIndex = 31;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -523,135 +571,78 @@
             this.txtStatus.Size = new System.Drawing.Size(78, 22);
             this.txtStatus.TabIndex = 24;
             // 
-            // label24
+            // groupBox4
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(462, 109);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 16);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Admissão";
+            this.groupBox4.Controls.Add(this.cboxEmpresas);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.cBoxSetor);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 584);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(655, 100);
+            this.groupBox4.TabIndex = 26;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Empregador";
             // 
-            // mskAdmissao
+            // cboxEmpresas
             // 
-            this.mskAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskAdmissao.Location = new System.Drawing.Point(536, 106);
-            this.mskAdmissao.Mask = "00/00/0000";
-            this.mskAdmissao.Name = "mskAdmissao";
-            this.mskAdmissao.Size = new System.Drawing.Size(106, 22);
-            this.mskAdmissao.TabIndex = 36;
-            this.mskAdmissao.ValidatingType = typeof(System.DateTime);
+            this.cboxEmpresas.Enabled = false;
+            this.cboxEmpresas.FormattingEnabled = true;
+            this.cboxEmpresas.Location = new System.Drawing.Point(103, 27);
+            this.cboxEmpresas.Name = "cboxEmpresas";
+            this.cboxEmpresas.Size = new System.Drawing.Size(389, 24);
+            this.cboxEmpresas.TabIndex = 29;
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(251, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Cargo";
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(511, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 24);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Buscar Setores";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtCargo
+            // label21
             // 
-            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCargo.Location = new System.Drawing.Point(301, 69);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(118, 22);
-            this.txtCargo.TabIndex = 34;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(39, 67);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 16);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "Setor";
             // 
-            // label7
+            // label20
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(246, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 16);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Carga Horária";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(30, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 16);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Empresa";
             // 
-            // label6
+            // cBoxSetor
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 16);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Contrato";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(432, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 16);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Salário Bruto";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(21, 72);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(79, 16);
-            this.label22.TabIndex = 31;
-            this.label22.Text = "Nascimento";
-            // 
-            // cboxHorario
-            // 
-            this.cboxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxHorario.FormattingEnabled = true;
-            this.cboxHorario.Items.AddRange(new object[] {
-            "80",
-            "120",
-            "220"});
-            this.cboxHorario.Location = new System.Drawing.Point(344, 106);
-            this.cboxHorario.Name = "cboxHorario";
-            this.cboxHorario.Size = new System.Drawing.Size(75, 24);
-            this.cboxHorario.TabIndex = 27;
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(535, 69);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(107, 22);
-            this.txtSalario.TabIndex = 29;
-            // 
-            // cboxTipoContrato
-            // 
-            this.cboxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxTipoContrato.FormattingEnabled = true;
-            this.cboxTipoContrato.Items.AddRange(new object[] {
-            "Fixo",
-            "Flexível"});
-            this.cboxTipoContrato.Location = new System.Drawing.Point(122, 106);
-            this.cboxTipoContrato.Name = "cboxTipoContrato";
-            this.cboxTipoContrato.Size = new System.Drawing.Size(111, 24);
-            this.cboxTipoContrato.TabIndex = 26;
-            // 
-            // mskNascimento
-            // 
-            this.mskNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskNascimento.Location = new System.Drawing.Point(122, 69);
-            this.mskNascimento.Mask = "00/00/0000";
-            this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(106, 22);
-            this.mskNascimento.TabIndex = 28;
-            this.mskNascimento.ValidatingType = typeof(System.DateTime);
+            this.cBoxSetor.Enabled = false;
+            this.cBoxSetor.FormattingEnabled = true;
+            this.cBoxSetor.Location = new System.Drawing.Point(103, 64);
+            this.cBoxSetor.Name = "cBoxSetor";
+            this.cBoxSetor.Size = new System.Drawing.Size(539, 24);
+            this.cBoxSetor.TabIndex = 25;
             // 
             // FrmColadorador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 727);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnBuscar);
@@ -710,15 +701,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtIdEmpresa;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtSetor;
         public System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtStatus;
@@ -734,5 +718,11 @@
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.ComboBox cboxTipoContrato;
         private System.Windows.Forms.MaskedTextBox mskNascimento;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox cboxEmpresas;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cBoxSetor;
     }
 }

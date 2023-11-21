@@ -10,9 +10,15 @@ namespace deltarh
     public partial class FrmCadColadorador : Form
     {
         public string consulta = Environment.GetEnvironmentVariable("BANCO_DELTARH", EnvironmentVariableTarget.User);
+        List<mdlEmpresa> empresas;
         public FrmCadColadorador()
         {
             InitializeComponent();
+            ConsultaBanco consulta = new ConsultaBanco();
+            empresas = consulta.ListarEmpresas();
+            cboxEmpresas.DataSource = empresas;
+            cboxEmpresas.DisplayMember = "razao";
+            cboxEmpresas.ValueMember = "id";
         }
 
         public void LimparCadastro()
@@ -36,24 +42,6 @@ namespace deltarh
             mskAdmissao.Text = "";
 
             mskCpf.Focus();
-        }
-
-        private void Coladorador_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                ConsultaBanco consulta = new ConsultaBanco();
-                List<mdlEmpresa> empresas = consulta.ListarEmpresas();
-
-                cboxEmpresas.DataSource = empresas;
-                cboxEmpresas.DisplayMember = "razao";
-                cboxEmpresas.ValueMember = "id";
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -129,23 +117,15 @@ namespace deltarh
 
             ConsultaBanco consulta = new ConsultaBanco();
 
-            List<mdlSetor> setores = new List<mdlSetor>();
-
-            mdlEmpresa empresa = new mdlEmpresa();
-
             try
             {
+                List<mdlSetor> setores = new List<mdlSetor>();
                 setores = consulta.ConsultarSetor(idEmpresa);
 
                 cBoxSetor.DataSource = setores;
 
                 cBoxSetor.DisplayMember = "nome";
                 cBoxSetor.ValueMember = "id";
-
-                empresa = consulta.ConsultarEmpresaId(idEmpresa);
-
-                txtEmpresa.Text = empresa.razao;
-
             }
             catch (Exception)
             {
@@ -267,11 +247,13 @@ namespace deltarh
                 txtEmail.Text = colab.email;
                 cboxStatus.Text = colab.status;
                 txtCargo.Text = colab.cargo;
-                cboxEmpresas.Text = Convert.ToString(colab.idEmpresa);
+
+                cboxEmpresas.SelectedValue = colab.idEmpresa;
                 txtSenha.Text = colab.senha;
                 mskAdmissao.Text = Convert.ToString(colab.data_admissao);
 
-                cBoxSetor.Text = colab.setor.nome;
+                BuscarSetor();
+                cBoxSetor.SelectedValue = colab.id_setor;
             }
             catch (Exception)
             {
