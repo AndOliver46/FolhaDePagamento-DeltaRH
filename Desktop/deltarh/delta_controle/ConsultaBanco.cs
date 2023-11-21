@@ -796,6 +796,7 @@ namespace delta_controle
                     {
                         mdlFolhaIndividual folhaIndividual = new mdlFolhaIndividual
                         {
+                            id_folhaindividual = (int)rd["id_folhaindividual"],
                             salario_base = (decimal)rd["valor_folhafinal"],
                             valor_vencimento = (decimal)rd["valor_venc_total"],
                             valor_desconto = (decimal)rd["valor_desc_total"],
