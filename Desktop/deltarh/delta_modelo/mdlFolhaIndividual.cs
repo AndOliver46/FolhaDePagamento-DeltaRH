@@ -141,6 +141,10 @@ namespace delta_modelo
                             horas_trabalhadas += horas_dia;
                         }
                     }
+                    else
+                    {
+                        horas_atraso += horas_esperadas;
+                    }
                 }
                 dias_trabalhados++;
             }

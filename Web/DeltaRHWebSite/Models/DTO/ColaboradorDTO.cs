@@ -25,6 +25,7 @@ namespace DeltaRHWebSite.Models.DTO
         public int id_setor { get; set; }
         public string? cargo { get; private set; }
         public decimal? horas_banco { get; private set; }
+        public DateTime? data_admissao { get; private set; }
 
         public ColaboradorDTO(Colaborador colaborador)
         {
@@ -49,6 +50,7 @@ namespace DeltaRHWebSite.Models.DTO
             this.id_setor = colaborador.id_setor;
             this.cargo = colaborador.cargo;
             this.horas_banco = colaborador.horas_banco;
+            this.data_admissao = colaborador.data_admissao;
         }
     }
 }

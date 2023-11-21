@@ -76,6 +76,11 @@ namespace deltarh
 
         private void RealizarSomasTotais()
         {
+            foreach (mdlFolhaIndividual folhaIndividual in folhas_individuais)
+            {
+                folhaIndividual.CalcularFolhaIndividual();
+            }
+
             decimal horas_totais = 0;
             decimal valor_bruto = 0;
             decimal descontos = 0;
@@ -168,6 +173,13 @@ namespace deltarh
                 default:
                     MessageBox.Show("Status inválido, contatar administrador.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+            }
+
+            if (folhas_individuais.Count == 0)
+            {
+                btnSolicitarAprovacao.Enabled = false;
+                btnProcessaFolha.Enabled = false;
+                btnRecalcular.Enabled = false;
             }
         }
 
@@ -382,7 +394,7 @@ namespace deltarh
 
                 CadHolerite cadHolerite = new CadHolerite();
                 cadHolerite.InserirHolerite(holerite);
-            }
+            } 
         }
 
         private void btnRecalcular_Click(object sender, EventArgs e)

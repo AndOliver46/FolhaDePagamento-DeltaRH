@@ -80,6 +80,7 @@ CREATE TABLE [dbo].[tbl_colaborador](
     [status] [varchar](10) NOT NULL,
     [id_empresa] [int] NOT NULL,
     [horas_banco] [decimal](8, 2) NOT NULL, -- New column to store time as decimal (in minutes)
+    [data_admissao] [date] NOT NULL
 );
 
 -- Create the FolhadePgt table with time columns converted to decimal columns

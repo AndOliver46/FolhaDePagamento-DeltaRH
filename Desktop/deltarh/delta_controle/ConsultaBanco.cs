@@ -245,6 +245,7 @@ namespace delta_controle
                         colaborador.status = rd.GetString(20);
                         colaborador.idEmpresa = rd.GetInt32(21);
                         colaborador.horas_banco = rd.GetDecimal(22);
+                        colaborador.data_admissao = rd.GetDateTime(23);
                     }
                     rd.Close();
 
@@ -269,6 +270,43 @@ namespace delta_controle
                         colaborador.setor = setor;
                     }
                     return colaborador;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<mdlColaborador> ConsultarAvisoFeriasColaboradores()
+        {
+            string consulta = conecta.stringSql;
+            try
+            {
+                using (SqlConnection conexaodb = new SqlConnection(consulta))
+                {
+                    conexaodb.Open();
+
+                    string sql = "SELECT nome, cpf, DATEADD(YEAR, 1, data_admissao) AS vencimento_ferias, DATEADD(MONTH, 22, data_admissao) AS limite_ferias FROM tbl_colaborador WHERE GETDATE() > DATEADD(YEAR, 1, data_admissao) AND GETDATE() < DATEADD(MONTH, 22, data_admissao) AND status != 'Inativo';";
+
+                    SqlCommand cmd = new SqlCommand(sql, conexaodb);
+
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    List<mdlColaborador> colaboradores = new List<mdlColaborador>();
+                    while (rd.Read())
+                    {
+                        mdlColaborador colaborador = new mdlColaborador();
+                        colaborador.nome = rd.GetString(0);
+                        colaborador.cpf = rd.GetString(1);
+                        colaborador.vencimento_ferias = rd.GetDateTime(2);
+                        colaborador.limite_ferias = rd.GetDateTime(3);
+
+                        colaboradores.Add(colaborador);
+                    }
+                    rd.Close();
+
+                    return colaboradores;
                 }
             }
             catch (Exception)

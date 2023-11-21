@@ -18,6 +18,7 @@ namespace deltarh
         {
             InitializeComponent();
             ListarFolhasDePagamento();
+            ListarAvisosFerias();
         }
 
         public void ListarEmpresa()
@@ -399,6 +400,18 @@ namespace deltarh
         {
             ListarEmpresa();
             ListarFolhasDePagamento();
+        }
+
+        private void ListarAvisosFerias()
+        {
+            ConsultaBanco consulta = new ConsultaBanco();
+
+            List<mdlColaborador> colaboradores_aviso = consulta.ConsultarAvisoFeriasColaboradores();
+
+            dataGridFerias.DataSource = colaboradores_aviso;
+
+            dataGridFerias.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridFerias.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
     }
 }

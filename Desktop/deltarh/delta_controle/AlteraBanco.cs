@@ -185,7 +185,8 @@ namespace delta_controle
             cargo = @cargo,
             status = @status,
             id_empresa = @id_empresa,
-            horas_banco = @horas_banco
+            horas_banco = @horas_banco,
+            data_admissao = @data_admissao 
             WHERE id_colaborador = @id_colaborador";
 
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
@@ -214,6 +215,7 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@status", colab.status);
                     cmd.Parameters.AddWithValue("@id_empresa", colab.idEmpresa);
                     cmd.Parameters.AddWithValue("@horas_banco", colab.horas_banco);
+                    cmd.Parameters.AddWithValue("@data_admissao", colab.data_admissao);
 
                     Int32 idInseriro = cmd.ExecuteNonQuery();
 
