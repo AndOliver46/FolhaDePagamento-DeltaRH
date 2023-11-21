@@ -74,7 +74,7 @@ namespace delta_controle
 
 
                     cmd.Parameters.AddWithValue("@nome", colab.nome);
-                    cmd.Parameters.AddWithValue("@data_nascimento", Convert.ToDateTime(colab.nascimento));
+                    cmd.Parameters.AddWithValue("@data_nascimento", colab.nascimento);
                     cmd.Parameters.AddWithValue("@cpf", colab.cpf);
                     cmd.Parameters.AddWithValue("@tipo_contrato", colab.contrato);
                     cmd.Parameters.AddWithValue("@salario_bruto", colab.salario);
@@ -97,7 +97,7 @@ namespace delta_controle
                     cmd.Parameters.AddWithValue("@status", colab.status);
                     cmd.Parameters.AddWithValue("@id_empresa", colab.idEmpresa);
                     cmd.Parameters.AddWithValue("@horas_banco", colab.horas_banco);
-                    cmd.Parameters.AddWithValue("@data_admissao", Convert.ToDateTime(colab.data_admissao));
+                    cmd.Parameters.AddWithValue("@data_admissao", colab.data_admissao);
 
                     int idInserido = (int)cmd.ExecuteScalar();
                 }

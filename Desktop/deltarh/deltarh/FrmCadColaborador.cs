@@ -2,6 +2,7 @@
 using delta_modelo;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 using ViaCep;
 
@@ -68,7 +69,7 @@ namespace deltarh
             colab.id = Convert.ToInt32(txtId.Text);
 
             colab.nome = txtNome.Text;
-            colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
+            colab.nascimento = DateTime.ParseExact(mskNascimento.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             colab.cpf = mskCpf.Text;
             colab.contrato = cboxTipoContrato.Text;
             colab.salario = Convert.ToDecimal(txtSalario.Text);
@@ -89,7 +90,7 @@ namespace deltarh
             colab.idEmpresa = Convert.ToInt32(cboxEmpresas.SelectedValue);
             colab.cargo = txtCargo.Text;
             colab.horas_banco = 0;
-            colab.data_admissao = Convert.ToDateTime(mskAdmissao.Text);
+            colab.data_admissao = DateTime.ParseExact(mskAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture); 
 
             try
             {
@@ -162,7 +163,7 @@ namespace deltarh
             try
             {
                 colab.nome = txtNome.Text;
-                colab.nascimento = Convert.ToDateTime(mskNascimento.Text);
+                colab.nascimento = DateTime.ParseExact(mskNascimento.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 colab.cpf = mskCpf.Text;
                 colab.contrato = cboxTipoContrato.Text;
                 colab.salario = Convert.ToDecimal(txtSalario.Text);
@@ -183,7 +184,7 @@ namespace deltarh
                 colab.idEmpresa = Convert.ToInt32(cboxEmpresas.SelectedValue);
                 colab.cargo = txtCargo.Text;
                 colab.horas_banco = 0;
-                colab.data_admissao = Convert.ToDateTime(mskAdmissao.Text);
+                colab.data_admissao = DateTime.ParseExact(mskAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 CadColab conecta = new CadColab();
 
@@ -231,7 +232,7 @@ namespace deltarh
                 txtId.Text = Convert.ToString(colab.id);
                 txtNome.Text = colab.nome;
                 mskCpf.Text = colab.cpf;
-                mskNascimento.Text = Convert.ToString(colab.nascimento);
+                mskNascimento.Text = colab.nascimento.ToString("dd/MM/yyyy");
                 txtSalario.Text = Convert.ToString(colab.salario);
                 cboxTipoContrato.Text = colab.contrato;
                 cboxHorario.Text = Convert.ToString(colab.cHoraria);
@@ -250,7 +251,7 @@ namespace deltarh
 
                 cboxEmpresas.SelectedValue = colab.idEmpresa;
                 txtSenha.Text = colab.senha;
-                mskAdmissao.Text = Convert.ToString(colab.data_admissao);
+                mskAdmissao.Text = colab.data_admissao.ToString("dd/MM/yyyy");
 
                 BuscarSetor();
                 cBoxSetor.SelectedValue = colab.id_setor;

@@ -50,7 +50,7 @@ namespace deltarh
                 txtId.Text = Convert.ToString(colab.id);
                 txtNome.Text = colab.nome;
                 mskCpf.Text = colab.cpf;
-                mskNascimento.Text = Convert.ToString(colab.nascimento);
+                mskNascimento.Text = colab.nascimento.ToString("dd/MM/yyyy");
                 txtSalario.Text = Convert.ToString(colab.salario);
                 cboxTipoContrato.Text = colab.contrato;
                 cboxHorario.Text = Convert.ToString(colab.cHoraria);
@@ -69,7 +69,7 @@ namespace deltarh
                 PopularEmpresas();
                 cboxEmpresas.SelectedValue = colab.idEmpresa;
                 txtCargo.Text = colab.cargo;
-                mskAdmissao.Text = Convert.ToString(colab.data_admissao);
+                mskAdmissao.Text = colab.data_admissao.ToString("dd/MM/yyyy");
 
                 try
                 {
@@ -124,6 +124,11 @@ namespace deltarh
             {
                 BuscarColab();
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

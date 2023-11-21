@@ -193,7 +193,7 @@ namespace delta_controle
 
                     cmd.Parameters.AddWithValue("@id_colaborador", colab.id);
                     cmd.Parameters.AddWithValue("@nome", colab.nome);
-                    cmd.Parameters.AddWithValue("@data_nascimento", Convert.ToDateTime(colab.nascimento));
+                    cmd.Parameters.AddWithValue("@data_nascimento", colab.nascimento);
                     cmd.Parameters.AddWithValue("@cpf", colab.cpf);
                     cmd.Parameters.AddWithValue("@tipo_contrato", colab.contrato);
                     cmd.Parameters.AddWithValue("@salario_bruto", colab.salario);
