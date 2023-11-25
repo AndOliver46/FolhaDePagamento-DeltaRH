@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Data;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -10,6 +11,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
+using Microsoft.AspNetCore.Components;
 
 
 public class LoginController : Controller
@@ -127,6 +129,7 @@ public class LoginController : Controller
                     empresa.Cidade = rd.GetString(11);
                     empresa.Telefone = rd.GetString(13);
                     empresa.Telefone2 = rd.GetString(14);
+                    empresa.Email = rd.GetString(15);
                     empresa.id_missao = rd.GetInt32(22);
                     empresa.id_politica = rd.GetInt32(23);
                 }
@@ -275,6 +278,7 @@ public class LoginController : Controller
     [HttpPost("/Login/AprovarFolha/{id_folha}")]
     public IActionResult AprovarFolha(int id_folha)
     {
+
         // Suponha que você já tenha uma conexão SQL configurada.
         using (SqlConnection conexaodb = new SqlConnection(consulta))
         {
@@ -285,11 +289,12 @@ public class LoginController : Controller
              {
                 cmdUp.Parameters.AddWithValue("@status_folha", "Aprovado");
                 cmdUp.Parameters.AddWithValue("@id_folha", id_folha);
-                
+
                 int updateStatus = cmdUp.ExecuteNonQuery();
 
                 if (updateStatus > 0)
                 {
+                    Thread.Sleep(2000);
                     return RedirectToAction("InfosEmpresa");
                 }
              }
@@ -317,6 +322,8 @@ public class LoginController : Controller
 
                 if (updateStatus > 0)
                 {
+                    Thread.Sleep(2000);
+
                     return RedirectToAction("InfosEmpresa");
                 }
             }

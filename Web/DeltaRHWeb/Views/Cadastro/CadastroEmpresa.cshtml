@@ -13,7 +13,7 @@
     <main class="conteudo">
         <section class="conteudo-painel">
             <div class="conteudo-painel-livre">
-                <img src="~/img/logo-rcm.png" alt="Logo da RCM Software" class="logo-img">
+                <img src="~/img/Logo Laranja - Delta Rh.png" alt="Logo da RCM Software" class="logo-img">
             </div>
             <form class="conteudo-painel-form" method="post" action="/Cadastro/SalvarEmpresa">
                 <label for="RazaoSocial">Razão Social</label>
@@ -25,7 +25,7 @@
                 <label for="Responsavel">Responsável</label>
                 <input id="Responsavel" type="text" asp-for="Responsavel" placeholder="Responsável" class="caixa-nome-responsavel" required>
                 <label for="CPFResponsavel">CPF do Responsável</label>
-                <input id="CPFResponsavel" type="text" asp-for="CPFResponsavel" placeholder="Apenas números" class="caixa-cpf-responsavel" required>
+                <input id="CPFResponsavel" type="text" asp-for="CPFResponsavel" placeholder="Apenas números" class="caixa-cpf-responsavel" maxlength="11" required>
                 <label for="Telefone">Telefone</label>
                 <input id="Telefone" type="text" asp-for="Telefone" placeholder="Telefone comercial" class="caixa-telefone">
                 <label for="Telefone2">Celular</label>

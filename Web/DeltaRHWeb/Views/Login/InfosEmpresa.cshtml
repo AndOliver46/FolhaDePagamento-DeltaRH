@@ -11,10 +11,11 @@
     <title>Delta RH</title>
 </head>
 <body>
+    <div id="modal-lateral"></div>
     <main>
         <div id="container-view">
             <div id="container-abas">
-                <a class="botao botao-infos">Informações da empresa</a>
+                <a class="botao botao-infos botao-ativo">Informações da empresa</a>
                 <a class="botao botao-aprovacoes">Aprovações</a>
                 <a href="/Login/Sair" class="botao botao-sair">Sair</a>
             </div>
@@ -36,8 +37,8 @@
                             <input id="cidade" value="@Model.Cidade" type="text" name="cidade" readonly>
                             <label for="logradouro">Logradouro</label>
                             <input id="logradouro" value="@Model.Logradouro, @Model.Numero" type="text" name="logradouro" readonly>
-                            <label for="Numero">Numero</label>
-                            <input id="Numero" value="@Model.Numero" type="text" name="Numero" readonly>
+                            <label for="Email">E-mail</label>
+                            <input id="Email" value="@Model.Email" type="text" name="Email" readonly>
                         </section>
                     </form>
                 </div>
@@ -79,11 +80,11 @@
                                     <td class="status-item">@objeto.Status</td>
                                     <td class="acoes">
                                         <form method="post" action="/Login/AprovarFolha/@objeto.id_folha">
-                                            <button class="botao-ap-rp botao-aprove" type="submit"><i class="bi bi-clipboard2-check"></i></button>
+                                            <button onclick="showNotification(folhaAprovada)" class="botao-ap-rp botao-aprove " type="submit"><i class="bi bi-clipboard2-check bt-aprovaFolha"></i></button>
                                         </form>
 
                                         <form method="post" action="/Login/ReprovarFolha/@objeto.id_folha">
-                                            <button class="botao-ap-rp botao-aprove" type="submit"><i class="bi bi-clipboard-x"></i></button>
+                                            <button onclick="showNotification(folhaReprovada)" class="botao-ap-rp botao-aprove " type="submit"><i class="bi bi-clipboard-x bt-reprovaFolha"></i></button>
                                         </form>
                                     </td>
                                 </tr>

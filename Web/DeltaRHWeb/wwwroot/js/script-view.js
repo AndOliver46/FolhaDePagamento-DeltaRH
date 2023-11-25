@@ -7,11 +7,17 @@ const viewAprovacoes = document.querySelector(".container-aprovacoes");
 botaoInfos.addEventListener("click", function(){
     viewAprovacoes.classList.add('sumiu');
     viewMissao.classList.remove('sumiu');
+
+    botaoInfos.classList.add('botao-ativo')
+    botaoAprovacoes.classList.remove('botao-ativo')
 })
 
 botaoAprovacoes.addEventListener("click", function(){
     viewMissao.classList.add('sumiu');
     viewAprovacoes.classList.remove('sumiu');
+
+    botaoAprovacoes.classList.add('botao-ativo')
+    botaoInfos.classList.remove('botao-ativo')
 })
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -35,3 +41,23 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+
+const aprovaFolha = document.querySelector(".bt-aprovaFolha")
+const reprovaFolha = document.querySelector(".bt-reprovaFolha")
+const notification = document.getElementById("modal-lateral")
+const folhaAprovada = '<i class="bi bi-check-circle-fill" style="color: green;"></i> Folha aprovada com sucesso'
+const folhaReprovada = '<i class="bi bi-x-circle-fill" style="color: red;"></i> Folha reprovada com sucesso'
+
+function showNotification(msg) {
+    const toast = document.createElement('div');
+
+    toast.classList.add('toast');
+    toast.innerHTML = msg;
+    notification.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 2000);
+}

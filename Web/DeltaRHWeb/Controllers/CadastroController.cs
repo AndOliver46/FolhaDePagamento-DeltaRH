@@ -169,7 +169,7 @@ public class CadastroController : Controller
                 cmd.Parameters.AddWithValue("@cep", enderecoModel.CEP);
                 cmd.Parameters.AddWithValue("@cidade", enderecoModel.Cidade);
                 cmd.Parameters.AddWithValue("@uf", enderecoModel.Estado);
-                cmd.Parameters.AddWithValue("@telefone", empresaModel.Telefone);
+                cmd.Parameters.AddWithValue("@telefone", empresaModel.Telefone == null ? "" : empresaModel.Telefone);
                 cmd.Parameters.AddWithValue("@telefone2", empresaModel.Telefone2);
                 cmd.Parameters.AddWithValue("@email", empresaModel.Email);
                 cmd.Parameters.AddWithValue("@status", "Pendente");
