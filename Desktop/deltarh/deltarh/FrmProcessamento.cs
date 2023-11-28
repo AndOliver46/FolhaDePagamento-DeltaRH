@@ -120,6 +120,8 @@ namespace deltarh
             dataGridFolhasIndividuais.DataSource = null;
             dataGridFolhasIndividuais.DataSource = folhas_individuais;
 
+            dataGridFolhasIndividuais.Columns["horas_trabalhadas"].DefaultCellStyle.Format = "N2";
+            dataGridFolhasIndividuais.Columns["horas_extras"].DefaultCellStyle.Format = "N2";
             dataGridFolhasIndividuais.Columns["salario_base"].DefaultCellStyle.Format = "N2";
             dataGridFolhasIndividuais.Columns["valor_desconto"].DefaultCellStyle.Format = "N2";
             dataGridFolhasIndividuais.Columns["salario_liquido"].DefaultCellStyle.Format = "N2";
