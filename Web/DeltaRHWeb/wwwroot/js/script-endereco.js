@@ -58,38 +58,46 @@ const getEndereco = async (cep) => {
 
     cepInput.blur();
 
-    const apiURL = `https://viacep.com.br/ws/${cep}/json/`
+    const apiURL = `https://viacep.com.br/ws/${cep}/json/`;
 
-    const response = await fetch(apiURL);
+    try {
+        const response = await Promise.race([
+            fetch(apiURL),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000))
+        ]);
 
-    const data = await response.json();
+        const data = await response.json();
 
-    //Error
-    if (data.erro === true) {
-        document.getElementById("form-endereco").reset();
+        // Error
+        if (data.erro === true) {
+            document.getElementById("form-endereco").reset();
+            aparecerLoader();
+            return;
+        }
+
+        cidadeInput.value = data.localidade;
+        ruaInput.value = data.logradouro;
+        bairroInput.value = data.bairro;
+        estadoInput.value = data.uf;
+
+        if (ruaInput.hasAttribute("disabled")) {
+            formInputs.forEach((input) => {
+                input.removeAttribute("disabled");
+            });
+        }
+
         aparecerLoader();
-        return;
+    } catch (error) {
+        // Trate o erro aqui (pode ser um timeout)
+        console.error("Erro na requisição:", error.message);
+        aparecerLoader();
     }
-
-    cidadeInput.value = data.localidade;
-    ruaInput.value = data.logradouro;
-    bairroInput.value = data.bairro;
-    estadoInput.value = data.uf;
-
-    if (ruaInput.hasAttribute("disabled")) {
-        formInputs.forEach((input) => {
-            input.removeAttribute("disabled");
-        });
-    }
-
-    aparecerLoader();
-}
+};
 
 formEndereco.addEventListener("submit", (e) => {
     aparecerLoader();
 
     setTimeout(() => {
         aparecerLoader();
-    }, 1500)
-})
-
+    }, 1500);
+});
